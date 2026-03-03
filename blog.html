@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Latest Insights — Blog</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #F5F5F3;
+      --bg-secondary: #FAFAF8;
+      --text-primary: #1C1C1C;
+      --accent-beige: #D6CFC7;
+      --accent-black: #111111;
+    }
+    
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    
+    .font-heading {
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .blog-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+    }
+    
+    .ad-space {
+      background: linear-gradient(135deg, #FAFAF8 0%, #EBE9E4 100%);
+      border: 1px dashed var(--accent-beige);
+    }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full overflow-auto">
+  <div class="h-full w-full bg-[#F5F5F3]"><!-- Navigation -->
+   <nav class="sticky top-0 z-50 bg-[#F5F5F3]/95 backdrop-blur-lg border-b border-[#D6CFC7]/20">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between"><a href="#home" class="font-heading font-bold text-xl tracking-tight hover:text-[#1C1C1C]/70 transition-colors" id="site-name">aaditya.</a>
+     <div class="hidden md:flex items-center gap-12"><a href="http://aadityabhatnagar.online/" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Homepage<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="http://aadityabhatnagar.online/#about" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">About<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/#services" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/ads.html" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">By me a coffee <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/#contact" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a>
+     </div><button id="mobile-menu-btn" class="md:hidden p-2 text-[#1C1C1C] hover:bg-[#1C1C1C]/10 rounded-lg transition-colors">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg></button>
+    </div><!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-[#D6CFC7]/20 bg-[#FAFAF8]"><a href="http://aadityabhatnagar.online/" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Homepage<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="http://aadityabhatnagar.online/#about" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">About<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/#services" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/ads.html" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">By me a coffee <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="https://aadityabhatnagar.online/#contact" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a>
+    </div>
+   </nav><!-- Blog Section -->
+   <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+      <div>
+       <p class="text-sm font-medium tracking-widest text-[#111111]/60 mb-4">BLOG</p>
+       <h1 class="font-heading font-bold text-5xl md:text-6xl leading-tight" id="page-title">Latest <span class="font-serif italic font-normal">insights</span></h1>
+      </div><a href="#" class="mt-6 md:mt-0 text-sm font-medium underline underline-offset-4">View All Posts →</a>
+     </div>
+     <div class="grid lg:grid-cols-3 gap-8"><!-- Blog Posts Column -->
+      <div class="lg:col-span-2 space-y-8" id="blog-posts-container">
+      </div><!-- Ad Space Column -->
+      <div class="space-y-6"><!-- Ad Space 1 -->
+       <div class="ad-space rounded-2xl p-6 h-64 flex flex-col items-center justify-center text-center">
+        <div class="w-12 h-12 bg-[#1C1C1C]/10 rounded-full flex items-center justify-center mb-4">
+         <svg class="w-6 h-6 text-[#1C1C1C]/40" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+         </svg>
+        </div>
+        <p class="text-sm font-medium text-[#1C1C1C]/60 mb-1">Advertisement</p>
+        <p class="text-xs text-[#1C1C1C]/40">Your Ad Here</p>
+       </div><!-- Ad Space 2 -->
+       <div class="ad-space rounded-2xl p-6 h-80 flex flex-col items-center justify-center text-center">
+        <div class="w-12 h-12 bg-[#1C1C1C]/10 rounded-full flex items-center justify-center mb-4">
+         <svg class="w-6 h-6 text-[#1C1C1C]/40" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+         </svg>
+        </div>
+        <p class="text-sm font-medium text-[#1C1C1C]/60 mb-1">Advertisement</p>
+        <p class="text-xs text-[#1C1C1C]/40">300 × 250</p>
+       </div><!-- Newsletter Signup -->
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 bg-[#111111] text-white mt-20">
+    <div class="max-w-6xl mx-auto px-6">
+     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-2"><span class="font-heading font-bold text-xl">aaditya.</span>
+      </div>
+      
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      page_title: 'Latest insights',
+      site_name: 'aaditya.',
+      background_color: '#F5F5F3',
+      surface_color: '#FAFAF8',
+      text_color: '#1C1C1C',
+      primary_action_color: '#111111',
+      secondary_action_color: '#D6CFC7',
+      font_family: 'DM Sans',
+      font_size: 16
+    };
+
+    let currentBlogPosts = [];
+    let newPostData = {
+      title: '',
+      category: '',
+      description: '',
+      read_time: '',
+      date: ''
+    };
+
+    /* 
+    ╔════════════════════════════════════════════════════════════════╗
+    ║           📝 BLOG POST TEMPLATE - COPY & PASTE                 ║
+    ╚════════════════════════════════════════════════════════════════╝
+    
+    Use this template to quickly add new posts to your blog.
+    Fill in all 5 fields in the edit panel and your post appears instantly!
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 1: AI AUTOMATION POST
+    ════════════════════════════════════════════════════════════════
+    Post Title: How AI is Transforming Web Design
+    Category: AI Automation
+    Description: Explore the latest tools and techniques for automating design workflows with artificial intelligence.
+    Read Time: 8 min read
+    Date: January 15, 2025
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 2: NO-CODE AUTOMATION
+    ════════════════════════════════════════════════════════════════
+    Post Title: Building No-Code Automation Workflows
+    Category: No-Code
+    Description: Learn how to create powerful automations without writing a single line of code using modern platforms.
+    Read Time: 6 min read
+    Date: January 10, 2025
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 3: WEB DESIGN TRENDS
+    ════════════════════════════════════════════════════════════════
+    Post Title: The Future of Responsive Web Design
+    Category: Web Design
+    Description: Discover emerging trends in responsive design and how to create seamless experiences across all devices.
+    Read Time: 7 min read
+    Date: January 5, 2025
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 4: AI & PRODUCTIVITY
+    ════════════════════════════════════════════════════════════════
+    Post Title: AI Tools That Save Hours of Work
+    Category: AI Automation
+    Description: A comprehensive guide to AI-powered tools that can dramatically speed up your workflow and increase productivity.
+    Read Time: 10 min read
+    Date: December 28, 2024
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 5: DESIGN SYSTEM GUIDE
+    ════════════════════════════════════════════════════════════════
+    Post Title: Building Scalable Design Systems
+    Category: Web Design
+    Description: Learn how to create a robust design system that keeps your brand consistent across all digital platforms.
+    Read Time: 12 min read
+    Date: December 22, 2024
+    
+    ════════════════════════════════════════════════════════════════
+    TEMPLATE 6: NO-CODE INTEGRATIONS
+    ════════════════════════════════════════════════════════════════
+    Post Title: Connecting No-Code Tools Without Programming
+    Category: No-Code
+    Description: Master the art of integrating multiple no-code platforms to create seamless automated workflows.
+    Read Time: 9 min read
+    Date: December 15, 2024
+    
+    ════════════════════════════════════════════════════════════════
+    📋 HOW TO USE THESE TEMPLATES
+    ════════════════════════════════════════════════════════════════
+    1. Copy one of the templates above
+    2. Go to the Edit Panel (the controls button)
+    3. Fill in all 5 fields under "Add New Post":
+       • Post Title: Copy the title from template
+       • Category: Copy the category (AI Automation / Web Design / No-Code)
+       • Description: Copy the description
+       • Read Time: Copy the read time
+       • Date: Copy the date
+    4. Your post appears instantly on the blog!
+    5. It's automatically saved to your Canva Sheet forever
+    6. Add unlimited posts - no limits!
+    
+    ════════════════════════════════════════════════════════════════
+    ⭐ PRO TIPS
+    ════════════════════════════════════════════════════════════════
+    • Each category has its own unique icon (AI ⚡, Web 🖥️, No-Code 📦)
+    • Posts appear at the top of the list (newest first)
+    • Click any post card to trigger an action
+    • Edit panel remembers your last entry - clear it after posting!
+    • Mix and match templates or create your own variations
+    
+    ════════════════════════════════════════════════════════════════
+    */
+
+    const categoryIcons = {
+      'AI Automation': '<svg class="w-10 h-10 text-[#1C1C1C]/30" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>',
+      'Web Design': '<svg class="w-10 h-10 text-[#1C1C1C]/30" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>',
+      'No-Code': '<svg class="w-10 h-10 text-[#1C1C1C]/30" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>'
+    };
+
+    function getIconForCategory(category) {
+      return categoryIcons[category] || categoryIcons['Web Design'];
+    }
+
+    function createBlogPostElement(post) {
+      const link = document.createElement('a');
+      link.href = post.url || '#';
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      link.className = 'blog-card bg-[#FAFAF8] rounded-2xl p-6 w-full text-left no-underline block';
+      link.dataset.postId = post.id;
+      link.innerHTML = `
+        <div class="flex flex-col md:flex-row gap-6">
+         <div class="md:w-48 h-32 bg-[#D6CFC7]/30 rounded-xl flex-shrink-0 flex items-center justify-center">
+          ${getIconForCategory(post.category)}
+         </div>
+         <div class="flex-1">
+          <div class="flex items-center gap-3 mb-3"><span class="text-xs font-medium px-3 py-1 bg-[#1C1C1C]/5 rounded-full">${post.category}</span> <span class="text-xs text-[#1C1C1C]/50">${post.read_time}</span>
+          </div>
+          <h3 class="font-heading font-semibold text-lg mb-2">${post.title}</h3>
+          <p class="text-sm text-[#1C1C1C]/60 line-clamp-2">${post.description}</p>
+          <p class="text-xs text-[#1C1C1C]/40 mt-4">${post.date}</p>
+         </div>
+        </div>
+      `;
+      return link;
+    }
+
+    function renderBlogPosts() {
+      const container = document.getElementById('blog-posts-container');
+      if (!container) return;
+
+      container.innerHTML = '';
+      currentBlogPosts.forEach(post => {
+        container.appendChild(createBlogPostElement(post));
+      });
+    }
+
+    async function addBlogPost() {
+      if (!newPostData.title || !newPostData.category || !newPostData.description) {
+        return;
+      }
+
+      if (currentBlogPosts.length >= 999) {
+        alert('Maximum limit of 999 posts reached. Please delete some posts first.');
+        return;
+      }
+
+      const result = await window.dataSdk.create({
+        id: Date.now().toString(),
+        title: newPostData.title,
+        category: newPostData.category,
+        description: newPostData.description,
+        read_time: newPostData.read_time,
+        date: newPostData.date
+      });
+
+      if (result.isOk) {
+        // Reset the form fields
+        newPostData = { title: '', category: '', description: '', read_time: '', date: '' };
+        
+        // Update the edit panel to show cleared fields
+        if (window.elementSdk) {
+          window.elementSdk.setConfig({
+            new_post_title: '',
+            new_post_category: '',
+            new_post_description: '',
+            new_post_read_time: '',
+            new_post_date: ''
+          });
+        }
+      }
+    }
+
+    function subscribeNewsletter() {
+      const form = event.target;
+      const email = form.querySelector('input[type="email"]').value;
+      const btn = form.querySelector('button');
+      btn.textContent = 'Subscribed!';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Subscribe';
+        btn.disabled = false;
+        form.reset();
+      }, 2000);
+    }
+
+    function openPost(title) {
+      // Function removed - posts now link directly to URLs
+    }
+
+    async function onConfigChange(config) {
+      const pageTitle = document.getElementById('page-title');
+      const siteName = document.getElementById('site-name');
+      
+      if (pageTitle && config.page_title) {
+        pageTitle.innerHTML = config.page_title.replace('insights', '<span class="font-serif italic font-normal">insights</span>');
+      }
+      if (siteName && config.site_name) {
+        siteName.textContent = config.site_name;
+      }
+
+      // Update blog post form data
+      if (config.new_post_title) newPostData.title = config.new_post_title;
+      if (config.new_post_category) newPostData.category = config.new_post_category;
+      if (config.new_post_description) newPostData.description = config.new_post_description;
+      if (config.new_post_read_time) newPostData.read_time = config.new_post_read_time;
+      if (config.new_post_date) newPostData.date = config.new_post_date;
+
+      // Trigger add post when all fields are filled
+      if (newPostData.title && newPostData.category && newPostData.description && newPostData.read_time && newPostData.date) {
+        await addBlogPost();
+      }
+
+      // Apply colors
+      document.documentElement.style.setProperty('--bg-primary', config.background_color || defaultConfig.background_color);
+      document.documentElement.style.setProperty('--bg-secondary', config.surface_color || defaultConfig.surface_color);
+      document.documentElement.style.setProperty('--text-primary', config.text_color || defaultConfig.text_color);
+      document.documentElement.style.setProperty('--accent-black', config.primary_action_color || defaultConfig.primary_action_color);
+      document.documentElement.style.setProperty('--accent-beige', config.secondary_action_color || defaultConfig.secondary_action_color);
+
+      document.body.style.backgroundColor = config.background_color || defaultConfig.background_color;
+      document.body.style.color = config.text_color || defaultConfig.text_color;
+
+      // Apply font
+      const fontFamily = config.font_family || defaultConfig.font_family;
+      document.body.style.fontFamily = `${fontFamily}, sans-serif`;
+
+      // Apply font size
+      const baseSize = config.font_size || defaultConfig.font_size;
+      document.body.style.fontSize = `${baseSize}px`;
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => { config.primary_action_color = value; window.elementSdk.setConfig({ primary_action_color: value }); }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => { config.secondary_action_color = value; window.elementSdk.setConfig({ secondary_action_color: value }); }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => { config.font_family = value; window.elementSdk.setConfig({ font_family: value }); }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => { config.font_size = value; window.elementSdk.setConfig({ font_size: value }); }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ['page_title', config.page_title || defaultConfig.page_title],
+        ['site_name', config.site_name || defaultConfig.site_name],
+        ['new_post_title', newPostData.title || ''],
+        ['new_post_category', newPostData.category || ''],
+        ['new_post_description', newPostData.description || ''],
+        ['new_post_read_time', newPostData.read_time || ''],
+        ['new_post_date', newPostData.date || '']
+      ]);
+    }
+
+    // Initialize Data SDK
+    const dataHandler = {
+      onDataChanged(data) {
+        currentBlogPosts = data;
+        renderBlogPosts();
+      }
+    };
+
+    // Example blog posts to display on load
+    const examplePosts = [
+      {
+        id: '1',
+        title: 'How AI is Transforming Web Design',
+        category: 'AI Automation',
+        description: 'Explore the latest tools and techniques for automating design workflows with artificial intelligence.',
+        read_time: '8 min read',
+        date: 'January 15, 2025',
+        url: 'https://example.com/ai-web-design'
+      },
+      {
+        id: '2',
+        title: 'Building No-Code Automation Workflows',
+        category: 'No-Code',
+        description: 'Learn how to create powerful automations without writing a single line of code using modern platforms.',
+        read_time: '6 min read',
+        date: 'January 10, 2025',
+        url: 'https://example.com/no-code-automation'
+      }
+    ];
+
+    async function initializeSdk() {
+      // Display example posts immediately
+      currentBlogPosts = examplePosts;
+      renderBlogPosts();
+
+      if (window.dataSdk) {
+        await window.dataSdk.init(dataHandler);
+      }
+
+      if (window.elementSdk) {
+        window.elementSdk.init({
+          defaultConfig,
+          onConfigChange,
+          mapToCapabilities,
+          mapToEditPanelValues
+        });
+      }
+    }
+
+    initializeSdk();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+
+      // Close menu when a link is clicked
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6b953d625ea792',t:'MTc3MjU3MTc1NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
