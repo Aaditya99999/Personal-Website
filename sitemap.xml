@@ -9,24 +9,30 @@
 
 <url>
   <loc>https://aadityabhatnagar.online/</loc>
-  <lastmod>2026-03-03T18:42:14+00:00</lastmod>
+  <lastmod>2026-03-03T21:22:39+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://aadityabhatnagar.online/portfolio.html</loc>
-  <lastmod>2026-03-03T18:42:14+00:00</lastmod>
+  <lastmod>2026-03-03T21:22:39+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://aadityabhatnagar.online/blog.html</loc>
+  <lastmod>2026-03-03T21:22:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://aadityabhatnagar.online/ads.html</loc>
-  <lastmod>2026-03-03T18:42:14+00:00</lastmod>
+  <lastmod>2026-03-03T21:22:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://aadityabhatnagar.online/privacy.html</loc>
-  <lastmod>2026-03-03T18:42:14+00:00</lastmod>
+  <lastmod>2026-03-03T21:22:39+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+
 
 
 </urlset>
