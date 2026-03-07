@@ -390,15 +390,7 @@
       <div class="lg:col-span-2">
        <h3 class="text-2xl lg:text-3xl font-bold mb-8">Get in Touch</h3>
        <div class="space-y-6">
-        <form id="contactForm" class="space-y-4 mb-8" onsubmit="handleContactForm(event)">
-         <div><label for="contactName" class="block text-sm font-medium text-charcoal/70 mb-2">Name</label> <input type="text" id="contactName" name="name" placeholder="Your name" required class="w-full px-4 py-3 rounded-lg border border-muted-beige/50 bg-warm-grey focus:outline-none focus:border-soft-black transition-colors text-charcoal placeholder-charcoal/40">
-         </div>
-         <div><label for="contactEmail" class="block text-sm font-medium text-charcoal/70 mb-2">Email</label> <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required class="w-full px-4 py-3 rounded-lg border border-muted-beige/50 bg-warm-grey focus:outline-none focus:border-soft-black transition-colors text-charcoal placeholder-charcoal/40">
-         </div>
-         <div><label for="contactMessage" class="block text-sm font-medium text-charcoal/70 mb-2">Message</label> <textarea id="contactMessage" name="message" placeholder="Your message..." rows="4" required class="w-full px-4 py-3 rounded-lg border border-muted-beige/50 bg-warm-grey focus:outline-none focus:border-soft-black transition-colors text-charcoal placeholder-charcoal/40 resize-none"></textarea>
-         </div><button type="submit" class="bg-soft-black text-off-white px-6 py-3 rounded-full font-medium hover:bg-charcoal transition-colors w-full"> <span id="submitBtnText">Send Message</span> </button>
-         <p id="formMessage" class="text-sm text-charcoal/60 text-center hidden"></p>
-        </form>
+        
         <div class="pt-4 border-t border-muted-beige/30">
          <p class="text-charcoal/60 text-sm mb-4">Or reach out directly:</p><a href="mailto:aadityabusiness3301@gmail.com" class="flex items-center gap-4 text-charcoal/70 hover:text-soft-black transition-colors group mb-3">
           <div class="w-12 h-12 rounded-xl bg-warm-grey flex items-center justify-center group-hover:bg-muted-beige/50 transition-colors">
@@ -561,44 +553,6 @@
       });
     }
 
-    // Contact form handler
-    function handleContactForm(event) {
-      event.preventDefault();
-      
-      const name = document.getElementById('contactName').value;
-      const email = document.getElementById('contactEmail').value;
-      const message = document.getElementById('contactMessage').value;
-      const form = document.getElementById('contactForm');
-      const formMessage = document.getElementById('formMessage');
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const submitBtnText = document.getElementById('submitBtnText');
-      
-      // Show loading state
-      submitBtn.disabled = true;
-      submitBtnText.textContent = 'Sending...';
-      
-      // Create mailto link with form data
-      const subject = `New message from ${name}`;
-      const body = `Name: ${name}%0AEmail: ${email}%0A%0AMessage:%0A${message}`;
-      const mailtoLink = `mailto:aadityabusiness3301@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
-      
-      // Reset form and show success message
-      setTimeout(() => {
-        form.reset();
-        formMessage.textContent = '✓ Opening your email client...';
-        formMessage.classList.remove('hidden');
-        submitBtn.disabled = false;
-        submitBtnText.textContent = 'Send Message';
-        
-        // Hide message after 3 seconds
-        setTimeout(() => {
-          formMessage.classList.add('hidden');
-        }, 3000);
-      }, 500);
-    }
 
     // Smooth scroll for navigation
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -612,15 +566,36 @@
         }
       });
     });
-   <script>
+    
     document.addEventListener("DOMContentLoaded", function() {
      document.body.classList.add("loaded");
     });
    </script>
   </script>
+  <script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwnUw8CElxAAvUL9Z0LDWu2ZF_X3mVFqgGqQZqNVn-8_1psusRux0pcN1oLlXfCGuHj/exec";
+    const form = document.forms["submit-to-google-sheet"];
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch(scriptURL, {
+        method: "POST",
+        body: formData
+      })
+      .then(response => {
+        alert("Message sent successfully!");
+        form.reset();
+      })
+      .catch(error => {
+        alert("Something went wrong.");
+      });
+    });
+  </script>    
+  </script>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d58211e657fb2d8',t:'MTc3MjM2Nzc2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+
 
 
 
