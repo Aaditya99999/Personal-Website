@@ -280,7 +280,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex items-center gap-2"><span class="text-xl font-semibold" id="footer-name">Aaditya.</span>
       </div>
-      <div class="flex items-center gap-8"><a href="https://www.linkedin.com/" class="nav-link">LinkedIn</a> <a href="https://github.com/Aaditya99999" class="nav-link">GitHub</a> <a href="https://www.instagram.com/aadityabhatnagar13" class="nav-link">Instagram</a>
+      <div class="flex items-center gap-8"><a href="https://www.linkedin.com/in/aadityabhatnagar2008/" class="nav-link">LinkedIn</a> <a href="https://github.com/Aaditya99999" class="nav-link">GitHub</a> <a href="https://www.instagram.com/aadityabhatnagar13" class="nav-link">Instagram</a>
       </div>
       
      </div>
@@ -384,7 +384,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         url: 'https://github.com/Aaditya99999/n8n-personal-agent/tree/main',
         stats: [
           { label: 'Time Saved', value: '40 hrs/mo' },
-          { label: 'Sterss Level', value: '📉' }
+          { label: 'Stress Level', value: '📉' }
         ]
       }
       // Add more automations here by copying the structure above
@@ -455,12 +455,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // }
     ];
 
-    function renderPortfolioCard(project, delayClass) {
+    function renderPortfolioCard(project, delayClass, section) {
       return `
         <a href="${project.url}" target="_blank" rel="noopener noreferrer" class="portfolio-card slide-up ${delayClass} cursor-pointer">
           <div class="portfolio-image">${project.emoji}</div>
           <div class="portfolio-content">
-            <span class="portfolio-label">${project.id.includes('whatsapp') || project.id.includes('crm') || project.id.includes('email') || project.id.includes('chatbot') || project.id.includes('analytics') || project.id.includes('zapier') ? 'Automation' : 'Website'}</span>
+            <span class="portfolio-label">${section === 'automation' ? 'Automation' : 'Website'}</span>
             <h3 class="portfolio-title">${project.title}</h3>
             <p class="portfolio-description">${project.description}</p>
             <div class="portfolio-stats">
@@ -481,11 +481,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const websitesGrid = document.getElementById('websites-grid');
 
       automationGrid.innerHTML = automationProjects
-        .map((project, index) => renderPortfolioCard(project, `delay-${index + 1}`))
+        .map((project, index) => renderPortfolioCard(project, `delay-${index + 1}`, 'automation'))
         .join('');
 
       websitesGrid.innerHTML = websiteProjects
-        .map((project, index) => renderPortfolioCard(project, `delay-${index + 1}`))
+        .map((project, index) => renderPortfolioCard(project, `delay-${index + 1}`, 'website'))
         .join('');
     }
 
