@@ -4,6 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Velour & Co.</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z7G8E7CW0H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z7G8E7CW0H');
+</script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -458,6 +466,16 @@ async function submitOrder(){
 function openWA(msg){window.open('https://wa.me/917357397888?text='+encodeURIComponent(msg),'_blank');}
 let toastTimer;
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),2800);}
+
+// UTM Source tracking
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const source = params.get('utm_source');
+  if(source && typeof gtag !== 'undefined'){
+    gtag('event','page_view',{'traffic_source': source});
+  }
+})();
+
 renderHomeGrid();updateCartUI();
 </script>
 </body>
