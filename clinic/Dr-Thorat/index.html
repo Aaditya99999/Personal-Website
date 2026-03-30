@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Denta Care — Premium Dental Clinic in Pune</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+/* ===================== CONFIG / THEME ===================== */
+:root {
+  --sky: #ddeeff; --sky-mid: #c8e3f8; --blue: #1a6fb5; --blue-dark: #134e82;
+  --orange: #f27430; --orange-dark: #d95e1a; --white: #ffffff;
+  --text: #1a2340; --muted: #5a6a82; --radius: 18px;
+  --shadow: 0 8px 32px rgba(26,111,181,0.10);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'DM Sans', sans-serif; background: var(--sky); color: var(--text); overflow-x: hidden; }
+a { text-decoration: none; color: inherit; }
+
+/* ===================== PAGES ===================== */
+.page { display: none; }
+.page.active { display: block; }
+
+/* ===================== NAV ===================== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 68px;
+  box-shadow: 0 2px 16px rgba(26,111,181,0.07);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--blue-dark); cursor: pointer; }
+.nav-logo span { color: var(--orange); }
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { font-size: 0.92rem; font-weight: 500; color: var(--text); transition: color .2s; cursor: pointer; }
+.nav-links a:hover, .nav-links a.active { color: var(--orange); }
+.nav-cta { background: var(--orange) !important; color: #fff !important; padding: 0.55rem 1.3rem; border-radius: 50px; font-size: 0.88rem; font-weight: 600 !important; transition: background .2s; }
+.nav-cta:hover { background: var(--orange-dark) !important; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+.hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; }
+.mobile-menu { display: none; background: white; padding: 1.5rem 5vw; box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.mobile-menu.open { display: flex; flex-direction: column; gap: 1rem; }
+.mobile-menu a { font-size: 1rem; font-weight: 500; padding: 0.5rem 0; border-bottom: 1px solid #f0f4f8; cursor: pointer; }
+
+/* ===================== COMMON ===================== */
+.btn-primary { background: var(--orange); color: #fff; padding: 0.75rem 1.6rem; border-radius: 50px; font-weight: 600; font-size: 0.92rem; transition: all .2s; display: inline-flex; align-items: center; gap: 0.4rem; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(242,116,48,0.3); }
+.btn-outline { background: transparent; color: var(--blue); border: 2px solid var(--blue); padding: 0.7rem 1.5rem; border-radius: 50px; font-weight: 600; font-size: 0.92rem; transition: all .2s; cursor: pointer; }
+.btn-outline:hover { background: var(--blue); color: white; }
+.btn-white { background: white; color: var(--blue-dark); padding: 0.85rem 2rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; transition: all .2s; white-space: nowrap; cursor: pointer; display: inline-block; }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.section-tag { font-size: 0.8rem; font-weight: 600; color: var(--orange); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.7rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--text); line-height: 1.2; margin-bottom: 1rem; }
+.section-lead { color: var(--muted); font-size: 1rem; max-width: 520px; line-height: 1.7; margin-bottom: 2rem; }
+.page-banner { padding: 5rem 5vw 4rem; color: white; position: relative; overflow: hidden; }
+.page-banner .breadcrumb { font-size: 0.82rem; opacity: 0.65; margin-bottom: 1rem; }
+.page-banner h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; line-height: 1.1; }
+.page-banner h1 span { color: var(--orange); }
+.page-banner p { margin-top: 1rem; opacity: 0.8; max-width: 540px; line-height: 1.7; }
+
+/* ===================== FOOTER ===================== */
+footer { background: var(--text); color: white; padding: 3rem 5vw 1.5rem; }
+.footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; cursor: pointer; }
+.footer-logo span { color: var(--orange); }
+.footer-desc { font-size: 0.88rem; opacity: 0.65; line-height: 1.7; }
+.footer-col h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 1rem; color: var(--sky); }
+.footer-col a { display: block; font-size: 0.85rem; opacity: 0.65; margin-bottom: 0.6rem; cursor: pointer; transition: opacity .2s; }
+.footer-col a:hover { opacity: 1; }
+.footer-bottom { text-align: center; padding-top: 1.5rem; font-size: 0.8rem; opacity: 0.45; }
+
+/* ===================== HOME ===================== */
+.hero {
+  min-height: calc(100vh - 68px);
+  background: linear-gradient(145deg, var(--sky) 60%, var(--sky-mid) 100%);
+  display: grid; grid-template-columns: 1fr 1.1fr 0.85fr;
+  gap: 2rem; align-items: center; padding: 3rem 5vw 2rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: ''; position: absolute; top: -80px; right: -80px;
+  width: 480px; height: 480px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(242,116,48,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-left { display: flex; flex-direction: column; gap: 1.5rem; }
+.hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: white; border-radius: 50px; padding: 0.4rem 1rem; font-size: 0.82rem; font-weight: 500; color: var(--blue); box-shadow: var(--shadow); width: fit-content; }
+.hero-badge::before { content: '✦'; color: var(--orange); }
+.hero-card { background: white; border-radius: var(--radius); padding: 1.4rem; box-shadow: var(--shadow); border-left: 4px solid var(--orange); }
+.hero-card p { font-size: 0.9rem; line-height: 1.7; color: var(--muted); }
+.hero-card strong { color: var(--text); display: block; margin-bottom: 0.3rem; font-size: 0.95rem; }
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-center { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.hero-heading { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 900; line-height: 1.05; color: var(--text); text-align: center; letter-spacing: -2px; }
+.hero-heading .accent { color: var(--orange); }
+.hero-heading .blue-word { color: var(--blue); }
+.hero-visual { width: 100%; max-width: 300px; aspect-ratio: 1; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 20px 60px rgba(26,111,181,0.15); font-size: 6rem; position: relative; }
+.hero-visual::after { content: ''; position: absolute; inset: -8px; border-radius: 50%; border: 3px dashed rgba(242,116,48,0.3); animation: spin 20s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-sub { font-size: 0.97rem; color: var(--muted); text-align: center; max-width: 280px; line-height: 1.6; }
+.hero-right { display: flex; flex-direction: column; gap: 1rem; }
+.stat-card { background: white; border-radius: var(--radius); padding: 1.2rem 1.4rem; box-shadow: var(--shadow); display: flex; align-items: center; gap: 1rem; transition: transform .2s; }
+.stat-card:hover { transform: translateX(-4px); }
+.stat-icon { font-size: 2rem; width: 50px; height: 50px; background: var(--sky); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.stat-val { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; color: var(--blue-dark); }
+.stat-lbl { font-size: 0.82rem; color: var(--muted); }
+.service-strip { background: var(--blue-dark); padding: 1rem 0; overflow: hidden; }
+.strip-track { display: flex; animation: scrollStrip 22s linear infinite; width: max-content; }
+.strip-item { display: flex; align-items: center; gap: 1.2rem; padding: 0 2.5rem; color: white; font-size: 0.92rem; font-weight: 500; letter-spacing: 0.5px; white-space: nowrap; }
+.strip-dot { width: 6px; height: 6px; background: var(--orange); border-radius: 50%; flex-shrink: 0; }
+@keyframes scrollStrip { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.about-preview { background: white; border-radius: 24px; margin: 0 5vw; padding: 4rem; box-shadow: var(--shadow); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+.about-img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.about-img-card { border-radius: 16px; overflow: hidden; aspect-ratio: 1; background: var(--sky); box-shadow: var(--shadow); position: relative; }
+.about-img-card img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.about-img-card:hover img { transform: scale(1.05); }
+.about-img-card.tall { grid-row: span 2; aspect-ratio: auto; min-height: 260px; }
+.treatments-preview { background: var(--sky); padding: 5rem 5vw; }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.treatment-card { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; gap: 0.7rem; cursor: pointer; }
+.treatment-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,111,181,0.15); }
+.card-icon { font-size: 2.5rem; width: 60px; height: 60px; background: var(--sky); border-radius: 14px; display: flex; align-items: center; justify-content: center; }
+.card-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; }
+.card-desc { font-size: 0.88rem; color: var(--muted); line-height: 1.6; }
+.card-link { font-size: 0.85rem; color: var(--orange); font-weight: 600; margin-top: auto; }
+.appt-cta { background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue) 100%); border-radius: 24px; margin: 0 5vw; padding: 4rem 5vw; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap; color: white; }
+.appt-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+.appt-cta p { opacity: 0.8; margin-top: 0.5rem; font-size: 0.95rem; }
+.testimonials { background: white; border-radius: 24px; margin: 3rem 5vw 0; padding: 3rem 2.5rem; overflow: hidden; }
+.testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 2rem; }
+.testi-card { background: var(--sky); border-radius: 16px; padding: 1.5rem; min-width: 0; }
+.testi-stars { color: var(--orange); font-size: 1rem; margin-bottom: 0.8rem; }
+.testi-text { font-size: 0.88rem; color: var(--text); line-height: 1.7; font-style: italic; }
+.testi-author { margin-top: 1rem; font-weight: 600; font-size: 0.82rem; color: var(--blue-dark); }
+.faq-preview { padding: 5rem 5vw; }
+.faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 720px; }
+.faq-item { background: white; border-radius: 14px; box-shadow: var(--shadow); overflow: hidden; cursor: pointer; }
+.faq-header { display: flex; justify-content: space-between; align-items: center; padding: 1.3rem 1.6rem; }
+.faq-q { font-weight: 500; font-size: 0.95rem; }
+.faq-icon { font-size: 1.4rem; color: var(--orange); font-weight: 300; transition: transform .3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .35s ease; padding: 0 1.6rem; }
+.faq-answer p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; padding-bottom: 1.3rem; border-top: 1px solid #eef3f8; padding-top: 0.8rem; }
+.faq-item.open .faq-answer { max-height: 200px; }
+.contact-preview { background: var(--sky-mid); border-radius: 24px; margin: 0 5vw 3rem; padding: 3rem; display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; justify-content: space-between; }
+.contact-info-item { display: flex; align-items: center; gap: 1rem; }
+.contact-info-icon { width: 48px; height: 48px; background: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; box-shadow: var(--shadow); }
+.contact-info-label { font-size: 0.8rem; color: var(--muted); }
+.contact-info-val { font-weight: 600; font-size: 0.95rem; color: var(--text); }
+
+/* ===================== ABOUT ===================== */
+#page-about .page-banner { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+#page-about .page-banner::before { content: '🦷'; position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.08; }
+.story { padding: 5rem 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.story-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 1.2rem; line-height: 1.2; }
+.story-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; font-size: 0.97rem; }
+.story-highlight { background: white; border-radius: var(--radius); padding: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid var(--orange); margin-top: 1.5rem; }
+.story-highlight p { margin: 0; font-weight: 500; color: var(--text); }
+.collage { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 1rem; height: 420px; }
+.col-card { border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: var(--shadow); transition: transform .2s; }
+.col-card:hover { transform: scale(1.02); }
+.col-card.span2 { grid-column: span 2; font-size: 4rem; }
+.col-sky { background: var(--sky-mid); }
+.col-orange { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); color: white; }
+.col-blue { background: linear-gradient(135deg, var(--blue), var(--blue-dark)); color: white; }
+.doctor-section { background: white; margin: 0 5vw; border-radius: 24px; padding: 4rem; box-shadow: var(--shadow); display: grid; grid-template-columns: auto 1fr; gap: 3rem; align-items: center; }
+.doctor-avatar { width: 180px; height: 180px; border-radius: 50%; background: linear-gradient(135deg, var(--sky), var(--sky-mid)); display: flex; align-items: center; justify-content: center; font-size: 5rem; box-shadow: 0 8px 30px rgba(26,111,181,0.2); flex-shrink: 0; }
+.doctor-name { font-family: 'Playfair Display', serif; font-size: 1.9rem; font-weight: 700; }
+.doctor-title { color: var(--orange); font-weight: 600; font-size: 0.95rem; margin: 0.3rem 0 1rem; }
+.doctor-bio { color: var(--muted); line-height: 1.8; font-size: 0.95rem; }
+.doctor-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.2rem; }
+.tag { background: var(--sky); color: var(--blue-dark); padding: 0.35rem 1rem; border-radius: 50px; font-size: 0.82rem; font-weight: 500; }
+.why-section { padding: 5rem 5vw; }
+.why-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; margin-bottom: 2.5rem; }
+.why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.why-card { background: white; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow); transition: transform .2s; }
+.why-card:hover { transform: translateY(-6px); }
+.why-icon { font-size: 2.4rem; margin-bottom: 1rem; }
+.why-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+.why-desc { color: var(--muted); font-size: 0.87rem; line-height: 1.6; }
+.bottom-cta { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); margin: 0 5vw 4rem; border-radius: 24px; padding: 3.5rem; text-align: center; color: white; }
+.bottom-cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+.bottom-cta p { opacity: 0.85; margin-bottom: 2rem; }
+.btn-white-orange { background: white; color: var(--orange); padding: 0.85rem 2.5rem; border-radius: 50px; font-weight: 700; font-size: 0.95rem; display: inline-block; transition: all .2s; cursor: pointer; }
+.btn-white-orange:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,0,0,0.2); }
+
+/* ===================== TREATMENTS ===================== */
+#page-treatments .page-banner { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+#page-treatments .page-banner::before { content: '😬'; position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.08; }
+.why-timely { background: white; margin: 3rem 5vw; border-radius: 24px; padding: 3rem; box-shadow: var(--shadow); display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+.timely-item { text-align: center; }
+.timely-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+.timely-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--blue-dark); }
+.timely-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+.treatments-section { padding: 2rem 5vw 5rem; }
+.treatments-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2rem; }
+.t-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .25s, box-shadow .25s; display: flex; flex-direction: column; }
+.t-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(26,111,181,0.15); }
+.t-card-header { padding: 2.5rem 2rem 1.5rem; display: flex; align-items: flex-start; gap: 1.2rem; }
+.t-icon-wrap { width: 64px; height: 64px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; flex-shrink: 0; }
+.ic-blue { background: var(--sky); }
+.ic-orange { background: #fff3ec; }
+.ic-green { background: #eafaf1; }
+.t-card-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.2rem; }
+.t-card-tag { font-size: 0.78rem; color: var(--orange); font-weight: 600; }
+.t-card-body { padding: 0 2rem 1.5rem; flex: 1; }
+.t-card-body p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+.t-card-footer { padding: 1rem 2rem 2rem; }
+.btn-book { background: var(--orange); color: white; padding: 0.65rem 1.5rem; border-radius: 50px; font-size: 0.88rem; font-weight: 600; display: inline-block; transition: all .2s; cursor: pointer; border: none; font-family: 'DM Sans', sans-serif; }
+.btn-book:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.cta-section { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); margin: 0 5vw 5rem; border-radius: 24px; padding: 4rem; text-align: center; color: white; }
+.cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 1rem; }
+.cta-section p { opacity: 0.8; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+
+/* ===================== APPOINTMENT ===================== */
+#page-appointment .page-banner { background: linear-gradient(135deg, var(--orange), var(--orange-dark)); }
+#page-appointment .page-banner::before { content: '📅'; position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.08; }
+.appt-layout { display: grid; grid-template-columns: 1fr 360px; gap: 2.5rem; padding: 4rem 5vw 5rem; align-items: start; }
+.form-card { background: white; border-radius: 24px; padding: 2.5rem; box-shadow: var(--shadow); }
+.form-card h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 0.5rem; }
+.form-card .form-sub { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+.form-group { margin-bottom: 1.2rem; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.75rem 1rem; border: 2px solid #e8f0f8;
+  border-radius: 12px; font-size: 0.92rem; font-family: 'DM Sans', sans-serif;
+  color: var(--text); background: #f8fbff; transition: border-color .2s; outline: none;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue); background: white; }
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-group .field-error { display: block; color: #e53e3e; font-size: 0.78rem; margin-top: 0.3rem; }
+.form-group input.input-error, .form-group select.input-error, .form-group textarea.input-error { border-color: #e53e3e; }
+.radio-group { display: flex; gap: 1.5rem; margin-top: 0.3rem; }
+.radio-option { display: flex; align-items: center; gap: 0.5rem; cursor: pointer; font-size: 0.9rem; }
+.radio-option input[type="radio"] { accent-color: var(--orange); width: 16px; height: 16px; }
+.submit-btn { width: 100%; background: var(--orange); color: white; padding: 1rem; border: none; border-radius: 50px; font-size: 1rem; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all .2s; margin-top: 0.5rem; }
+.submit-btn:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(242,116,48,0.3); }
+.submit-btn-blue { background: var(--blue); }
+.submit-btn-blue:hover { background: var(--blue-dark); box-shadow: 0 8px 20px rgba(26,111,181,0.3); }
+.form-note { font-size: 0.82rem; color: var(--muted); text-align: center; margin-top: 1rem; }
+.success-box { display: none; background: #ebfbf0; border: 2px solid #38a169; border-radius: 12px; padding: 1rem 1.2rem; font-size: 0.92rem; color: #276749; margin-bottom: 1.5rem; font-weight: 500; }
+.sidebar { display: flex; flex-direction: column; gap: 1.5rem; }
+.info-card { background: white; border-radius: 20px; padding: 1.8rem; box-shadow: var(--shadow); }
+.info-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 1.2rem; color: var(--blue-dark); }
+.info-item { display: flex; align-items: flex-start; gap: 0.8rem; margin-bottom: 1rem; }
+.info-icon { font-size: 1.2rem; margin-top: 2px; flex-shrink: 0; }
+.info-label { font-size: 0.78rem; color: var(--muted); }
+.info-val { font-weight: 600; font-size: 0.92rem; color: var(--text); }
+.doctor-mini { display: flex; align-items: center; gap: 1rem; padding: 1.2rem; background: var(--sky); border-radius: 14px; }
+.doctor-mini-avatar { font-size: 2.5rem; width: 55px; height: 55px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); flex-shrink: 0; }
+.doctor-mini-name { font-weight: 700; font-size: 0.95rem; }
+.doctor-mini-title { font-size: 0.8rem; color: var(--muted); }
+.hours-row { display: flex; justify-content: space-between; font-size: 0.87rem; padding: 0.5rem 0; border-bottom: 1px solid #f0f4f8; }
+.hours-row:last-child { border-bottom: none; }
+.hours-day { color: var(--muted); }
+.hours-time { font-weight: 600; }
+
+/* ===================== CONTACT ===================== */
+#page-contact .page-banner { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); }
+#page-contact .page-banner::before { content: '📍'; position: absolute; right: 8%; top: 50%; transform: translateY(-50%); font-size: 8rem; opacity: 0.08; }
+.info-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; padding: 3rem 5vw 0; }
+.info-box { background: white; border-radius: var(--radius); padding: 1.8rem 1.5rem; box-shadow: var(--shadow); text-align: center; transition: transform .2s; }
+.info-box:hover { transform: translateY(-4px); }
+.info-box-icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+.info-box-label { font-size: 0.78rem; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.4rem; }
+.info-box-val { font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.5; }
+.contact-layout { display: grid; grid-template-columns: 1fr 1.1fr; gap: 2.5rem; padding: 3rem 5vw 5rem; align-items: start; }
+.map-side { display: flex; flex-direction: column; gap: 1.5rem; }
+.clinic-detail-card { background: white; border-radius: 20px; padding: 2rem; box-shadow: var(--shadow); }
+.clinic-detail-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--blue-dark); }
+.detail-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; padding-bottom: 1.2rem; border-bottom: 1px solid #f0f4f8; }
+.detail-item:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.detail-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+.detail-label { font-size: 0.75rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+.detail-val { font-size: 0.95rem; font-weight: 600; color: var(--text); margin-top: 0.1rem; line-height: 1.4; }
+.map-container { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); height: 280px; }
+.map-container iframe { width: 100%; height: 100%; border: 0; }
+.hours-card { background: linear-gradient(135deg, var(--blue-dark), var(--blue)); border-radius: 20px; padding: 1.8rem; color: white; }
+.hours-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 1.2rem; }
+.hours-card .hours-row { border-bottom-color: rgba(255,255,255,0.15); }
+.hours-card .hours-day { opacity: 0.75; color: white; }
+.hours-card .hours-time { color: white; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 2rem 5vw; min-height: auto; gap: 1.5rem; }
+  .hero-center { order: -1; }
+  .hero-visual { max-width: 200px; font-size: 5rem; }
+  .hero-heading { font-size: 2.2rem; }
+  .hero-right { flex-direction: row; flex-wrap: wrap; }
+  .stat-card { flex: 1 1 140px; }
+  .about-preview { grid-template-columns: 1fr; padding: 2rem; margin: 0 3vw; }
+  .story { grid-template-columns: 1fr; gap: 2rem; }
+  .collage { height: 260px; }
+  .doctor-section { grid-template-columns: 1fr; text-align: center; padding: 2rem; margin: 0 3vw; }
+  .doctor-avatar { margin: 0 auto; }
+  .appt-layout { grid-template-columns: 1fr; }
+  .sidebar { order: -1; }
+  .form-row { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .testimonials { margin: 2rem 3vw 0; padding: 2rem 1.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .appt-cta { flex-direction: column; text-align: center; }
+  .contact-preview { flex-direction: column; }
+  .why-timely { margin: 2rem 3vw; }
+  .cta-section { margin: 0 3vw 3rem; padding: 2.5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav>
+  <div class="nav-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+  <div class="nav-links">
+    <a onclick="showPage('home')" data-nav="home">Home</a>
+    <a onclick="showPage('about')" data-nav="about">About</a>
+    <a onclick="showPage('treatments')" data-nav="treatments">Treatments</a>
+    <a onclick="showPage('contact')" data-nav="contact">Contact</a>
+    <a onclick="showPage('appointment')" class="nav-cta" data-nav="appointment">Book Appointment</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="showPage('home');toggleMenu()">Home</a>
+  <a onclick="showPage('about');toggleMenu()">About</a>
+  <a onclick="showPage('treatments');toggleMenu()">Treatments</a>
+  <a onclick="showPage('contact');toggleMenu()">Contact</a>
+  <a onclick="showPage('appointment');toggleMenu()" style="color:var(--orange);font-weight:700;">Book Appointment</a>
+</div>
+
+<!-- ========================================================
+     PAGE: HOME
+     ======================================================== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">Trusted Dental Care in Pune</div>
+      <div class="hero-card">
+        <strong>Your Smile, Our Priority</strong>
+        <p>Expert dental treatments delivered with precision, warmth, and modern technology — right here in Pune.</p>
+      </div>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="showPage('appointment')">Book Appointment →</button>
+        <button class="btn-outline" onclick="showPage('contact')">Contact Us</button>
+      </div>
+    </div>
+    <div class="hero-center">
+      <h1 class="hero-heading">EVERY<br/><span class="accent">SMILE</span><br/><span class="blue-word">MATTERS</span></h1>
+      <div class="hero-visual">🦷</div>
+      <p class="hero-sub">Premium dental care for the whole family in the heart of Pune.</p>
+    </div>
+    <div class="hero-right">
+      <div class="stat-card">
+        <div class="stat-icon">👨‍⚕️</div>
+        <div><div class="stat-val">1</div><div class="stat-lbl">Expert Doctor</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📍</div>
+        <div><div class="stat-val">Pune</div><div class="stat-lbl">Maharashtra, India</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div><div class="stat-val">100%</div><div class="stat-lbl">Personalized Care</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🕐</div>
+        <div>
+          <div class="stat-val" id="heroHours"></div>
+          <div class="stat-lbl" id="heroDays"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE STRIP -->
+  <div class="service-strip"><div class="strip-track" id="stripTrack"></div></div>
+
+  <!-- ABOUT PREVIEW -->
+  <section style="background:var(--sky);padding:5rem 5vw;">
+    <div class="about-preview">
+      <div>
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">A Clinic Built on<br/>Trust & Compassion</h2>
+        <p class="section-lead">At <strong id="h-name"></strong>, we believe every patient deserves a healthy, confident smile. Our clinic in <span id="h-location"></span> combines modern dentistry with a gentle, patient-first approach.</p>
+        <button class="btn-primary" onclick="showPage('about')">Learn More →</button>
+      </div>
+      <div class="about-img-grid">
+        <div class="about-img-card tall">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80" alt="Dental clinic" loading="lazy" />
+        </div>
+        <div class="about-img-card">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80" alt="Dentist treating patient" loading="lazy" />
+        </div>
+        <div class="about-img-card">
+          <img src="https://www.colgate.com/content/dam/cloud/cp-sites/oral-care/oral-care-center/en-in/occ/basics/mouth-and-teeth-anatomy/woman-smiling.jpg" alt="Happy smile" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREATMENTS PREVIEW -->
+  <div class="treatments-preview">
+    <div class="section-tag">Our Treatments</div>
+    <h2 class="section-title">Comprehensive Dental Services</h2>
+    <p class="section-lead">From routine cleanings to advanced procedures — all under one roof with expert care.</p>
+    <div class="cards-grid">
+      <div class="treatment-card" onclick="showPage('treatments')">
+        <div class="card-icon">🦷</div>
+        <div class="card-title">Teeth Cleaning</div>
+        <div class="card-desc">Professional scaling and polishing to remove plaque and keep your gums healthy.</div>
+        <span class="card-link">Learn More →</span>
+      </div>
+      <div class="treatment-card" onclick="showPage('treatments')">
+        <div class="card-icon">😬</div>
+        <div class="card-title">Braces & Alignment</div>
+        <div class="card-desc">Modern braces and aligners to give you the perfectly straight smile you deserve.</div>
+        <span class="card-link">Learn More →</span>
+      </div>
+      <div class="treatment-card" onclick="showPage('treatments')">
+        <div class="card-icon">💉</div>
+        <div class="card-title">Root Canal Treatment</div>
+        <div class="card-desc">Painless, precise root canal procedures to save your natural tooth.</div>
+        <span class="card-link">Learn More →</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <button class="btn-primary" onclick="showPage('treatments')">View All Treatments →</button>
+    </div>
+  </div>
+
+  <!-- APPOINTMENT CTA -->
+  <div class="appt-cta">
+    <div>
+      <h2>Ready for a Healthier Smile?</h2>
+      <p>Book your appointment today — we're here for you, Mon–Sat, <span id="h-hours"></span>.</p>
+    </div>
+    <button class="btn-white" onclick="showPage('appointment')">Book Appointment →</button>
+  </div>
+
+  <!-- TESTIMONIALS -->
+  <div class="testimonials">
+    <div class="section-tag">Patient Reviews</div>
+    <h2 class="section-title">What Our Patients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"The doctor was incredibly gentle and professional. My root canal was completely painless. Highly recommend Denta Care!"</div>
+        <div class="testi-author">— Priya Sharma, Pune</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Best dental experience I've had. The clinic is spotless and the staff is so warm. My braces treatment is going perfectly."</div>
+        <div class="testi-author">— Rahul Mehta, Pune</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Quick, affordable, and professional. Got my teeth cleaned and they look amazing now. Will definitely come back!"</div>
+        <div class="testi-author">— Anjali Desai, Pune</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-preview">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-header"><span class="faq-q">What are the clinic timings?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>We are open <strong>Monday to Saturday</strong>, from <strong>10:00 AM to 7:00 PM</strong>. We are closed on Sundays. You can call us or book online anytime.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header"><span class="faq-q">How do I book an appointment?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Click the <strong>Book Appointment</strong> button on our website, call us directly, or visit the clinic in person. We'll confirm your slot within 24 hours.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header"><span class="faq-q">Do you accept walk-in patients?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Yes, we do accept walk-in patients subject to availability. We recommend booking in advance to avoid waiting and ensure the doctor is available for you.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-header"><span class="faq-q">Is the root canal treatment painful?</span><span class="faq-icon">+</span></div>
+        <div class="faq-answer"><p>Not at all! With modern anesthesia and advanced techniques, root canal treatment at Denta Care is virtually painless. Most patients are surprised by how comfortable it actually is.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT PREVIEW -->
+  <div class="contact-preview">
+    <div class="contact-info-item">
+      <div class="contact-info-icon">📞</div>
+      <div><div class="contact-info-label">Call Us</div><div class="contact-info-val" id="cpPhone"></div></div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-icon">✉️</div>
+      <div><div class="contact-info-label">Email</div><div class="contact-info-val" id="cpEmail"></div></div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-icon">📍</div>
+      <div><div class="contact-info-label">Location</div><div class="contact-info-val" id="cpAddress"></div></div>
+    </div>
+    <button class="btn-primary" onclick="showPage('contact')">Get in Touch →</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+        <p class="footer-desc">Premium dental care in <span id="f-location"></span>. Committed to your health, comfort, and a beautiful smile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('treatments')">Treatments</a>
+        <a onclick="showPage('appointment')">Book Appointment</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a id="f-phone"></a>
+        <a id="f-email"></a>
+        <a id="f-address"></a>
+        <a>Mon–Sat: <span id="f-hours"></span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 <span id="f-name"></span>. All rights reserved. | Dr. <span id="f-doctor"></span></div>
+  </footer>
+</div>
+
+<!-- ========================================================
+     PAGE: ABOUT
+     ======================================================== -->
+<div class="page" id="page-about">
+  <div class="page-banner">
+    <div class="breadcrumb">Home › About Us</div>
+    <h1>About <span>Denta Care</span></h1>
+    <p>A trusted dental clinic in <span class="d-location"></span> — where modern dentistry meets compassionate care.</p>
+  </div>
+
+  <section class="story">
+    <div class="story-text">
+      <div class="section-tag">Our Story</div>
+      <h2>Building Smiles,<br/>One Patient at a Time</h2>
+      <p><strong class="d-name"></strong> was founded with a single purpose: to make quality dental care accessible, comfortable, and trustworthy for everyone in Pune.</p>
+      <p>Located in the heart of <span class="d-location"></span>, our clinic combines advanced dental technology with a genuinely warm patient experience. From your very first visit, you'll feel the difference.</p>
+      <p>Our commitment is to hygiene, precision, and personalized attention — ensuring every treatment is tailored to your unique needs.</p>
+      <div class="story-highlight">
+        <p>🦷 "We don't just treat teeth — we build long-term relationships built on trust, transparency, and excellence."</p>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="col-card col-sky span2">🏥</div>
+      <div class="col-card col-orange">😊</div>
+      <div class="col-card col-blue">🦷</div>
+    </div>
+  </section>
+
+  <div class="doctor-section">
+    <div class="doctor-avatar">👨‍⚕️</div>
+    <div>
+      <div class="doctor-name d-doctor"></div>
+      <div class="doctor-title">Dental Specialist — <span class="d-name"></span></div>
+      <p class="doctor-bio">With deep expertise in general and cosmetic dentistry, <span class="d-doctor"></span> is dedicated to providing every patient with the highest standard of care. Known for a calm, friendly demeanor and exceptional clinical precision, our doctor ensures every procedure is as comfortable and effective as possible.<br/><br/>Committed to continuous learning and staying updated with modern dental techniques, <span class="d-doctor"></span> brings both skill and compassion to every consultation.</p>
+      <div class="doctor-tags">
+        <span class="tag">General Dentistry</span>
+        <span class="tag">Root Canal Specialist</span>
+        <span class="tag">Cosmetic Dentistry</span>
+        <span class="tag">Orthodontics</span>
+        <span class="tag">Pediatric Care</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="why-section">
+    <div class="section-tag">Why Choose Us</div>
+    <h2>The Denta Care Difference</h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">👨‍⚕️</div><div class="why-title">Experienced Doctor</div><div class="why-desc">Skilled and compassionate dental specialist with expertise across all major dental treatments.</div></div>
+      <div class="why-card"><div class="why-icon">🧼</div><div class="why-title">Hygienic Clinic</div><div class="why-desc">Strict sterilization protocols and a spotlessly clean environment for your safety.</div></div>
+      <div class="why-card"><div class="why-icon">🔬</div><div class="why-title">Modern Equipment</div><div class="why-desc">Advanced dental technology for accurate diagnosis and gentle, effective treatment.</div></div>
+      <div class="why-card"><div class="why-icon">💰</div><div class="why-title">Affordable Pricing</div><div class="why-desc">Quality dental care at transparent, fair prices — no hidden charges, ever.</div></div>
+      <div class="why-card"><div class="why-icon">💛</div><div class="why-title">Personalized Care</div><div class="why-desc">Every treatment plan is customized to your dental needs, preferences, and comfort level.</div></div>
+      <div class="why-card"><div class="why-icon">🛋️</div><div class="why-title">Comfortable Environment</div><div class="why-desc">A calm, welcoming clinic designed to ease dental anxiety and make every visit pleasant.</div></div>
+    </div>
+  </div>
+
+  <div class="bottom-cta">
+    <h2>Ready to Experience Better Dental Care?</h2>
+    <p>Join hundreds of happy patients in Pune. Book your appointment with <span class="d-doctor"></span> today.</p>
+    <button class="btn-white-orange" onclick="showPage('appointment')">Book My Appointment →</button>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+        <p class="footer-desc">Premium dental care in <span class="d-location"></span>. Committed to your health, comfort, and a beautiful smile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('treatments')">Treatments</a><a onclick="showPage('appointment')">Book Appointment</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4><a class="d-phone"></a><a class="d-email"></a><a class="d-address"></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 <span class="d-name"></span>. All rights reserved. | Dr. <span class="d-doctor"></span></div>
+  </footer>
+</div>
+
+<!-- ========================================================
+     PAGE: TREATMENTS
+     ======================================================== -->
+<div class="page" id="page-treatments">
+  <div class="page-banner">
+    <div class="breadcrumb">Home › Treatments</div>
+    <h1>Our <span>Treatments</span></h1>
+    <p>Comprehensive dental services tailored to your needs — delivered with precision and care at <span class="d-name"></span>.</p>
+  </div>
+
+  <div style="padding:3rem 5vw 0;text-align:center;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1rem;">Modern Dentistry, Gentle Touch</h2>
+    <p style="color:var(--muted);max-width:640px;margin:0 auto;line-height:1.8;font-size:0.97rem;">At <strong class="d-name"></strong>, we offer a full range of dental treatments under one roof. Whether it's a routine check-up or a complex procedure, our expert doctor ensures you receive the best possible care.</p>
+  </div>
+
+  <div class="why-timely">
+    <div class="timely-item"><div class="timely-icon">⚡</div><div class="timely-title">Early Detection Saves Teeth</div><div class="timely-desc">Catching dental issues early prevents costly and painful treatments later.</div></div>
+    <div class="timely-item"><div class="timely-icon">💪</div><div class="timely-title">Better Overall Health</div><div class="timely-desc">Oral health directly impacts heart health, immunity, and overall wellbeing.</div></div>
+    <div class="timely-item"><div class="timely-icon">😊</div><div class="timely-title">Confidence in Every Smile</div><div class="timely-desc">Timely treatment keeps your smile beautiful, fresh, and confident.</div></div>
+    <div class="timely-item"><div class="timely-icon">💸</div><div class="timely-title">Save Money Long-Term</div><div class="timely-desc">Prevention and early care cost far less than emergency procedures.</div></div>
+  </div>
+
+  <div class="treatments-section">
+    <div class="section-tag">All Treatments</div>
+    <div class="section-title">What We Offer at <span class="d-name"></span></div>
+    <div class="treatments-grid">
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-blue">🦷</div><div><div class="t-card-title">Teeth Cleaning</div><div class="t-card-tag">Preventive Care</div></div></div>
+        <div class="t-card-body"><p>Professional scaling and polishing remove plaque, tartar, and surface stains that regular brushing can't. Protects your gums, freshens breath, and keeps teeth healthy long-term. Recommended every 6 months.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-orange">😬</div><div><div class="t-card-title">Braces & Teeth Alignment</div><div class="t-card-tag">Orthodontics</div></div></div>
+        <div class="t-card-body"><p>Modern metal and ceramic braces carefully fitted to straighten your teeth effectively. Our doctor designs a personalized treatment plan for optimal, lasting results.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-blue">💉</div><div><div class="t-card-title">Root Canal Treatment</div><div class="t-card-tag">Restorative</div></div></div>
+        <div class="t-card-body"><p>Saves your natural tooth when the pulp is infected or damaged. Using precision instruments and anesthesia, the procedure is virtually painless. We clean, seal, and restore the tooth.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-orange">🔧</div><div><div class="t-card-title">Tooth Extraction</div><div class="t-card-tag">Oral Surgery</div></div></div>
+        <div class="t-card-body"><p>When a tooth is severely damaged, decayed, or causing crowding, a gentle extraction is the safest solution. We ensure a comfortable, anxiety-free experience with proper aftercare guidance.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-green">🔩</div><div><div class="t-card-title">Dental Implants</div><div class="t-card-tag">Permanent Restoration</div></div></div>
+        <div class="t-card-body"><p>The gold standard for missing teeth — a titanium post fused with your jawbone, topped with a natural-looking crown. They look, feel, and function exactly like real teeth.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-header"><div class="t-icon-wrap ic-blue">👄</div><div><div class="t-card-title">Dentures</div><div class="t-card-tag">Prosthetic Dentistry</div></div></div>
+        <div class="t-card-body"><p>Comfortable, custom-fitted dentures for patients who have lost multiple or all teeth. Whether full or partial, we craft them to fit perfectly, restoring your ability to eat, speak, and smile naturally.</p></div>
+        <div class="t-card-footer"><button class="btn-book" onclick="showPage('appointment')">Book Now →</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h2>Not Sure Which Treatment You Need?</h2>
+    <p>Book a consultation with <span class="d-doctor"></span> at <span class="d-name"></span> today. We'll assess your dental health and recommend the best treatment plan for you.</p>
+    <button class="btn-primary" onclick="showPage('appointment')">Book a Free Consultation →</button>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+        <p class="footer-desc">Premium dental care in <span class="d-location"></span>. Committed to your health and a beautiful smile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('treatments')">Treatments</a><a onclick="showPage('appointment')">Book Appointment</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4><a class="d-phone"></a><a class="d-email"></a><a class="d-address"></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 <span class="d-name"></span>. All rights reserved. | Dr. <span class="d-doctor"></span></div>
+  </footer>
+</div>
+
+<!-- ========================================================
+     PAGE: APPOINTMENT
+     ======================================================== -->
+<div class="page" id="page-appointment">
+  <div class="page-banner">
+    <div class="breadcrumb">Home › Book Appointment</div>
+    <h1>Book Your Appointment</h1>
+    <p>Fill in the form below and our team at <span class="d-name"></span> will confirm your appointment within 24 hours.</p>
+  </div>
+
+  <div class="appt-layout">
+    <div class="form-card">
+      <h2>Appointment Request</h2>
+      <p class="form-sub">All fields marked * are required. We'll contact you to confirm your slot.</p>
+      <form id="appointmentForm" novalidate>
+        <div class="success-box"></div>
+        <div class="form-row">
+          <div class="form-group"><label>Full Name *</label><input type="text" name="fullname" placeholder="Your full name" required /></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="10-digit mobile number" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="you@example.com" required /></div>
+          <div class="form-group"><label>Age *</label><input type="number" name="age" placeholder="Your age" min="1" max="120" required /></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>Preferred Date *</label><input type="date" name="date" id="apptDate" required /></div>
+          <div class="form-group">
+            <label>Preferred Time *</label>
+            <select name="time" required>
+              <option value="">Select a time slot</option>
+              <option>10:00 AM – 11:00 AM</option><option>11:00 AM – 12:00 PM</option>
+              <option>12:00 PM – 1:00 PM</option><option>2:00 PM – 3:00 PM</option>
+              <option>3:00 PM – 4:00 PM</option><option>4:00 PM – 5:00 PM</option>
+              <option>5:00 PM – 6:00 PM</option><option>6:00 PM – 7:00 PM</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Gender *</label>
+            <select name="gender" required>
+              <option value="">Select gender</option>
+              <option>Male</option><option>Female</option><option>Other</option><option>Prefer not to say</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Treatment Needed *</label>
+            <select name="treatment" required>
+              <option value="">Select treatment</option>
+              <option>Teeth Cleaning</option><option>Braces / Teeth Alignment</option>
+              <option>Root Canal Treatment</option><option>Tooth Extraction</option>
+              <option>Dental Implants</option><option>Dentures</option>
+              <option>General Checkup / Consultation</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Patient Type *</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="patientType" value="New" required /> New Patient</label>
+            <label class="radio-option"><input type="radio" name="patientType" value="Existing" /> Existing Patient</label>
+          </div>
+        </div>
+        <div class="form-group"><label>Message / Problem Description</label><textarea name="message" placeholder="Briefly describe your dental concern..."></textarea></div>
+        <button type="submit" class="submit-btn">Confirm Appointment Request →</button>
+        <p class="form-note">📞 We will call you to confirm your appointment within 24 hours.</p>
+      </form>
+    </div>
+
+    <div class="sidebar">
+      <div class="info-card">
+        <div class="doctor-mini">
+          <div class="doctor-mini-avatar">👨‍⚕️</div>
+          <div><div class="doctor-mini-name d-doctor"></div><div class="doctor-mini-title">Dental Specialist</div></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Clinic Information</h3>
+        <div class="info-item"><div class="info-icon">📍</div><div><div class="info-label">Address</div><div class="info-val d-address"></div></div></div>
+        <div class="info-item"><div class="info-icon">📞</div><div><div class="info-label">Phone</div><div class="info-val d-phone"></div></div></div>
+        <div class="info-item"><div class="info-icon">✉️</div><div><div class="info-label">Email</div><div class="info-val d-email"></div></div></div>
+      </div>
+      <div class="info-card">
+        <h3>Clinic Hours</h3>
+        <div class="hours-row"><span class="hours-day d-days"></span><span class="hours-time d-hours"></span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+        <p class="footer-desc">Premium dental care in <span class="d-location"></span>. Committed to your health and a beautiful smile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('treatments')">Treatments</a><a onclick="showPage('appointment')">Book Appointment</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4><a class="d-phone"></a><a class="d-email"></a><a class="d-address"></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 <span class="d-name"></span>. All rights reserved. | Dr. <span class="d-doctor"></span></div>
+  </footer>
+</div>
+
+<!-- ========================================================
+     PAGE: CONTACT
+     ======================================================== -->
+<div class="page" id="page-contact">
+  <div class="page-banner">
+    <div class="breadcrumb">Home › Contact</div>
+    <h1>Get in <span>Touch</span></h1>
+    <p>We're here for you. Reach out to <span class="d-name"></span> in <span class="d-location"></span> — we'll get back to you promptly.</p>
+  </div>
+
+  <div class="info-strip">
+    <div class="info-box"><div class="info-box-icon">📞</div><div class="info-box-label">Call Us</div><div class="info-box-val d-phone"></div></div>
+    <div class="info-box"><div class="info-box-icon">✉️</div><div class="info-box-label">Email</div><div class="info-box-val d-email"></div></div>
+    <div class="info-box"><div class="info-box-icon">🕐</div><div class="info-box-label">Hours</div><div class="info-box-val"><span class="d-days"></span><br/><span class="d-hours"></span></div></div>
+    <div class="info-box"><div class="info-box-icon">📍</div><div class="info-box-label">Location</div><div class="info-box-val d-location"></div></div>
+  </div>
+
+  <div class="contact-layout">
+    <div class="form-card">
+      <h2>Send Us a Message</h2>
+      <p class="form-sub">Have a question? Drop us a message and we'll respond soon.</p>
+      <form id="contactForm" novalidate>
+        <div class="success-box"></div>
+        <div class="form-group"><label>Full Name *</label><input type="text" name="fullname" placeholder="Your full name" required /></div>
+        <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="10-digit mobile number" required /></div>
+        <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="you@example.com" required /></div>
+        <div class="form-group">
+          <label>Subject *</label>
+          <select name="subject" required>
+            <option value="">Select subject</option>
+            <option>General Inquiry</option><option>Appointment Related</option>
+            <option>Treatment Information</option><option>Pricing & Fees</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message *</label><textarea name="message" placeholder="Write your message here..." required></textarea></div>
+        <button type="submit" class="submit-btn submit-btn-blue">Send Message →</button>
+      </form>
+    </div>
+
+    <div class="map-side">
+      <div class="clinic-detail-card">
+        <h3>Clinic Details</h3>
+        <div class="detail-item"><div class="detail-icon">🏥</div><div><div class="detail-label">Clinic Name</div><div class="detail-val d-name"></div></div></div>
+        <div class="detail-item"><div class="detail-icon">👨‍⚕️</div><div><div class="detail-label">Doctor</div><div class="detail-val d-doctor"></div></div></div>
+        <div class="detail-item"><div class="detail-icon">📍</div><div><div class="detail-label">Address</div><div class="detail-val d-address"></div></div></div>
+        <div class="detail-item"><div class="detail-icon">📞</div><div><div class="detail-label">Phone</div><div class="detail-val d-phone"></div></div></div>
+        <div class="detail-item"><div class="detail-icon">✉️</div><div><div class="detail-label">Email</div><div class="detail-val d-email"></div></div></div>
+      </div>
+      <div class="map-container" id="mapContainer"></div>
+      <div class="hours-card">
+        <h3>📅 Working Hours</h3>
+        <div class="hours-row"><span class="hours-day d-days"></span><span class="hours-time d-hours"></span></div>
+        <div class="hours-row"><span class="hours-day">Sunday</span><span class="hours-time">Closed</span></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo" onclick="showPage('home')">Denta<span>Care</span></div>
+        <p class="footer-desc">Premium dental care in <span class="d-location"></span>. Committed to your health and a beautiful smile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a onclick="showPage('home')">Home</a><a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('treatments')">Treatments</a><a onclick="showPage('appointment')">Book Appointment</a>
+        <a onclick="showPage('contact')">Contact</a>
+      </div>
+      <div class="footer-col"><h4>Contact</h4><a class="d-phone"></a><a class="d-email"></a><a class="d-address"></a></div>
+    </div>
+    <div class="footer-bottom">© 2025 <span class="d-name"></span>. All rights reserved. | Dr. <span class="d-doctor"></span></div>
+  </footer>
+</div>
+
+<!-- ========================================================
+     SCRIPTS — CONFIG + LOGIC (all inline, no external files)
+     ======================================================== -->
+<script>
+/* ===================== CLINIC CONFIG =====================
+   Edit only this object to update the entire website.
+   ======================================================= */
+const clinicData = {
+  name:     "Denta Care",
+  doctor:   "Dr. Thorat",
+  phone:    "+91 9326087416",
+  email:    "info@dentacare.com",
+  location: "Pune, Maharashtra",
+  address:  "Flat 9, Sadalaxmi Complex, Vitthal Rao Shivarkar Rd, Fatima Nagar, Parmar Nagar, Hadapsar, Pune, Maharashtra 411040",
+  hours:    "10:30 am–1:30 pm",
+  days:     "Monday – Saturday",
+  mapEmbed: `<iframe src="https://www.google.com/maps/place/Dr+Thorat's+Dental+Care+and+Implant+Centre/@18.5012342,73.9007923,17z/data=!3m1!4b1!4m6!3m5!1s0x3bc2c1c562b7bd4b:0x8e7eb91cd25f0bcf!8m2!3d18.5012342!4d73.9007923!16s%2Fg%2F11cnd5c6dv?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"></iframe>`
+};
+
+/* ===================== DATA INJECTION ===================== */
+function injectAll() {
+  // Home page unique IDs
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set('heroHours',  clinicData.hours);
+  set('heroDays',   clinicData.days);
+  set('h-name',     clinicData.name);
+  set('h-location', clinicData.location);
+  set('h-hours',    clinicData.hours);
+  set('cpPhone',    clinicData.phone);
+  set('cpEmail',    clinicData.email);
+  set('cpAddress',  clinicData.address);
+  set('f-name',     clinicData.name);
+  set('f-doctor',   clinicData.doctor);
+  set('f-location', clinicData.location);
+  set('f-phone',    clinicData.phone);
+  set('f-email',    clinicData.email);
+  set('f-address',  clinicData.address);
+  set('f-hours',    clinicData.hours);
+
+  // All other pages use class-based selectors
+  const fill = (cls, val) => document.querySelectorAll('.' + cls).forEach(el => el.textContent = val);
+  fill('d-name',     clinicData.name);
+  fill('d-doctor',   clinicData.doctor);
+  fill('d-location', clinicData.location);
+  fill('d-address',  clinicData.address);
+  fill('d-phone',    clinicData.phone);
+  fill('d-email',    clinicData.email);
+  fill('d-hours',    clinicData.hours);
+  fill('d-days',     clinicData.days);
+
+  // Map embed
+  const map = document.getElementById('mapContainer');
+  if (map) map.innerHTML = clinicData.mapEmbed;
+}
+
+/* ===================== SPA NAVIGATION ===================== */
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  document.querySelectorAll('[data-nav]').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('data-nav') === name);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  injectAll(); // re-inject on every page switch to be safe
+}
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+/* ===================== SERVICE STRIP ===================== */
+function buildStrip() {
+  const services = ['Braces','Denta Care','Dentist','Dentures','Root Canal','Teeth Cleaning','Implants','Whitening'];
+  const track = document.getElementById('stripTrack');
+  let html = '';
+  for (let i = 0; i < 4; i++) services.forEach(s => { html += `<div class="strip-item"><span class="strip-dot"></span>${s}</div>`; });
+  track.innerHTML = html;
+}
+
+/* ===================== FAQ ACCORDION ===================== */
+function initFAQ() {
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-header').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+}
+
+/* ===================== FORM VALIDATION ===================== */
+function validateEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim()); }
+function validatePhone(phone) { return /^[6-9]\d{9}$/.test(phone.replace(/\s+/g, '')); }
+
+function showFieldError(field, msg) {
+  field.classList.add('input-error');
+  let err = field.parentElement.querySelector('.field-error');
+  if (!err) { err = document.createElement('span'); err.className = 'field-error'; field.parentElement.appendChild(err); }
+  err.textContent = msg;
+}
+function clearFieldError(field) {
+  field.classList.remove('input-error');
+  const err = field.parentElement.querySelector('.field-error');
+  if (err) err.remove();
+}
+function showFormSuccess(form, msg) {
+  const box = form.querySelector('.success-box');
+  box.textContent = msg;
+  box.style.display = 'block';
+  setTimeout(() => { box.style.display = 'none'; }, 6000);
+}
+
+function initForm(formId, successMsg) {
+  const form = document.getElementById(formId);
+  if (!form) return;
+  form.querySelectorAll('input, textarea, select').forEach(f => {
+    f.addEventListener('input', () => clearFieldError(f));
+    f.addEventListener('change', () => clearFieldError(f));
+  });
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    let valid = true;
+    form.querySelectorAll('[required]').forEach(f => {
+      const val = f.type === 'radio'
+        ? form.querySelector(`[name="${f.name}"]:checked`)
+        : f.value.trim();
+      if (!val) { showFieldError(f, 'This field is required.'); valid = false; }
+      else clearFieldError(f);
+    });
+    const emailF = form.querySelector('[type="email"]');
+    if (emailF && emailF.value.trim() && !validateEmail(emailF.value)) {
+      showFieldError(emailF, 'Please enter a valid email address.'); valid = false;
+    }
+    const phoneF = form.querySelector('[name="phone"]');
+    if (phoneF && phoneF.value.trim() && !validatePhone(phoneF.value)) {
+      showFieldError(phoneF, 'Enter a valid 10-digit Indian mobile number.'); valid = false;
+    }
+    if (!valid) return;
+    showFormSuccess(form, successMsg);
+    form.reset();
+  });
+}
+
+/* ===================== INIT ===================== */
+injectAll();
+buildStrip();
+initFAQ();
+initForm('appointmentForm', '✓ Appointment request received! We will contact you within 24 hours to confirm.');
+initForm('contactForm', '✓ Message sent! We\'ll get back to you shortly.');
+
+// Set min date on appointment form
+const dateInput = document.getElementById('apptDate');
+if (dateInput) dateInput.setAttribute('min', new Date().toISOString().split('T')[0]);
+</script>
+</body>
+</html>
