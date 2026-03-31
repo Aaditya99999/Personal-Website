@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Kota Algo Stock Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black: #030712;
+      --navy: #0a0f1e;
+      --navy-mid: #0d1528;
+      --navy-light: #111d35;
+      --border: rgba(255,255,255,0.07);
+      --green: #00d084;
+      --green-dim: rgba(0,208,132,0.12);
+      --green-glow: rgba(0,208,132,0.25);
+      --white: #f0f4ff;
+      --white-dim: rgba(240,244,255,0.55);
+      --white-faint: rgba(240,244,255,0.12);
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: var(--font-body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 999; padding: 0 5%; height: 68px; display: flex; align-items: center; justify-content: space-between; background: rgba(3,7,18,0.88); backdrop-filter: blur(18px); border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--font-display); font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
+    .nav-logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--white-dim); letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a.active { color: var(--green); }
+    .nav-cta { background: var(--green); color: var(--black) !important; padding: 0.45rem 1.2rem; border-radius: 4px; font-weight: 700 !important; font-size: 0.82rem !important; letter-spacing: 0.05em; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; background: var(--navy); border-bottom: 1px solid var(--border); padding: 1.5rem 5%; flex-direction: column; gap: 1.2rem; z-index: 998; }
+    .mobile-menu a { font-size: 1rem; color: var(--white-dim); }
+    .mobile-menu a.active { color: var(--green); }
+    .mobile-menu.open { display: flex; }
+
+    /* PAGE HERO */
+    .page-hero {
+      padding: 140px 5% 80px;
+      background: var(--navy);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 80% 50%, rgba(0,208,132,0.06), transparent);
+    }
+    .page-hero-inner { position: relative; max-width: 680px; }
+    .page-badge {
+      display: inline-block;
+      background: var(--green-dim);
+      border: 1px solid rgba(0,208,132,0.25);
+      color: var(--green);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .page-hero h1 { font-family: var(--font-display); font-size: clamp(2rem,4.5vw,3.2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 1.2rem; }
+    .page-hero p { font-size: 1.05rem; color: var(--white-dim); line-height: 1.8; }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--green); margin-bottom: 0.8rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.7rem,3vw,2.5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 1rem; }
+    .section-sub { font-size: 1rem; color: var(--white-dim); max-width: 580px; line-height: 1.8; margin-bottom: 2.5rem; }
+    .divider { width: 40px; height: 3px; background: var(--green); border-radius: 2px; margin-bottom: 2rem; }
+
+    /* STORY */
+    .story { background: var(--black); }
+    .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .story-text p { font-size: 0.95rem; color: var(--white-dim); line-height: 1.9; margin-bottom: 1.2rem; }
+    .story-text p strong { color: var(--white); font-weight: 500; }
+    .story-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .story-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--green), transparent);
+    }
+    .quote-mark { font-family: var(--font-display); font-size: 5rem; color: var(--green); line-height: 0.8; margin-bottom: 1rem; opacity: 0.4; }
+    .story-card blockquote { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; line-height: 1.6; margin-bottom: 1.5rem; }
+    .story-author { font-size: 0.85rem; color: var(--white-dim); }
+    .story-author strong { color: var(--green); display: block; font-weight: 700; }
+
+    /* MISSION VISION */
+    .mv { background: var(--navy); }
+    .mv-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .mv-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2.5rem;
+      transition: border-color 0.2s;
+    }
+    .mv-card:hover { border-color: rgba(0,208,132,0.3); }
+    .mv-card-icon { font-size: 2rem; margin-bottom: 1.2rem; }
+    .mv-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; margin-bottom: 0.8rem; }
+    .mv-card p { font-size: 0.92rem; color: var(--white-dim); line-height: 1.8; }
+
+    /* DIFFERENCE */
+    .difference { background: var(--black); }
+    .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+    .diff-card {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 2rem;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .diff-card:hover { transform: translateY(-4px); border-color: rgba(0,208,132,0.2); }
+    .diff-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--green); opacity: 0.25; line-height: 1; margin-bottom: 0.8rem; }
+    .diff-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .diff-card p { font-size: 0.88rem; color: var(--white-dim); line-height: 1.7; }
+
+    /* JOURNEY */
+    .journey { background: var(--navy); }
+    .journey-inner { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
+    .journey-text p { font-size: 0.95rem; color: var(--white-dim); line-height: 1.9; margin-bottom: 1rem; }
+    .journey-timeline { position: relative; padding-left: 2rem; }
+    .journey-timeline::before {
+      content: '';
+      position: absolute;
+      left: 6px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green), rgba(0,208,132,0.1));
+    }
+    .jt-item { position: relative; margin-bottom: 2rem; }
+    .jt-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem; top: 6px;
+      width: 10px; height: 10px;
+      background: var(--navy);
+      border: 2px solid var(--green);
+      border-radius: 50%;
+    }
+    .jt-item h4 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; color: var(--white); }
+    .jt-item p { font-size: 0.85rem; color: var(--white-dim); }
+
+    /* CTA BANNER */
+    .cta-banner { background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 80px 5%; text-align: center; position: relative; overflow: hidden; }
+    .cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 60% at 50% 50%, var(--green-dim), transparent); }
+    .cta-banner > * { position: relative; }
+    .cta-banner h2 { font-family: var(--font-display); font-size: clamp(1.8rem,3vw,2.6rem); font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; }
+    .cta-banner p { color: var(--white-dim); margin-bottom: 2rem; }
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn-primary { background: var(--green); color: var(--black); font-family: var(--font-display); font-weight: 700; font-size: 0.9rem; letter-spacing: 0.04em; padding: 0.85rem 2rem; border-radius: 5px; border: none; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; display: inline-block; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px var(--green-glow); }
+    .btn-outline { background: transparent; color: var(--white); font-family: var(--font-display); font-weight: 600; font-size: 0.9rem; padding: 0.85rem 2rem; border-radius: 5px; border: 1px solid var(--border); cursor: pointer; transition: border-color 0.2s, background 0.2s; display: inline-block; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.25); background: var(--white-faint); }
+
+    /* FOOTER */
+    footer { background: var(--navy); border-top: 1px solid var(--border); padding: 60px 5% 30px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 3rem; margin-bottom: 3rem; }
+    .footer-brand p { font-size: 0.88rem; color: var(--white-dim); margin-top: 0.8rem; line-height: 1.8; max-width: 280px; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green); margin-bottom: 1.2rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .footer-col a { font-size: 0.88rem; color: var(--white-dim); transition: color 0.2s; }
+    .footer-col a:hover { color: var(--white); }
+    .footer-info { font-size: 0.88rem; color: var(--white-dim); display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-bottom { border-top: 1px solid var(--border); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: var(--white-dim); flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom span { color: var(--green); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .mv-grid { grid-template-columns: 1fr; }
+      .journey-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 5%; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Kota <span>Algo</span> Stock Academy</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="screener.html">Screener</a></li>
+      <li><a href="results.html">Results</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="courses.html">Courses</a>
+    <a href="screener.html">Screener</a>
+    <a href="results.html">Results</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="page-badge">About the Academy</div>
+      <h1>Built for Serious Market Learners in Kota</h1>
+      <p>Kota Algo Stock Academy was started with one clear purpose — to give serious learners a structured, data-backed, and practical way to understand and participate in Indian stock markets.</p>
+    </div>
+  </div>
+
+  <!-- STORY -->
+  <section class="story">
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label">Our Story</div>
+        <div class="section-title">How It All Began</div>
+        <div class="divider"></div>
+        <p>Kota has always been a city of serious learners. Students come here to prepare for some of the toughest examinations in India. We asked ourselves — why shouldn't that same discipline and seriousness apply to understanding financial markets?</p>
+        <p>Most stock market institutes in India focus on <strong>surface-level content</strong> — a few chart patterns, some basic theory, and generic tips. That was never enough. Markets are data-driven systems, and trading them well requires a <strong>systematic, structured, and analytical approach</strong>.</p>
+        <p>Kota Algo Stock Academy was founded to bridge that gap. We built our own screener tool, structured a curriculum from fundamentals to algorithmic thinking, and started training students the right way — with logic, data, and real market practice.</p>
+      </div>
+      <div class="story-card">
+        <div class="quote-mark">"</div>
+        <blockquote>The market rewards those who understand data and punishes those who follow emotions. Our job is to make sure every student at this academy understands that difference before they ever place a real trade.</blockquote>
+        <div class="story-author">
+          <strong>Founder, Kota Algo Stock Academy</strong>
+          Kota, Rajasthan
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="mv">
+    <div style="text-align:center; margin-bottom: 3rem;">
+      <div class="section-label" style="justify-content:center;display:flex">Our Purpose</div>
+      <div class="section-title" style="max-width:560px;margin:0.5rem auto 0">Mission & Vision That Drive Everything We Do</div>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <div class="mv-card-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To provide structured, algorithm-based stock market education to students across Kota and Rajasthan — equipping them with real analytical skills, not just market awareness. We want every student to leave our academy with the confidence and competence to analyze any market situation independently.</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-card-icon">🔭</div>
+        <h3>Our Vision</h3>
+        <p>To become the most trusted stock market academy in Rajasthan by setting a new benchmark for quality, practicality, and outcomes in trading education. We envision a future where data-based decision-making is accessible to every aspiring trader in India, regardless of their educational background.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES US DIFFERENT -->
+  <section class="difference">
+    <div class="section-label">What Makes Us Different</div>
+    <div class="section-title">This Is Not a Typical Stock Market Class</div>
+    <div class="section-sub">Most institutes teach the same content with the same approach. We built something fundamentally different from the ground up.</div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-num">01</div>
+        <h3>We Built Our Own Screener</h3>
+        <p>Unlike institutes that rely on generic third-party tools, we built our own screener so students always have a fast, reliable, and educational-first tool to work with.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">02</div>
+        <h3>30 Years of Historical Data</h3>
+        <p>Our system gives students access to 30 years of Indian market data. You can test any strategy or pattern across decades of price action in one click.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">03</div>
+        <h3>Algorithm Logic Training</h3>
+        <p>We do not just show you patterns — we teach you the logic behind why those patterns work. That is what algorithm-based learning means at this academy.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">04</div>
+        <h3>From Zero to Advanced</h3>
+        <p>Whether you have never invested or you already know the basics, our structured modules take you exactly where you need to go — step by step.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">05</div>
+        <h3>Real Market Sessions</h3>
+        <p>Classroom-only education is not enough. We incorporate live market hours into training so students experience real conditions, not simulations.</p>
+      </div>
+      <div class="diff-card">
+        <div class="diff-num">06</div>
+        <h3>Regular Test Series</h3>
+        <p>Knowledge retention is tested consistently through structured quizzes and assessments, ensuring that learning sticks beyond the classroom.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT JOURNEY -->
+  <section class="journey">
+    <div class="journey-inner">
+      <div>
+        <div class="section-label">The Learning Journey</div>
+        <div class="section-title">From First Session to Advanced Trader</div>
+        <div class="divider"></div>
+        <p>We designed a journey that any motivated learner can follow — regardless of whether they come in as a complete beginner or someone with some market experience.</p>
+        <p>The goal at every stage is simple: build real understanding, not just familiarity. Each module prepares students for the next one, so by the time they reach live market practice, they are genuinely ready.</p>
+      </div>
+      <div class="journey-timeline">
+        <div class="jt-item">
+          <h4>Stock Market Orientation</h4>
+          <p>Understanding exchanges, instruments, brokers, and how Indian markets are structured. Building the base vocabulary every trader must have.</p>
+        </div>
+        <div class="jt-item">
+          <h4>Technical Concepts & Charting</h4>
+          <p>Candlesticks, chart patterns, volume analysis, moving averages, and key indicators that form the foundation of technical trading.</p>
+        </div>
+        <div class="jt-item">
+          <h4>Screener Tool Training</h4>
+          <p>Learning to use the academy's own screener to filter, rank, and shortlist stocks for analysis — dramatically cutting down study time.</p>
+        </div>
+        <div class="jt-item">
+          <h4>Strategy & Algorithm Thinking</h4>
+          <p>Building rule-based strategies. Understanding what conditions to enter and exit trades. Backtesting using 30 years of data.</p>
+        </div>
+        <div class="jt-item">
+          <h4>Live Market Exposure</h4>
+          <p>Applying everything in real-time during market hours. Learning to handle uncertainty, news, and volatility with a structured mindset.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <div class="cta-banner">
+    <h2>Come See What Learning Here Feels Like</h2>
+    <p>Visit us in Kota or reach out today. We will walk you through exactly what the program covers and what you can expect.</p>
+    <div class="cta-actions">
+      <a href="courses.html" class="btn-primary">View Courses</a>
+      <a href="contact.html" class="btn-outline">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">Kota <span style="color:var(--green)">Algo</span> Stock Academy</div>
+        <p>Algorithm-based stock market education in Kota, Rajasthan. Teaching practical trading from basics to advanced with data-driven methods.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="screener.html">Screener Tool</a></li>
+          <li><a href="results.html">Results</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Courses</h4>
+        <ul>
+          <li><a href="courses.html">Stock Market Basics</a></li>
+          <li><a href="courses.html">Technical Analysis</a></li>
+          <li><a href="courses.html">Algo Strategy</a></li>
+          <li><a href="courses.html">Live Market Practice</a></li>
+          <li><a href="courses.html">Test Series</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-info">
+          <span>📍 Kota, Rajasthan, India</span>
+          <span>📞 +91-XXXXXXXXXX</span>
+          <span>📧 info@kotaalgo.in</span>
+          <span>💬 WhatsApp: +91-XXXXXXXXXX</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2025 Kota <span>Algo</span> Stock Academy. All rights reserved.</div>
+      <div>Kota, Rajasthan | Stock Market Education</div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  </script>
+</body>
+</html>
