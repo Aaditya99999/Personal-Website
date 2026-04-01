@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>About Us | Aditya Law Associates</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-img-wrap { position: relative; }
+.about-card-img { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); border-radius: 16px; padding: 60px 40px; text-align: center; border: 1px solid var(--border); }
+.about-initials { font-family: 'Playfair Display', serif; font-size: 80px; font-weight: 700; color: var(--gold); opacity: 0.15; line-height: 1; }
+.about-lawyer-title { color: white; font-family: 'Playfair Display', serif; font-size: 22px; margin-top: 16px; }
+.about-lawyer-sub { color: rgba(255,255,255,0.55); font-size: 14px; margin-top: 6px; }
+.about-badge-float { position: absolute; bottom: -20px; right: -20px; background: var(--gold); color: var(--navy); padding: 16px 20px; border-radius: 12px; text-align: center; box-shadow: 0 8px 32px rgba(201,162,39,0.35); }
+.about-badge-float .num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; }
+.about-badge-float .lbl { font-size: 11px; font-weight: 700; display: block; text-transform: uppercase; letter-spacing: 0.5px; }
+.about-content { }
+.about-content p { color: var(--text-muted); line-height: 1.8; margin-bottom: 18px; font-size: 15px; }
+.values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 32px 0; }
+.value-card { background: var(--off-white); border-radius: 10px; padding: 20px; border-left: 3px solid var(--gold); }
+.value-card h4 { color: var(--navy); font-size: 15px; font-weight: 700; margin-bottom: 5px; }
+.value-card p { color: var(--text-muted); font-size: 13px; margin: 0; }
+.team-section { padding: 80px 0; background: var(--off-white); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 48px; }
+.team-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,0.06); transition: all 0.3s; text-align: center; }
+.team-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.team-avatar { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); height: 160px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--gold); opacity: 0.7; }
+.team-info { padding: 24px; }
+.team-info h3 { font-family: 'Playfair Display', serif; font-size: 18px; color: var(--navy); margin-bottom: 4px; }
+.team-info .role { color: var(--gold); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; display: block; }
+.team-info p { color: var(--text-muted); font-size: 13px; line-height: 1.6; }
+@media (max-width: 768px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .about-badge-float { position: relative; right: auto; bottom: auto; margin-top: 20px; display: inline-block; }
+  .team-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-top">
+    <div class="container header-top-inner">
+      <div class="header-contacts">
+        <a href="tel:+917357397888" class="hcontact"><span class="icon">📞</span> +91 73573 97888</a>
+        <a href="mailto:aadityabusiness3301@gmail.com" class="hcontact"><span class="icon">✉️</span> aadityabusiness3301@gmail.com</a>
+      </div>
+      <a href="appointment.html" class="btn-free-consult">Free Consultation</a>
+    </div>
+  </div>
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-icon">⚖️</span>
+        <div><span class="logo-main">ADITYA LAW</span><span class="logo-sub">ASSOCIATES</span></div>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Practice Areas</a></li>
+        <li><a href="appointment.html">Consultation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">FAQ</a></li>
+      </ul>
+      <a href="tel:+917357397888" class="btn-call-now mobile-call">📞 Call Now</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Practice Areas</a><a href="appointment.html">Consultation</a><a href="contact.html">Contact</a><a href="blog.html">FAQ</a>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <h1>About Our Firm</h1>
+    <p>Two decades of legal excellence, built on trust, integrity, and results.</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>About</span></div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="section-pad">
+  <div class="container about-grid">
+    <div class="about-img-wrap">
+      <div class="about-card-img">
+        <div class="about-initials">AS</div>
+        <div class="about-lawyer-title">Adv. Aditya Sharma</div>
+        <div class="about-lawyer-sub">Senior Partner & Founder</div>
+      </div>
+      <div class="about-badge-float">
+        <div class="num">15+</div>
+        <span class="lbl">Years of Experience</span>
+      </div>
+    </div>
+    <div class="about-content">
+      <div class="section-tag">Our Story</div>
+      <h2 class="section-title" style="margin-bottom:20px;">Justice Is Not Just<br/>Our Job — It's Our <span class="gold">Mission</span></h2>
+      <p>Aditya Law Associates was founded in 2010 with a simple but powerful vision: to provide every client with the highest quality legal representation, regardless of the complexity of their situation.</p>
+      <p>Over the past 15 years, we've grown from a small Jodhpur practice into one of Rajasthan's most respected law firms, handling over 2,400 cases with a 97% success rate. Our founder, Adv. Aditya Sharma, brings deep expertise across criminal, civil, family, and corporate law.</p>
+      <p>We believe in building long-term relationships with our clients. When you come to us, you're not just a case number — you're someone whose life, livelihood, or freedom may depend on the outcome. We take that responsibility very seriously.</p>
+      <div class="values-grid">
+        <div class="value-card"><h4>⚡ Fast Response</h4><p>We respond to all inquiries within 10 minutes, day or night</p></div>
+        <div class="value-card"><h4>🔒 100% Confidential</h4><p>Your privacy is sacred. All consultations are fully protected.</p></div>
+        <div class="value-card"><h4>💰 Affordable Rates</h4><p>Quality legal help should be accessible to everyone</p></div>
+        <div class="value-card"><h4>🏆 Results Driven</h4><p>We focus relentlessly on achieving the best possible outcome</p></div>
+      </div>
+      <a href="appointment.html" class="btn-primary">Book Free Consultation →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="container cta-banner-inner">
+    <div><h3>Talk Directly to a Lawyer — Today</h3><p>Get legal advice within 10 minutes. 100% confidential consultation.</p></div>
+    <div class="cta-banner-btns">
+      <a href="tel:+917357397888" class="btn-navy">📞 Call Now</a>
+      <a href="https://wa.me/917357397888?text=Hello%20I%20need%20legal%20consultation" target="_blank" class="btn-wa">💬 WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Our Team</div>
+      <h2 class="section-title">Meet Our Legal Experts</h2>
+      <p class="section-sub">A dedicated team of experienced lawyers committed to your success</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">AS</div>
+        <div class="team-info">
+          <h3>Adv. Aditya Sharma</h3>
+          <span class="role">Senior Partner & Founder</span>
+          <p>15+ years in criminal and civil law. Handled 1,200+ cases with outstanding results across Rajasthan High Court.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">PV</div>
+        <div class="team-info">
+          <h3>Adv. Prerna Verma</h3>
+          <span class="role">Family Law Specialist</span>
+          <p>Expert in divorce, custody, maintenance, and domestic dispute cases. Known for empathetic yet effective representation.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">RK</div>
+        <div class="team-info">
+          <h3>Adv. Rahul Kulkarni</h3>
+          <span class="role">Corporate & Property Law</span>
+          <p>10 years specializing in business contracts, property disputes, and real estate legal advisory for major clients.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">⚖️ ADITYA LAW ASSOCIATES</div>
+      <p>Expert legal solutions you can trust. Serving clients across Rajasthan and India since 2010.</p>
+      <div class="footer-social"><a href="tel:+917357397888">📞</a><a href="mailto:aadityabusiness3301@gmail.com">✉️</a><a href="https://wa.me/917357397888" target="_blank">💬</a></div>
+    </div>
+    <div class="footer-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About Us</a><a href="services.html">Practice Areas</a><a href="appointment.html">Book Consultation</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><h4>Practice Areas</h4><a href="services.html">Criminal Law</a><a href="services.html">Family Law</a><a href="services.html">Corporate Law</a><a href="services.html">Property Law</a></div>
+    <div class="footer-contact"><h4>Contact Us</h4><p>📞 <a href="tel:+917357397888">+91 73573 97888</a></p><p>✉️ <a href="mailto:aadityabusiness3301@gmail.com">aadityabusiness3301@gmail.com</a></p><p>📍 Jodhpur, Rajasthan, India</p><a href="appointment.html" class="footer-cta">Book Free Consultation →</a></div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>© 2025 Aditya Law Associates. All Rights Reserved.</p></div></div>
+</footer>
+
+<a href="https://wa.me/917357397888?text=Hello%20I%20need%20legal%20consultation" target="_blank" class="whatsapp-float" title="Chat with us">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+<a href="tel:+917357397888" class="mobile-sticky-call">📞 Call Now — Free Consultation</a>
+<script src="script.js"></script>
+</body>
+</html>
