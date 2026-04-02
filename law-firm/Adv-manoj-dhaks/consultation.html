@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Consultation — Advocate Manoj Dhaka, Sikar</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#0c0c0b;--charcoal:#161614;--dark:#1e1e1b;--gold:#b8965a;--gold-light:#d4aa6e;--gold-dim:#7a6038;--ivory:#f0ead8;--ivory-dim:#c8bfa8;--white:#faf8f3;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',sans-serif;}
+  *{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+  body{background:var(--black);color:var(--ivory);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden;}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(12,12,11,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,150,90,0.18);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .logo{font-family:var(--serif);font-size:1.1rem;color:var(--ivory);letter-spacing:0.04em;text-decoration:none;}.logo span{color:var(--gold);}
+  nav{display:flex;gap:2rem;align-items:center;}
+  nav a{font-family:var(--sans);font-size:0.75rem;font-weight:400;color:var(--ivory-dim);letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:color 0.2s;}
+  nav a:hover,nav a.active{color:var(--gold);}
+  .header-cta{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;padding:8px 20px;cursor:pointer;text-decoration:none;transition:all 0.25s;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}.hamburger span{width:22px;height:1px;background:var(--ivory);display:block;}
+
+  /* HERO */
+  .page-hero{padding:160px 10vw 80px;background:var(--charcoal);border-bottom:1px solid rgba(184,150,90,0.12);position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 40%,rgba(184,150,90,0.07) 0%,transparent 70%);pointer-events:none;}
+  .eyebrow{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block;opacity:0;transform:translateY(14px);animation:fadeUp 0.7s ease 0.2s forwards;}
+  .hero-title{font-family:var(--serif);font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:300;line-height:1.1;color:var(--white);max-width:760px;opacity:0;transform:translateY(20px);animation:fadeUp 0.8s ease 0.35s forwards;}
+  .hero-title em{font-style:italic;color:var(--gold);}
+  .hero-sub{font-family:var(--sans);font-size:0.95rem;font-weight:300;color:var(--ivory-dim);max-width:560px;margin-top:1.5rem;line-height:1.9;opacity:0;animation:fadeUp 0.7s ease 0.5s forwards;}
+  .hero-urgency{display:inline-block;background:rgba(184,150,90,0.08);border:1px solid rgba(184,150,90,0.2);padding:10px 20px;margin-top:2rem;font-family:var(--sans);font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);opacity:0;animation:fadeUp 0.7s ease 0.65s forwards;}
+
+  /* MAIN */
+  .consultation-section{padding:100px 10vw;background:var(--black);}
+  .consultation-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:6vw;align-items:start;}
+  .section-label{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;display:block;}
+  .section-title{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.5rem);font-weight:400;line-height:1.2;color:var(--white);}
+  .section-title em{font-style:italic;color:var(--gold);}
+  .gold-line{width:48px;height:1px;background:var(--gold);margin:2rem 0;}
+
+  .why-consult{display:flex;flex-direction:column;gap:0;}
+  .why-item{padding:1.5rem 0;border-bottom:1px solid rgba(184,150,90,0.08);}
+  .why-item:last-child{border-bottom:none;}
+  .why-num{font-family:var(--serif);font-size:0.85rem;color:var(--gold-dim);margin-bottom:0.4rem;}
+  .why-title{font-family:var(--serif);font-size:1.1rem;color:var(--white);margin-bottom:0.4rem;}
+  .why-body{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:var(--ivory-dim);line-height:1.8;}
+
+  /* FORM */
+  .form-panel{background:var(--charcoal);border:1px solid rgba(184,150,90,0.15);padding:3.5rem;position:relative;}
+  .form-panel::before{content:'';position:absolute;top:10px;left:10px;right:10px;bottom:10px;border:1px solid rgba(184,150,90,0.05);pointer-events:none;}
+  .form-panel-title{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--white);margin-bottom:0.5rem;}
+  .form-panel-sub{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:var(--ivory-dim);margin-bottom:2.5rem;line-height:1.7;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .form-group{margin-bottom:1.5rem;}
+  .form-label{font-family:var(--sans);font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold-dim);display:block;margin-bottom:0.6rem;}
+  .form-input,.form-select,.form-textarea{width:100%;background:var(--dark);border:1px solid rgba(184,150,90,0.12);color:var(--ivory);font-family:var(--sans);font-size:0.9rem;font-weight:300;padding:14px 16px;outline:none;transition:border-color 0.25s;appearance:none;}
+  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:rgba(184,150,90,0.4);}
+  .form-input::placeholder,.form-textarea::placeholder{color:rgba(200,191,168,0.3);}
+  .form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23b8965a'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;}
+  .form-select option{background:var(--dark);}
+  .form-textarea{height:110px;resize:none;}
+  .form-submit{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;padding:18px 40px;border:none;cursor:pointer;transition:all 0.25s;width:100%;margin-top:0.5rem;}
+  .form-submit:hover{background:var(--gold-light);}
+  .form-submit-note{font-family:var(--sans);font-size:0.72rem;font-weight:300;color:var(--ivory-dim);margin-top:1rem;line-height:1.7;text-align:center;}
+  #consultSuccess{display:none;background:rgba(184,150,90,0.06);border:1px solid rgba(184,150,90,0.25);padding:2rem;text-align:center;margin-top:1.5rem;}
+  #consultSuccess h4{font-family:var(--serif);font-size:1.4rem;font-weight:400;color:var(--gold);margin-bottom:0.5rem;}
+  #consultSuccess p{font-family:var(--sans);font-size:0.85rem;font-weight:300;color:var(--ivory-dim);line-height:1.7;}
+
+  /* CALL ALT */
+  .call-alt{background:var(--charcoal);border-top:1px solid rgba(184,150,90,0.1);border-bottom:1px solid rgba(184,150,90,0.1);padding:60px 10vw;text-align:center;}
+  .call-alt h3{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:var(--white);margin-bottom:0.8rem;}
+  .call-alt h3 em{font-style:italic;color:var(--gold);}
+  .call-alt p{font-family:var(--sans);font-size:0.88rem;font-weight:300;color:var(--ivory-dim);max-width:440px;margin:0 auto 2rem;line-height:1.8;}
+  .call-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  .btn-primary{background:var(--gold);color:var(--black);font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;text-decoration:none;transition:all 0.25s;display:inline-block;}
+  .btn-primary:hover{background:var(--gold-light);}
+  .btn-wa{background:transparent;color:#4ade80;border:1px solid rgba(74,222,128,0.35);font-family:var(--sans);font-size:0.72rem;font-weight:400;letter-spacing:0.16em;text-transform:uppercase;padding:14px 32px;cursor:pointer;text-decoration:none;transition:all 0.25s;display:inline-block;}
+  .btn-wa:hover{border-color:#4ade80;background:rgba(74,222,128,0.08);}
+
+  footer{background:var(--black);border-top:1px solid rgba(184,150,90,0.12);padding:60px 10vw 40px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(184,150,90,0.08);}
+  .footer-brand{font-family:var(--serif);font-size:1.2rem;color:var(--white);margin-bottom:1rem;}.footer-brand span{color:var(--gold);}
+  .footer-tagline{font-family:var(--sans);font-size:0.8rem;font-weight:300;color:var(--ivory-dim);line-height:1.8;max-width:280px;}
+  .footer-col-title{font-family:var(--sans);font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:0.6rem;}
+  .footer-links a{font-family:var(--sans);font-size:0.82rem;font-weight:300;color:var(--ivory-dim);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--gold);}
+  .footer-bottom{padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+  .footer-copy{font-family:var(--sans);font-size:0.72rem;font-weight:300;color:rgba(200,191,168,0.4);}
+
+  .wa-float{position:fixed;bottom:32px;right:32px;z-index:200;width:54px;height:54px;background:#1a1a18;border:1px solid rgba(74,222,128,0.4);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 0 24px rgba(74,222,128,0.12);transition:all 0.3s;}
+  .wa-float:hover{background:rgba(74,222,128,0.1);border-color:#4ade80;transform:translateY(-2px);}
+  .wa-float svg{width:22px;height:22px;}
+
+  @keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:768px){
+    nav{display:none;}nav.open{display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:var(--black);padding:2rem 5vw;border-bottom:1px solid rgba(184,150,90,0.15);gap:1.5rem;z-index:99;}
+    .hamburger{display:flex;}.header-cta{display:none;}
+    .consultation-grid{grid-template-columns:1fr;}
+    .form-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;gap:2.5rem;}
+    .consultation-section{padding:70px 6vw;}.page-hero{padding:110px 6vw 70px;}
+    .form-panel{padding:2rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <a href="index.html" class="logo">Advocate <span>Manoj Dhaka</span></a>
+  <nav id="nav">
+    <a href="index.html">Home</a><a href="about.html">About</a>
+    <a href="practice-areas.html">Practice Areas</a>
+    <a href="reviews.html">Reviews</a><a href="contact.html">Contact</a>
+  </nav>
+  <div style="display:flex;gap:1rem;align-items:center;">
+    <a href="consultation.html" class="header-cta">Book Consultation</a>
+    <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <span class="eyebrow">Book a Consultation</span>
+  <h1 class="hero-title">Begin with <em>clarity.</em> A consultation is the most important first step.</h1>
+  <p class="hero-sub">Legal matters become more manageable the moment they are properly understood. A direct conversation with Advocate Manoj Dhaka starts that process — in confidence, without judgment, and with full professional attention.</p>
+  <span class="hero-urgency">Early action can make legal decisions more informed and effective.</span>
+</div>
+
+<section class="consultation-section">
+  <div class="consultation-grid">
+    <div>
+      <span class="section-label reveal">Why consult early</span>
+      <h2 class="section-title reveal">Understanding your position <em>before</em> acting on it.</h2>
+      <div class="gold-line reveal"></div>
+      <div class="why-consult reveal">
+        <div class="why-item">
+          <p class="why-num">I</p>
+          <h3 class="why-title">Know where you stand</h3>
+          <p class="why-body">Before any decision is made, understanding the legal reality of your situation gives you the clarity needed to act with confidence — not guesswork.</p>
+        </div>
+        <div class="why-item">
+          <p class="why-num">II</p>
+          <h3 class="why-title">More options remain available</h3>
+          <p class="why-body">Legal matters typically offer more pathways early on than they do after time has passed or actions have already been taken. Early guidance preserves options.</p>
+        </div>
+        <div class="why-item">
+          <p class="why-num">III</p>
+          <h3 class="why-title">Confidential and respectful</h3>
+          <p class="why-body">Everything shared in consultation is handled with full professional confidentiality. You will be heard with genuine attention and without dismissal or rush.</p>
+        </div>
+        <div class="why-item">
+          <p class="why-num">IV</p>
+          <h3 class="why-title">Practical, not theoretical</h3>
+          <p class="why-body">Advice given here is grounded in the practical realities of your specific matter — not abstract legal principles disconnected from your situation.</p>
+        </div>
+      </div>
+      <div style="margin-top:2rem;padding:2rem;background:var(--charcoal);border-left:2px solid var(--gold);" class="reveal">
+        <p style="font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--ivory-dim);line-height:1.7;">"The most common regret clients express is not seeking legal guidance sooner. Early awareness consistently leads to better outcomes."</p>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="form-panel">
+        <h3 class="form-panel-title">Request a Consultation</h3>
+        <p class="form-panel-sub">Fill in your details below. On submission, your information will be sent directly to Advocate Manoj Dhaka via WhatsApp for immediate review.</p>
+        <div id="consultForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name *</label>
+              <input type="text" id="cName" class="form-input" placeholder="Your full name">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" id="cPhone" class="form-input" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">City</label>
+              <input type="text" id="cCity" class="form-input" placeholder="Your city">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time</label>
+              <select id="cTime" class="form-select">
+                <option value="">Select preference</option>
+                <option>Morning (8am – 12pm)</option>
+                <option>Afternoon (12pm – 4pm)</option>
+                <option>Evening (4pm – 8pm)</option>
+                <option>Anytime available</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Legal Matter Type</label>
+            <select id="cMatter" class="form-select">
+              <option value="">Select matter type</option>
+              <option>Criminal Law</option>
+              <option>Civil Matter</option>
+              <option>Matrimonial / Family</option>
+              <option>Legal Consultation</option>
+              <option>Documentation / Notice</option>
+              <option>Court Representation</option>
+              <option>Other / Unsure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Brief Description</label>
+            <textarea id="cDesc" class="form-textarea" placeholder="Briefly describe your matter (this helps prepare for your consultation)..."></textarea>
+          </div>
+          <button onclick="submitConsultation()" class="form-submit">Submit via WhatsApp →</button>
+          <p class="form-submit-note">Your matter will be treated with full confidentiality and professional respect. Available 24 hours.</p>
+        </div>
+        <div id="consultSuccess">
+          <h4>Consultation Request Sent</h4>
+          <p>Your details have been forwarded to Advocate Manoj Dhaka. You will receive a response shortly. If you need to speak immediately, please call <a href="tel:+919413000824" style="color:var(--gold);">+91 94130 00824</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="call-alt">
+  <h3 class="reveal">Prefer to call or message <em>directly?</em></h3>
+  <p class="reveal">For urgent matters or if you'd prefer immediate contact — Advocate Manoj Dhaka is available 24 hours.</p>
+  <div class="call-btns reveal">
+    <a href="tel:+919413000824" class="btn-primary">Call +91 94130 00824</a>
+    <a href="https://wa.me/919413000824" class="btn-wa" target="_blank">WhatsApp Now</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">Advocate <span>Manoj Dhaka</span></div>
+      <p class="footer-tagline">District &amp; Session Court, Doliyon Ka Bass, Sikar, Rajasthan 332001. Trusted legal representation in Sikar.</p>
+      <p style="font-family:var(--serif);font-size:1.2rem;color:var(--gold-dim);margin-top:1.2rem;font-style:italic;">एडवोकेट मनोज ढाका</p>
+    </div>
+    <div>
+      <p class="footer-col-title">Navigate</p>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+        <li><a href="practice-areas.html">Practice Areas</a></li><li><a href="reviews.html">Reviews</a></li>
+        <li><a href="contact.html">Contact</a></li><li><a href="consultation.html">Book Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Contact</p>
+      <ul class="footer-links">
+        <li><a href="tel:+919413000824">+91 94130 00824</a></li>
+        <li><a href="https://wa.me/919413000824">WhatsApp</a></li>
+        <li style="color:var(--ivory-dim);font-size:0.82rem;">Open 24 Hours</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><p class="footer-copy">© 2025 Advocate Manoj Dhaka. All rights reserved.</p><p class="footer-copy">Sikar · Rajasthan</p></div>
+</footer>
+
+<a href="https://wa.me/919413000824" class="wa-float" target="_blank">
+  <svg viewBox="0 0 24 24" fill="#4ade80" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+<script>
+  function toggleNav(){document.getElementById('nav').classList.toggle('open');}
+  function submitConsultation(){
+    const name=document.getElementById('cName').value.trim();
+    const phone=document.getElementById('cPhone').value.trim();
+    const city=document.getElementById('cCity').value.trim();
+    const time=document.getElementById('cTime').value;
+    const matter=document.getElementById('cMatter').value;
+    const desc=document.getElementById('cDesc').value.trim();
+    if(!name||!phone){alert('Please enter your name and phone number to continue.');return;}
+    const msg=`*Consultation Request — Website*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*City:* ${city||'Not specified'}\n*Matter Type:* ${matter||'Not specified'}\n*Preferred Time:* ${time||'Anytime'}\n\n*Description:*\n${desc||'No description provided.'}\n\n_Sent from advocatemanojdhaka.in_`;
+    window.open('https://wa.me/919413000824?text='+encodeURIComponent(msg),'_blank');
+    document.getElementById('consultForm').style.display='none';
+    document.getElementById('consultSuccess').style.display='block';
+  }
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
