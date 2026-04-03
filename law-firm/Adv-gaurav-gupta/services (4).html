@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Practice Areas | Advocate Gaurav Gupta – Property Law, Ahmedabad</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{--navy:#0B1F3A;--navy-light:#122748;--navy-mid:#1a3459;--gold:#C9A227;--gold-light:#e0b93a;--gold-pale:#f5e9c0;--white:#ffffff;--off-white:#f8f6f1;--text:#2c2c2c;--text-muted:#6b7280;--green-wa:#25D366;--border:rgba(201,162,39,0.2);--shadow:0 4px 30px rgba(11,31,58,0.12);--shadow-lg:0 12px 60px rgba(11,31,58,0.2);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden;}a{text-decoration:none;color:inherit;}
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+.header{position:sticky;top:0;z-index:1000;background:var(--navy);box-shadow:0 2px 20px rgba(0,0,0,0.3);}
+.navbar{padding:14px 0;}.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.logo{display:flex;align-items:center;gap:10px;}.logo-icon{font-size:28px;}
+.logo-main{display:block;color:var(--white);font-family:'Playfair Display',serif;font-size:18px;font-weight:700;letter-spacing:2px;line-height:1.1;}
+.logo-sub{display:block;color:var(--gold);font-size:9px;letter-spacing:3px;font-weight:500;}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.75);padding:8px 14px;font-size:14px;font-weight:500;border-radius:4px;transition:all 0.2s;position:relative;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-links a.active::after{content:'';position:absolute;bottom:2px;left:50%;transform:translateX(-50%);width:20px;height:2px;background:var(--gold);border-radius:2px;}
+.nav-links .nav-appt a{background:var(--gold);color:var(--navy)!important;border-radius:5px;font-weight:700;padding:9px 18px;}
+.nav-links .nav-appt a:hover{background:var(--gold-light);}.nav-links .nav-appt a::after{display:none;}
+.btn-call-now{background:transparent;border:2px solid var(--gold);color:var(--gold);padding:8px 18px;border-radius:4px;font-size:13px;font-weight:700;transition:all 0.2s;white-space:nowrap;}
+.btn-call-now:hover{background:var(--gold);color:var(--navy);}.mobile-call{display:none;}
+.hamburger{display:none;background:none;border:none;color:white;font-size:24px;cursor:pointer;}
+.mobile-menu{display:none;background:var(--navy-light);padding:12px 20px;flex-direction:column;gap:2px;}
+.mobile-menu.open{display:flex;}.mobile-menu a{color:rgba(255,255,255,0.85);padding:10px 12px;border-radius:4px;font-size:15px;}
+.mobile-menu a:hover{color:var(--gold);background:rgba(255,255,255,0.05);}
+.mobile-menu .mob-appt{background:var(--gold);color:var(--navy)!important;font-weight:700;border-radius:5px;margin-top:6px;}
+.page-hero{background:var(--navy);padding:60px 0 50px;text-align:center;position:relative;overflow:hidden;}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 100%,rgba(201,162,39,0.07) 0%,transparent 60%);}
+.page-hero-content{position:relative;z-index:1;}
+.page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,54px);color:white;font-weight:700;margin-bottom:12px;}
+.page-hero p{color:rgba(255,255,255,0.65);font-size:16px;max-width:500px;margin:0 auto;}
+.breadcrumb{display:flex;justify-content:center;gap:8px;color:rgba(255,255,255,0.45);font-size:13px;margin-top:14px;}
+.breadcrumb a{color:var(--gold);}.breadcrumb span{color:rgba(255,255,255,0.3);}
+.section-pad{padding:80px 0;}.section-tag{display:inline-block;background:var(--gold-pale);color:#8a6b0a;padding:5px 16px;border-radius:30px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+.btn-primary{background:var(--gold);color:var(--navy);padding:14px 28px;border-radius:5px;font-weight:700;font-size:15px;transition:all 0.2s;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);}
+.btn-wa{background:var(--green-wa);color:white;padding:14px 24px;border-radius:5px;font-weight:700;font-size:15px;transition:all 0.2s;white-space:nowrap;}
+.btn-wa:hover{background:#1ebe5a;}
+.btn-navy{background:var(--navy);color:white;padding:14px 28px;border-radius:5px;font-weight:700;font-size:15px;transition:all 0.2s;white-space:nowrap;}
+.btn-navy:hover{background:var(--navy-mid);}
+.cta-banner{background:linear-gradient(135deg,var(--gold) 0%,#e0b93a 100%);padding:52px 0;}
+.cta-banner-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.cta-banner h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);}
+.cta-banner p{color:rgba(11,31,58,0.7);font-size:15px;margin-top:6px;}
+.cta-banner-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.footer{background:#060f1d;padding:64px 0 0;}.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.5fr;gap:48px;margin-bottom:48px;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:18px;color:white;font-weight:700;margin-bottom:14px;letter-spacing:1px;}
+.footer-brand p{color:rgba(255,255,255,0.5);font-size:14px;line-height:1.7;margin-bottom:20px;}
+.footer-social{display:flex;gap:10px;}.footer-social a{width:38px;height:38px;background:rgba(255,255,255,0.07);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;transition:background 0.2s;}
+.footer-social a:hover{background:var(--gold);}
+.footer-links h4,.footer-contact h4{color:var(--gold);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:18px;}
+.footer-links{display:flex;flex-direction:column;}.footer-links a{color:rgba(255,255,255,0.55);font-size:14px;padding:5px 0;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-contact p{color:rgba(255,255,255,0.55);font-size:14px;margin-bottom:8px;}.footer-contact a{color:rgba(255,255,255,0.55);transition:color 0.2s;}.footer-contact a:hover{color:var(--gold);}
+.footer-cta{display:inline-block;margin-top:16px;background:var(--gold);color:var(--navy);padding:11px 22px;border-radius:4px;font-size:14px;font-weight:700;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding:20px 0;text-align:center;}.footer-bottom p{color:rgba(255,255,255,0.3);font-size:12px;}
+.whatsapp-float{position:fixed;bottom:28px;right:28px;z-index:9999;background:var(--green-wa);width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,0.4);animation:waBounce 2.5s ease-in-out infinite;transition:transform 0.2s;}
+.whatsapp-float:hover{transform:scale(1.12);animation:none;}
+.wa-tooltip{position:absolute;right:72px;background:var(--navy);color:white;padding:6px 12px;border-radius:6px;font-size:13px;font-weight:600;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+.wa-tooltip::after{content:'';position:absolute;right:-6px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left-color:var(--navy);border-right:none;}
+.whatsapp-float:hover .wa-tooltip{opacity:1;}
+@keyframes waBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* Services specific */
+.service-block{background:white;border-radius:14px;overflow:hidden;border:1px solid rgba(0,0,0,0.07);margin-bottom:32px;transition:all 0.3s;}
+.service-block:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px);}
+.service-block-inner{display:grid;grid-template-columns:1fr 1fr;}
+.service-block:nth-child(even) .service-block-inner{direction:rtl;}
+.service-block:nth-child(even) .service-block-inner>*{direction:ltr;}
+.service-img{background:var(--navy);min-height:300px;display:flex;align-items:center;justify-content:center;font-size:80px;position:relative;overflow:hidden;}
+.service-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,162,39,0.07) 0%,transparent 60%);}
+.service-content{padding:44px 40px;}
+.service-content h2{font-family:'Playfair Display',serif;font-size:28px;color:var(--navy);font-weight:700;margin-bottom:14px;}
+.service-content p{color:var(--text-muted);font-size:15px;line-height:1.75;margin-bottom:16px;}
+.service-list{list-style:none;margin-bottom:24px;}
+.service-list li{color:var(--text);font-size:14px;padding:6px 0;border-bottom:1px solid rgba(0,0,0,0.04);display:flex;align-items:flex-start;gap:8px;}
+.service-list li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;}
+.service-actions{display:flex;gap:12px;flex-wrap:wrap;}
+@media(max-width:768px){.service-block-inner{grid-template-columns:1fr;direction:ltr!important}.service-img{min-height:180px}.service-content{padding:28px 24px}.mobile-call{display:flex}.hamburger{display:block}.nav-links{display:none}.footer-grid{grid-template-columns:1fr;gap:32px}.cta-banner-inner{flex-direction:column;text-align:center}.cta-banner-btns{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+
+<header class="header" id="header">
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-icon">⚖️</span><div><span class="logo-main">ADV. GAURAV</span><span class="logo-sub">GUPTA — ADVOCATE</span></div></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Practice Areas</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">FAQ</a></li>
+        <li class="nav-appt"><a href="appointment.html">📅 Appointment</a></li>
+      </ul>
+      <a href="tel:+918000887766" class="btn-call-now mobile-call">📞 Call Now</a>
+      <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">☰</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Practice Areas</a><a href="contact.html">Contact</a><a href="blog.html">FAQ</a>
+    <a href="appointment.html" class="mob-appt">📅 Appointment</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container page-hero-content">
+    <h1>Our Practice Areas</h1>
+    <p>Specialized legal expertise in property, real estate & land revenue matters across Gujarat</p>
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Practice Areas</span></div>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="service-block" id="property">
+      <div class="service-block-inner">
+        <div class="service-img">🏠</div>
+        <div class="service-content">
+          <div class="section-tag">Property & Civil</div>
+          <h2>Property Law</h2>
+          <p>Adv. Gaurav Gupta's primary area of expertise. Whether you're dealing with a long-standing title dispute, an inheritance conflict, or a registration issue — every property matter is handled with meticulous attention to detail and a results-driven approach.</p>
+          <p>His in-depth knowledge of Gujarat's property laws gives clients a distinct advantage in both negotiations and courtroom proceedings.</p>
+          <ul class="service-list">
+            <li>Property title verification & due diligence</li>
+            <li>Title disputes & adverse possession claims</li>
+            <li>Partition suits & co-ownership disputes</li>
+            <li>Property registration & mutation issues</li>
+            <li>Landlord-tenant disputes & eviction matters</li>
+            <li>Inheritance & succession disputes over property</li>
+          </ul>
+          <div class="service-actions">
+            <a href="appointment.html" class="btn-primary">Free Consultation</a>
+            <a href="https://wa.me/918000887766?text=I%20need%20help%20with%20a%20Property%20Law%20matter" target="_blank" class="btn-wa">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block" id="realestate">
+      <div class="service-block-inner">
+        <div class="service-img">🏢</div>
+        <div class="service-content">
+          <div class="section-tag">Real Estate & RERA</div>
+          <h2>Real Estate Legal Matters</h2>
+          <p>Navigating real estate transactions and disputes in Ahmedabad requires someone who understands both the legal framework and the local market. Adv. Gaurav Gupta has guided numerous clients through complex builder disputes, investment-related legal matters, and RERA proceedings.</p>
+          <p>Whether you're a buyer, seller, or investor, having the right legal counsel before signing any agreement can save significant time, money, and stress.</p>
+          <ul class="service-list">
+            <li>Builder-buyer disputes & agreement enforcement</li>
+            <li>RERA complaints & consumer forum matters</li>
+            <li>Purchase & sale agreement drafting / review</li>
+            <li>Real estate due diligence before investment</li>
+            <li>Flat & plot registry disputes</li>
+            <li>Society & housing board legal issues</li>
+          </ul>
+          <div class="service-actions">
+            <a href="appointment.html" class="btn-primary">Free Consultation</a>
+            <a href="https://wa.me/918000887766?text=I%20need%20help%20with%20a%20Real%20Estate%20matter" target="_blank" class="btn-wa">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block" id="revenue">
+      <div class="service-block-inner">
+        <div class="service-img">📜</div>
+        <div class="service-content">
+          <div class="section-tag">Revenue & Agricultural Land</div>
+          <h2>Land Revenue Cases</h2>
+          <p>Land revenue matters in Gujarat involve a complex web of regulations, revenue authority procedures, and government land laws. Adv. Gaurav Gupta brings sharp expertise in this specialized domain — guiding clients through tribunal proceedings and revenue disputes with confidence.</p>
+          <p>His practical knowledge of revenue records, mutation procedures, and agricultural land regulations ensures your rights are protected at every stage.</p>
+          <ul class="service-list">
+            <li>Mutation of property records (7/12, 8-A entries)</li>
+            <li>Agricultural land conversion disputes</li>
+            <li>Revenue tribunal representation</li>
+            <li>Government land & encroachment matters</li>
+            <li>Inheritance-based mutation applications</li>
+            <li>Survey & boundary dispute resolution</li>
+          </ul>
+          <div class="service-actions">
+            <a href="appointment.html" class="btn-primary">Free Consultation</a>
+            <a href="https://wa.me/918000887766?text=I%20need%20help%20with%20a%20Land%20Revenue%20matter" target="_blank" class="btn-wa">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-block" id="consultation">
+      <div class="service-block-inner">
+        <div class="service-img">🤝</div>
+        <div class="service-content">
+          <div class="section-tag">Advisory & Consultation</div>
+          <h2>Legal Consultation</h2>
+          <p>Sometimes all you need is honest, expert guidance before making a major property decision. Adv. Gaurav Gupta offers comprehensive legal consultations that help you understand your rights, assess risks, and make fully informed choices — before any issue escalates.</p>
+          <p>Known for his clarity and approachability, he explains complex legal situations in straightforward terms so you always know exactly where you stand.</p>
+          <ul class="service-list">
+            <li>Property purchase advisory & risk assessment</li>
+            <li>Legal opinion letters on property matters</li>
+            <li>Pre-litigation consultation & strategy</li>
+            <li>Documentation review & legal vetting</li>
+            <li>Know-your-rights sessions for property owners</li>
+            <li>Out-of-court settlement negotiations</li>
+          </ul>
+          <div class="service-actions">
+            <a href="appointment.html" class="btn-primary">Free Consultation</a>
+            <a href="https://wa.me/918000887766?text=I%20need%20a%20legal%20consultation" target="_blank" class="btn-wa">💬 WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-banner">
+  <div class="container cta-banner-inner">
+    <div><h3>Not Sure Which Area Applies to You?</h3><p>Speak directly with Adv. Gaurav Gupta — he'll guide you clearly and honestly.</p></div>
+    <div class="cta-banner-btns">
+      <a href="tel:+918000887766" class="btn-navy">📞 Call Now</a>
+      <a href="https://wa.me/918000887766?text=Hello%20I%20need%20legal%20consultation" target="_blank" class="btn-wa">💬 WhatsApp Now</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand"><div class="footer-logo">⚖️ ADV. GAURAV GUPTA</div><p>Trusted property law specialist serving clients across Ahmedabad and Gujarat. Honest advice, expert representation.</p><div class="footer-social"><a href="tel:+918000887766">📞</a><a href="mailto:adv.gauravgupta@gmail.com">✉️</a><a href="https://wa.me/918000887766" target="_blank">💬</a></div></div>
+    <div class="footer-links"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Practice Areas</a><a href="appointment.html">Appointment</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><h4>Practice Areas</h4><a href="#property">Property Law</a><a href="#realestate">Real Estate Matters</a><a href="#revenue">Land Revenue Cases</a><a href="#consultation">Legal Consultation</a></div>
+    <div class="footer-contact"><h4>Contact Us</h4><p>📞 <a href="tel:+918000887766">+91 80008 87766</a></p><p>✉️ <a href="mailto:adv.gauravgupta@gmail.com">adv.gauravgupta@gmail.com</a></p><p>📍 A-802, Amrapali Lakeview Tower, Vastrapur, Ahmedabad 380054</p><a href="appointment.html" class="footer-cta">Book Free Consultation →</a></div>
+  </div>
+  <div class="footer-bottom"><div class="container"><p>© 2025 Advocate Gaurav Gupta. All Rights Reserved. | Ahmedabad, Gujarat</p></div></div>
+</footer>
+
+<a href="https://wa.me/918000887766?text=Hello%20I%20need%20legal%20consultation" target="_blank" class="whatsapp-float">
+  <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-tooltip">Chat with us</span>
+</a>
+
+</body>
+</html>
