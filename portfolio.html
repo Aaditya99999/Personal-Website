@@ -223,7 +223,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <div class="main-wrapper"><!-- Navigation -->
    <nav class="fixed top-0 left-0 right-0 z-50 fade-in" style="background-color: rgba(245, 245, 243, 0.9); backdrop-filter: blur(20px);">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between"><a href="#" class="text-xl font-semibold tracking-tight" id="nav-name">Aaditya</a>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-5 flex items-center justify-between"><a href="#" class="text-xl font-semibold tracking-tight flex items-center gap-3" id="nav-name"><img src="logo.png" alt="Aaditya Bhatnagar logo" class="w-10 h-10 object-contain"><span id="nav-name-text">Aaditya</span></a>
      <div class="hidden md:flex items-center gap-10 ml-auto"><a href="#automation" class="nav-link">Automation</a> <a href="#websites" class="nav-link">Websites</a> <a href="https://aadityabhatnagar.online/#contact" class="btn-primary">Get in Touch</a>
      </div><button class="md:hidden p-2" id="mobile-menu-btn">
       <svg width="24" height="24" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line> <line x1="3" y1="12" x2="21" y2="12"></line> <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -278,7 +278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
    <footer class="py-12 px-6 lg:px-12 border-t" style="border-color: var(--accent-beige); background-color: var(--bg-primary);">
     <div class="max-w-7xl mx-auto">
      <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-2"><span class="text-xl font-semibold" id="footer-name">Aaditya.</span>
+      <div class="flex items-center gap-3"><img src="logo.png" alt="Aaditya Bhatnagar logo" class="w-10 h-10 object-contain"><span class="text-xl font-semibold" id="footer-name-text">Aaditya.</span>
       </div>
       <div class="flex items-center gap-8"><a href="https://www.linkedin.com/in/aadityabhatnagar2008/" class="nav-link">LinkedIn</a> <a href="https://github.com/Aaditya99999" class="nav-link">GitHub</a> <a href="https://www.instagram.com/aadityabhatnagar13" class="nav-link">Instagram</a>
       </div>
@@ -302,9 +302,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     async function onConfigChange(config) {
       const yourName = config.your_name || defaultConfig.your_name;
       
-      document.getElementById('nav-name').textContent = yourName;
+      document.getElementById('nav-name-text').textContent = yourName;
       document.getElementById('your-name').textContent = yourName;
-      document.getElementById('footer-name').textContent = yourName;
+      document.getElementById('footer-name-text').textContent = yourName;
       
       const automationTitle = config.automation_title || defaultConfig.automation_title;
       const automationEl = document.getElementById('automation-title');
@@ -403,52 +403,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ];
 
     const websiteProjects = [
-      {
-        id: 'Law-firm',
-        title: 'Law firm Website',
-        description: 'Professional high-conversion website for a law firm showcasing legal services, building trust, and driving client inquiries through call, WhatsApp, and consultation booking.',
-        emoji: '⚖️',
-        url: 'https://aadityabhatnagar.online/demo/law-firm/',
-        stats: [
-          { label: 'Conversion', value: '9.1%' },
-          { label: 'Speed', value: '0.7s' }
-        ]
-      },
-      {
-        id: 'Coaching-Tutor',
-        title: 'Coaching Tutor Website',
-        description: 'Professional website for a personal coaching tutor showcasing subjects taught, student results, class timings, and easy contact for admissions.',
-        emoji: '📚',
-        url: 'https://aadityabhatnagar.online/demo/coaching',
-        stats: [
-          { label: 'Conversion', value: '8.2%' },
-          { label: 'Speed', value: '0.8s' }
-        ]
-      },
-      {
-        id: 'Personal-Trainer',
-        title: 'Personal Trainer Website',
-        description: 'Professional fitness trainer website designed for mobile users. Showcases workout programs, weight loss plans, strength training, Pilates, trainer profile, client transformations, pricing plans, and easy WhatsApp/contact booking for sessions.',
-        emoji: '💪',
-        url: 'https://aadityabhatnagar.online/demo/superfit',
-        stats: [
-          { label: 'Conversion', value: '9.1%' },
-          { label: 'Speed', value: '0.7s' },
-          { label: 'Device', value: 'Mobile Only' }
-        ]
-      },
-      {
-        id: 'At-Home-Fitness',
-        title: 'At Home Fitness Trainer Website',
-        description: 'Mobile-optimized website for an at-home fitness trainer offering personal training sessions at client homes. Highlights workout programs, weight loss plans, strength training, booking options, trainer profile, pricing packages, and quick WhatsApp contact for scheduling sessions.',
-        emoji: '🏋️',
-        url: 'https://aadityabhatnagar.online/demo/at-home',
-        stats: [
-          { label: 'Conversion', value: '8.9%' },
-          { label: 'Speed', value: '0.7s' },
-          { label: 'Device', value: 'Mobile Optimized' }
-        ]
-      },
       {
         id: 'BG-Remover',
         title: 'AI Background Remover',
@@ -568,3 +522,4 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d6a5cd9d051a792',t:'MTc3MjU1ODk2MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 
 </html>
+

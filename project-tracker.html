@@ -74,6 +74,15 @@
       font-weight: 800;
       letter-spacing: 0;
       white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
     }
 
     .nav-links {
@@ -723,7 +732,7 @@
 <body>
   <nav class="nav">
     <div class="shell nav-inner">
-      <a class="brand" href="index.html">Aaditya.</a>
+      <a class="brand" href="index.html"><img src="logo.png" alt="Aaditya Bhatnagar logo"><span>Aaditya.</span></a>
       <div class="nav-links" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="portfolio.html">Portfolio</a>
@@ -1400,4 +1409,3 @@
   </script>
 </body>
 </html>
-

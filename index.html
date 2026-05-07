@@ -76,14 +76,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <div id="app-wrapper" class="w-full h-full"><!-- Navigation -->
    <nav class="fixed top-0 left-0 right-0 z-50 bg-off-white/90 backdrop-blur-sm border-b border-muted-beige/30">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between"><a href="#" class="text-xl font-semibold tracking-tight" id="nav-name">Aaditya<span class="text-muted-beige">.</span></a>
-     <div class="hidden md:flex items-center gap-8 text-sm font-medium"><a href="#about" class="hover:text-soft-black/60 transition-colors">About</a> <a href="#services" class="hover:text-soft-black/60 transition-colors">Services</a> <a href="#use-cases" class="nav-link py-2">Use Cases</a><a href="http://aadityabhatnagar.online/portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-soft-black/60 transition-colors">Portfolio</a><a href="http://aadityabhatnagar.online/ads" class="py-2 font-medium">Buy me a coffee</a> <a href="http://aadityabhatnagar.online/blog" class="py-2 font-medium">Blog</a> <a href="#contact" class="bg-soft-black text-white px-5 py-2.5 rounded-full hover:bg-charcoal transition-colors">Contact</a>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between"><a href="#" class="flex items-center gap-3 text-xl font-semibold tracking-tight" id="nav-name"><img src="logo.png" alt="Aaditya Bhatnagar logo" class="h-10 w-10 object-contain"><span id="nav-name-text">Aaditya<span class="text-muted-beige">.</span></span></a>
+     <div class="hidden md:flex items-center gap-8 text-sm font-medium"><a href="#about" class="hover:text-soft-black/60 transition-colors">About</a> <a href="#services" class="hover:text-soft-black/60 transition-colors">Services</a> <a href="#use-cases" class="nav-link py-2">Use Cases</a><a href="http://aadityabhatnagar.online/portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-soft-black/60 transition-colors">Portfolio</a> <a href="http://aadityabhatnagar.online/blog" class="py-2 font-medium">Blog</a> <a href="#contact" class="bg-soft-black text-white px-5 py-2.5 rounded-full hover:bg-charcoal transition-colors">Contact</a>
      </div><button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
     </div><!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden bg-off-white border-t border-muted-beige/30 px-6 py-4">
-     <div class="flex flex-col gap-4"> <a href="http://aadityabhatnagar.online/#about" class="py-2 font-medium">About</a> <a href="http://aadityabhatnagar.online/#services" class="py-2 font-medium">Services</a><a href="#use-cases" class="nav-link py-2">Use Cases</a><a href="http://aadityabhatnagar.online/portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-soft-black/60 transition-colors">Portfolio</a><a href="http://aadityabhatnagar.online/ads" class="py-2 font-medium">Buy me a coffee</a> <a href="http://aadityabhatnagar.online/blog" class="py-2 font-medium">Blog</a> <a href="#contact" class="bg-soft-black text-white px-5 py-3 rounded-full text-center font-medium">Contact</a>
+     <div class="flex flex-col gap-4"> <a href="http://aadityabhatnagar.online/#about" class="py-2 font-medium">About</a> <a href="http://aadityabhatnagar.online/#services" class="py-2 font-medium">Services</a><a href="#use-cases" class="nav-link py-2">Use Cases</a><a href="http://aadityabhatnagar.online/portfolio" target="_blank" rel="noopener noreferrer" class="hover:text-soft-black/60 transition-colors">Portfolio</a> <a href="http://aadityabhatnagar.online/blog" class="py-2 font-medium">Blog</a> <a href="#contact" class="bg-soft-black text-white px-5 py-3 rounded-full text-center font-medium">Contact</a>
      </div>
     </div>
    </nav><!-- Hero Section -->
@@ -501,7 +501,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const heroName = document.getElementById('hero-name');
       if (heroName) heroName.textContent = config.hero_name || defaultConfig.hero_name;
       
-      const navName = document.getElementById('nav-name');
+      const navName = document.getElementById('nav-name-text');
       if (navName) navName.innerHTML = (config.hero_name || defaultConfig.hero_name) + '<span class="text-muted-beige">.</span>';
       
       const heroTagline = document.getElementById('hero-tagline');
