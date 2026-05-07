@@ -77,17 +77,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <div class="h-full w-full bg-[#F5F5F3]">
    <!-- Navigation -->
-   <nav class="sticky top-0 z-50 bg-[#F5F5F3]/95 backdrop-blur-lg border-b border-[#D6CFC7]/20">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-     <a href="http://aadityabhatnagar.online/" class="font-heading font-bold text-xl tracking-tight hover:text-[#1C1C1C]/70 transition-colors" id="site-name"><span id="site-name-text">aaditya.</span></a>
-     <div class="hidden md:flex items-center gap-12">
-      <a href="http://aadityabhatnagar.online/" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Homepage<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="http://aadityabhatnagar.online/#about" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">About<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="http://aadityabhatnagar.online/#services" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Services<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a> <a href="http://aadityabhatnagar.online/#contact" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors relative group">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#111111] group-hover:w-full transition-all duration-300"></span></a>
-     </div><button id="mobile-menu-btn" class="md:hidden p-2 text-[#1C1C1C] hover:bg-[#1C1C1C]/10 rounded-lg transition-colors">
-      <svg class="w-6 h-6 transition-transform duration-300" id="menu-icon" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+   <nav class="fixed top-0 left-0 right-0 z-50 bg-[#FAFAF8]/90 backdrop-blur-sm border-b border-[#D6CFC7]/30">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex items-center justify-between"><a href="/" class="text-xl font-semibold tracking-tight">Aaditya<span class="text-[#D6CFC7]">.</span></a>
+     <div class="hidden md:flex items-center gap-8 text-sm font-medium"><a href="/#about" class="hover:text-black/60 transition-colors">About</a> <a href="/#services" class="hover:text-black/60 transition-colors">Services</a> <a href="/#use-cases" class="hover:text-black/60 transition-colors">Use Cases</a><a href="/portfolio.html" class="hover:text-black/60 transition-colors">Portfolio</a> <a href="/blog.html" class="py-2 font-medium">Blog</a> <a href="/#contact" class="bg-[#111111] text-white px-5 py-2.5 rounded-full hover:bg-[#1C1C1C] transition-colors">Contact</a>
+     </div><button class="md:hidden" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16" />
       </svg></button>
-    </div><!-- Mobile Menu Dropdown -->
-    <div id="mobile-menu" class="md:hidden max-h-0 overflow-hidden transition-all duration-300 ease-out bg-[#FAFAF8]">
-     <div class="px-6 py-0"><a href="http://aadityabhatnagar.online/" class="block py-3 text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors border-b border-[#D6CFC7]/20">Homepage</a> <a href="http://aadityabhatnagar.online/#about" class="block py-3 text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors border-b border-[#D6CFC7]/20">About</a> <a href="http://aadityabhatnagar.online/#services" class="block py-3 text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors border-b border-[#D6CFC7]/20">Services</a> <a href="http://aadityabhatnagar.online/#contact" class="block py-3 text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors">Contact</a>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FAFAF8] border-t border-[#D6CFC7]/30 px-6 py-4">
+     <div class="flex flex-col gap-4"><a href="/#about" class="py-2 font-medium">About</a> <a href="/#services" class="py-2 font-medium">Services</a><a href="/#use-cases" class="py-2 font-medium">Use Cases</a><a href="/portfolio.html" class="py-2 font-medium">Portfolio</a> <a href="/blog.html" class="py-2 font-medium">Blog</a> <a href="/#contact" class="bg-[#111111] text-white px-5 py-3 rounded-full text-center font-medium">Contact</a>
      </div>
     </div>
    </nav><!-- Blog Section -->
@@ -127,14 +125,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
      </div>
     </div>
+   </section>
+   <section class="py-24 px-6 lg:px-12" style="background-color: var(--accent-dark);">
+    <div class="max-w-4xl mx-auto text-center">
+     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">Ready to build <span class="font-serif italic">something great?</span></h2>
+     <p class="text-lg mb-10" style="color: rgba(255,255,255,0.7);">Let's discuss your next project and how I can help drive results</p>
+     <div class="flex flex-wrap justify-center gap-4"><a href="https://aadityabhatnagar.online/#contact" class="px-8 py-4 rounded-full font-medium text-base" style="background-color: white; color: var(--accent-dark);"> Start Your Project </a>
+     </div>
+    </div>
    </section><!-- Footer -->
-   <footer class="py-12 bg-[#111111] text-white mt-20">
-    <div class="max-w-6xl mx-auto px-6">
-     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-2">
-       <span class="font-heading font-bold text-xl">aaditya.</span>
+   <footer class="py-12 px-6 lg:px-12 border-t mt-20" style="border-color: #D6CFC7; background-color: #F5F5F3;">
+    <div class="max-w-7xl mx-auto">
+     <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-8"><a href="https://www.linkedin.com/in/aadityabhatnagar2008/" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors">LinkedIn</a> <a href="https://github.com/Aaditya99999" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors">GitHub</a> <a href="https://www.instagram.com/aadityabhatnagar13" class="text-sm font-medium text-[#1C1C1C]/70 hover:text-[#1C1C1C] transition-colors">Instagram</a>
       </div>
-      <p class="text-sm text-white/40">© 2026 Aaditya. All rights reserved.</p>
+      <p class="text-sm text-[#1C1C1C]/45">© 2026 Aaditya. All rights reserved.</p>
      </div>
     </div>
    </footer>
