@@ -1146,10 +1146,15 @@
       display: inline-flex;
     }
 
+    .package-choice {
+      display: grid;
+      gap: 14px;
+    }
+
     .package-options {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 22px;
       align-items: stretch;
     }
 
@@ -2183,7 +2188,7 @@
                 <p>Pick one option, answer a few quick questions, and send a structured message directly on WhatsApp.</p>
               </div>
             </div>
-            <div>
+            <div class="package-choice">
               <label>Choose one option *</label>
               <div class="package-options" role="radiogroup" aria-label="Project package">
                 <label class="package-option">
