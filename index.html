@@ -506,31 +506,32 @@
 
     .quick-stats {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-      margin-top: 20px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 22px;
     }
 
     .quick-stats div {
-      min-height: 82px;
-      padding: 14px 10px;
+      min-height: 112px;
+      padding: 20px 14px;
       background: var(--paper);
       border-radius: 8px;
       text-align: center;
       display: grid;
       align-content: center;
-      gap: 4px;
+      gap: 8px;
     }
 
     .quick-stats strong {
       display: block;
       color: var(--green);
-      font-size: 24px;
+      font-size: 34px;
+      line-height: 1;
     }
 
     .quick-stats span {
       color: var(--muted);
-      font-size: 11px;
+      font-size: 13px;
       line-height: 1.35;
     }
 
