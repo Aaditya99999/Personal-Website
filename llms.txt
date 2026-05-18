@@ -1,20 +1,53 @@
 # Aaditya Bhatnagar
 
-> Personal website for Aaditya Bhatnagar, focused on AI automation, workflow automation, website building, and digital services.
+> Personal website for Aaditya Bhatnagar, focused on website making, website development, automation, and digital services.
 
 ## Site
 
 - Home: https://aadityabhatnagar.online/
+- About: https://aadityabhatnagar.online/about.html
+- Services: https://aadityabhatnagar.online/services.html
+- Services Folder Index: https://aadityabhatnagar.online/services/index.html
+- Website Making: https://aadityabhatnagar.online/services/website-making.html
+- Landing Pages: https://aadityabhatnagar.online/services/landing-pages.html
+- SEO Setup: https://aadityabhatnagar.online/services/seo-setup.html
+- Lead Systems: https://aadityabhatnagar.online/services/lead-systems.html
+- Automation: https://aadityabhatnagar.online/services/automation.html
+- Business Tools: https://aadityabhatnagar.online/services/business-tools.html
 - Portfolio: https://aadityabhatnagar.online/portfolio.html
 - Blog: https://aadityabhatnagar.online/blog.html
+- Case Study - Better Lungs Clinic: https://aadityabhatnagar.online/case-studies/better-lungs-clinic.html
+- Case Study - Better Kid Clinic: https://aadityabhatnagar.online/case-studies/better-kid-clinic.html
+- Case Study - Better Health EMR Software: https://aadityabhatnagar.online/case-studies/better-health-emr-software.html
+- Case Study - Personal Bot: https://aadityabhatnagar.online/case-studies/personal-bot.html
+- Blog - Minimalist Website Design: https://aadityabhatnagar.online/blogs/minimalist-website-design.html
+- Blog - Practical UX Layouts: https://aadityabhatnagar.online/blogs/practical-ux-layouts.html
+- Blog - Automation After Website: https://aadityabhatnagar.online/blogs/automation-after-website.html
+- Blog - Lead Systems: https://aadityabhatnagar.online/blogs/lead-systems.html
+- Blog - Useful Automation: https://aadityabhatnagar.online/blogs/useful-automation.html
+- Blog - Business Tools: https://aadityabhatnagar.online/blogs/business-tools.html
+- Blog - Clinic Websites: https://aadityabhatnagar.online/blogs/clinic-websites.html
+- Blog - Landing Pages: https://aadityabhatnagar.online/blogs/landing-pages.html
+- Blog - Contact Options: https://aadityabhatnagar.online/blogs/contact-options.html
+- Blog - Website Launch: https://aadityabhatnagar.online/blogs/website-launch.html
+- Blog - Simple Dashboards: https://aadityabhatnagar.online/blogs/simple-dashboards.html
+- Blog - Website Pages: https://aadityabhatnagar.online/blogs/website-pages.html
+- Project Money Tracker: https://aadityabhatnagar.online/project-tracker.html
+- AI Background Remover: https://aadityabhatnagar.online/demo/bg.html
 - Privacy: https://aadityabhatnagar.online/privacy.html
 
 ## Topics
 
-- AI automation
-- n8n workflows
+- Website making
 - Website development
+- Landing pages
+- SEO setup
+- Lead systems
+- Automation
+- AI automation
 - Business automation
+- Clinic websites
+- Business tools
 - Digital services
 
 ## Contact
