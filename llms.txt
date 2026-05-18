@@ -7,14 +7,16 @@
 - Home: https://aadityabhatnagar.online/
 - About: https://aadityabhatnagar.online/about/
 - Services: https://aadityabhatnagar.online/services/
+- Start Project: https://aadityabhatnagar.online/start-project/
 - Services Folder Index: https://aadityabhatnagar.online/services/
 - Website Making: https://aadityabhatnagar.online/services/website-making/
 - Landing Pages: https://aadityabhatnagar.online/services/landing-pages/
 - SEO Setup: https://aadityabhatnagar.online/services/seo-setup/
-- Lead Systems: https://aadityabhatnagar.online/services/lead-systems/
+- Contact Systems: https://aadityabhatnagar.online/services/contact-systems/
 - Automation: https://aadityabhatnagar.online/services/automation/
 - Business Tools: https://aadityabhatnagar.online/services/business-tools/
 - Portfolio: https://aadityabhatnagar.online/portfolio/
+- Case Studies: https://aadityabhatnagar.online/case-studies/
 - Blog: https://aadityabhatnagar.online/blog/
 - Case Study - Better Lungs Clinic: https://aadityabhatnagar.online/case-studies/better-lungs-clinic/
 - Case Study - Better Kid Clinic: https://aadityabhatnagar.online/case-studies/better-kid-clinic/
@@ -22,8 +24,8 @@
 - Case Study - Personal Bot: https://aadityabhatnagar.online/case-studies/personal-bot/
 - Blog - Minimalist Website Design: https://aadityabhatnagar.online/blogs/minimalist-website-design/
 - Blog - Practical UX Layouts: https://aadityabhatnagar.online/blogs/practical-ux-layouts/
-- Blog - Automation After Website: https://aadityabhatnagar.online/blogs/automation-after-website/
-- Blog - Lead Systems: https://aadityabhatnagar.online/blogs/lead-systems/
+- Blog - Websites and Automation Together: https://aadityabhatnagar.online/blogs/automation-after-website/
+- Blog - Contact Systems: https://aadityabhatnagar.online/blogs/contact-systems/
 - Blog - Useful Automation: https://aadityabhatnagar.online/blogs/useful-automation/
 - Blog - Business Tools: https://aadityabhatnagar.online/blogs/business-tools/
 - Blog - Clinic Websites: https://aadityabhatnagar.online/blogs/clinic-websites/
@@ -32,8 +34,8 @@
 - Blog - Website Launch: https://aadityabhatnagar.online/blogs/website-launch/
 - Blog - Simple Dashboards: https://aadityabhatnagar.online/blogs/simple-dashboards/
 - Blog - Website Pages: https://aadityabhatnagar.online/blogs/website-pages/
-- Project Money Tracker: https://aadityabhatnagar.online/project-tracker/
-- AI Background Remover: https://aadityabhatnagar.online/demo/bg/
+
+
 - Privacy: https://aadityabhatnagar.online/privacy/
 
 ## Topics
@@ -42,7 +44,7 @@
 - Website development
 - Landing pages
 - SEO setup
-- Lead systems
+- Contact systems
 - Automation
 - AI automation
 - Business automation

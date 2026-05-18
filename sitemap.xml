@@ -13,6 +13,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aadityabhatnagar.online/start-project/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://aadityabhatnagar.online/about/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
@@ -20,6 +26,12 @@
   </url>
   <url>
     <loc>https://aadityabhatnagar.online/portfolio/</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aadityabhatnagar.online/case-studies/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -55,13 +67,13 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aadityabhatnagar.online/blogs/landing-pages/</loc>
+    <loc>https://aadityabhatnagar.online/blogs/contact-systems/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://aadityabhatnagar.online/blogs/lead-systems/</loc>
+    <loc>https://aadityabhatnagar.online/blogs/landing-pages/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -127,22 +139,10 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aadityabhatnagar.online/demo/bg/</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://aadityabhatnagar.online/privacy/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://aadityabhatnagar.online/project-tracker/</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://aadityabhatnagar.online/services/automation/</loc>
@@ -157,13 +157,13 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aadityabhatnagar.online/services/landing-pages/</loc>
+    <loc>https://aadityabhatnagar.online/services/contact-systems/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://aadityabhatnagar.online/services/lead-systems/</loc>
+    <loc>https://aadityabhatnagar.online/services/landing-pages/</loc>
     <lastmod>2026-05-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

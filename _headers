@@ -12,3 +12,9 @@
 
 /full-llms.txt
   X-Robots-Tag: noindex, follow
+
+/demo/*
+  X-Robots-Tag: noindex, nofollow
+
+/project-tracker/*
+  X-Robots-Tag: noindex, nofollow
