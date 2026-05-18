@@ -2405,17 +2405,21 @@
       }
       const customBusinessActive = businessType?.value === 'Other';
       businessOtherField?.classList.toggle('is-active', customBusinessActive);
-      const businessValue = customBusinessActive ? (businessOther?.value || 'Other') : (businessType?.value || 'Not selected');
+      const businessValue = customBusinessActive ? businessOther?.value?.trim() : businessType?.value;
+      const goalValue = mainGoal?.value?.trim();
+      const customValue = customMessage?.value?.trim();
 
-      const message = [
+      const messageLines = [
         'Hi Aaditya, I want to discuss a project with AB Labs.',
         '',
         `Selected option: ${choice.value}`,
-        `Package note: ${content.note || choice.dataset.summary || ''}`,
-        `Business type: ${businessValue}`,
-        `Main goal: ${mainGoal?.value || 'Not selected'}`,
-        `Custom message: ${customMessage?.value || 'Not added'}`
-      ].join('\n');
+        `Package note: ${content.note || choice.dataset.summary || ''}`
+      ];
+      if (businessValue) messageLines.push(`Business type: ${businessValue}`);
+      if (goalValue) messageLines.push(`Main goal: ${goalValue}`);
+      if (customValue) messageLines.push(`Custom message: ${customValue}`);
+
+      const message = messageLines.join('\n');
       whatsappProjectLink.href = `https://wa.me/917357397888?text=${encodeURIComponent(message)}`;
     }
 
