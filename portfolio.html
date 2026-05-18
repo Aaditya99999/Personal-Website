@@ -11,9 +11,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aaditya Bhatnagar | Portfolio</title>
   <meta name="description" content="Portfolio of n8n automation projects and modern websites. Explore real examples of workflow automation and web development work.">
+  <link rel="canonical" href="https://aadityabhatnagar.online/portfolio.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Aaditya Bhatnagar | Portfolio">
+  <meta property="og:description" content="Portfolio of n8n automation projects and modern websites. Explore real examples of workflow automation and web development work.">
+  <meta property="og:url" content="https://aadityabhatnagar.online/portfolio.html">
+  <meta property="og:image" content="https://aadityabhatnagar.online/logo.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Aaditya Bhatnagar Portfolio",
+  "url": "https://aadityabhatnagar.online/portfolio.html",
+  "description": "Portfolio of n8n automation projects and modern websites.",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Aaditya Bhatnagar",
+    "url": "https://aadityabhatnagar.online/"
+  }
+}
+</script>
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="/_sdk/element_sdk.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -388,6 +409,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           { label: 'Time Saved', value: '40 hrs/mo' },
           { label: 'Stress Level', value: '📉' }
         ]
+      },
+      {
+        id: 'better-health-emr',
+        title: 'Better Health EMR Software',
+        description: 'EMR software project for The Better Health Clinic, built to support clinic workflows and patient record management.',
+        emoji: 'EMR',
+        url: 'https://github.com/ablabsbusiness-create/thebetterhealth.clinic',
+        stats: [
+          { label: 'Type', value: 'EMR Software' },
+          { label: 'Industry', value: 'Healthcare' }
+        ]
       }
       // Add more automations here by copying the structure above
       // Example:
@@ -405,6 +437,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ];
 
     const websiteProjects = [
+      {
+        id: 'better-lungs-clinic',
+        title: 'The Better Lungs Clinic',
+        description: 'Clinic website for The Better Health Clinic focused on respiratory care, services, and patient trust.',
+        emoji: 'Lungs',
+        url: 'https://www.thebetterhealth.clinic/the-better-lungs-clinic/',
+        stats: [
+          { label: 'Type', value: 'Clinic Website' },
+          { label: 'Industry', value: 'Healthcare' }
+        ]
+      },
+      {
+        id: 'better-kid-clinic',
+        title: 'The Better Kid Clinic',
+        description: 'Pediatric clinic website for The Better Health Clinic with a clear patient-focused service presentation.',
+        emoji: 'Kids',
+        url: 'https://www.thebetterhealth.clinic/the-better-kid-clinic/',
+        stats: [
+          { label: 'Type', value: 'Clinic Website' },
+          { label: 'Industry', value: 'Healthcare' }
+        ]
+      },
       {
         id: 'BG-Remover',
         title: 'AI Background Remover',
@@ -464,6 +518,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .join('');
 
       websitesGrid.innerHTML = websiteProjects
+        .filter(project => project.id !== 'BG-Remover')
         .map((project, index) => renderPortfolioCard(project, `delay-${index + 1}`, 'website'))
         .join('');
     }
