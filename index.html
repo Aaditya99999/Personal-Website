@@ -421,15 +421,22 @@
       max-width: 660px;
       margin: 0;
       font-size: clamp(48px, 7vw, 88px);
-      line-height: 0.96;
+      line-height: 1.02;
       letter-spacing: 0;
     }
 
+    .hero h1 .headline-line {
+      display: block;
+    }
+
     .hero h1 strong {
+      display: inline-block;
       color: var(--orange);
       font-family: "Playfair Display", Georgia, serif;
       font-style: italic;
       font-weight: 700;
+      line-height: 0.92;
+      transform: translateY(0.06em);
     }
 
     .hero-copy {
@@ -1878,7 +1885,7 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <h1>I build <strong>websites</strong> and automation that grow together.</h1>
+          <h1><span class="headline-line">I build <strong>websites</strong></span><span class="headline-line">and automation</span><span class="headline-line">that grow together.</span></h1>
           <p class="hero-copy">I help businesses launch clean, fast, conversion-focused websites with useful automations for leads, follow-ups, and daily work.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="/portfolio.html">View My Portfolio <span class="btn-dot">+</span></a>
