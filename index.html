@@ -668,14 +668,16 @@
 
     .about-visual {
       position: relative;
-      min-height: 420px;
+      min-height: 0;
       display: grid;
       place-items: center;
+      align-self: stretch;
     }
 
     .about-frame {
-      width: min(100%, 300px);
-      padding: 18px;
+      width: min(100%, 340px);
+      max-height: 100%;
+      padding: 20px;
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: 8px;
@@ -684,7 +686,8 @@
 
     .about-frame img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      max-height: 300px;
+      aspect-ratio: 5 / 6;
       object-fit: cover;
       object-position: center top;
       background: #fff;
