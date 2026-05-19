@@ -35,10 +35,10 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100vw - 40px));margin:0 auto}.script{color:var(--orange);font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:500}.eyebrow{display:flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--green);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.eyebrow:before{content:"";width:16px;height:2px;background:var(--orange)}
     .hero{padding:78px 0 30px}.hero h1{max-width:900px;margin:0;font-size:clamp(42px,7vw,82px);line-height:1;letter-spacing:0}.hero p{max-width:760px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.75}
     .dashboard{display:grid;grid-template-columns:.78fr 1.22fr;gap:30px;align-items:start;padding:24px 0 88px}.panel,.tool-card,.native-card{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 22px 54px rgba(41,77,51,.08)}.panel{padding:28px;position:sticky;top:24px}.panel h2{margin:0 0 12px;font-size:30px}.panel p{color:var(--muted);line-height:1.7}.id-box{display:grid;gap:10px;margin-top:22px}.id-row{display:flex;justify-content:space-between;gap:14px;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:14px}.id-row strong{color:var(--green)}
-    .native-card{grid-column:1/-1;padding:clamp(20px,3vw,30px)}.native-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.native-head h2{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}.native-head p{max-width:680px;margin:8px 0 0;color:var(--muted);line-height:1.65}.analytics-login{display:grid;grid-template-columns:1.35fr .75fr auto;gap:10px;margin-top:18px;max-width:920px}.analytics-login input{min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit}.analytics-login button,.refresh-button{min-height:48px;padding:12px 18px;border:0;border-radius:999px;color:#fff;background:var(--green);font-weight:900;cursor:pointer}.refresh-button{white-space:nowrap}.analytics-status{margin:12px 0 0;color:var(--muted);font-size:14px}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:22px 0}.metric-card{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.metric-card span{display:block;color:var(--muted);font-size:13px;font-weight:800}.metric-card strong{display:block;margin-top:8px;color:var(--green);font-size:clamp(26px,4vw,40px);line-height:1}.analytics-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.data-panel{padding:18px;border:1px solid var(--line);border-radius:8px;background:#fff}.data-panel h3{margin:0 0 12px;font-size:20px}.data-list{display:grid;gap:8px}.data-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(222,216,206,.75);color:var(--muted);font-size:14px}.data-row:last-child{border-bottom:0}.data-row strong{color:var(--ink);text-align:right}.data-empty{color:var(--muted);line-height:1.6}.ux-warning{border-color:rgba(245,169,0,.6);background:rgba(245,169,0,.08)}
+    .native-card{grid-column:1/-1;padding:clamp(20px,3vw,30px)}.native-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.native-head h2{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}.native-head p{max-width:680px;margin:8px 0 0;color:var(--muted);line-height:1.65}.analytics-login{display:grid;grid-template-columns:1.35fr .75fr auto;gap:10px;margin-top:18px;max-width:920px}.analytics-login input{min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit}.analytics-login button,.refresh-button{min-height:48px;padding:12px 18px;border:0;border-radius:999px;color:#fff;background:var(--green);font-weight:900;cursor:pointer}.refresh-button{white-space:nowrap}.analytics-status{margin:12px 0 0;color:var(--muted);font-size:14px}.dashboard-label{margin:24px 0 12px;color:var(--green);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.action-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:22px 0}.action-card{display:grid;gap:12px;min-height:150px;padding:18px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,#fff 0%,#f8f4ea 100%)}.action-card.primary{color:#fff;background:var(--green);border-color:var(--green);box-shadow:0 22px 48px rgba(41,77,51,.16)}.action-card span{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--orange);color:var(--green);font-weight:900}.action-card strong{font-size:clamp(28px,4vw,42px);line-height:1}.action-card small{color:var(--muted);font-weight:900;line-height:1.35}.action-card.primary small{color:rgba(255,255,255,.84)}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 22px}.metric-card{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.metric-card span{display:block;color:var(--muted);font-size:13px;font-weight:800}.metric-card strong{display:block;margin-top:8px;color:var(--green);font-size:clamp(26px,4vw,40px);line-height:1}.analytics-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.data-panel{padding:18px;border:1px solid var(--line);border-radius:8px;background:#fff}.data-panel.wide{grid-column:1/-1}.data-panel h3{margin:0 0 12px;font-size:20px}.data-list{display:grid;gap:8px}.data-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(222,216,206,.75);color:var(--muted);font-size:14px}.data-row:last-child{border-bottom:0}.data-row strong{color:var(--ink);text-align:right}.data-empty{color:var(--muted);line-height:1.6}.recent-row{display:grid;grid-template-columns:1.2fr .8fr .75fr auto;gap:12px;align-items:center}.recent-row span:first-child{color:var(--ink);font-weight:800}.recent-row em{font-style:normal;color:var(--muted)}.ux-warning{border-color:rgba(245,169,0,.6);background:rgba(245,169,0,.08)}
     .tools{display:grid;gap:18px}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tool-card{display:grid;gap:14px;min-height:210px;padding:24px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.tool-card:hover{transform:translateY(-3px);border-color:rgba(245,169,0,.75);box-shadow:0 24px 58px rgba(41,77,51,.12)}.tool-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;color:var(--green);background:var(--orange);font-weight:900}.tool-card h2{margin:0;font-size:24px;line-height:1.15}.tool-card p{margin:0;color:var(--muted);line-height:1.65}.tool-link{display:inline-flex;align-items:center;gap:10px;width:fit-content;margin-top:auto;color:var(--green);font-weight:900}.tool-link span{display:grid;place-items:center;width:24px;height:24px;border-radius:999px;color:#fff;background:var(--green)}
     .events{padding:26px;background:#fff;border:1px solid var(--line);border-radius:8px}.events h2{margin:0 0 16px;font-size:28px}.event-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.event-list span{padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--green);font-size:13px;font-weight:900;text-align:center}.note{padding:18px;border-left:4px solid var(--orange);background:rgba(245,169,0,.1);border-radius:8px;color:var(--muted);line-height:1.7}
-    @media(max-width:900px){.dashboard{grid-template-columns:1fr}.panel{position:static}.tool-grid,.analytics-tables{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:52px}.hero h1{font-size:38px}.native-head{align-items:flex-start;flex-direction:column}.analytics-login{grid-template-columns:1fr}}@media(max-width:640px){.container{width:calc(100% - 28px)}.hero h1{font-size:32px;line-height:1.12}.metric-grid,.event-list{grid-template-columns:1fr}.id-row{flex-direction:column}.tool-card{min-height:0}.native-card{padding:12px}.refresh-button{width:100%}}
+    @media(max-width:900px){.dashboard{grid-template-columns:1fr}.panel{position:static}.tool-grid,.analytics-tables{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:52px}.hero h1{font-size:38px}.native-head{align-items:flex-start;flex-direction:column}.analytics-login{grid-template-columns:1fr}.data-panel.wide{grid-column:auto}.recent-row{grid-template-columns:1fr}}@media(max-width:640px){.container{width:calc(100% - 28px)}.hero h1{font-size:32px;line-height:1.12}.metric-grid,.action-grid,.event-list{grid-template-columns:1fr}.id-row{flex-direction:column}.tool-card{min-height:0}.native-card{padding:12px}.refresh-button{width:100%}}
   </style>
 </head>
 <body>
@@ -64,6 +64,15 @@
           </div>
           <button class="refresh-button" id="refreshAnalytics" type="button">Refresh</button>
         </div>
+        <p class="dashboard-label">Business actions first</p>
+        <div class="action-grid" id="actionGrid">
+          <div class="action-card primary"><span>W</span><strong>-</strong><small>WhatsApp actions</small></div>
+          <div class="action-card"><span>S</span><strong>-</strong><small>Start Project clicks</small></div>
+          <div class="action-card"><span>H</span><strong>-</strong><small>Hire Me clicks</small></div>
+          <div class="action-card"><span>P</span><strong>-</strong><small>Portfolio interest</small></div>
+          <div class="action-card"><span>V</span><strong>-</strong><small>Service interest</small></div>
+        </div>
+        <p class="dashboard-label">Site overview</p>
         <div class="metric-grid" id="metricGrid">
           <div class="metric-card"><span>Active users</span><strong>-</strong></div>
           <div class="metric-card"><span>Sessions</span><strong>-</strong></div>
@@ -71,10 +80,11 @@
           <div class="metric-card"><span>Events</span><strong>-</strong></div>
         </div>
         <div class="analytics-tables">
-          <div class="data-panel"><h3>Top events</h3><div class="data-list" id="eventsList"><p class="data-empty">Load data to see button clicks and actions.</p></div></div>
-          <div class="data-panel"><h3>UX signals</h3><div class="data-list" id="uxList"><p class="data-empty">Load data to see scroll depth, dead clicks, and rage clicks.</p></div></div>
+          <div class="data-panel wide"><h3>Recent visitor actions</h3><div class="data-list" id="recentList"><p class="data-empty">Load data to see what visitors did recently.</p></div></div>
           <div class="data-panel"><h3>Top pages</h3><div class="data-list" id="pagesList"><p class="data-empty">Load data to see page performance.</p></div></div>
           <div class="data-panel"><h3>Traffic sources</h3><div class="data-list" id="sourcesList"><p class="data-empty">Load data to see where visitors came from.</p></div></div>
+          <div class="data-panel"><h3>Useful actions</h3><div class="data-list" id="eventsList"><p class="data-empty">Load data to see useful clicks and actions.</p></div></div>
+          <div class="data-panel"><h3>UX signals</h3><div class="data-list" id="uxList"><p class="data-empty">Load data to see scroll depth, dead clicks, and rage clicks.</p></div></div>
           <div class="data-panel"><h3>Devices</h3><div class="data-list" id="devicesList"><p class="data-empty">Load data to see mobile vs desktop.</p></div></div>
           <div class="data-panel"><h3>Daily users</h3><div class="data-list" id="dailyList"><p class="data-empty">Load data to see daily trend.</p></div></div>
         </div>
@@ -141,6 +151,7 @@
     const analyticsKey = document.getElementById('analyticsKey');
     const analyticsStatus = document.getElementById('analyticsStatus');
     const refreshAnalytics = document.getElementById('refreshAnalytics');
+    const actionGrid = document.getElementById('actionGrid');
     const metricGrid = document.getElementById('metricGrid');
     const lists = {
       events: document.getElementById('eventsList'),
@@ -148,7 +159,8 @@
       pages: document.getElementById('pagesList'),
       sources: document.getElementById('sourcesList'),
       devices: document.getElementById('devicesList'),
-      daily: document.getElementById('dailyList')
+      daily: document.getElementById('dailyList'),
+      recent: document.getElementById('recentList')
     };
 
     function formatNumber(value) {
@@ -167,6 +179,67 @@
       return `<div class="data-row${warning ? ' ux-warning' : ''}"><span>${label || 'Unknown'}</span><strong>${formatNumber(value)}</strong></div>`;
     }
 
+    function readableEvent(name) {
+      const labels = {
+        project_whatsapp_submit: 'Project sent on WhatsApp',
+        whatsapp_click: 'WhatsApp click',
+        hero_hire_me_click: 'Hero Hire Me click',
+        start_project_click: 'Start Project click',
+        footer_start_project_click: 'Footer Start Project click',
+        hero_portfolio_click: 'Hero portfolio click',
+        portfolio_card_click: 'Portfolio card click',
+        portfolio_click: 'Portfolio click',
+        service_card_click: 'Service card click',
+        service_click: 'Service page click',
+        blog_card_click: 'Blog card click',
+        phone_click: 'Phone click',
+        email_click: 'Email click',
+        project_option_select: 'Project option selected',
+        dead_click: 'Dead click',
+        rage_click: 'Rage click',
+        ab_page_view: 'Page view'
+      };
+      return labels[name] || String(name || 'Unknown').replace(/_/g, ' ');
+    }
+
+    const businessEventNames = [
+      'project_whatsapp_submit',
+      'whatsapp_click',
+      'hero_hire_me_click',
+      'start_project_click',
+      'footer_start_project_click',
+      'hero_portfolio_click',
+      'portfolio_card_click',
+      'portfolio_click',
+      'service_card_click',
+      'service_click',
+      'phone_click',
+      'email_click',
+      'project_option_select'
+    ];
+
+    function eventCount(data, names) {
+      const rows = data.events || [];
+      return rows.reduce((total, item) => names.includes(item.event) ? total + Number(item.count || 0) : total, 0);
+    }
+
+    function renderActionCards(data) {
+      const actions = [
+        { icon: 'W', label: 'WhatsApp actions', count: eventCount(data, ['project_whatsapp_submit', 'whatsapp_click']), primary: true },
+        { icon: 'S', label: 'Start Project clicks', count: eventCount(data, ['start_project_click', 'footer_start_project_click']) },
+        { icon: 'H', label: 'Hire Me clicks', count: eventCount(data, ['hero_hire_me_click']) },
+        { icon: 'P', label: 'Portfolio interest', count: eventCount(data, ['hero_portfolio_click', 'portfolio_card_click', 'portfolio_click']) },
+        { icon: 'V', label: 'Service interest', count: eventCount(data, ['service_card_click', 'service_click']) }
+      ];
+      actionGrid.innerHTML = actions.map((item) => `
+        <div class="action-card${item.primary ? ' primary' : ''}">
+          <span>${item.icon}</span>
+          <strong>${formatNumber(item.count)}</strong>
+          <small>${item.label}</small>
+        </div>
+      `).join('');
+    }
+
     function renderList(element, items, labelKey, valueKey, warningKeys) {
       if (!items || !items.length) {
         element.innerHTML = '<p class="data-empty">No data yet.</p>';
@@ -175,15 +248,32 @@
       element.innerHTML = items.map((item) => row(item[labelKey], item[valueKey], warningKeys && warningKeys.includes(item[labelKey]))).join('');
     }
 
+    function renderRecent(items) {
+      const useful = (items || []).filter((item) => !['time_30_seconds', 'time_60_seconds', 'time_120_seconds', 'page_exit'].includes(item.event_name)).slice(0, 12);
+      if (!useful.length) {
+        lists.recent.innerHTML = '<p class="data-empty">No recent visitor actions yet.</p>';
+        return;
+      }
+      lists.recent.innerHTML = useful.map((item) => {
+        const time = item.timestamp ? new Date(item.timestamp).toLocaleString() : 'Unknown time';
+        return `<div class="data-row recent-row"><span>${readableEvent(item.event_name)}</span><em>${item.page_path || '/'}</em><em>${item.device_type || 'device unknown'}</em><strong>${time}</strong></div>`;
+      }).join('');
+    }
+
     function renderDashboard(data) {
+      renderActionCards(data);
       metricGrid.innerHTML = `
         <div class="metric-card"><span>Active users</span><strong>${formatNumber(data.overview.activeUsers)}</strong></div>
         <div class="metric-card"><span>Sessions</span><strong>${formatNumber(data.overview.sessions)}</strong></div>
         <div class="metric-card"><span>Page views</span><strong>${formatNumber(data.overview.views)}</strong></div>
         <div class="metric-card"><span>Events</span><strong>${formatNumber(data.overview.events)}</strong></div>
       `;
-      renderList(lists.events, data.events, 'event', 'count');
-      renderList(lists.ux, data.uxSignals, 'event', 'count', ['dead_click', 'rage_click']);
+      const usefulEvents = (data.events || [])
+        .filter((item) => businessEventNames.includes(item.event))
+        .map((item) => ({ event: readableEvent(item.event), count: item.count }));
+      renderRecent(data.recent);
+      renderList(lists.events, usefulEvents, 'event', 'count');
+      renderList(lists.ux, (data.uxSignals || []).map((item) => ({ event: readableEvent(item.event), count: item.count })), 'event', 'count', ['Dead click', 'Rage click']);
       renderList(lists.pages, data.pages, 'path', 'views');
       renderList(lists.sources, data.sources, 'source', 'sessions');
       renderList(lists.devices, data.devices, 'device', 'sessions');
