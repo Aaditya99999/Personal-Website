@@ -55,13 +55,12 @@
           <div>
             <p class="eyebrow">Native Dashboard</p>
             <h2>AB Labs analytics</h2>
-            <p>Paste your Google Apps Script web app URL and private dashboard key to load live event data from Google Sheets.</p>
+            <p>Enter your private dashboard key to load live event data from Google Sheets.</p>
             <form class="analytics-login" id="analyticsLogin">
-              <input id="analyticsEndpoint" name="analyticsEndpoint" type="url" autocomplete="url" placeholder="Apps Script web app URL">
               <input id="analyticsKey" name="analyticsKey" type="password" autocomplete="current-password" placeholder="Dashboard key">
               <button type="submit">Load data</button>
             </form>
-            <p class="analytics-status" id="analyticsStatus">Connect your Apps Script URL to load AB Labs analytics.</p>
+            <p class="analytics-status" id="analyticsStatus">Enter your dashboard key to load AB Labs analytics.</p>
           </div>
           <button class="refresh-button" id="refreshAnalytics" type="button">Refresh</button>
         </div>
@@ -138,7 +137,7 @@
   <script src="/assets/site-analytics.js" defer></script>
   <script>
     const analyticsLogin = document.getElementById('analyticsLogin');
-    const analyticsEndpoint = document.getElementById('analyticsEndpoint');
+    const ANALYTICS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxtfxOA1Sk45TGVsYwEJV7LMHdTbGl_3Q1qMHLyU1JWoIfxgPbHyJ0Iletmv1YDJJQB/exec';
     const analyticsKey = document.getElementById('analyticsKey');
     const analyticsStatus = document.getElementById('analyticsStatus');
     const refreshAnalytics = document.getElementById('refreshAnalytics');
@@ -156,17 +155,12 @@
       return new Intl.NumberFormat('en-IN').format(Number(value || 0));
     }
 
-    function saveSettings(endpoint, key) {
-      localStorage.setItem('ab_analytics_endpoint', endpoint);
+    function saveKey(key) {
       sessionStorage.setItem('ab_analytics_key', key);
     }
 
     function getKey() {
       return sessionStorage.getItem('ab_analytics_key') || '';
-    }
-
-    function getEndpoint() {
-      return localStorage.getItem('ab_analytics_endpoint') || '';
     }
 
     function row(label, value, warning) {
@@ -199,11 +193,6 @@
 
     async function loadAnalytics() {
       const key = getKey();
-      const endpoint = getEndpoint();
-      if (!endpoint) {
-        analyticsStatus.textContent = 'Paste your Apps Script web app URL first.';
-        return;
-      }
       if (!key) {
         analyticsStatus.textContent = 'Enter your dashboard key to load data.';
         return;
@@ -212,7 +201,7 @@
       analyticsStatus.textContent = 'Loading analytics data...';
       let url;
       try {
-        url = new URL(endpoint);
+        url = new URL(ANALYTICS_ENDPOINT);
         url.searchParams.set('mode', 'summary');
         url.searchParams.set('key', key);
       } catch (error) {
@@ -241,15 +230,12 @@
 
     analyticsLogin.addEventListener('submit', (event) => {
       event.preventDefault();
-      saveSettings(analyticsEndpoint.value.trim(), analyticsKey.value.trim());
+      saveKey(analyticsKey.value.trim());
       loadAnalytics();
     });
 
     refreshAnalytics.addEventListener('click', loadAnalytics);
 
-    if (getEndpoint()) {
-      analyticsEndpoint.value = getEndpoint();
-    }
     if (getKey()) {
       analyticsKey.value = getKey();
       loadAnalytics();

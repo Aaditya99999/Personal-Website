@@ -1,7 +1,7 @@
 (function () {
   var GA_ID = 'G-DZZZLY06Q4';
   // Add the Apps Script Web App URL here after deploying APPS_SCRIPT_ANALYTICS.gs.
-  var AB_ANALYTICS_ENDPOINT = window.AB_ANALYTICS_ENDPOINT || '';
+  var AB_ANALYTICS_ENDPOINT = window.AB_ANALYTICS_ENDPOINT || 'https://script.google.com/macros/s/AKfycbxtfxOA1Sk45TGVsYwEJV7LMHdTbGl_3Q1qMHLyU1JWoIfxgPbHyJ0Iletmv1YDJJQB/exec';
   var AB_ANALYTICS_SITE_KEY = window.AB_ANALYTICS_SITE_KEY || 'ab-labs-site';
   var sessionKey = 'ab_labs_session_id';
   var startedAt = Date.now();
