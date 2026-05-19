@@ -30,7 +30,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Website Developer & AI Automation Expert in India | Aaditya Bhatnagar">
   <meta name="twitter:description" content="Business websites, clinic websites, EMR systems, WhatsApp automation, and AI automation by Aaditya Bhatnagar of AB Labs in India and Ajmer.">
-  <meta name="twitter:image" content="https://aadityabhatnagar.online/assets/og-preview.png">
+  <meta name="twitter:image" content="https://aadityabhatnagar.online/assets/og-preview-v2.png">
   <meta property="og:site_name" content="AB Labs by Aaditya">
   <meta property="og:locale" content="en_US">
   <link rel="alternate" type="text/plain" href="https://aadityabhatnagar.online/llms.txt" title="LLM summary">
@@ -41,19 +41,21 @@
   <link rel="canonical" href="https://aadityabhatnagar.online/">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <link rel="manifest" href="/site.webmanifest">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Website Developer & AI Automation Expert in India | Aaditya Bhatnagar">
   <meta property="og:description" content="Business websites, clinic websites, EMR systems, WhatsApp automation, and AI automation by Aaditya Bhatnagar of AB Labs in India and Ajmer.">
   <meta property="og:url" content="https://aadityabhatnagar.online/">
-  <meta property="og:image" content="https://aadityabhatnagar.online/assets/og-preview.png">
+  <meta property="og:image" content="https://aadityabhatnagar.online/assets/og-preview-v2.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="AB Labs by Aaditya Bhatnagar website development and AI automation preview">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Aaditya Bhatnagar",
     "url": "https://aadityabhatnagar.online/",
-    "image": "https://aadityabhatnagar.online/assets/og-preview.png",
+    "image": "https://aadityabhatnagar.online/assets/og-preview-v2.png",
     "jobTitle": "Website Developer and AI Automation Expert",
     "knowsAbout": [
       "website developer in India",
@@ -1585,7 +1587,7 @@
       font-size: 13px;
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px), (orientation: portrait) {
       .nav-links,
       .nav-cta {
         display: none;
@@ -1594,6 +1596,14 @@
       .menu-button {
         display: inline-grid;
         place-items: center;
+        position: fixed;
+        top: 28px;
+        right: 28px;
+        z-index: 90;
+      }
+
+      .nav-shell {
+        padding-right: 58px;
       }
 
       .hero-grid,
@@ -1759,6 +1769,18 @@
       .footer-bottom {
         flex-direction: column;
       }
+
+      .contact-list {
+        gap: 12px;
+      }
+
+      .contact-item {
+        min-height: 56px;
+        padding: 10px 12px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--surface);
+      }
     }
   </style>
   <!-- Entity graph for search and answer engines -->
@@ -1771,7 +1793,7 @@
         "@id": "https://aadityabhatnagar.online/#aaditya",
         "name": "Aaditya Bhatnagar",
         "url": "https://aadityabhatnagar.online/",
-        "image": "https://aadityabhatnagar.online/assets/og-preview.png",
+        "image": "https://aadityabhatnagar.online/assets/og-preview-v2.png",
         "jobTitle": "Website Developer and AI Automation Expert",
         "email": "aadityabusiness3301@gmail.com",
         "telephone": "+91 735 739 7888",
@@ -1799,7 +1821,7 @@
         "@id": "https://aadityabhatnagar.online/#organization",
         "name": "AB Labs by Aaditya",
         "url": "https://aadityabhatnagar.online/",
-        "logo": "https://aadityabhatnagar.online/assets/og-preview.png",
+        "logo": "https://aadityabhatnagar.online/assets/og-preview-v2.png",
         "founder": {
           "@id": "https://aadityabhatnagar.online/#aaditya"
         },
@@ -1842,7 +1864,7 @@
         },
         "primaryImageOfPage": {
           "@type": "ImageObject",
-          "url": "https://aadityabhatnagar.online/assets/og-preview.png"
+          "url": "https://aadityabhatnagar.online/assets/og-preview-v2.png"
         },
         "inLanguage": "en",
         "audience": {
@@ -1892,7 +1914,7 @@
           <a href="/blog/">Blog</a>
           <a href="/#faq">FAQ</a>
         </div>
-        <a class="nav-cta" href="/start-project/">Contact Me</a>
+        <a class="nav-cta" href="/start-project/">Contact Me</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="mobile-menu" aria-label="Mobile navigation"><a href="/services/">Services</a><a href="/about/">About</a><a href="/portfolio/">Portfolio</a><a href="/case-studies/">Case Studies</a><a href="/blog/">Blog</a><a href="/#faq">FAQ</a><a href="/start-project/">Contact Me</a></div>
       </nav>
     </div>
   </header>
@@ -1904,8 +1926,8 @@
           <h1><span class="headline-line">I build <strong>websites</strong></span><span class="headline-line">and automation</span><span class="headline-line">that grow together.</span></h1>
           <p class="hero-copy">I am a website developer and AI automation expert helping businesses in India and Ajmer launch responsive websites, clinic websites, WhatsApp automation, and practical digital systems.</p>
           <div class="hero-actions">
-            <a class="btn btn-light" href="/portfolio/">View My Portfolio <span class="btn-dot">+</span></a>
-            <a class="btn btn-primary" href="#contact">Hire Me <span class="btn-dot">+</span></a>
+            <a class="btn btn-primary" href="/portfolio/">View My Portfolio <span class="btn-dot">+</span></a>
+            <a class="btn btn-light" href="#contact">Hire Me <span class="btn-dot">+</span></a>
           </div>
         </div>
         <div class="hero-visual" aria-label="Aaditya Bhatnagar Website Developer visual">
@@ -2462,5 +2484,6 @@
     blogNext?.addEventListener('click', () => scrollBlogCarousel(1));
   </script>
   <script src="/assets/site-analytics.js" defer></script>
+  <script src="assets/site-nav.js"></script>
 </body>
 </html>
