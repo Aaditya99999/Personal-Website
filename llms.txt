@@ -1,6 +1,6 @@
 # Aaditya Bhatnagar
 
-> Personal website for Aaditya Bhatnagar, focused on website making, website development, automation, and digital services.
+> Personal and business website for Aaditya Bhatnagar and AB Labs, focused on website development, clinic websites, EMR systems, AI automation, WhatsApp automation, and local business digital solutions in India and Ajmer.
 
 ## Site
 
@@ -9,7 +9,7 @@
 - Services: https://aadityabhatnagar.online/services/
 - Start Project: https://aadityabhatnagar.online/start-project/
 - Services Folder Index: https://aadityabhatnagar.online/services/
-- Website Making: https://aadityabhatnagar.online/services/website-making/
+- Website Development: https://aadityabhatnagar.online/services/website-making/
 - Landing Pages: https://aadityabhatnagar.online/services/landing-pages/
 - SEO Setup: https://aadityabhatnagar.online/services/seo-setup/
 - Contact Systems: https://aadityabhatnagar.online/services/contact-systems/
@@ -40,8 +40,16 @@
 
 ## Topics
 
-- Website making
+- Website developer in India
+- Website developer in Ajmer
 - Website development
+- Business website developer
+- Clinic website developer
+- Doctor website design
+- Healthcare website development
+- EMR software developer
+- WhatsApp automation for business
+- AI automation developer
 - Landing pages
 - SEO setup
 - Contact systems
