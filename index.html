@@ -663,7 +663,7 @@
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 54px;
-      align-items: center;
+      align-items: stretch;
     }
 
     .about-visual {
@@ -757,6 +757,16 @@
       color: rgba(255, 255, 255, 0.75);
       line-height: 1.8;
       font-size: 16px;
+    }
+
+    .about-copy {
+      display: grid;
+      align-content: center;
+      padding: clamp(26px, 4vw, 42px);
+      background: rgba(255, 255, 255, 0.055);
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 8px;
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.1);
     }
 
     .metric-row {
@@ -1622,6 +1632,10 @@
 
       .about-visual {
         justify-items: center;
+      }
+
+      .about-copy {
+        padding: 28px;
       }
 
       .contact-copy {
