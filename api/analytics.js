@@ -1,4 +1,5 @@
 const { BetaAnalyticsDataClient } = require('@google-analytics/data').v1beta;
+const { OAuth2Client } = require('google-auth-library');
 
 const CACHE_TTL_MS = 5 * 60 * 1000;
 let cachedPayload = null;
@@ -11,12 +12,16 @@ function json(res, status, body) {
   res.end(JSON.stringify(body));
 }
 
-function getClient() {
+function hasOAuthCredentials() {
+  return Boolean(process.env.GA_CLIENT_ID && process.env.GA_CLIENT_SECRET && process.env.GA_REFRESH_TOKEN);
+}
+
+function getServiceAccountClient() {
   const clientEmail = process.env.GA_CLIENT_EMAIL;
   const privateKey = (process.env.GA_PRIVATE_KEY || '').replace(/\\n/g, '\n');
 
   if (!clientEmail || !privateKey) {
-    throw new Error('Missing GA_CLIENT_EMAIL or GA_PRIVATE_KEY.');
+    throw new Error('Missing GA OAuth credentials or service account credentials.');
   }
 
   return new BetaAnalyticsDataClient({
@@ -39,7 +44,37 @@ function rows(response, mapper) {
   return (response.rows || []).map(mapper);
 }
 
-async function runReport(client, propertyId, request) {
+async function getOAuthAccessToken() {
+  const oauthClient = new OAuth2Client(
+    process.env.GA_CLIENT_ID,
+    process.env.GA_CLIENT_SECRET
+  );
+  oauthClient.setCredentials({ refresh_token: process.env.GA_REFRESH_TOKEN });
+  const token = await oauthClient.getAccessToken();
+  return typeof token === 'string' ? token : token.token;
+}
+
+async function runOAuthReport(propertyId, request) {
+  const accessToken = await getOAuthAccessToken();
+  const response = await fetch(`https://analyticsdata.googleapis.com/v1beta/properties/${propertyId}:runReport`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(Object.assign({
+      dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }]
+    }, request))
+  });
+
+  const data = await response.json();
+  if (!response.ok) {
+    throw new Error(data.error && data.error.message ? data.error.message : 'Google Analytics API request failed.');
+  }
+  return data;
+}
+
+async function runServiceAccountReport(client, propertyId, request) {
   const [response] = await client.runReport(Object.assign({
     property: `properties/${propertyId}`,
     dateRanges: [{ startDate: '30daysAgo', endDate: 'today' }]
@@ -48,11 +83,16 @@ async function runReport(client, propertyId, request) {
   return response;
 }
 
+async function runReport(client, propertyId, request) {
+  if (hasOAuthCredentials()) return runOAuthReport(propertyId, request);
+  return runServiceAccountReport(client, propertyId, request);
+}
+
 async function getAnalyticsPayload() {
   const propertyId = process.env.GA4_PROPERTY_ID;
   if (!propertyId) throw new Error('Missing GA4_PROPERTY_ID.');
 
-  const client = getClient();
+  const client = hasOAuthCredentials() ? null : getServiceAccountClient();
   const [
     overview,
     pages,

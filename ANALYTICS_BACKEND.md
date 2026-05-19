@@ -15,26 +15,50 @@ Set these in Vercel project settings:
 
 ```text
 GA4_PROPERTY_ID=123456789
-GA_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
-GA_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
+GA_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
+GA_CLIENT_SECRET=your-google-oauth-client-secret
+GA_REFRESH_TOKEN=your-google-oauth-refresh-token
 ANALYTICS_DASHBOARD_KEY=choose-a-private-dashboard-password
 ```
 
-## Google Setup
+If service account keys are allowed, you can use these instead of OAuth:
+
+```text
+GA_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
+GA_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
+```
+
+## Google Setup With OAuth
 
 1. Open Google Cloud Console.
 2. Create or select a project.
 3. Enable **Google Analytics Data API**.
-4. Create a **Service Account**.
-5. Create a JSON key for that service account.
-6. Copy the service account email into `GA_CLIENT_EMAIL`.
-7. Copy the private key into `GA_PRIVATE_KEY`.
-8. Open Google Analytics.
-9. Go to **Admin**.
-10. Open your GA4 property.
-11. Go to **Property access management**.
-12. Add the service account email as **Viewer**.
-13. Find your GA4 **Property ID** and put it in `GA4_PROPERTY_ID`.
+4. Configure the OAuth consent screen.
+5. Create an OAuth Client ID.
+6. Use the OAuth client ID and secret as `GA_CLIENT_ID` and `GA_CLIENT_SECRET`.
+7. Generate a refresh token for the Google account that has access to the GA4 property.
+8. Put that refresh token in `GA_REFRESH_TOKEN`.
+9. Open Google Analytics.
+10. Go to **Admin**.
+11. Open your GA4 property.
+12. Find your GA4 **Property ID** and put it in `GA4_PROPERTY_ID`.
+
+## If Service Account Key Creation Is Disabled
+
+That is okay. Use the OAuth variables above:
+
+```text
+GA_CLIENT_ID
+GA_CLIENT_SECRET
+GA_REFRESH_TOKEN
+```
+
+You do not need:
+
+```text
+GA_CLIENT_EMAIL
+GA_PRIVATE_KEY
+```
 
 ## Vercel Setup
 
