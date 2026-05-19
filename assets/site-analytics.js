@@ -1,8 +1,24 @@
 (function () {
+  var GA_ID = 'G-DZZZLY06Q4';
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () {
+    window.dataLayer.push(arguments);
+  };
+
+  if (!document.querySelector('script[src*="googletagmanager.com/gtag/js?id=' + GA_ID + '"]')) {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    document.head.appendChild(gaScript);
+  }
+
+  window.gtag('js', new Date());
+  window.gtag('config', GA_ID);
+
   function sendEvent(name, params) {
     var data = Object.assign({ page_path: location.pathname }, params || {});
-    if (typeof window.gtag === 'function') window.gtag('event', name, data);
-    window.dataLayer = window.dataLayer || [];
+    window.gtag('event', name, data);
     window.dataLayer.push(Object.assign({ event: name }, data));
   }
 

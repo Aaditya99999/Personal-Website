@@ -1,6 +1,6 @@
 {
-  "name": "Project Money Tracker",
-  "short_name": "Project Tracker",
+  "name": "AB Labs",
+  "short_name": "AB Labs",
   "description": "Track income, spending, profit, and project-wise money records.",
   "start_url": "/project-tracker/",
   "scope": "/project-tracker/",
