@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/project-tracker.webmanifest">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project Money Tracker | Aaditya Bhatnagar</title>
   <meta name="description" content="Track income, spending, profit, and project-wise money records.">
@@ -12,7 +13,10 @@
   <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="bingbot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="theme-color" content="#294d33">
-  <meta name="application-name" content="AB Labs by Aaditya">
+  <meta name="application-name" content="Project Money Tracker">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Project Tracker">
   <meta name="publisher" content="Aaditya Bhatnagar">
   <meta name="classification" content="Website development, clinic website development, doctor website design, EMR software, SEO setup, contact systems, AI automation, WhatsApp automation, business tools">
   <meta name="coverage" content="India, Ajmer, Worldwide">
@@ -1592,6 +1596,13 @@
       <div class="footer-bottom"><span>Copyright 2026 AB Labs by Aaditya. All rights reserved.</span><span><a href="/privacy/">Privacy Policy</a></span></div>
     </div>
   </footer>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/project-tracker-sw.js", { scope: "/project-tracker/" }).catch(function () {});
+      });
+    }
+  </script>
   <script src="/assets/site-analytics.js" defer></script>
   <script src="assets/site-nav.js"></script>
 </body>
