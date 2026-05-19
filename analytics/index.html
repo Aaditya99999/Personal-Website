@@ -38,7 +38,8 @@
     .native-card{grid-column:1/-1;padding:clamp(20px,3vw,30px)}.native-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.native-head h2{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}.native-head p{max-width:680px;margin:8px 0 0;color:var(--muted);line-height:1.65}.analytics-login{display:grid;grid-template-columns:1.35fr .75fr auto;gap:10px;margin-top:18px;max-width:920px}.analytics-login input{min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit}.analytics-login button,.refresh-button{min-height:48px;padding:12px 18px;border:0;border-radius:999px;color:#fff;background:var(--green);font-weight:900;cursor:pointer}.refresh-button{white-space:nowrap}.analytics-status{margin:12px 0 0;color:var(--muted);font-size:14px}.dashboard-label{margin:24px 0 12px;color:var(--green);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.action-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;margin:22px 0}.action-card{display:grid;gap:12px;min-height:150px;padding:18px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,#fff 0%,#f8f4ea 100%)}.action-card.primary{color:#fff;background:var(--green);border-color:var(--green);box-shadow:0 22px 48px rgba(41,77,51,.16)}.action-card span{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--orange);color:var(--green);font-weight:900}.action-card strong{font-size:clamp(28px,4vw,42px);line-height:1}.action-card small{color:var(--muted);font-weight:900;line-height:1.35}.action-card.primary small{color:rgba(255,255,255,.84)}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 22px}.metric-card{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.metric-card span{display:block;color:var(--muted);font-size:13px;font-weight:800}.metric-card strong{display:block;margin-top:8px;color:var(--green);font-size:clamp(26px,4vw,40px);line-height:1}.analytics-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.data-panel{padding:18px;border:1px solid var(--line);border-radius:8px;background:#fff}.data-panel.wide{grid-column:1/-1}.data-panel h3{margin:0 0 12px;font-size:20px}.data-list{display:grid;gap:8px}.data-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(222,216,206,.75);color:var(--muted);font-size:14px}.data-row:last-child{border-bottom:0}.data-row strong{color:var(--ink);text-align:right}.data-empty{color:var(--muted);line-height:1.6}.recent-row{display:grid;grid-template-columns:1.2fr .8fr .75fr auto;gap:12px;align-items:center}.recent-row span:first-child{color:var(--ink);font-weight:800}.recent-row em{font-style:normal;color:var(--muted)}.ux-warning{border-color:rgba(245,169,0,.6);background:rgba(245,169,0,.08)}
     .tools{display:grid;gap:18px}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tool-card{display:grid;gap:14px;min-height:210px;padding:24px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.tool-card:hover{transform:translateY(-3px);border-color:rgba(245,169,0,.75);box-shadow:0 24px 58px rgba(41,77,51,.12)}.tool-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;color:var(--green);background:var(--orange);font-weight:900}.tool-card h2{margin:0;font-size:24px;line-height:1.15}.tool-card p{margin:0;color:var(--muted);line-height:1.65}.tool-link{display:inline-flex;align-items:center;gap:10px;width:fit-content;margin-top:auto;color:var(--green);font-weight:900}.tool-link span{display:grid;place-items:center;width:24px;height:24px;border-radius:999px;color:#fff;background:var(--green)}
     .events{padding:26px;background:#fff;border:1px solid var(--line);border-radius:8px}.events h2{margin:0 0 16px;font-size:28px}.event-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.event-list span{padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--green);font-size:13px;font-weight:900;text-align:center}.note{padding:18px;border-left:4px solid var(--orange);background:rgba(245,169,0,.1);border-radius:8px;color:var(--muted);line-height:1.7}
-    @media(max-width:900px){.dashboard{grid-template-columns:1fr}.panel{position:static}.tool-grid,.analytics-tables{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:52px}.hero h1{font-size:38px}.native-head{align-items:flex-start;flex-direction:column}.analytics-login{grid-template-columns:1fr}.data-panel.wide{grid-column:auto}.recent-row{grid-template-columns:1fr}}@media(max-width:640px){.container{width:calc(100% - 28px)}.hero h1{font-size:32px;line-height:1.12}.metric-grid,.action-grid,.event-list{grid-template-columns:1fr}.id-row{flex-direction:column}.tool-card{min-height:0}.native-card{padding:12px}.refresh-button{width:100%}}
+    .setup-message{display:none;margin:18px 0 0;padding:18px;border:1px dashed rgba(245,169,0,.9);border-radius:8px;background:rgba(245,169,0,.1);color:var(--muted);line-height:1.65}.setup-message strong{display:block;margin-bottom:4px;color:var(--ink)}.warning-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.warning-card{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.warning-card.is-hot{border-color:rgba(245,169,0,.8);background:rgba(245,169,0,.12)}.warning-card strong{display:block;color:var(--green);font-size:24px}.warning-card span{display:block;margin-top:4px;color:var(--muted);font-size:12px;font-weight:900;line-height:1.35}
+    @media(max-width:900px){.dashboard{grid-template-columns:1fr}.panel{position:static}.tool-grid,.analytics-tables{grid-template-columns:1fr}.metric-grid,.warning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:52px}.hero h1{font-size:38px}.native-head{align-items:flex-start;flex-direction:column}.analytics-login{grid-template-columns:1fr}.data-panel.wide{grid-column:auto}.recent-row{grid-template-columns:1fr}}@media(max-width:640px){.container{width:calc(100% - 28px)}.hero h1{font-size:32px;line-height:1.12}.metric-grid,.action-grid,.warning-grid,.event-list{grid-template-columns:1fr}.id-row{flex-direction:column}.tool-card{min-height:0}.native-card{padding:12px}.refresh-button{width:100%}}
   </style>
 </head>
 <body>
@@ -64,6 +65,10 @@
           </div>
           <button class="refresh-button" id="refreshAnalytics" type="button">Refresh</button>
         </div>
+        <div class="setup-message" id="setupMessage">
+          <strong>No analytics data yet.</strong>
+          Open your website once, click a few buttons, then refresh this dashboard.
+        </div>
         <p class="dashboard-label">Business actions first</p>
         <div class="action-grid" id="actionGrid">
           <div class="action-card primary"><span>W</span><strong>-</strong><small>WhatsApp actions</small></div>
@@ -84,7 +89,8 @@
           <div class="data-panel"><h3>Top pages</h3><div class="data-list" id="pagesList"><p class="data-empty">Load data to see page performance.</p></div></div>
           <div class="data-panel"><h3>Traffic sources</h3><div class="data-list" id="sourcesList"><p class="data-empty">Load data to see where visitors came from.</p></div></div>
           <div class="data-panel"><h3>Useful actions</h3><div class="data-list" id="eventsList"><p class="data-empty">Load data to see useful clicks and actions.</p></div></div>
-          <div class="data-panel"><h3>UX signals</h3><div class="data-list" id="uxList"><p class="data-empty">Load data to see scroll depth, dead clicks, and rage clicks.</p></div></div>
+          <div class="data-panel"><h3>Engagement</h3><div class="data-list" id="engagementList"><p class="data-empty">Load data to see scroll and time events.</p></div></div>
+          <div class="data-panel wide"><h3>UX warning panel</h3><div class="warning-grid" id="warningGrid"><div class="warning-card"><strong>-</strong><span>Rage clicks</span></div><div class="warning-card"><strong>-</strong><span>Dead clicks</span></div><div class="warning-card"><strong>-</strong><span>Low scroll depth</span></div><div class="warning-card"><strong>-</strong><span>Mobile traffic</span></div></div></div>
           <div class="data-panel"><h3>Devices</h3><div class="data-list" id="devicesList"><p class="data-empty">Load data to see mobile vs desktop.</p></div></div>
           <div class="data-panel"><h3>Daily users</h3><div class="data-list" id="dailyList"><p class="data-empty">Load data to see daily trend.</p></div></div>
         </div>
@@ -153,9 +159,11 @@
     const refreshAnalytics = document.getElementById('refreshAnalytics');
     const actionGrid = document.getElementById('actionGrid');
     const metricGrid = document.getElementById('metricGrid');
+    const setupMessage = document.getElementById('setupMessage');
+    const warningGrid = document.getElementById('warningGrid');
     const lists = {
       events: document.getElementById('eventsList'),
-      ux: document.getElementById('uxList'),
+      engagement: document.getElementById('engagementList'),
       pages: document.getElementById('pagesList'),
       sources: document.getElementById('sourcesList'),
       devices: document.getElementById('devicesList'),
@@ -197,7 +205,16 @@
         project_option_select: 'Project option selected',
         dead_click: 'Dead click',
         rage_click: 'Rage click',
-        ab_page_view: 'Page view'
+        ab_page_view: 'Page view',
+        time_30_seconds: 'Stayed 30 seconds',
+        time_60_seconds: 'Stayed 60 seconds',
+        time_120_seconds: 'Stayed 120 seconds',
+        page_exit: 'Page exit',
+        scroll_25: 'Scrolled 25%',
+        scroll_50: 'Scrolled 50%',
+        scroll_75: 'Scrolled 75%',
+        scroll_90: 'Scrolled 90%',
+        scroll_100: 'Scrolled 100%'
       };
       return labels[name] || String(name || 'Unknown').replace(/_/g, ' ');
     }
@@ -216,6 +233,18 @@
       'phone_click',
       'email_click',
       'project_option_select'
+    ];
+
+    const engagementEventNames = [
+      'time_30_seconds',
+      'time_60_seconds',
+      'time_120_seconds',
+      'page_exit',
+      'scroll_25',
+      'scroll_50',
+      'scroll_75',
+      'scroll_90',
+      'scroll_100'
     ];
 
     function eventCount(data, names) {
@@ -240,6 +269,26 @@
       `).join('');
     }
 
+    function renderWarnings(data) {
+      const events = data.events || [];
+      const devices = data.devices || [];
+      const rageClicks = eventCount(data, ['rage_click']);
+      const deadClicks = eventCount(data, ['dead_click']);
+      const scroll25 = eventCount(data, ['scroll_25']);
+      const scroll75 = eventCount(data, ['scroll_75']);
+      const mobile = devices.find((item) => String(item.device || '').toLowerCase() === 'mobile');
+      const totalDeviceSessions = devices.reduce((total, item) => total + Number(item.sessions || 0), 0);
+      const mobilePercent = totalDeviceSessions ? Math.round((Number(mobile?.sessions || 0) / totalDeviceSessions) * 100) : 0;
+      const lowScroll = scroll25 > 0 && scroll75 === 0 ? 'Yes' : 'No';
+      const cards = [
+        { label: 'Rage clicks', value: rageClicks, hot: rageClicks > 0 },
+        { label: 'Dead clicks', value: deadClicks, hot: deadClicks > 0 },
+        { label: 'Low scroll depth', value: lowScroll, hot: lowScroll === 'Yes' },
+        { label: 'Mobile traffic', value: `${mobilePercent}%`, hot: mobilePercent >= 70 }
+      ];
+      warningGrid.innerHTML = cards.map((item) => `<div class="warning-card${item.hot ? ' is-hot' : ''}"><strong>${item.value}</strong><span>${item.label}</span></div>`).join('');
+    }
+
     function renderList(element, items, labelKey, valueKey, warningKeys) {
       if (!items || !items.length) {
         element.innerHTML = '<p class="data-empty">No data yet.</p>';
@@ -261,7 +310,9 @@
     }
 
     function renderDashboard(data) {
+      setupMessage.style.display = Number(data.overview.events || 0) === 0 ? 'block' : 'none';
       renderActionCards(data);
+      renderWarnings(data);
       metricGrid.innerHTML = `
         <div class="metric-card"><span>Active users</span><strong>${formatNumber(data.overview.activeUsers)}</strong></div>
         <div class="metric-card"><span>Sessions</span><strong>${formatNumber(data.overview.sessions)}</strong></div>
@@ -271,9 +322,12 @@
       const usefulEvents = (data.events || [])
         .filter((item) => businessEventNames.includes(item.event))
         .map((item) => ({ event: readableEvent(item.event), count: item.count }));
+      const engagementEvents = (data.events || [])
+        .filter((item) => engagementEventNames.includes(item.event))
+        .map((item) => ({ event: readableEvent(item.event), count: item.count }));
       renderRecent(data.recent);
       renderList(lists.events, usefulEvents, 'event', 'count');
-      renderList(lists.ux, (data.uxSignals || []).map((item) => ({ event: readableEvent(item.event), count: item.count })), 'event', 'count', ['Dead click', 'Rage click']);
+      renderList(lists.engagement, engagementEvents, 'event', 'count');
       renderList(lists.pages, data.pages, 'path', 'views');
       renderList(lists.sources, data.sources, 'source', 'sessions');
       renderList(lists.devices, data.devices, 'device', 'sessions');

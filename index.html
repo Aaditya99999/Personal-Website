@@ -1122,6 +1122,46 @@
       line-height: 1.65;
     }
 
+    .contact-mini-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-mini-card {
+      min-height: 118px;
+      padding: 14px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .contact-mini-card span {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 10px;
+      color: var(--green);
+      background: var(--orange);
+      border-radius: 999px;
+      font-weight: 900;
+    }
+
+    .contact-mini-card strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 13px;
+    }
+
+    .contact-mini-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .picker-kicker {
       display: inline-flex;
       align-items: center;
@@ -1660,6 +1700,7 @@
       }
 
       .package-options,
+      .contact-mini-cards,
       .project-questions {
         grid-template-columns: 1fr;
       }
@@ -2274,6 +2315,11 @@
                 <span class="picker-kicker">Contact</span>
                 <h3>Choose what you need first</h3>
                 <p>Pick one option, answer a few quick questions, and send a structured message directly on WhatsApp.</p>
+                <div class="contact-mini-cards" aria-label="How this contact flow helps">
+                  <div class="contact-mini-card"><span>1</span><strong>Clear choice</strong><small>Start with the project type so the message is easy to understand.</small></div>
+                  <div class="contact-mini-card"><span>2</span><strong>Quick details</strong><small>Answer only the useful questions before sending.</small></div>
+                  <div class="contact-mini-card"><span>3</span><strong>WhatsApp ready</strong><small>Your selected details are prepared into one clean message.</small></div>
+                </div>
               </div>
             </div>
             <div class="package-choice">
