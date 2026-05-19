@@ -670,7 +670,8 @@
       position: relative;
       min-height: 0;
       display: grid;
-      place-items: center;
+      align-items: center;
+      justify-items: start;
       align-self: stretch;
     }
 
@@ -1617,6 +1618,10 @@
       .contact-grid,
       .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        justify-items: center;
       }
 
       .contact-copy {
