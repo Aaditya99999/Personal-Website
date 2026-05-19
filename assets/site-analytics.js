@@ -1,5 +1,8 @@
 (function () {
   var GA_ID = 'G-DZZZLY06Q4';
+  // Add the Apps Script Web App URL here after deploying APPS_SCRIPT_ANALYTICS.gs.
+  var AB_ANALYTICS_ENDPOINT = window.AB_ANALYTICS_ENDPOINT || '';
+  var AB_ANALYTICS_SITE_KEY = window.AB_ANALYTICS_SITE_KEY || 'ab-labs-site';
   var sessionKey = 'ab_labs_session_id';
   var startedAt = Date.now();
   var sentScroll = {};
@@ -65,6 +68,33 @@
     var data = baseParams(params);
     window.gtag('event', name, data);
     window.dataLayer.push(Object.assign({ event: name }, data));
+    sendToAbAnalytics(name, data);
+  }
+
+  function sendToAbAnalytics(name, data) {
+    if (!AB_ANALYTICS_ENDPOINT) return;
+    var payload = JSON.stringify(Object.assign({
+      site_key: AB_ANALYTICS_SITE_KEY,
+      event_name: name,
+      timestamp: new Date().toISOString(),
+      referrer: document.referrer || '',
+      url: location.href,
+      user_agent: navigator.userAgent
+    }, data));
+
+    try {
+      if (navigator.sendBeacon) {
+        var blob = new Blob([payload], { type: 'text/plain;charset=UTF-8' });
+        if (navigator.sendBeacon(AB_ANALYTICS_ENDPOINT, blob)) return;
+      }
+      fetch(AB_ANALYTICS_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        keepalive: true,
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: payload
+      }).catch(function () {});
+    } catch (error) {}
   }
 
   function namedClickEvent(link, href, text) {

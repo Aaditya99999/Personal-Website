@@ -1,73 +1,99 @@
-# AB Labs Analytics Backend Setup
+# AB Labs Analytics on GitHub Pages
 
-This backend lets `/analytics/` show real Google Analytics data directly on the website.
+This setup keeps `aadityabhatnagar.online` on GitHub Pages and uses Google
+Apps Script plus Google Sheets as the free analytics backend.
 
-## What It Uses
+## What You Get
 
-- Vercel Serverless Function: `/api/analytics`
-- Google Analytics Data API
-- GA4 property data
-- A private dashboard key entered on `/analytics/`
+- Page visits
+- Button clicks
+- WhatsApp clicks
+- Service, portfolio, and blog clicks
+- Scroll depth
+- Rage clicks and dead clicks
+- Device type and screen size
+- Referrer/source
+- A private `/analytics/` dashboard
 
-## Required Environment Variables
+Google Analytics still runs too. This free backend is for your own AB Labs
+dashboard inside the website.
 
-Set these in Vercel project settings:
+## No Vercel Env Vars Needed
 
-```text
-GA4_PROPERTY_ID=123456789
-GA_CLIENT_ID=your-google-oauth-client-id.apps.googleusercontent.com
-GA_CLIENT_SECRET=your-google-oauth-client-secret
-GA_REFRESH_TOKEN=your-google-oauth-refresh-token
-ANALYTICS_DASHBOARD_KEY=choose-a-private-dashboard-password
-```
-
-If service account keys are allowed, you can use these instead of OAuth:
-
-```text
-GA_CLIENT_EMAIL=your-service-account@your-project.iam.gserviceaccount.com
-GA_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nYOUR_PRIVATE_KEY\n-----END PRIVATE KEY-----\n"
-```
-
-## Google Setup With OAuth
-
-1. Open Google Cloud Console.
-2. Create or select a project.
-3. Enable **Google Analytics Data API**.
-4. Configure the OAuth consent screen.
-5. Create an OAuth Client ID.
-6. Use the OAuth client ID and secret as `GA_CLIENT_ID` and `GA_CLIENT_SECRET`.
-7. Generate a refresh token for the Google account that has access to the GA4 property.
-8. Put that refresh token in `GA_REFRESH_TOKEN`.
-9. Open Google Analytics.
-10. Go to **Admin**.
-11. Open your GA4 property.
-12. Find your GA4 **Property ID** and put it in `GA4_PROPERTY_ID`.
-
-## If Service Account Key Creation Is Disabled
-
-That is okay. Use the OAuth variables above:
+You do not need:
 
 ```text
+GA4_PROPERTY_ID
+GA_CLIENT_EMAIL
+GA_PRIVATE_KEY
 GA_CLIENT_ID
 GA_CLIENT_SECRET
 GA_REFRESH_TOKEN
 ```
 
-You do not need:
+For the GitHub Pages setup, you only need:
 
 ```text
-GA_CLIENT_EMAIL
-GA_PRIVATE_KEY
+Apps Script Web App URL
+Dashboard key: 3301
 ```
 
-## Vercel Setup
+## Setup Steps
 
-1. Import this GitHub repo into Vercel.
-2. Add the environment variables above.
-3. Deploy.
-4. Open `/analytics/`.
-5. Enter the value from `ANALYTICS_DASHBOARD_KEY`.
+1. Open Google Drive.
+2. Create a new Google Sheet named `AB Labs Analytics`.
+3. In that Sheet, open **Extensions > Apps Script**.
+4. Delete the default code.
+5. Paste the full code from `APPS_SCRIPT_ANALYTICS.gs`.
+6. Save the Apps Script project.
+7. Click **Deploy > New deployment**.
+8. Select **Web app**.
+9. Set **Execute as** to `Me`.
+10. Set **Who has access** to `Anyone`.
+11. Deploy and copy the Web App URL.
 
-## Important
+The URL will look like:
 
-If the site stays only on GitHub Pages, `/api/analytics` will not run. GitHub Pages is static and cannot execute the backend. Deploy the site to Vercel, or host the API separately and update the fetch URL in `analytics/index.html`.
+```text
+https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec
+```
+
+## Connect The Website
+
+Open `assets/site-analytics.js` and set:
+
+```js
+var AB_ANALYTICS_ENDPOINT = window.AB_ANALYTICS_ENDPOINT || 'YOUR_APPS_SCRIPT_WEB_APP_URL';
+```
+
+Keep this as-is unless you change the Apps Script `SITE_KEY`:
+
+```js
+var AB_ANALYTICS_SITE_KEY = window.AB_ANALYTICS_SITE_KEY || 'ab-labs-site';
+```
+
+## View The Dashboard
+
+Open:
+
+```text
+https://aadityabhatnagar.online/analytics/
+```
+
+Paste:
+
+```text
+Apps Script Web App URL
+Dashboard key: 3301
+```
+
+Click **Load data**.
+
+## Notes
+
+- The first few hours may look empty until visitors create events.
+- Apps Script is free for normal small-site usage.
+- The dashboard key protects the summary view, but the event collector URL is
+  public because browser tracking always needs a public endpoint.
+- If you change `DASHBOARD_KEY` inside `APPS_SCRIPT_ANALYTICS.gs`, use the new
+  key on `/analytics/`.
