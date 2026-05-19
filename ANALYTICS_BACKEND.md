@@ -89,6 +89,12 @@ Dashboard key: 3301
 
 Click **Load data**.
 
+## Updating The Dashboard Backend
+
+When `APPS_SCRIPT_ANALYTICS.gs` changes, paste the updated file into Apps
+Script and deploy a new Web App version. Otherwise the live dashboard will keep
+using the old backend summary.
+
 ## Notes
 
 - The first few hours may look empty until visitors create events.

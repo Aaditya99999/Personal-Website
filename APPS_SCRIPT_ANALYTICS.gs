@@ -60,7 +60,8 @@ function doGet(e) {
     return json_({ ok: false, error: 'Invalid dashboard key' }, 403);
   }
 
-  return json_(buildSummary_());
+  var days = Math.max(1, Math.min(90, Number(params.days || 30)));
+  return json_(buildSummary_(days));
 }
 
 function parsePayload_(e) {
@@ -86,16 +87,16 @@ function getEventsSheet_() {
   return sheet;
 }
 
-function buildSummary_() {
+function buildSummary_(days) {
   var sheet = getEventsSheet_();
   var lastRow = sheet.getLastRow();
   if (lastRow < 2) {
-    return emptySummary_();
+    return emptySummary_(days);
   }
 
   var values = sheet.getRange(2, 1, lastRow - 1, HEADERS.length).getValues();
   var cutoff = new Date();
-  cutoff.setDate(cutoff.getDate() - 30);
+  cutoff.setDate(cutoff.getDate() - days);
 
   var rows = values.map(rowToObject_).filter(function (item) {
     var date = new Date(item.timestamp);
@@ -106,16 +107,22 @@ function buildSummary_() {
   var pageViews = rows.filter(function (item) { return item.event_name === 'ab_page_view'; });
   var activeUsers = Math.max(sessions, uniqueCount_(pageViews, 'session_id'));
   var uxNames = ['dead_click', 'rage_click', 'scroll_25', 'scroll_50', 'scroll_75', 'scroll_90', 'scroll_100'];
+  var whatsappClicks = rows.filter(function (item) {
+    return item.event_name === 'project_whatsapp_submit' || item.event_name === 'whatsapp_click';
+  }).length;
 
   return {
     ok: true,
-    range: 'last 30 days',
+    range: days === 1 ? 'today' : 'last ' + days + ' days',
+    days: days,
     updatedAt: new Date().toISOString(),
     overview: {
       activeUsers: activeUsers,
       sessions: sessions,
       views: pageViews.length,
-      events: rows.length
+      events: rows.length,
+      whatsappClicks: whatsappClicks,
+      whatsappConversionRate: pageViews.length ? Math.round((whatsappClicks / pageViews.length) * 1000) / 10 : 0
     },
     events: topCounts_(rows, 'event_name', 'event', 10),
     uxSignals: topCounts_(rows.filter(function (item) {
@@ -124,6 +131,9 @@ function buildSummary_() {
     pages: topCounts_(pageViews, 'page_path', 'path', 10, 'views'),
     sources: topSources_(pageViews),
     devices: topCounts_(rows, 'device_type', 'device', 8, 'sessions'),
+    topButtons: topButtons_(rows),
+    packageChoices: packageChoices_(rows),
+    deadClicks: deadClickDetails_(rows),
     daily: dailyUsers_(rows),
     recent: rows.slice(-25).reverse()
   };
@@ -137,20 +147,94 @@ function rowToObject_(row) {
   return object;
 }
 
-function emptySummary_() {
+function emptySummary_(days) {
   return {
     ok: true,
-    range: 'last 30 days',
+    range: days === 1 ? 'today' : 'last ' + days + ' days',
+    days: days,
     updatedAt: new Date().toISOString(),
-    overview: { activeUsers: 0, sessions: 0, views: 0, events: 0 },
+    overview: { activeUsers: 0, sessions: 0, views: 0, events: 0, whatsappClicks: 0, whatsappConversionRate: 0 },
     events: [],
     uxSignals: [],
     pages: [],
     sources: [],
     devices: [],
+    topButtons: [],
+    packageChoices: [],
+    deadClicks: [],
     daily: [],
     recent: []
   };
+}
+
+function topButtons_(rows) {
+  var buttonEvents = [
+    'project_whatsapp_submit',
+    'whatsapp_click',
+    'hero_hire_me_click',
+    'start_project_click',
+    'footer_start_project_click',
+    'hero_portfolio_click',
+    'portfolio_card_click',
+    'portfolio_click',
+    'service_card_click',
+    'service_click',
+    'phone_click',
+    'email_click'
+  ];
+
+  var mapped = rows.filter(function (item) {
+    return buttonEvents.indexOf(item.event_name) !== -1;
+  }).map(function (item) {
+    return {
+      button: item.link_text || item.button_text || readableButtonName_(item.event_name),
+      event: item.event_name,
+      page: item.page_path || '/',
+      section: item.section || 'unknown'
+    };
+  });
+
+  return topCounts_(mapped, 'button', 'button', 12);
+}
+
+function packageChoices_(rows) {
+  var choices = rows.filter(function (item) {
+    return item.event_name === 'project_option_select' && item.selected_option;
+  }).map(function (item) {
+    return { choice: item.selected_option };
+  });
+
+  return topCounts_(choices, 'choice', 'choice', 10);
+}
+
+function deadClickDetails_(rows) {
+  var details = rows.filter(function (item) {
+    return item.event_name === 'dead_click';
+  }).map(function (item) {
+    return {
+      location: (item.page_path || '/') + ' / ' + (item.section || 'unknown') + ' / ' + (item.device_type || 'unknown')
+    };
+  });
+
+  return topCounts_(details, 'location', 'location', 12);
+}
+
+function readableButtonName_(eventName) {
+  var names = {
+    project_whatsapp_submit: 'Send Project on WhatsApp',
+    whatsapp_click: 'WhatsApp',
+    hero_hire_me_click: 'Hire Me',
+    start_project_click: 'Start Project',
+    footer_start_project_click: 'Footer Start Project',
+    hero_portfolio_click: 'View Portfolio',
+    portfolio_card_click: 'Portfolio card',
+    portfolio_click: 'Portfolio',
+    service_card_click: 'Service card',
+    service_click: 'Services',
+    phone_click: 'Phone',
+    email_click: 'Email'
+  };
+  return names[eventName] || eventName;
 }
 
 function topCounts_(rows, sourceKey, labelKey, limit, valueKey) {
