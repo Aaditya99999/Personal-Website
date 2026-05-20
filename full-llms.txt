@@ -101,7 +101,7 @@ Business automation services include connecting apps, reducing repetitive admin 
 
 #### Personal Bot
 
-- URL: https://github.com/ablabsbusiness-create/n8n-personal-agent/tree/main
+- URL: https://github.com/ablabsbusiness-create
 - Type: Automation
 - Description: Automates Gmail, creates contacts automatically, and schedules events in Google Calendar.
 - Reported benefits: Saves time and reduces stress.
