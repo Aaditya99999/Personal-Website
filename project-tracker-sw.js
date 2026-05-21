@@ -1,10 +1,10 @@
-const CACHE_NAME = "project-tracker-v1";
+const CACHE_NAME = "project-tracker-v2";
 const APP_SCOPE = "/project-tracker/";
 const APP_SHELL = [
   "/project-tracker/",
   "/assets/site-nav.js",
-  "/project-tracker-icon-192.png",
-  "/project-tracker-icon-512.png"
+  "/project-tracker-icon-192-v2.png",
+  "/project-tracker-icon-512-v2.png"
 ];
 
 self.addEventListener("install", (event) => {
