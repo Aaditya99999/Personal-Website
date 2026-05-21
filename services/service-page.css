@@ -47,12 +47,14 @@ a { color: inherit; text-decoration: none; }
 .brand-mark {
   display: inline-grid;
   place-items: center;
-  width: 28px;
-  height: 28px;
-  color: var(--green);
-  background: var(--orange);
-  border-radius: 999px;
-  font-size: 13px;
+  width: 32px;
+  height: 32px;
+  color: transparent;
+  background: #f7f6f2 url("/apple-touch-icon.png") center / 82% auto no-repeat;
+  border: 1px solid rgba(41, 77, 51, 0.18);
+  border-radius: 8px;
+  font-size: 0;
+  overflow: hidden;
 }
 .nav-links { display: flex; align-items: center; gap: clamp(12px, 3vw, 30px); color: rgba(255,255,255,0.78); font-size: 12px; }
 .nav-cta { color: var(--green); background: #fff; min-height: 36px; }
