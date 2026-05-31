@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caller Lead List</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:#f6f7fb; color:#151515; }
+    header { position: sticky; top:0; z-index: 10; background: linear-gradient(135deg,#111827,#374151); color:white; padding:16px; box-shadow:0 4px 18px rgba(0,0,0,.18); }
+    h1 { margin:0; font-size:20px; }
+    .sub { opacity:.85; margin-top:4px; font-size:13px; }
+    .tools { display:flex; gap:8px; margin-top:12px; }
+    input, select { width:100%; border:1px solid #ddd; border-radius:12px; padding:12px; font-size:15px; background:white; }
+    main { padding:12px; max-width:850px; margin:auto; }
+    .card { background:white; border:1px solid #e7e7e7; border-radius:16px; padding:14px; margin-bottom:12px; box-shadow:0 3px 10px rgba(0,0,0,.05); }
+    .top { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .name { font-weight:800; font-size:16px; line-height:1.25; }
+    .place { font-size:13px; color:#666; margin-top:4px; }
+    .phone { display:inline-flex; align-items:center; justify-content:center; margin-top:12px; text-decoration:none; background:#16a34a; color:white; font-weight:800; padding:11px 14px; border-radius:12px; min-width:132px; }
+    .statusBox { margin-top:12px; display:grid; grid-template-columns: 1fr; gap:7px; }
+    label { font-size:12px; color:#666; font-weight:700; }
+    .badge { font-size:12px; padding:6px 9px; border-radius:999px; background:#eef2ff; white-space:nowrap; color:#3730a3; font-weight:700; }
+    .count { margin:8px 0 12px; font-size:13px; color:#555; }
+    @media (min-width:650px) { .statusBox { grid-template-columns: 120px 1fr; align-items:center; } .card { padding:16px; } }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Caller Lead List</h1>
+  <div class="sub">Tap phone number to call. Status is saved on this device.</div>
+  <div class="tools">
+    <input id="search" placeholder="Search doctor, city, phone..." />
+    <select id="filter"><option value="">All Status</option></select>
+  </div>
+</header>
+<main>
+  <div class="count" id="count"></div>
+  <div id="list"></div>
+</main>
+<script>
+const leads = [{"name": "SATISH CHILDREN'S HOSPITAL", "phone": "099898 00200", "tel": "+919989800200", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Sri Mahalaxmi Childrens Hospital", "phone": "075697 60851", "tel": "+917569760851", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Paediatrix Children's Clinic", "phone": "090350 60249", "tel": "+919035060249", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "arka hospital", "phone": "080731 16280", "tel": "+918073116280", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Dr.sharath gangone - Best Pediatrician & Neonatologist near me in Kompally, Hyderabad", "phone": "086880 16088", "tel": "+918688016088", "city": "Hyderabad", "locality": "Gachibowli", "status": "Not Called"}, {"name": "Nest Children's Clinic", "phone": "081869 40940", "tel": "+918186940940", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Kangaroo woman & child care", "phone": "096117 77866", "tel": "+919611777866", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "DR JASMIN RATH & DR AVASH PANI", "phone": "081868 07795", "tel": "+918186807795", "city": "Hyderabad", "locality": "Kondapur", "status": "Not Called"}, {"name": "Sai Manohar Children's Clinic", "phone": "080 4370 4949", "tel": "+918043704949", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Kushala's Childcare Clinic", "phone": "078998 99547", "tel": "+917899899547", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Shree Akshaya Clinic- Dr. Gunda Srinivas- Pediatrician in South Bangalore", "phone": "096861 83999", "tel": "+919686183999", "city": "Bangalore", "locality": "Bannerghatta Road", "status": "Not Called"}, {"name": "Anugraha Children's Clinic", "phone": "080 4219 5348", "tel": "+918042195348", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "R.K. Laxmi Childrens Hospital", "phone": "099666 16342", "tel": "+919966616342", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Neo Children's Hospital", "phone": "093474 07901", "tel": "+919347407901", "city": "Suryapet", "locality": "", "status": "Not Called"}, {"name": "Shree Krishna Clinic For Women & Children", "phone": "062812 50710", "tel": "+916281250710", "city": "Hyderabad", "locality": "Kukatpally", "status": "Not Called"}, {"name": "Lakshmi Hospital for Women & Children", "phone": "090591 71263", "tel": "+919059171263", "city": "Hyderabad", "locality": "Kondapur", "status": "Not Called"}, {"name": "Dr Prashanth.M V Child Speciality Clinic", "phone": "094803 90855", "tel": "+919480390855", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Dwarakamai Children's Hospital", "phone": "080088 02006", "tel": "+918008802006", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Newborn & Kids Clinic (Pediatrics and Immunization)", "phone": "080 2545 8657", "tel": "+918025458657", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "Dr.Supriya's Children Clinic | Pediatrician| Allergy & Asthma Specialist", "phone": "080730 35813", "tel": "+918073035813", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Santhasa Child Care, Dr LOKESH T R", "phone": "093532 44832", "tel": "+919353244832", "city": "Bangalore", "locality": "Rajajinagar", "status": "Not Called"}, {"name": "Mokshita Hospitals", "phone": "097043 04310", "tel": "+919704304310", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Pardhu children's hospital", "phone": "070365 55588", "tel": "+917036555588", "city": "Suryapet", "locality": "Kodad", "status": "Not Called"}, {"name": "Sasya mother and children's hospital", "phone": "0870 350 0347", "tel": "+918703500347", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "AkSHAy Ayurvedic Woman and Child Health Care", "phone": "094482 41191", "tel": "+919448241191", "city": "Shivamogga", "locality": "Vinobanagar", "status": "Not Called"}, {"name": "Swathi Kids Clinic", "phone": "095384 12920", "tel": "+919538412920", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "Naina Children's Clinic", "phone": "093947 83483", "tel": "+919394783483", "city": "Hyderabad", "locality": "Kukatpally", "status": "Not Called"}, {"name": "Madilu Kids Clinic- Dr Sharath Keerthy R", "phone": "091486 42467", "tel": "+919148642467", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Chetan Children’s Clinic", "phone": "089515 15223", "tel": "+918951515223", "city": "Belagavi", "locality": "Tilakwadi", "status": "Not Called"}, {"name": "Kids Doctors.in", "phone": "080081 66166", "tel": "+918008166166", "city": "Hyderabad", "locality": "Madhapur", "status": "Not Called"}, {"name": "Kids Health Clinic", "phone": "080 2341 4901", "tel": "+918023414901", "city": "Bangalore", "locality": "Hebbal", "status": "Not Called"}, {"name": "Dr P. Avinash", "phone": "098660 07203", "tel": "+919866007203", "city": "Hyderabad", "locality": "Begumpet", "status": "Not Called"}, {"name": "Cuddles Kids Clinic Mysore", "phone": "096065 25551", "tel": "+919606525551", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Dr.Charan Child Clinic", "phone": "083408 40340", "tel": "+918340840340", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Dr Mahesh Holeyannavar", "phone": "077605 26060", "tel": "+917760526060", "city": "Hubli", "locality": "Vidyanagar", "status": "Not Called"}, {"name": "Sri Chiranjeeva Hospital (Dr Narahari) (Dr Navya) (Dr Praneeth raj)", "phone": "0870 355 0004", "tel": "+918703550004", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "V care clinic- pediatrician/ physician", "phone": "096069 00478", "tel": "+919606900478", "city": "Bangalore", "locality": "JP Nagar", "status": "Not Called"}, {"name": "Jack And Jill Children's Clinic", "phone": "080732 00018", "tel": "+918073200018", "city": "Bangalore", "locality": "Bannerghatta Road", "status": "Not Called"}, {"name": "Aruna Clinic", "phone": "080 2336 5841", "tel": "+918023365841", "city": "Bangalore", "locality": "Malleshwaram", "status": "Not Called"}, {"name": "Vennela Children's Clinic", "phone": "063042 60053", "tel": "+916304260053", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "BABY CARE CHILDRENS HOSPITAL", "phone": "090002 47668", "tel": "+919000247668", "city": "Suryapet", "locality": "", "status": "Not Called"}, {"name": "Care Woman & Child Clinic - Dr Hethyshi R || Dr Anil M U", "phone": "086186 44255", "tel": "+918618644255", "city": "Bangalore", "locality": "Rajajinagar", "status": "Not Called"}, {"name": "Kumar Children Clinic", "phone": "080 4092 5305", "tel": "+918040925305", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "ICA Clinic, Nallagandla", "phone": "099662 21797", "tel": "+919966221797", "city": "Hyderabad", "locality": "Nallagandla", "status": "Not Called"}, {"name": "Little Star Childrens Hospital", "phone": "095538 94233", "tel": "+919553894233", "city": "Khammam", "locality": "Wyra Road", "status": "Not Called"}, {"name": "Mamatha Kid Care Clinic (Dr. U G Shenoy)", "phone": "0821 254 3351", "tel": "+918212543351", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Srinivasa Children's Clinic", "phone": "093434 34344", "tel": "+919343434344", "city": "Mangalore", "locality": "Kadri", "status": "Not Called"}, {"name": "Dr.Govind Childreen's Clinics", "phone": "098660 78771", "tel": "+919866078771", "city": "Hyderabad", "locality": "Nallagandla", "status": "Not Called"}, {"name": "Baliga Children Clinic", "phone": "095387 22865", "tel": "+919538722865", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "Sparsha Children's Clinic", "phone": "0824 298 7744", "tel": "+918242987744", "city": "Mangalore", "locality": "Kadri", "status": "Not Called"}, {"name": "Sri Sudha Children & General Hospital", "phone": "063056 33301", "tel": "+916305633301", "city": "Suryapet", "locality": "", "status": "Not Called"}, {"name": "Jaya Childrens Hospital", "phone": "083339 97868", "tel": "+918333997868", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "LITTLE BLOOM BTM Layout (Best pediatrician, Children Clinic & hospital)", "phone": "096061 22002", "tel": "+919606122002", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "Ganga Saraswathi Childrens Hospital", "phone": "084622 21589", "tel": "+918462221589", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Madhavi Children's Clinic", "phone": "097032 08501", "tel": "+919703208501", "city": "Hyderabad", "locality": "Begumpet", "status": "Not Called"}, {"name": "Chiguru clinic - Pediatrician and physician", "phone": "073382 67277", "tel": "+917338267277", "city": "Mysore", "locality": "Vijayanagar", "status": "Not Called"}, {"name": "SREENIKA CHILDREN'S HOSPITAL", "phone": "086887 31166", "tel": "+918688731166", "city": "Peddapalli", "locality": "Ramagundam", "status": "Not Called"}, {"name": "Arya Children's clinic", "phone": "085229 96612", "tel": "+918522996612", "city": "Hyderabad", "locality": "Nallagandla", "status": "Not Called"}, {"name": "Chandrashila Children Hospital", "phone": "084622 24422", "tel": "+918462224422", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "MAATHASRI HOSPITAL FOR WOMEN AND CHILDREN", "phone": "081256 11670", "tel": "+918125611670", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Venkata Sai New Borns & Children's Hospital", "phone": "084622 25708", "tel": "+918462225708", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Vijaya Clinic", "phone": "080 2332 3805", "tel": "+918023323805", "city": "Bangalore", "locality": "Rajajinagar", "status": "Not Called"}, {"name": "Amrutha Child Care Clinic", "phone": "094493 91508", "tel": "+919449391508", "city": "Mysore", "locality": "Vijayanagar", "status": "Not Called"}, {"name": "Dr.A.Swetha - pediatrician", "phone": "087900 06946", "tel": "+918790006946", "city": "Hyderabad", "locality": "Kukatpally", "status": "Not Called"}, {"name": "Sanvi Kids Care", "phone": "076767 94031", "tel": "+917676794031", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Haritha Pillala Aasupatri", "phone": "084622 51408", "tel": "+918462251408", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Florus Children's clinic", "phone": "098489 24330", "tel": "+919848924330", "city": "Hyderabad", "locality": "Kukatpally", "status": "Not Called"}, {"name": "AK CHILD CLINIC", "phone": "096864 50160", "tel": "+919686450160", "city": "Bangalore", "locality": "HSR Layout", "status": "Not Called"}, {"name": "Dr Natu Ravindra", "phone": "0831 246 1283", "tel": "+918312461283", "city": "Belagavi", "locality": "Tilakwadi", "status": "Not Called"}, {"name": "Dr Srikanta Rao Clinic", "phone": "080 2334 3730", "tel": "+918023343730", "city": "Bangalore", "locality": "Malleshwaram", "status": "Not Called"}, {"name": "sri thanmayee children's hospital", "phone": "070939 20101", "tel": "+917093920101", "city": "Peddapalli", "locality": "Ramagundam", "status": "Not Called"}, {"name": "Neolife Children's Hospital", "phone": "084622 21110", "tel": "+918462221110", "city": "Nizamabad", "locality": "Pragathi Nagar", "status": "Not Called"}, {"name": "Dhrithi children's hospital", "phone": "073861 40333", "tel": "+917386140333", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Siddhi Vinayak Hospital For Children", "phone": "084622 24488", "tel": "+918462224488", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Indur Childrens Hospital", "phone": "085006 00345", "tel": "+918500600345", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Little Angels Children's Clinic", "phone": "095420 57919", "tel": "+919542057919", "city": "Warangal", "locality": "Kazipet", "status": "Not Called"}, {"name": "Grisha kids care", "phone": "074115 56684", "tel": "+917411556684", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Shanmukha Children's & General Hospital", "phone": "095509 08947", "tel": "+919550908947", "city": "Warangal", "locality": "Kazipet", "status": "Not Called"}, {"name": "Dr. Habib Khan", "phone": "0824 243 1266", "tel": "+918242431266", "city": "Mangalore", "locality": "Kadri", "status": "Not Called"}, {"name": "JANANI CHILDRENS CLINIC", "phone": "0870 243 2976", "tel": "+918702432976", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Vcare children's & Poly clinic", "phone": "083092 04110", "tel": "+918309204110", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "KANNAIAH CHILDRENS CLINIC (Best pediatrician in manikonda/Hyderabad/children specialist)", "phone": "063030 90690", "tel": "+916303090690", "city": "Hyderabad", "locality": "Gachibowli", "status": "Not Called"}, {"name": "AASHRAYA HEALTH CARE", "phone": "0821 419 1860", "tel": "+918214191860", "city": "Mysore", "locality": "Kuvempu Nagar", "status": "Not Called"}, {"name": "Dr. Shamshad Ahmad Khan", "phone": "099454 45445", "tel": "+919945445445", "city": "Mangalore", "locality": "Kadri", "status": "Not Called"}, {"name": "Dr. K. Surender's Children's Clinic", "phone": "0870 244 9427", "tel": "+918702449427", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Sri Harsha Children's Hospital", "phone": "098661 81526", "tel": "+919866181526", "city": "Khammam", "locality": "Wyra Road", "status": "Not Called"}, {"name": "Dr Mohan's Child Care Clinic", "phone": "073491 22079", "tel": "+917349122079", "city": "Bangalore", "locality": "Hebbal", "status": "Not Called"}, {"name": "Life Line Hospital, general physician And Children’s Hospital", "phone": "090009 66653", "tel": "+919000966653", "city": "Peddapalli", "locality": "Ramagundam", "status": "Not Called"}, {"name": "Dr.K.V.Krishna Rao", "phone": "099127 41244", "tel": "+919912741244", "city": "Khammam", "locality": "Wyra Road", "status": "Not Called"}, {"name": "Isha Children's Clinic", "phone": "062817 61683", "tel": "+916281761683", "city": "Hyderabad", "locality": "Gachibowli", "status": "Not Called"}, {"name": "GGR Children Clinic", "phone": "098444 13073", "tel": "+919844413073", "city": "Bangalore", "locality": "Yelahanka", "status": "Not Called"}, {"name": "Dr N R Munoli", "phone": "0831 246 7597", "tel": "+918312467597", "city": "Belagavi", "locality": "Tilakwadi", "status": "Not Called"}, {"name": "Nidhi Children's Clinic", "phone": "099488 57056", "tel": "+919948857056", "city": "Warangal", "locality": "Kazipet", "status": "Not Called"}, {"name": "Dr Chandana Pai", "phone": "083108 20683", "tel": "+918310820683", "city": "Mangalore", "locality": "Kadri", "status": "Not Called"}, {"name": "RAJAKUMARI MOTHER & CHILD HOSPITAL", "phone": "096407 44297", "tel": "+919640744297", "city": "Khammam", "locality": "Wyra Road", "status": "Not Called"}, {"name": "Sunshine childrens hospital", "phone": "082975 65657", "tel": "+918297565657", "city": "Suryapet", "locality": "Kodad", "status": "Not Called"}, {"name": "ATHARVA WOMEN & CHILDREN CLINIC", "phone": "090149 67038", "tel": "+919014967038", "city": "Warangal", "locality": "Kazipet", "status": "Not Called"}, {"name": "Taksh Multispeciality Hospital", "phone": "093819 52413", "tel": "+919381952413", "city": "Nizamabad", "locality": "South", "status": "Not Called"}, {"name": "Dr. K.S. Rao Children's Specialist Clinic", "phone": "0870 256 2523", "tel": "+918702562523", "city": "Warangal", "locality": "Hanamkonda", "status": "Not Called"}, {"name": "Dr. Panchaksharaiah Clinic| Pediatrician| 30+yr Exp| Consultation only", "phone": "094480 51533", "tel": "+919448051533", "city": "Mysore", "locality": "Gokulam", "status": "Not Called"}];
+const statuses = ["Not Called", "Called", "Not Answered", "Interested", "Not Interested"];
+const manualStatuses = ["Not Called", "Not Answered", "Interested", "Not Interested"];
+const list = document.getElementById('list');
+const search = document.getElementById('search');
+const filter = document.getElementById('filter');
+const count = document.getElementById('count');
+statuses.forEach(s => { const o=document.createElement('option'); o.value=s; o.textContent=s; filter.appendChild(o); });
+function key(i) { return 'callerLeadStatus_' + i; }
+function getStatus(i, fallback) {
+  const saved = localStorage.getItem(key(i));
+  const oldMap = {
+    'Called - No Answer': 'Not Answered',
+    'Follow-up': 'Interested',
+    'Demo Scheduled': 'Interested',
+    'Converted': 'Interested',
+    'Wrong Number': 'Not Interested',
+    'Not Called': 'Not Called'
+  };
+  const value = oldMap[saved] ?? saved ?? oldMap[fallback] ?? fallback ?? 'Not Called';
+  return statuses.includes(value) ? value : 'Not Called';
+}
+function statusOptions(currentStatus) {
+  return statuses.map(s => {
+    const selected = s === currentStatus ? 'selected' : '';
+    const locked = s === 'Called' && currentStatus !== 'Called' ? 'disabled' : '';
+    return `<option value="${s}" ${selected} ${locked}>${s}${locked ? ' 🔒' : ''}</option>`;
+  }).join('');
+}
+function markCalled(i) {
+  localStorage.setItem(key(i), 'Called');
+}
+function render() {
+  const q = search.value.toLowerCase().trim();
+  const f = filter.value;
+  list.innerHTML = '';
+  let shown = 0;
+  leads.forEach((lead, i) => {
+    const st = getStatus(i, lead.status);
+    const hay = [lead.name, lead.phone, lead.city, lead.locality, st].join(' ').toLowerCase();
+    if (q && !hay.includes(q)) return;
+    if (f && st !== f) return;
+    shown++;
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="top">
+        <div>
+          <div class="name">${escapeHtml(lead.name || 'Unnamed Lead')}</div>
+          <div class="place">${escapeHtml([lead.locality, lead.city].filter(Boolean).join(', '))}</div>
+        </div>
+        <div class="badge">#${i+1}</div>
+      </div>
+      <a class="phone" href="tel:${escapeHtml(lead.tel)}" data-call-index="${i}">📞 ${escapeHtml(lead.phone)}</a>
+      <div class="statusBox">
+        <label>Status</label>
+        <select data-index="${i}">${statusOptions(st)}</select>
+      </div>`;
+    list.appendChild(card);
+  });
+  count.textContent = `${shown} of ${leads.length} leads showing`;
+  document.querySelectorAll('a[data-call-index]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      markCalled(e.currentTarget.dataset.callIndex);
+    });
+  });
+  document.querySelectorAll('select[data-index]').forEach(sel => {
+    sel.addEventListener('change', e => {
+      if (e.target.value === 'Called' && getStatus(e.target.dataset.index) !== 'Called') {
+        e.target.value = getStatus(e.target.dataset.index);
+        return;
+      }
+      localStorage.setItem(key(e.target.dataset.index), e.target.value || 'Not Called');
+      render();
+    });
+  });
+}
+function escapeHtml(str) { return String(str).replace(/[&<>'"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c])); }
+search.addEventListener('input', render); filter.addEventListener('change', render); render();
+</script>
+</body>
+</html>
