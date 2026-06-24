@@ -1362,6 +1362,38 @@
       if (select) select.value = cleanStatus;
     }
 
+
+    const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwFABvUULhamAAteuxgxK1uYHaVzYJTdNEJ5629wfeiHhmcUcK3IS9x-Q2dDTwCklbJ/exec';
+    const SHEET_NAME = 'Part 3 Leads';
+
+    function getLeadById(id) {
+      return leads.find(l => String(l.id) === String(id));
+    }
+
+    function syncToSheet(id) {
+      const lead = getLeadById(id);
+      if (!lead) return;
+      const store = loadStore();
+      const status = getLeadStatus(lead, store);
+      const notes = getLeadNotes(lead, store);
+      const payload = {
+        sheetName: SHEET_NAME,
+        id: lead.id,
+        rank: lead.rank,
+        name: lead.name,
+        phone: lead.phone,
+        location: lead.location,
+        status: status,
+        notes: notes
+      };
+      fetch(SHEET_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).catch(err => console.warn('Sheet sync failed:', err));
+    }
+
     function setStatus(id, status) {
       const store = loadStore();
       const key = String(id);
@@ -1370,14 +1402,18 @@
       saveStore(store);
       applyRowStatus(id, store[key].status);
       updateStats();
+      syncToSheet(id);
     }
 
+    const notesSyncTimers = {};
     function setNotes(id, notes) {
       const store = loadStore();
       const key = String(id);
       store[key] = store[key] || {};
       store[key].notes = notes;
       saveStore(store);
+      clearTimeout(notesSyncTimers[key]);
+      notesSyncTimers[key] = setTimeout(() => syncToSheet(id), 800);
     }
 
     function markCalled(id) {
