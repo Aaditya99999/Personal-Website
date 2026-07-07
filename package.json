@@ -1,0 +1,12 @@
+{
+  "name": "aaditya-personal-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "check:analytics-api": "node --check api/analytics.js"
+  },
+  "dependencies": {
+    "@google-analytics/data": "^4.12.0",
+    "google-auth-library": "^9.15.1"
+  }
+}

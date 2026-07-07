@@ -1,0 +1,20 @@
+/*
+  X-Robots-Tag: index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1
+
+/robots.txt
+  X-Robots-Tag: noindex, follow
+
+/sitemap.xml
+  X-Robots-Tag: noindex, follow
+
+/llms.txt
+  X-Robots-Tag: noindex, follow
+
+/full-llms.txt
+  X-Robots-Tag: noindex, follow
+
+/demo/*
+  X-Robots-Tag: noindex, nofollow
+
+/project-tracker/*
+  X-Robots-Tag: noindex, nofollow

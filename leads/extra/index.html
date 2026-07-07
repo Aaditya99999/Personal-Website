@@ -1,0 +1,1495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Next 50 Pediatric Leads</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --card: #ffffff;
+      --text: #102033;
+      --muted: #667085;
+      --line: #e7edf5;
+      --brand: #0f766e;
+      --brand-dark: #115e59;
+      --soft: #ecfdf5;
+      --danger: #fff1f2;
+      --warn: #fffbeb;
+      --blue-soft: #eff6ff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: var(--bg); color: var(--text); }
+    .wrap { width: min(1180px, 94vw); margin: 28px auto; }
+    .hero { background: linear-gradient(135deg, #0f766e, #0ea5e9); color: white; border-radius: 22px; padding: 24px; box-shadow: 0 16px 40px rgba(15, 118, 110, 0.2); }
+    .hero h1 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 38px); }
+    .hero p { margin: 0; opacity: 0.95; font-size: 15px; }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+    .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px; box-shadow: 0 8px 24px rgba(16, 24, 40, 0.04); }
+    .stat .num { font-size: 28px; font-weight: 800; }
+    .stat .label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+    .toolbar { display: flex; gap: 10px; align-items: center; justify-content: space-between; margin: 16px 0; flex-wrap: wrap; }
+    .search { flex: 1; min-width: 240px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; font-size: 14px; outline: none; background: white; }
+    .small-btn { border: none; background: #102033; color: white; border-radius: 12px; padding: 12px 14px; font-weight: 700; cursor: pointer; text-decoration: none; display: inline-block; }
+    .small-btn.secondary { background: #475467; }
+    .table-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: 0 8px 30px rgba(16, 24, 40, 0.05); }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 13px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: middle; }
+    th { background: #f9fafb; color: #334155; font-size: 13px; text-transform: uppercase; letter-spacing: 0.03em; position: sticky; top: 0; z-index: 1; }
+    tr:hover td { background: #fbfdff; }
+    .serial { color: var(--muted); font-weight: 700; width: 54px; }
+    .lead-name { font-weight: 800; }
+    .lead-meta { color: var(--muted); font-size: 12px; margin-top: 3px; }
+    .phone-number { color: #0f172a; font-weight: 800; text-decoration: none; white-space: nowrap; }
+    .call-btn { display: inline-flex; align-items: center; justify-content: center; background: var(--brand); color: white; padding: 10px 14px; border-radius: 999px; text-decoration: none; font-weight: 800; white-space: nowrap; }
+    .call-btn:hover { background: var(--brand-dark); }
+    select.status-select, input.notes { width: 100%; border: 1px solid var(--line); border-radius: 10px; padding: 10px; font-size: 14px; background: white; }
+    .notes-cell { min-width: 180px; }
+    .status-called select { background: var(--blue-soft); border-color: #bfdbfe; font-weight: 700; }
+    .status-interested select { background: var(--soft); border-color: #86efac; font-weight: 800; }
+    .status-not-answered select { background: var(--warn); border-color: #fde68a; font-weight: 700; }
+    .status-not-interested select { background: var(--danger); border-color: #fecdd3; font-weight: 700; }
+    .footer-note { color: var(--muted); font-size: 12px; margin-top: 12px; }
+    .muted { color: var(--muted); }
+    @media (max-width: 760px) {
+      .wrap { width: 100%; margin: 0; }
+      .hero { border-radius: 0; }
+      .stats { grid-template-columns: repeat(2, 1fr); padding: 0 12px; }
+      .toolbar { padding: 0 12px; }
+      .table-card { border-radius: 0; border-left: 0; border-right: 0; }
+      table, tbody, tr, td { display: block; width: 100%; }
+      thead { display: none; }
+      tr { padding: 12px; border-bottom: 1px solid var(--line); }
+      td { border: 0; padding: 6px 0; }
+      .serial { color: var(--muted); }
+      .hide-mobile { display: none; }
+      .call-btn { width: 100%; padding: 12px; margin-top: 6px; }
+      .notes-cell { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Next 50 Pediatric Leads</h1>
+      <p>Tap the phone button to mark a lead as Called. The status cards update instantly and stay saved on this device.</p>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><div class="num" id="totalCount">0</div><div class="label">Total Leads</div></div>
+      <div class="stat"><div class="num" id="calledCount">0</div><div class="label">Called / Contacted</div></div>
+      <div class="stat"><div class="num" id="interestedCount">0</div><div class="label">Interested</div></div>
+      <div class="stat"><div class="num" id="notCalledCount">0</div><div class="label">Not Called</div></div>
+    </section>
+
+    <div class="toolbar">
+      <input class="search" id="searchBox" type="search" oninput="filterRows()" placeholder="Search name, phone, city, status..." />
+      <button class="small-btn" onclick="downloadCSV()">Download Updated CSV</button>
+      <button class="small-btn secondary" onclick="resetStatuses()">Reset Status</button>
+    </div>
+
+    <section class="table-card">
+      <table id="leadTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Phone Number</th>
+            <th>Location</th>
+            <th>Call</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+      <tr data-lead-id="1" data-status="Not Called">
+        <td class="serial">1</td>
+        <td>
+          <div class="lead-name">Dr.Anuja Rajoriya | Best Child Specialist Greater Noida West| Best Pediatrician in Noida extension|Chubby Cheeks Kids Clinic</div>
+          <div class="lead-meta">Rank 1 · Score 124.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918800375226" onclick="return markCalled(1);">088003 75226</a></td>
+        <td class="hide-mobile">Shop no UGF-12, Trident shoperio, Trident Embassy</td>
+        <td><a class="call-btn" href="tel:+918800375226" onclick="return markCalled(1);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="1" onchange="setStatus(1, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="1" placeholder="Notes" oninput="setNotes(1, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="2" data-status="Not Called">
+        <td class="serial">2</td>
+        <td>
+          <div class="lead-name">Dr. Nyay Bhai Gupta (Child &amp; New Born Specialist, Paediatrician &amp; Neonatologist, Vaccination Centre)</div>
+          <div class="lead-meta">Rank 2 · Score 124.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919517129129" onclick="return markCalled(2);">095171 29129</a></td>
+        <td class="hide-mobile">A-98, A Block</td>
+        <td><a class="call-btn" href="tel:+919517129129" onclick="return markCalled(2);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="2" onchange="setStatus(2, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="2" placeholder="Notes" oninput="setNotes(2, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="3" data-status="Not Called">
+        <td class="serial">3</td>
+        <td>
+          <div class="lead-name">Dr Charu Chandwani</div>
+          <div class="lead-meta">Rank 3 · Score 124.0 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919999046624" onclick="return markCalled(3);">099990 46624</a></td>
+        <td class="hide-mobile">House 162, 32 meter, 32 metre, B Block Rd</td>
+        <td><a class="call-btn" href="tel:+919999046624" onclick="return markCalled(3);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="3" onchange="setStatus(3, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="3" placeholder="Notes" oninput="setNotes(3, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="4" data-status="Not Called">
+        <td class="serial">4</td>
+        <td>
+          <div class="lead-name">Maccure Hospital | Best Pregnancy, Maternity Hospital | Best Gynecologist in Janakpuri, Delhi</div>
+          <div class="lead-meta">Rank 4 · Score 124.0 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+917042179696" onclick="return markCalled(4);">070421 79696</a></td>
+        <td class="hide-mobile">C-2/22</td>
+        <td><a class="call-btn" href="tel:+917042179696" onclick="return markCalled(4);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="4" onchange="setStatus(4, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="4" placeholder="Notes" oninput="setNotes(4, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="5" data-status="Not Called">
+        <td class="serial">5</td>
+        <td>
+          <div class="lead-name">Dr Alok Gupta , pediatrician Ghaziabad, indirapuram</div>
+          <div class="lead-meta">Rank 5 · Score 123.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+911204219317" onclick="return markCalled(5);">0120 421 9317</a></td>
+        <td class="hide-mobile">NH 4, Gyan Khand 1</td>
+        <td><a class="call-btn" href="tel:+911204219317" onclick="return markCalled(5);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="5" onchange="setStatus(5, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="5" placeholder="Notes" oninput="setNotes(5, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="6" data-status="Not Called">
+        <td class="serial">6</td>
+        <td>
+          <div class="lead-name">UN Fetal Medicine &amp; Child Clinic | Dr Ravinder Yadav &amp; Dr Priyanka Chaudhary | Best Pediatrician &amp; Fetal Medicine in Rohini</div>
+          <div class="lead-meta">Rank 6 · Score 123.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919560256261" onclick="return markCalled(6);">095602 56261</a></td>
+        <td class="hide-mobile">1st Floor, D-11/151, opposite Metro Pillar no 390, near Rohini East Metro Station</td>
+        <td><a class="call-btn" href="tel:+919560256261" onclick="return markCalled(6);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="6" onchange="setStatus(6, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="6" placeholder="Notes" oninput="setNotes(6, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="7" data-status="Not Called">
+        <td class="serial">7</td>
+        <td>
+          <div class="lead-name">Dr Vandana Singh Pediatrician in Gaur City – Child Specialist Pediatrician</div>
+          <div class="lead-meta">Rank 7 · Score 123.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918047758154" onclick="return markCalled(7);">080 4775 8154</a></td>
+        <td class="hide-mobile">First floor shop, Galleria Market, 28, Greater Noida W Rd</td>
+        <td><a class="call-btn" href="tel:+918047758154" onclick="return markCalled(7);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="7" onchange="setStatus(7, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="7" placeholder="Notes" oninput="setNotes(7, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="8" data-status="Not Called">
+        <td class="serial">8</td>
+        <td>
+          <div class="lead-name">Dr. Tina Goel (Ex - AIIMS) - Best Pediatrician &amp; Child Specialist Doctor In Delhi</div>
+          <div class="lead-meta">Rank 8 · Score 123.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+917011220152" onclick="return markCalled(8);">070112 20152</a></td>
+        <td class="hide-mobile">Shop no 104, first floor, Krishna Mall, Plot 7</td>
+        <td><a class="call-btn" href="tel:+917011220152" onclick="return markCalled(8);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="8" onchange="setStatus(8, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="8" placeholder="Notes" oninput="setNotes(8, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="9" data-status="Not Called">
+        <td class="serial">9</td>
+        <td>
+          <div class="lead-name">Dr Devendra Soni</div>
+          <div class="lead-meta">Rank 9 · Score 123.8 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918010421236" onclick="return markCalled(9);">080104 21236</a></td>
+        <td class="hide-mobile">SFS Agarwal Farm, Talwar Medical Center, 3/101</td>
+        <td><a class="call-btn" href="tel:+918010421236" onclick="return markCalled(9);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="9" onchange="setStatus(9, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="9" placeholder="Notes" oninput="setNotes(9, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="10" data-status="Not Called">
+        <td class="serial">10</td>
+        <td>
+          <div class="lead-name">Dr Arihant Jain MD l Certified Pediatrician l Vaccine Expert l Child Specialist l Mansarovar</div>
+          <div class="lead-meta">Rank 10 · Score 123.8 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919029445115" onclick="return markCalled(10);">090294 45115</a></td>
+        <td class="hide-mobile">52/201 (Basement, MAIN, VT Rd, opposite Pacific Mall</td>
+        <td><a class="call-btn" href="tel:+919029445115" onclick="return markCalled(10);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="10" onchange="setStatus(10, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="10" placeholder="Notes" oninput="setNotes(10, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="11" data-status="Not Called">
+        <td class="serial">11</td>
+        <td>
+          <div class="lead-name">KIDGENIX CHILD CLINIC (Dr Nikhil Mehrotra)</div>
+          <div class="lead-meta">Rank 11 · Score 123.7 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919318496507" onclick="return markCalled(11);">093184 96507</a></td>
+        <td class="hide-mobile">Main A-31, Janpath Marg</td>
+        <td><a class="call-btn" href="tel:+919318496507" onclick="return markCalled(11);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="11" onchange="setStatus(11, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="11" placeholder="Notes" oninput="setNotes(11, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="12" data-status="Not Called">
+        <td class="serial">12</td>
+        <td>
+          <div class="lead-name">Dr. Ashish Pratap Singh (Tanush Mother and Child Care Centre)-Pediatrician Vaccination In Gomti Nagar</div>
+          <div class="lead-meta">Rank 12 · Score 123.6 · Doctor</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919369354047" onclick="return markCalled(12);">093693 54047</a></td>
+        <td class="hide-mobile">A6/3, Sulabh Awas, sector 1, opposite H block, Greenwood Apartment Rd</td>
+        <td><a class="call-btn" href="tel:+919369354047" onclick="return markCalled(12);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="12" onchange="setStatus(12, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="12" placeholder="Notes" oninput="setNotes(12, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="13" data-status="Not Called">
+        <td class="serial">13</td>
+        <td>
+          <div class="lead-name">Giggles Clinic &amp; My Own Space ( Child Clinic &amp; Child Developmental Centre ,CDC):Centre for AUTISM, ADHD, GDD, DOWN SYNDROME</div>
+          <div class="lead-meta">Rank 13 · Score 123.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919818282558" onclick="return markCalled(13);">098182 82558</a></td>
+        <td class="hide-mobile">1ST FLOOR, 57, above LENSKART SHOWROOM</td>
+        <td><a class="call-btn" href="tel:+919818282558" onclick="return markCalled(13);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="13" onchange="setStatus(13, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="13" placeholder="Notes" oninput="setNotes(13, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="14" data-status="Not Called">
+        <td class="serial">14</td>
+        <td>
+          <div class="lead-name">Dr. Anand Kumawat</div>
+          <div class="lead-meta">Rank 14 · Score 123.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918875223777" onclick="return markCalled(14);">088752 23777</a></td>
+        <td class="hide-mobile">Pediatrician</td>
+        <td><a class="call-btn" href="tel:+918875223777" onclick="return markCalled(14);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="14" onchange="setStatus(14, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="14" placeholder="Notes" oninput="setNotes(14, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="15" data-status="Not Called">
+        <td class="serial">15</td>
+        <td>
+          <div class="lead-name">Dr. Anshita Jain l Paediatrician in Gurugram - Newborn, Vaccination &amp; Child Specialist l Jain Hospital</div>
+          <div class="lead-meta">Rank 15 · Score 123.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919599023002" onclick="return markCalled(15);">095990 23002</a></td>
+        <td class="hide-mobile">1499P</td>
+        <td><a class="call-btn" href="tel:+919599023002" onclick="return markCalled(15);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="15" onchange="setStatus(15, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="15" placeholder="Notes" oninput="setNotes(15, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="16" data-status="Not Called">
+        <td class="serial">16</td>
+        <td>
+          <div class="lead-name">Parvarish Kids and Family Clinic - Dr. Reshu Lohiya - Best Pediatrician/Child Specialist Indirapuram / Vaccination centre</div>
+          <div class="lead-meta">Rank 16 · Score 123.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919971325450" onclick="return markCalled(16);">099713 25450</a></td>
+        <td class="hide-mobile">283 , GROUND FLOOR</td>
+        <td><a class="call-btn" href="tel:+919971325450" onclick="return markCalled(16);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="16" onchange="setStatus(16, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="16" placeholder="Notes" oninput="setNotes(16, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="17" data-status="Not Called">
+        <td class="serial">17</td>
+        <td>
+          <div class="lead-name">Lifecare Clinic - Gynecology &amp; Child Care Clinic</div>
+          <div class="lead-meta">Rank 17 · Score 123.5 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918197561760" onclick="return markCalled(17);">081975 61760</a></td>
+        <td class="hide-mobile">257, Saraswati Marg, near Chitrakoot Stadium</td>
+        <td><a class="call-btn" href="tel:+918197561760" onclick="return markCalled(17);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="17" onchange="setStatus(17, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="17" placeholder="Notes" oninput="setNotes(17, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="18" data-status="Not Called">
+        <td class="serial">18</td>
+        <td>
+          <div class="lead-name">Renaissance Child Dental centre Dr Anamika Jain</div>
+          <div class="lead-meta">Rank 18 · Score 123.5 · Pediatric dentist</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+911204225557" onclick="return markCalled(18);">0120 422 5557</a></td>
+        <td class="hide-mobile">64, LGF, Jaipuria Mall, SA 62, near RR cinema box office</td>
+        <td><a class="call-btn" href="tel:+911204225557" onclick="return markCalled(18);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="18" onchange="setStatus(18, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="18" placeholder="Notes" oninput="setNotes(18, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="19" data-status="Not Called">
+        <td class="serial">19</td>
+        <td>
+          <div class="lead-name">Care &#x27;n&#x27; Cure Children Clinic</div>
+          <div class="lead-meta">Rank 19 · Score 123.5 · Children Policlinic</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919582188753" onclick="return markCalled(19);">095821 88753</a></td>
+        <td class="hide-mobile">Shop no 145, Huda Market Rd</td>
+        <td><a class="call-btn" href="tel:+919582188753" onclick="return markCalled(19);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="19" onchange="setStatus(19, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="19" placeholder="Notes" oninput="setNotes(19, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="20" data-status="Not Called">
+        <td class="serial">20</td>
+        <td>
+          <div class="lead-name">Dr. Preeti Singh - Pediatrician &amp; Child Specialist In Gurgaon | Pediatric Nutrition | Vaccination | Newborn Care in Gurgaon</div>
+          <div class="lead-meta">Rank 20 · Score 123.5 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919205686906" onclick="return markCalled(20);">092056 86906</a></td>
+        <td class="hide-mobile">C410, B, Infront of Sanskriti Model Government School, Vyapar Kendra Rd</td>
+        <td><a class="call-btn" href="tel:+919205686906" onclick="return markCalled(20);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="20" onchange="setStatus(20, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="20" placeholder="Notes" oninput="setNotes(20, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="21" data-status="Not Called">
+        <td class="serial">21</td>
+        <td>
+          <div class="lead-name">Newborn And Child Care Clinic (Dr Sameer Sarswat)</div>
+          <div class="lead-meta">Rank 21 · Score 123.4 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+917838091471" onclick="return markCalled(21);">078380 91471</a></td>
+        <td class="hide-mobile">1sr floor, ATULYA CHOWK, ATULYA MULTI-SPECIALITY CLINIC, plot no. 236</td>
+        <td><a class="call-btn" href="tel:+917838091471" onclick="return markCalled(21);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="21" onchange="setStatus(21, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="21" placeholder="Notes" oninput="setNotes(21, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="22" data-status="Not Called">
+        <td class="serial">22</td>
+        <td>
+          <div class="lead-name">Dr. Sumit&#x27;s Child Care Clinic (Dr Sumit Arora - Paediatrician &amp; Neonatologist)</div>
+          <div class="lead-meta">Rank 22 · Score 123.4 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919717567399" onclick="return markCalled(22);">097175 67399</a></td>
+        <td class="hide-mobile">485 - G/7, Geeta Bhawan Mandir Rd</td>
+        <td><a class="call-btn" href="tel:+919717567399" onclick="return markCalled(22);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="22" onchange="setStatus(22, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="22" placeholder="Notes" oninput="setNotes(22, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="23" data-status="Not Called">
+        <td class="serial">23</td>
+        <td>
+          <div class="lead-name">Child Specialist Dr. MANJU DUTTA</div>
+          <div class="lead-meta">Rank 23 · Score 123.4 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919910504199" onclick="return markCalled(23);">099105 04199</a></td>
+        <td class="hide-mobile">Child Specialist Dr MANJU DUTTA, A -78, near RAMAGYA SCHOOL</td>
+        <td><a class="call-btn" href="tel:+919910504199" onclick="return markCalled(23);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="23" onchange="setStatus(23, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="23" placeholder="Notes" oninput="setNotes(23, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="24" data-status="Not Called">
+        <td class="serial">24</td>
+        <td>
+          <div class="lead-name">Kids and teeth, Pediatric and Teenage Dental care | Laughing Gas | Braces &amp; Invisalign | Early orthodontics</div>
+          <div class="lead-meta">Rank 24 · Score 123.4 · Pediatric dentist</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918103055876" onclick="return markCalled(24);">081030 55876</a></td>
+        <td class="hide-mobile">floor, F1/B, Kirpal tower, E3, 10 number market, above Manohar Dairy and Restaurant</td>
+        <td><a class="call-btn" href="tel:+918103055876" onclick="return markCalled(24);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="24" onchange="setStatus(24, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="24" placeholder="Notes" oninput="setNotes(24, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="25" data-status="Not Called">
+        <td class="serial">25</td>
+        <td>
+          <div class="lead-name">नवकार क्लीनिक ॰॰॰॰ डॉ मयंक जैन ॰॰॰ चाइल्ड स्पेशलिस्ट</div>
+          <div class="lead-meta">Rank 25 · Score 123.3 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919075898677" onclick="return markCalled(25);">090758 98677</a></td>
+        <td class="hide-mobile">B-2</td>
+        <td><a class="call-btn" href="tel:+919075898677" onclick="return markCalled(25);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="25" onchange="setStatus(25, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="25" placeholder="Notes" oninput="setNotes(25, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="26" data-status="Not Called">
+        <td class="serial">26</td>
+        <td>
+          <div class="lead-name">Dr. Siddhartha Gogia</div>
+          <div class="lead-meta">Rank 26 · Score 123.3 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919899977935" onclick="return markCalled(26);">098999 77935</a></td>
+        <td class="hide-mobile">Galleria Tower, 1101, DLF Galleria Rd</td>
+        <td><a class="call-btn" href="tel:+919899977935" onclick="return markCalled(26);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="26" onchange="setStatus(26, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="26" placeholder="Notes" oninput="setNotes(26, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="27" data-status="Not Called">
+        <td class="serial">27</td>
+        <td>
+          <div class="lead-name">Dr. Poorva Rangnekar - Joy Pediatrics and Family Clinic | Kids Dentist in Bhopal</div>
+          <div class="lead-meta">Rank 27 · Score 123.3 · Pediatric dentist</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+917554866490" onclick="return markCalled(27);">0755 486 6490</a></td>
+        <td class="hide-mobile">E-2/127</td>
+        <td><a class="call-btn" href="tel:+917554866490" onclick="return markCalled(27);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="27" onchange="setStatus(27, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="27" placeholder="Notes" oninput="setNotes(27, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="28" data-status="Not Called">
+        <td class="serial">28</td>
+        <td>
+          <div class="lead-name">Dr. Shilpi Gupta</div>
+          <div class="lead-meta">Rank 28 · Score 123.3 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919313089610" onclick="return markCalled(28);">093130 89610</a></td>
+        <td class="hide-mobile">flat no 513, BLOCK-10, apartments, Kailash Dham Rd</td>
+        <td><a class="call-btn" href="tel:+919313089610" onclick="return markCalled(28);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="28" onchange="setStatus(28, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="28" placeholder="Notes" oninput="setNotes(28, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="29" data-status="Not Called">
+        <td class="serial">29</td>
+        <td>
+          <div class="lead-name">Dr Priyanka Singh- Best pediatrician in Bhopal,Pediatric Nephrologist,Newborn,Vaccination,neonatologist,nutrition,diet,</div>
+          <div class="lead-meta">Rank 29 · Score 123.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918287554462" onclick="return markCalled(29);">082875 54462</a></td>
+        <td class="hide-mobile">Well care medical center , B288</td>
+        <td><a class="call-btn" href="tel:+918287554462" onclick="return markCalled(29);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="29" onchange="setStatus(29, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="29" placeholder="Notes" oninput="setNotes(29, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="30" data-status="Not Called">
+        <td class="serial">30</td>
+        <td>
+          <div class="lead-name">Little Stars MD Pediatrics</div>
+          <div class="lead-meta">Rank 30 · Score 123.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919990800246" onclick="return markCalled(30);">099908 00246</a></td>
+        <td class="hide-mobile">83-A Sector -6 Pocket -2 DDA Flat Behind sec 6 market Dwarka, Behind sec 6 main market</td>
+        <td><a class="call-btn" href="tel:+919990800246" onclick="return markCalled(30);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="30" onchange="setStatus(30, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="30" placeholder="Notes" oninput="setNotes(30, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="31" data-status="Not Called">
+        <td class="serial">31</td>
+        <td>
+          <div class="lead-name">Dr Dinesh Mittal child specialist</div>
+          <div class="lead-meta">Rank 31 · Score 123.0 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+911145151377" onclick="return markCalled(31);">011 4515 1377</a></td>
+        <td class="hide-mobile">no 69 pocket H, House, 34</td>
+        <td><a class="call-btn" href="tel:+911145151377" onclick="return markCalled(31);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="31" onchange="setStatus(31, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="31" placeholder="Notes" oninput="setNotes(31, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="32" data-status="Not Called">
+        <td class="serial">32</td>
+        <td>
+          <div class="lead-name">SRG Multi-Specialty Hospital, Jaipur</div>
+          <div class="lead-meta">Rank 32 · Score 122.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919730066234" onclick="return markCalled(32);">097300 66234</a></td>
+        <td class="hide-mobile">Geo Villa, 178, Ajmer Rd</td>
+        <td><a class="call-btn" href="tel:+919730066234" onclick="return markCalled(32);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="32" onchange="setStatus(32, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="32" placeholder="Notes" oninput="setNotes(32, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="33" data-status="Not Called">
+        <td class="serial">33</td>
+        <td>
+          <div class="lead-name">Dr Vipul Jain, Vardhman Clinic, In Good Hands Childcare Group NCR</div>
+          <div class="lead-meta">Rank 33 · Score 122.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918447552555" onclick="return markCalled(33);">084475 52555</a></td>
+        <td class="hide-mobile">BF 107, Janak Puri,Santoshi, Mata Shanti Devi Marg, near Hari Nagar Depot</td>
+        <td><a class="call-btn" href="tel:+918447552555" onclick="return markCalled(33);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="33" onchange="setStatus(33, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="33" placeholder="Notes" oninput="setNotes(33, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="34" data-status="Not Called">
+        <td class="serial">34</td>
+        <td>
+          <div class="lead-name">Dr. Priti Agarwal</div>
+          <div class="lead-meta">Rank 34 · Score 122.9 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918375980448" onclick="return markCalled(34);">083759 80448</a></td>
+        <td class="hide-mobile">Plot.no 22, Ksheer Sagar Colony, Patrakar Colony Rd, near THE KID&#x27;S CLINIC</td>
+        <td><a class="call-btn" href="tel:+918375980448" onclick="return markCalled(34);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="34" onchange="setStatus(34, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="34" placeholder="Notes" oninput="setNotes(34, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="35" data-status="Not Called">
+        <td class="serial">35</td>
+        <td>
+          <div class="lead-name">Dr. Deepti Chopra</div>
+          <div class="lead-meta">Rank 35 · Score 122.8 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919599213833" onclick="return markCalled(35);">095992 13833</a></td>
+        <td class="hide-mobile">Care&#x27;nCure, Supermart I, C-012D, above Needs Supermarket</td>
+        <td><a class="call-btn" href="tel:+919599213833" onclick="return markCalled(35);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="35" onchange="setStatus(35, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="35" placeholder="Notes" oninput="setNotes(35, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="36" data-status="Not Called">
+        <td class="serial">36</td>
+        <td>
+          <div class="lead-name">Dr. Pawan Sulaniya</div>
+          <div class="lead-meta">Rank 36 · Score 122.8 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+917023083312" onclick="return markCalled(36);">070230 83312</a></td>
+        <td class="hide-mobile">LG-2, WellBaby Children&#x27;s Clinic, Jtm Mall</td>
+        <td><a class="call-btn" href="tel:+917023083312" onclick="return markCalled(36);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="36" onchange="setStatus(36, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="36" placeholder="Notes" oninput="setNotes(36, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="37" data-status="Not Called">
+        <td class="serial">37</td>
+        <td>
+          <div class="lead-name">Doctor Amit Child Clinic (Dr Amit Valbhani)</div>
+          <div class="lead-meta">Rank 37 · Score 122.7 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919910703041" onclick="return markCalled(37);">099107 03041</a></td>
+        <td class="hide-mobile">GF, Shaheed, Bhagat singh Apartments, 561</td>
+        <td><a class="call-btn" href="tel:+919910703041" onclick="return markCalled(37);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="37" onchange="setStatus(37, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="37" placeholder="Notes" oninput="setNotes(37, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="38" data-status="Not Called">
+        <td class="serial">38</td>
+        <td>
+          <div class="lead-name">Child Specialist - Dr Abha</div>
+          <div class="lead-meta">Rank 38 · Score 122.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918527913224" onclick="return markCalled(38);">085279 13224</a></td>
+        <td class="hide-mobile">E 15 123 -124</td>
+        <td><a class="call-btn" href="tel:+918527913224" onclick="return markCalled(38);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="38" onchange="setStatus(38, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="38" placeholder="Notes" oninput="setNotes(38, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="39" data-status="Not Called">
+        <td class="serial">39</td>
+        <td>
+          <div class="lead-name">Bhritii Health Care</div>
+          <div class="lead-meta">Rank 39 · Score 122.6 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+911140506969" onclick="return markCalled(39);">011 4050 6969</a></td>
+        <td class="hide-mobile">196</td>
+        <td><a class="call-btn" href="tel:+911140506969" onclick="return markCalled(39);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="39" onchange="setStatus(39, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="39" placeholder="Notes" oninput="setNotes(39, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="40" data-status="Not Called">
+        <td class="serial">40</td>
+        <td>
+          <div class="lead-name">Dr. Vaishakhi Rustagi - Paediatric &amp; Adolescent Endocrinologist</div>
+          <div class="lead-meta">Rank 40 · Score 122.5 · Pediatric endocrinologist</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919311341151" onclick="return markCalled(40);">093113 41151</a></td>
+        <td class="hide-mobile">AD-35A, Power Apartment</td>
+        <td><a class="call-btn" href="tel:+919311341151" onclick="return markCalled(40);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="40" onchange="setStatus(40, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="40" placeholder="Notes" oninput="setNotes(40, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="41" data-status="Not Called">
+        <td class="serial">41</td>
+        <td>
+          <div class="lead-name">Ethica Kids by Dr. Gurpreet Kaur (Developmental Pediatrics and Pediatric Allergy/Asthma Care)</div>
+          <div class="lead-meta">Rank 41 · Score 122.5 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919315737440" onclick="return markCalled(41);">093157 37440</a></td>
+        <td class="hide-mobile">Upper ground floor, UG 44, Ocus Quantum</td>
+        <td><a class="call-btn" href="tel:+919315737440" onclick="return markCalled(41);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="41" onchange="setStatus(41, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="41" placeholder="Notes" oninput="setNotes(41, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="42" data-status="Not Called">
+        <td class="serial">42</td>
+        <td>
+          <div class="lead-name">Dr Varun Vij | Best Pediatrician in Gurgaon | Child Specialist | Child Doctor | Vaccination | Neonatologist</div>
+          <div class="lead-meta">Rank 42 · Score 122.5 · Neonatal physician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919899661144" onclick="return markCalled(42);">098996 61144</a></td>
+        <td class="hide-mobile">525, Ashok Villa, rapid metro station, Golf Course Rd, near Sector 42/43</td>
+        <td><a class="call-btn" href="tel:+919899661144" onclick="return markCalled(42);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="42" onchange="setStatus(42, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="42" placeholder="Notes" oninput="setNotes(42, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="43" data-status="Not Called">
+        <td class="serial">43</td>
+        <td>
+          <div class="lead-name">Dr Sumit I karn -Best Pediatrician in Greater Noida West | Newborn &amp; Child Specialist | Kids Vaccination Clinic</div>
+          <div class="lead-meta">Rank 43 · Score 122.5 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918368424841" onclick="return markCalled(43);">083684 24841</a></td>
+        <td class="hide-mobile">Shop no GF-18, Evara Multi Speciality clinic, Greater Noida W Rd, next to Sarvodaya hospital, opposite 16th Avenue</td>
+        <td><a class="call-btn" href="tel:+918368424841" onclick="return markCalled(43);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="43" onchange="setStatus(43, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="43" placeholder="Notes" oninput="setNotes(43, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="44" data-status="Not Called">
+        <td class="serial">44</td>
+        <td>
+          <div class="lead-name">Dr. Jyoti Patodia</div>
+          <div class="lead-meta">Rank 44 · Score 122.4 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918872896648" onclick="return markCalled(44);">088728 96648</a></td>
+        <td class="hide-mobile">D-19, Mahalaxmi Nagar, behind WTP</td>
+        <td><a class="call-btn" href="tel:+918872896648" onclick="return markCalled(44);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="44" onchange="setStatus(44, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="44" placeholder="Notes" oninput="setNotes(44, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="45" data-status="Not Called">
+        <td class="serial">45</td>
+        <td>
+          <div class="lead-name">Child Care Clinic (Dr Kushagra Gupta)</div>
+          <div class="lead-meta">Rank 45 · Score 122.4 · Child health care center</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919650499969" onclick="return markCalled(45);">096504 99969</a></td>
+        <td class="hide-mobile">C184, 9th Cross St</td>
+        <td><a class="call-btn" href="tel:+919650499969" onclick="return markCalled(45);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="45" onchange="setStatus(45, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="45" placeholder="Notes" oninput="setNotes(45, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="46" data-status="Not Called">
+        <td class="serial">46</td>
+        <td>
+          <div class="lead-name">Dr Leena Soni | Child Specialist | शिशु रोग विशेषज्ञ | Pediatrician | Nipania | nearby DMart | Indore | Best Doctor.</div>
+          <div class="lead-meta">Rank 46 · Score 122.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919977175785" onclick="return markCalled(46);">099771 75785</a></td>
+        <td class="hide-mobile">business island 101, Nipania Main Rd</td>
+        <td><a class="call-btn" href="tel:+919977175785" onclick="return markCalled(46);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="46" onchange="setStatus(46, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="46" placeholder="Notes" oninput="setNotes(46, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="47" data-status="Not Called">
+        <td class="serial">47</td>
+        <td>
+          <div class="lead-name">Dr Vaibhav Agnihotri Paediatrician</div>
+          <div class="lead-meta">Rank 47 · Score 122.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+918197561760" onclick="return markCalled(47);">081975 61760</a></td>
+        <td class="hide-mobile">Ramnath Garden, Shree Pradhan Tower, 20- C, Sirsi Rd</td>
+        <td><a class="call-btn" href="tel:+918197561760" onclick="return markCalled(47);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="47" onchange="setStatus(47, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="47" placeholder="Notes" oninput="setNotes(47, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="48" data-status="Not Called">
+        <td class="serial">48</td>
+        <td>
+          <div class="lead-name">Dr Narendra Rungta</div>
+          <div class="lead-meta">Rank 48 · Score 122.2 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919829014237" onclick="return markCalled(48);">098290 14237</a></td>
+        <td class="hide-mobile">A 670, Shiv Marg</td>
+        <td><a class="call-btn" href="tel:+919829014237" onclick="return markCalled(48);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="48" onchange="setStatus(48, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="48" placeholder="Notes" oninput="setNotes(48, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="49" data-status="Not Called">
+        <td class="serial">49</td>
+        <td>
+          <div class="lead-name">ANAND&#x27;S CHILD CLINIC</div>
+          <div class="lead-meta">Rank 49 · Score 122.2 · Doctor</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+919899018167" onclick="return markCalled(49);">098990 18167</a></td>
+        <td class="hide-mobile">Shop No, C.S.C - II, DDA Market, 54 &amp; 62, behind Sachdeva School</td>
+        <td><a class="call-btn" href="tel:+919899018167" onclick="return markCalled(49);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="49" onchange="setStatus(49, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="49" placeholder="Notes" oninput="setNotes(49, this.value)" />
+        </td>
+      </tr>
+
+
+      <tr data-lead-id="50" data-status="Not Called">
+        <td class="serial">50</td>
+        <td>
+          <div class="lead-name">Kinder Care Clinic: Doctor Sharwan Gupta, Pediatrician, Child Specialist, Vaccination Centre, Clinic for Newborn Baby</div>
+          <div class="lead-meta">Rank 50 · Score 122.1 · Pediatrician</div>
+        </td>
+        <td class="phone-cell"><a class="phone-number" href="tel:+911146521409" onclick="return markCalled(50);">011 4652 1409</a></td>
+        <td class="hide-mobile">B-15</td>
+        <td><a class="call-btn" href="tel:+911146521409" onclick="return markCalled(50);">📞 Call</a></td>
+        <td>
+          <select class="status-select" data-lead-id="50" onchange="setStatus(50, this.value)">
+            <option value="Not Called" selected>Not Called</option>
+            <option value="Called">Called</option>
+            <option value="Not answered">Not answered</option>
+            <option value="Interested">Interested</option>
+            <option value="Not interested">Not interested</option>
+          </select>
+        </td>
+        <td class="notes-cell">
+          <input class="notes" data-lead-id="50" placeholder="Notes" oninput="setNotes(50, this.value)" />
+        </td>
+      </tr>
+
+        </tbody>
+      </table>
+    </section>
+    <p class="footer-note">Statuses and notes are saved in this browser/device. Use “Download Updated CSV” before sharing the final calling result.</p>
+  </div>
+
+  <script>
+    const leads = [{"id": 1, "rank": "1", "name": "Dr.Anuja Rajoriya | Best Child Specialist Greater Noida West| Best Pediatrician in Noida extension|Chubby Cheeks Kids Clinic", "phone": "088003 75226", "tel": "tel:+918800375226", "city": "", "state": "", "locality": "", "location": "Shop no UGF-12, Trident shoperio, Trident Embassy", "category": "Pediatrician", "score": "124.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 2, "rank": "2", "name": "Dr. Nyay Bhai Gupta (Child & New Born Specialist, Paediatrician & Neonatologist, Vaccination Centre)", "phone": "095171 29129", "tel": "tel:+919517129129", "city": "", "state": "", "locality": "", "location": "A-98, A Block", "category": "Pediatrician", "score": "124.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 3, "rank": "3", "name": "Dr Charu Chandwani", "phone": "099990 46624", "tel": "tel:+919999046624", "city": "", "state": "", "locality": "", "location": "House 162, 32 meter, 32 metre, B Block Rd", "category": "Pediatrician", "score": "124.0", "tier": "", "status": "Not Called", "notes": ""}, {"id": 4, "rank": "4", "name": "Maccure Hospital | Best Pregnancy, Maternity Hospital | Best Gynecologist in Janakpuri, Delhi", "phone": "070421 79696", "tel": "tel:+917042179696", "city": "", "state": "", "locality": "", "location": "C-2/22", "category": "Pediatrician", "score": "124.0", "tier": "", "status": "Not Called", "notes": ""}, {"id": 5, "rank": "5", "name": "Dr Alok Gupta , pediatrician Ghaziabad, indirapuram", "phone": "0120 421 9317", "tel": "tel:+911204219317", "city": "", "state": "", "locality": "", "location": "NH 4, Gyan Khand 1", "category": "Pediatrician", "score": "123.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 6, "rank": "6", "name": "UN Fetal Medicine & Child Clinic | Dr Ravinder Yadav & Dr Priyanka Chaudhary | Best Pediatrician & Fetal Medicine in Rohini", "phone": "095602 56261", "tel": "tel:+919560256261", "city": "", "state": "", "locality": "", "location": "1st Floor, D-11/151, opposite Metro Pillar no 390, near Rohini East Metro Station", "category": "Pediatrician", "score": "123.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 7, "rank": "7", "name": "Dr Vandana Singh Pediatrician in Gaur City – Child Specialist Pediatrician", "phone": "080 4775 8154", "tel": "tel:+918047758154", "city": "", "state": "", "locality": "", "location": "First floor shop, Galleria Market, 28, Greater Noida W Rd", "category": "Pediatrician", "score": "123.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 8, "rank": "8", "name": "Dr. Tina Goel (Ex - AIIMS) - Best Pediatrician & Child Specialist Doctor In Delhi", "phone": "070112 20152", "tel": "tel:+917011220152", "city": "", "state": "", "locality": "", "location": "Shop no 104, first floor, Krishna Mall, Plot 7", "category": "Pediatrician", "score": "123.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 9, "rank": "9", "name": "Dr Devendra Soni", "phone": "080104 21236", "tel": "tel:+918010421236", "city": "", "state": "", "locality": "", "location": "SFS Agarwal Farm, Talwar Medical Center, 3/101", "category": "Pediatrician", "score": "123.8", "tier": "", "status": "Not Called", "notes": ""}, {"id": 10, "rank": "10", "name": "Dr Arihant Jain MD l Certified Pediatrician l Vaccine Expert l Child Specialist l Mansarovar", "phone": "090294 45115", "tel": "tel:+919029445115", "city": "", "state": "", "locality": "", "location": "52/201 (Basement, MAIN, VT Rd, opposite Pacific Mall", "category": "Pediatrician", "score": "123.8", "tier": "", "status": "Not Called", "notes": ""}, {"id": 11, "rank": "11", "name": "KIDGENIX CHILD CLINIC (Dr Nikhil Mehrotra)", "phone": "093184 96507", "tel": "tel:+919318496507", "city": "", "state": "", "locality": "", "location": "Main A-31, Janpath Marg", "category": "Pediatrician", "score": "123.7", "tier": "", "status": "Not Called", "notes": ""}, {"id": 12, "rank": "12", "name": "Dr. Ashish Pratap Singh (Tanush Mother and Child Care Centre)-Pediatrician Vaccination In Gomti Nagar", "phone": "093693 54047", "tel": "tel:+919369354047", "city": "", "state": "", "locality": "", "location": "A6/3, Sulabh Awas, sector 1, opposite H block, Greenwood Apartment Rd", "category": "Doctor", "score": "123.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 13, "rank": "13", "name": "Giggles Clinic & My Own Space ( Child Clinic & Child Developmental Centre ,CDC):Centre for AUTISM, ADHD, GDD, DOWN SYNDROME", "phone": "098182 82558", "tel": "tel:+919818282558", "city": "", "state": "", "locality": "", "location": "1ST FLOOR, 57, above LENSKART SHOWROOM", "category": "Pediatrician", "score": "123.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 14, "rank": "14", "name": "Dr. Anand Kumawat", "phone": "088752 23777", "tel": "tel:+918875223777", "city": "", "state": "", "locality": "", "location": "Pediatrician", "category": "Pediatrician", "score": "123.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 15, "rank": "15", "name": "Dr. Anshita Jain l Paediatrician in Gurugram - Newborn, Vaccination & Child Specialist l Jain Hospital", "phone": "095990 23002", "tel": "tel:+919599023002", "city": "", "state": "", "locality": "", "location": "1499P", "category": "Pediatrician", "score": "123.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 16, "rank": "16", "name": "Parvarish Kids and Family Clinic - Dr. Reshu Lohiya - Best Pediatrician/Child Specialist Indirapuram / Vaccination centre", "phone": "099713 25450", "tel": "tel:+919971325450", "city": "", "state": "", "locality": "", "location": "283 , GROUND FLOOR", "category": "Pediatrician", "score": "123.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 17, "rank": "17", "name": "Lifecare Clinic - Gynecology & Child Care Clinic", "phone": "081975 61760", "tel": "tel:+918197561760", "city": "", "state": "", "locality": "", "location": "257, Saraswati Marg, near Chitrakoot Stadium", "category": "Pediatrician", "score": "123.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 18, "rank": "18", "name": "Renaissance Child Dental centre Dr Anamika Jain", "phone": "0120 422 5557", "tel": "tel:+911204225557", "city": "", "state": "", "locality": "", "location": "64, LGF, Jaipuria Mall, SA 62, near RR cinema box office", "category": "Pediatric dentist", "score": "123.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 19, "rank": "19", "name": "Care 'n' Cure Children Clinic", "phone": "095821 88753", "tel": "tel:+919582188753", "city": "", "state": "", "locality": "", "location": "Shop no 145, Huda Market Rd", "category": "Children Policlinic", "score": "123.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 20, "rank": "20", "name": "Dr. Preeti Singh - Pediatrician & Child Specialist In Gurgaon | Pediatric Nutrition | Vaccination | Newborn Care in Gurgaon", "phone": "092056 86906", "tel": "tel:+919205686906", "city": "", "state": "", "locality": "", "location": "C410, B, Infront of Sanskriti Model Government School, Vyapar Kendra Rd", "category": "Pediatrician", "score": "123.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 21, "rank": "21", "name": "Newborn And Child Care Clinic (Dr Sameer Sarswat)", "phone": "078380 91471", "tel": "tel:+917838091471", "city": "", "state": "", "locality": "", "location": "1sr floor, ATULYA CHOWK, ATULYA MULTI-SPECIALITY CLINIC, plot no. 236", "category": "Pediatrician", "score": "123.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 22, "rank": "22", "name": "Dr. Sumit's Child Care Clinic (Dr Sumit Arora - Paediatrician & Neonatologist)", "phone": "097175 67399", "tel": "tel:+919717567399", "city": "", "state": "", "locality": "", "location": "485 - G/7, Geeta Bhawan Mandir Rd", "category": "Pediatrician", "score": "123.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 23, "rank": "23", "name": "Child Specialist Dr. MANJU DUTTA", "phone": "099105 04199", "tel": "tel:+919910504199", "city": "", "state": "", "locality": "", "location": "Child Specialist Dr MANJU DUTTA, A -78, near RAMAGYA SCHOOL", "category": "Pediatrician", "score": "123.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 24, "rank": "24", "name": "Kids and teeth, Pediatric and Teenage Dental care | Laughing Gas | Braces & Invisalign | Early orthodontics", "phone": "081030 55876", "tel": "tel:+918103055876", "city": "", "state": "", "locality": "", "location": "floor, F1/B, Kirpal tower, E3, 10 number market, above Manohar Dairy and Restaurant", "category": "Pediatric dentist", "score": "123.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 25, "rank": "25", "name": "नवकार क्लीनिक ॰॰॰॰ डॉ मयंक जैन ॰॰॰ चाइल्ड स्पेशलिस्ट", "phone": "090758 98677", "tel": "tel:+919075898677", "city": "", "state": "", "locality": "", "location": "B-2", "category": "Pediatrician", "score": "123.3", "tier": "", "status": "Not Called", "notes": ""}, {"id": 26, "rank": "26", "name": "Dr. Siddhartha Gogia", "phone": "098999 77935", "tel": "tel:+919899977935", "city": "", "state": "", "locality": "", "location": "Galleria Tower, 1101, DLF Galleria Rd", "category": "Pediatrician", "score": "123.3", "tier": "", "status": "Not Called", "notes": ""}, {"id": 27, "rank": "27", "name": "Dr. Poorva Rangnekar - Joy Pediatrics and Family Clinic | Kids Dentist in Bhopal", "phone": "0755 486 6490", "tel": "tel:+917554866490", "city": "", "state": "", "locality": "", "location": "E-2/127", "category": "Pediatric dentist", "score": "123.3", "tier": "", "status": "Not Called", "notes": ""}, {"id": 28, "rank": "28", "name": "Dr. Shilpi Gupta", "phone": "093130 89610", "tel": "tel:+919313089610", "city": "", "state": "", "locality": "", "location": "flat no 513, BLOCK-10, apartments, Kailash Dham Rd", "category": "Pediatrician", "score": "123.3", "tier": "", "status": "Not Called", "notes": ""}, {"id": 29, "rank": "29", "name": "Dr Priyanka Singh- Best pediatrician in Bhopal,Pediatric Nephrologist,Newborn,Vaccination,neonatologist,nutrition,diet,", "phone": "082875 54462", "tel": "tel:+918287554462", "city": "", "state": "", "locality": "", "location": "Well care medical center , B288", "category": "Pediatrician", "score": "123.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 30, "rank": "30", "name": "Little Stars MD Pediatrics", "phone": "099908 00246", "tel": "tel:+919990800246", "city": "", "state": "", "locality": "", "location": "83-A Sector -6 Pocket -2 DDA Flat Behind sec 6 market Dwarka, Behind sec 6 main market", "category": "Pediatrician", "score": "123.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 31, "rank": "31", "name": "Dr Dinesh Mittal child specialist", "phone": "011 4515 1377", "tel": "tel:+911145151377", "city": "", "state": "", "locality": "", "location": "no 69 pocket H, House, 34", "category": "Pediatrician", "score": "123.0", "tier": "", "status": "Not Called", "notes": ""}, {"id": 32, "rank": "32", "name": "SRG Multi-Specialty Hospital, Jaipur", "phone": "097300 66234", "tel": "tel:+919730066234", "city": "", "state": "", "locality": "", "location": "Geo Villa, 178, Ajmer Rd", "category": "Pediatrician", "score": "122.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 33, "rank": "33", "name": "Dr Vipul Jain, Vardhman Clinic, In Good Hands Childcare Group NCR", "phone": "084475 52555", "tel": "tel:+918447552555", "city": "", "state": "", "locality": "", "location": "BF 107, Janak Puri,Santoshi, Mata Shanti Devi Marg, near Hari Nagar Depot", "category": "Pediatrician", "score": "122.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 34, "rank": "34", "name": "Dr. Priti Agarwal", "phone": "083759 80448", "tel": "tel:+918375980448", "city": "", "state": "", "locality": "", "location": "Plot.no 22, Ksheer Sagar Colony, Patrakar Colony Rd, near THE KID'S CLINIC", "category": "Pediatrician", "score": "122.9", "tier": "", "status": "Not Called", "notes": ""}, {"id": 35, "rank": "35", "name": "Dr. Deepti Chopra", "phone": "095992 13833", "tel": "tel:+919599213833", "city": "", "state": "", "locality": "", "location": "Care'nCure, Supermart I, C-012D, above Needs Supermarket", "category": "Pediatrician", "score": "122.8", "tier": "", "status": "Not Called", "notes": ""}, {"id": 36, "rank": "36", "name": "Dr. Pawan Sulaniya", "phone": "070230 83312", "tel": "tel:+917023083312", "city": "", "state": "", "locality": "", "location": "LG-2, WellBaby Children's Clinic, Jtm Mall", "category": "Pediatrician", "score": "122.8", "tier": "", "status": "Not Called", "notes": ""}, {"id": 37, "rank": "37", "name": "Doctor Amit Child Clinic (Dr Amit Valbhani)", "phone": "099107 03041", "tel": "tel:+919910703041", "city": "", "state": "", "locality": "", "location": "GF, Shaheed, Bhagat singh Apartments, 561", "category": "Pediatrician", "score": "122.7", "tier": "", "status": "Not Called", "notes": ""}, {"id": 38, "rank": "38", "name": "Child Specialist - Dr Abha", "phone": "085279 13224", "tel": "tel:+918527913224", "city": "", "state": "", "locality": "", "location": "E 15 123 -124", "category": "Pediatrician", "score": "122.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 39, "rank": "39", "name": "Bhritii Health Care", "phone": "011 4050 6969", "tel": "tel:+911140506969", "city": "", "state": "", "locality": "", "location": "196", "category": "Pediatrician", "score": "122.6", "tier": "", "status": "Not Called", "notes": ""}, {"id": 40, "rank": "40", "name": "Dr. Vaishakhi Rustagi - Paediatric & Adolescent Endocrinologist", "phone": "093113 41151", "tel": "tel:+919311341151", "city": "", "state": "", "locality": "", "location": "AD-35A, Power Apartment", "category": "Pediatric endocrinologist", "score": "122.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 41, "rank": "41", "name": "Ethica Kids by Dr. Gurpreet Kaur (Developmental Pediatrics and Pediatric Allergy/Asthma Care)", "phone": "093157 37440", "tel": "tel:+919315737440", "city": "", "state": "", "locality": "", "location": "Upper ground floor, UG 44, Ocus Quantum", "category": "Pediatrician", "score": "122.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 42, "rank": "42", "name": "Dr Varun Vij | Best Pediatrician in Gurgaon | Child Specialist | Child Doctor | Vaccination | Neonatologist", "phone": "098996 61144", "tel": "tel:+919899661144", "city": "", "state": "", "locality": "", "location": "525, Ashok Villa, rapid metro station, Golf Course Rd, near Sector 42/43", "category": "Neonatal physician", "score": "122.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 43, "rank": "43", "name": "Dr Sumit I karn -Best Pediatrician in Greater Noida West | Newborn & Child Specialist | Kids Vaccination Clinic", "phone": "083684 24841", "tel": "tel:+918368424841", "city": "", "state": "", "locality": "", "location": "Shop no GF-18, Evara Multi Speciality clinic, Greater Noida W Rd, next to Sarvodaya hospital, opposite 16th Avenue", "category": "Pediatrician", "score": "122.5", "tier": "", "status": "Not Called", "notes": ""}, {"id": 44, "rank": "44", "name": "Dr. Jyoti Patodia", "phone": "088728 96648", "tel": "tel:+918872896648", "city": "", "state": "", "locality": "", "location": "D-19, Mahalaxmi Nagar, behind WTP", "category": "Pediatrician", "score": "122.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 45, "rank": "45", "name": "Child Care Clinic (Dr Kushagra Gupta)", "phone": "096504 99969", "tel": "tel:+919650499969", "city": "", "state": "", "locality": "", "location": "C184, 9th Cross St", "category": "Child health care center", "score": "122.4", "tier": "", "status": "Not Called", "notes": ""}, {"id": 46, "rank": "46", "name": "Dr Leena Soni | Child Specialist | शिशु रोग विशेषज्ञ | Pediatrician | Nipania | nearby DMart | Indore | Best Doctor.", "phone": "099771 75785", "tel": "tel:+919977175785", "city": "", "state": "", "locality": "", "location": "business island 101, Nipania Main Rd", "category": "Pediatrician", "score": "122.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 47, "rank": "47", "name": "Dr Vaibhav Agnihotri Paediatrician", "phone": "081975 61760", "tel": "tel:+918197561760", "city": "", "state": "", "locality": "", "location": "Ramnath Garden, Shree Pradhan Tower, 20- C, Sirsi Rd", "category": "Pediatrician", "score": "122.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 48, "rank": "48", "name": "Dr Narendra Rungta", "phone": "098290 14237", "tel": "tel:+919829014237", "city": "", "state": "", "locality": "", "location": "A 670, Shiv Marg", "category": "Pediatrician", "score": "122.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 49, "rank": "49", "name": "ANAND'S CHILD CLINIC", "phone": "098990 18167", "tel": "tel:+919899018167", "city": "", "state": "", "locality": "", "location": "Shop No, C.S.C - II, DDA Market, 54 & 62, behind Sachdeva School", "category": "Doctor", "score": "122.2", "tier": "", "status": "Not Called", "notes": ""}, {"id": 50, "rank": "50", "name": "Kinder Care Clinic: Doctor Sharwan Gupta, Pediatrician, Child Specialist, Vaccination Centre, Clinic for Newborn Baby", "phone": "011 4652 1409", "tel": "tel:+911146521409", "city": "", "state": "", "locality": "", "location": "B-15", "category": "Pediatrician", "score": "122.1", "tier": "", "status": "Not Called", "notes": ""}];
+    const STORAGE_KEY = 'next_50_pediatric_leads_working_v1';
+
+    function normalizeStatus(status) {
+      const value = String(status || '').trim().toLowerCase();
+      if (value === 'called') return 'Called';
+      if (value === 'interested') return 'Interested';
+      if (value === 'not answered' || value === 'not-answered') return 'Not answered';
+      if (value === 'not interested' || value === 'not-interested') return 'Not interested';
+      return 'Not Called';
+    }
+
+    function loadStore() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        return saved && typeof saved === 'object' ? saved : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveStore(store) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(store));
+    }
+
+    function getRow(id) {
+      return document.querySelector(`tr[data-lead-id="${id}"]`);
+    }
+
+    function getLeadStatus(lead, store) {
+      const saved = store[String(lead.id)] || {};
+      return normalizeStatus(saved.status || lead.status || 'Not Called');
+    }
+
+    function getLeadNotes(lead, store) {
+      const saved = store[String(lead.id)] || {};
+      return saved.notes || lead.notes || '';
+    }
+
+    function applyRowStatus(id, status) {
+      const row = getRow(id);
+      if (!row) return;
+      const cleanStatus = normalizeStatus(status);
+      row.dataset.status = cleanStatus;
+      row.classList.remove('status-called', 'status-interested', 'status-not-answered', 'status-not-interested');
+      if (cleanStatus === 'Called') row.classList.add('status-called');
+      if (cleanStatus === 'Interested') row.classList.add('status-interested');
+      if (cleanStatus === 'Not answered') row.classList.add('status-not-answered');
+      if (cleanStatus === 'Not interested') row.classList.add('status-not-interested');
+      const select = row.querySelector('select.status-select');
+      if (select) select.value = cleanStatus;
+    }
+
+
+    const SHEET_WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbwFABvUULhamAAteuxgxK1uYHaVzYJTdNEJ5629wfeiHhmcUcK3IS9x-Q2dDTwCklbJ/exec';
+    const SHEET_NAME = 'Next 50 Leads';
+
+    function getLeadById(id) {
+      return leads.find(l => String(l.id) === String(id));
+    }
+
+    function syncToSheet(id) {
+      const lead = getLeadById(id);
+      if (!lead) return;
+      const store = loadStore();
+      const status = getLeadStatus(lead, store);
+      const notes = getLeadNotes(lead, store);
+      const payload = {
+        sheetName: SHEET_NAME,
+        id: lead.id,
+        rank: lead.rank,
+        name: lead.name,
+        phone: lead.phone,
+        location: lead.location,
+        status: status,
+        notes: notes
+      };
+      fetch(SHEET_WEBAPP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      }).catch(err => console.warn('Sheet sync failed:', err));
+    }
+
+    function setStatus(id, status) {
+      const store = loadStore();
+      const key = String(id);
+      store[key] = store[key] || {};
+      store[key].status = normalizeStatus(status);
+      saveStore(store);
+      applyRowStatus(id, store[key].status);
+      updateStats();
+      syncToSheet(id);
+    }
+
+    const notesSyncTimers = {};
+    function setNotes(id, notes) {
+      const store = loadStore();
+      const key = String(id);
+      store[key] = store[key] || {};
+      store[key].notes = notes;
+      saveStore(store);
+      clearTimeout(notesSyncTimers[key]);
+      notesSyncTimers[key] = setTimeout(() => syncToSheet(id), 800);
+    }
+
+    function markCalled(id) {
+      setStatus(id, 'Called');
+      return true;
+    }
+
+    function hydrate() {
+      const store = loadStore();
+      leads.forEach(lead => {
+        applyRowStatus(lead.id, getLeadStatus(lead, store));
+        const row = getRow(lead.id);
+        const notesInput = row ? row.querySelector('input.notes') : null;
+        if (notesInput) notesInput.value = getLeadNotes(lead, store);
+      });
+      updateStats();
+    }
+
+    function updateStats() {
+      const store = loadStore();
+      let called = 0;
+      let interested = 0;
+      let notCalled = 0;
+
+      leads.forEach(lead => {
+        const status = getLeadStatus(lead, store);
+        if (status === 'Interested') interested += 1;
+        if (status === 'Not Called') notCalled += 1;
+        else called += 1;
+      });
+
+      document.getElementById('totalCount').textContent = leads.length;
+      document.getElementById('calledCount').textContent = called;
+      document.getElementById('interestedCount').textContent = interested;
+      document.getElementById('notCalledCount').textContent = notCalled;
+    }
+
+    function filterRows() {
+      const q = document.getElementById('searchBox').value.trim().toLowerCase();
+      document.querySelectorAll('#leadTable tbody tr').forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(q) ? '' : 'none';
+      });
+    }
+
+    function resetStatuses() {
+      if (!confirm('Reset all saved statuses and notes on this device?')) return;
+      localStorage.removeItem(STORAGE_KEY);
+      document.querySelectorAll('input.notes').forEach(input => input.value = '');
+      hydrate();
+    }
+
+    function csvEscape(value) {
+      const s = String(value ?? '');
+      return '"' + s.replaceAll('"', '""') + '"';
+    }
+
+    function downloadCSV() {
+      const store = loadStore();
+      const header = ['S.No', 'Lead Rank', 'Name', 'Phone Number', 'Location', 'Status', 'Call Notes'];
+      const lines = [header.map(csvEscape).join(',')];
+      leads.forEach(lead => {
+        const row = [lead.id, lead.rank, lead.name, lead.phone, lead.location, getLeadStatus(lead, store), getLeadNotes(lead, store)];
+        lines.push(row.map(csvEscape).join(','));
+      });
+      const blob = new Blob([lines.join('\\n')], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'next_50_pediatric_leads_working_v1_call_status.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+
+    hydrate();
+  </script>
+</body>
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics Hub | AB Labs by Aaditya</title>
+  <meta name="description" content="Private AB Labs analytics dashboard for Aaditya Bhatnagar to review website clicks, scrolls, page visits, UX signals, Google Analytics, and tag tools.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#294d33">
+  <link rel="canonical" href="https://aadityabhatnagar.online/analytics/">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="AB Labs by Aaditya">
+  <meta property="og:title" content="Analytics Hub | AB Labs">
+  <meta property="og:description" content="AB Labs analytics dashboard, behavior events, UX signals, and tracking links for Aaditya Bhatnagar.">
+  <meta property="og:url" content="https://aadityabhatnagar.online/analytics/">
+  <meta property="og:image" content="https://aadityabhatnagar.online/assets/og-preview-v3.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Analytics Hub",
+    "url": "https://aadityabhatnagar.online/analytics/",
+    "description": "Private utility page for opening analytics and tag tools."
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site-shell.css">
+  <style>
+    :root{--ink:#171717;--muted:#66645f;--paper:#f7f6f2;--surface:#fff;--line:#ded8ce;--green:#294d33;--orange:#f5a900;--soft:#f1eee8}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}.container{width:min(1180px,calc(100vw - 40px));margin:0 auto}.script{color:var(--orange);font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:500}.eyebrow{display:flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--green);font-size:12px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.eyebrow:before{content:"";width:16px;height:2px;background:var(--orange)}
+    .hero{padding:78px 0 30px}.hero h1{max-width:900px;margin:0;font-size:clamp(42px,7vw,82px);line-height:1;letter-spacing:0}.hero p{max-width:760px;margin:22px 0 0;color:var(--muted);font-size:18px;line-height:1.75}
+    .dashboard{display:grid;grid-template-columns:.78fr 1.22fr;gap:30px;align-items:start;padding:24px 0 88px}.panel,.tool-card,.native-card{background:#fff;border:1px solid var(--line);border-radius:8px;box-shadow:0 22px 54px rgba(41,77,51,.08)}.panel{padding:28px;position:sticky;top:24px}.panel h2{margin:0 0 12px;font-size:30px}.panel p{color:var(--muted);line-height:1.7}.id-box{display:grid;gap:10px;margin-top:22px}.id-row{display:flex;justify-content:space-between;gap:14px;padding:13px 14px;border:1px solid var(--line);border-radius:8px;background:var(--paper);font-size:14px}.id-row strong{color:var(--green)}
+    .native-card{grid-column:1/-1;padding:clamp(20px,3vw,30px)}.native-head{display:flex;justify-content:space-between;align-items:flex-start;gap:18px;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--line)}.native-head h2{margin:0;font-size:clamp(28px,4vw,44px);line-height:1.05}.native-head p{max-width:680px;margin:8px 0 0;color:var(--muted);line-height:1.65}.analytics-login{display:grid;grid-template-columns:1.35fr .75fr auto;gap:10px;margin-top:18px;max-width:920px}.analytics-login input{min-height:48px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit}.analytics-login button,.refresh-button{min-height:48px;padding:12px 18px;border:0;border-radius:999px;color:#fff;background:var(--green);font-weight:900;cursor:pointer}.refresh-button{white-space:nowrap}.range-filter{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.range-filter button{min-height:38px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;color:var(--green);background:#fff;font-weight:900;cursor:pointer}.range-filter button.is-active{color:#fff;background:var(--green);border-color:var(--green)}.analytics-status{margin:12px 0 0;color:var(--muted);font-size:14px}.dashboard-label{margin:24px 0 12px;color:var(--green);font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.action-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:22px 0}.action-card{display:grid;gap:12px;min-height:150px;padding:18px;border:1px solid var(--line);border-radius:8px;background:linear-gradient(135deg,#fff 0%,#f8f4ea 100%)}.action-card.primary{color:#fff;background:var(--green);border-color:var(--green);box-shadow:0 22px 48px rgba(41,77,51,.16)}.action-card span{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--orange);color:var(--green);font-weight:900}.action-card strong{font-size:clamp(28px,4vw,42px);line-height:1}.action-card small{color:var(--muted);font-weight:900;line-height:1.35}.action-card.primary small{color:rgba(255,255,255,.84)}.metric-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:0 0 22px}.metric-card{padding:18px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.metric-card span{display:block;color:var(--muted);font-size:13px;font-weight:800}.metric-card strong{display:block;margin-top:8px;color:var(--green);font-size:clamp(26px,4vw,40px);line-height:1}.analytics-tables{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.data-panel{padding:18px;border:1px solid var(--line);border-radius:8px;background:#fff}.data-panel.wide{grid-column:1/-1}.data-panel h3{margin:0 0 12px;font-size:20px}.data-list{display:grid;gap:8px}.data-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(222,216,206,.75);color:var(--muted);font-size:14px}.data-row:last-child{border-bottom:0}.data-row strong{color:var(--ink);text-align:right}.data-empty{color:var(--muted);line-height:1.6}.recent-row{display:grid;grid-template-columns:1.2fr .8fr .75fr auto;gap:12px;align-items:center}.recent-row span:first-child{color:var(--ink);font-weight:800}.recent-row em{font-style:normal;color:var(--muted)}.ux-warning{border-color:rgba(245,169,0,.6);background:rgba(245,169,0,.08)}
+    .tools{display:grid;gap:18px}.tool-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.tool-card{display:grid;gap:14px;min-height:210px;padding:24px;transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}.tool-card:hover{transform:translateY(-3px);border-color:rgba(245,169,0,.75);box-shadow:0 24px 58px rgba(41,77,51,.12)}.tool-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:999px;color:var(--green);background:var(--orange);font-weight:900}.tool-card h2{margin:0;font-size:24px;line-height:1.15}.tool-card p{margin:0;color:var(--muted);line-height:1.65}.tool-link{display:inline-flex;align-items:center;gap:10px;width:fit-content;margin-top:auto;color:var(--green);font-weight:900}.tool-link span{display:grid;place-items:center;width:24px;height:24px;border-radius:999px;color:#fff;background:var(--green)}
+    .events{padding:26px;background:#fff;border:1px solid var(--line);border-radius:8px}.events h2{margin:0 0 16px;font-size:28px}.event-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.event-list span{padding:10px 12px;border:1px solid var(--line);border-radius:999px;background:var(--paper);color:var(--green);font-size:13px;font-weight:900;text-align:center}.note{padding:18px;border-left:4px solid var(--orange);background:rgba(245,169,0,.1);border-radius:8px;color:var(--muted);line-height:1.7}
+    .setup-message{display:none;margin:18px 0 0;padding:18px;border:1px dashed rgba(245,169,0,.9);border-radius:8px;background:rgba(245,169,0,.1);color:var(--muted);line-height:1.65}.setup-message strong{display:block;margin-bottom:4px;color:var(--ink)}.warning-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.warning-card{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.warning-card.is-hot{border-color:rgba(245,169,0,.8);background:rgba(245,169,0,.12)}.warning-card strong{display:block;color:var(--green);font-size:24px}.warning-card span{display:block;margin-top:4px;color:var(--muted);font-size:12px;font-weight:900;line-height:1.35}
+    @media(max-width:900px){.dashboard{grid-template-columns:1fr}.panel{position:static}.tool-grid,.analytics-tables{grid-template-columns:1fr}.metric-grid,.warning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.action-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.event-list{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding-top:52px}.hero h1{font-size:38px}.native-head{align-items:flex-start;flex-direction:column}.analytics-login{grid-template-columns:1fr}.data-panel.wide{grid-column:auto}.recent-row{grid-template-columns:1fr}}@media(max-width:640px){.container{width:calc(100% - 28px)}.hero h1{font-size:32px;line-height:1.12}.metric-grid,.action-grid,.warning-grid,.event-list{grid-template-columns:1fr}.id-row{flex-direction:column}.tool-card{min-height:0}.native-card{padding:12px}.refresh-button{width:100%}}
+  </style>
+</head>
+<body>
+  <header class="site-header"><div class="container"><nav class="nav-shell" aria-label="Main navigation"><a class="brand" href="/" aria-label="Aaditya home"><span class="brand-mark" aria-hidden="true"></span><span>Aaditya.</span></a><div class="nav-links"><a href="/services/">Services</a><a href="/about/">About</a><a href="/portfolio/">Portfolio</a><a href="/case-studies/">Case Studies</a><a href="/blog/">Blog</a></div><a class="nav-cta" href="/start-project/">Start Project</a><button class="menu-button" type="button" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button><div class="mobile-menu" aria-label="Mobile navigation"><a href="/services/">Services</a><a href="/about/">About</a><a href="/portfolio/">Portfolio</a><a href="/case-studies/">Case Studies</a><a href="/blog/">Blog</a><a href="/#faq">FAQ</a><a href="/start-project/">Contact Me</a></div></nav></div></header>
+  <main>
+    <section class="hero container">
+      <p class="eyebrow">Analytics</p>
+      <h1>Website data, tags, and <span class="script">events</span> in one place.</h1>
+      <p>This page can show your own free GitHub Pages-friendly AB Labs dashboard for button clicks, page visits, scroll behavior, and UX warning signals.</p>
+    </section>
+    <section class="container dashboard">
+      <div class="native-card">
+        <div class="native-head">
+          <div>
+            <p class="eyebrow">Native Dashboard</p>
+            <h2>AB Labs analytics</h2>
+            <p>Enter your private dashboard key to load live event data from Google Sheets.</p>
+            <form class="analytics-login" id="analyticsLogin">
+              <input id="analyticsKey" name="analyticsKey" type="password" autocomplete="current-password" placeholder="Dashboard key">
+              <button type="submit">Load data</button>
+            </form>
+            <div class="range-filter" id="rangeFilter" aria-label="Analytics date range">
+              <button type="button" class="is-active" data-days="1">Today</button>
+              <button type="button" data-days="7">7 days</button>
+              <button type="button" data-days="30">30 days</button>
+            </div>
+            <p class="analytics-status" id="analyticsStatus">Enter your dashboard key to load AB Labs analytics.</p>
+          </div>
+          <button class="refresh-button" id="refreshAnalytics" type="button">Refresh</button>
+        </div>
+        <div class="setup-message" id="setupMessage">
+          <strong>No analytics data yet.</strong>
+          Open your website once, click a few buttons, then refresh this dashboard.
+        </div>
+        <p class="dashboard-label">Business actions first</p>
+        <div class="action-grid" id="actionGrid">
+          <div class="action-card primary"><span>W</span><strong>-</strong><small>WhatsApp actions</small></div>
+          <div class="action-card"><span>S</span><strong>-</strong><small>Start Project clicks</small></div>
+          <div class="action-card"><span>H</span><strong>-</strong><small>Hire Me clicks</small></div>
+          <div class="action-card"><span>P</span><strong>-</strong><small>Portfolio interest</small></div>
+          <div class="action-card"><span>V</span><strong>-</strong><small>Service interest</small></div>
+          <div class="action-card"><span>%</span><strong>-</strong><small>WhatsApp conversion</small></div>
+        </div>
+        <p class="dashboard-label">Site overview</p>
+        <div class="metric-grid" id="metricGrid">
+          <div class="metric-card"><span>Active users</span><strong>-</strong></div>
+          <div class="metric-card"><span>Sessions</span><strong>-</strong></div>
+          <div class="metric-card"><span>Page views</span><strong>-</strong></div>
+          <div class="metric-card"><span>Events</span><strong>-</strong></div>
+        </div>
+        <div class="analytics-tables">
+          <div class="data-panel wide"><h3>Recent visitor actions</h3><div class="data-list" id="recentList"><p class="data-empty">Load data to see what visitors did recently.</p></div></div>
+          <div class="data-panel"><h3>Top pages</h3><div class="data-list" id="pagesList"><p class="data-empty">Load data to see page performance.</p></div></div>
+          <div class="data-panel"><h3>Traffic sources</h3><div class="data-list" id="sourcesList"><p class="data-empty">Load data to see where visitors came from.</p></div></div>
+          <div class="data-panel"><h3>Useful actions</h3><div class="data-list" id="eventsList"><p class="data-empty">Load data to see useful clicks and actions.</p></div></div>
+          <div class="data-panel"><h3>Top clicked buttons</h3><div class="data-list" id="buttonsList"><p class="data-empty">Load data to see top clicked buttons.</p></div></div>
+          <div class="data-panel"><h3>Package choices</h3><div class="data-list" id="packagesList"><p class="data-empty">Load data to see selected project options.</p></div></div>
+          <div class="data-panel"><h3>Engagement</h3><div class="data-list" id="engagementList"><p class="data-empty">Load data to see scroll and time events.</p></div></div>
+          <div class="data-panel wide"><h3>UX warning panel</h3><div class="warning-grid" id="warningGrid"><div class="warning-card"><strong>-</strong><span>Rage clicks</span></div><div class="warning-card"><strong>-</strong><span>Dead clicks</span></div><div class="warning-card"><strong>-</strong><span>Low scroll depth</span></div><div class="warning-card"><strong>-</strong><span>Mobile traffic</span></div></div></div>
+          <div class="data-panel wide"><h3>Dead-click details</h3><div class="data-list" id="deadClickList"><p class="data-empty">Load data to see where dead clicks happen.</p></div></div>
+          <div class="data-panel"><h3>Devices</h3><div class="data-list" id="devicesList"><p class="data-empty">Load data to see mobile vs desktop.</p></div></div>
+          <div class="data-panel"><h3>Daily users</h3><div class="data-list" id="dailyList"><p class="data-empty">Load data to see daily trend.</p></div></div>
+        </div>
+      </div>
+      <aside class="panel">
+        <p class="eyebrow">Setup</p>
+        <h2>Your tracking IDs</h2>
+        <p>Use these when checking Google Analytics, Tag Manager, or Tag Assistant.</p>
+        <div class="id-box">
+          <div class="id-row"><span>GA4 Measurement ID</span><strong>G-DZZZLY06Q4</strong></div>
+          <div class="id-row"><span>Google Tag Manager</span><strong>GTM-NLCX68VZ</strong></div>
+          <div class="id-row"><span>Website</span><strong>aadityabhatnagar.online</strong></div>
+        </div>
+      </aside>
+      <div class="tools">
+        <div class="tool-grid">
+          <a class="tool-card" href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener noreferrer">
+            <span class="tool-icon">A</span>
+            <h2>Google Analytics</h2>
+            <p>See users, page views, traffic sources, events, realtime visitors, and reports.</p>
+            <span class="tool-link">Open Analytics <span>+</span></span>
+          </a>
+          <a class="tool-card" href="https://analytics.google.com/analytics/web/#/realtime" target="_blank" rel="noopener noreferrer">
+            <span class="tool-icon">R</span>
+            <h2>Realtime</h2>
+            <p>Open this after visiting your website to confirm that traffic is being recorded.</p>
+            <span class="tool-link">Open Realtime <span>+</span></span>
+          </a>
+          <a class="tool-card" href="https://tagmanager.google.com/" target="_blank" rel="noopener noreferrer">
+            <span class="tool-icon">T</span>
+            <h2>Tag Manager</h2>
+            <p>Manage GTM tags, preview the container, and publish tracking changes.</p>
+            <span class="tool-link">Open GTM <span>+</span></span>
+          </a>
+          <a class="tool-card" href="https://tagassistant.google.com/" target="_blank" rel="noopener noreferrer">
+            <span class="tool-icon">✓</span>
+            <h2>Tag Assistant</h2>
+            <p>Test whether GA4 and GTM are loading correctly on aadityabhatnagar.online.</p>
+            <span class="tool-link">Test Tags <span>+</span></span>
+          </a>
+        </div>
+        <div class="events">
+          <h2>Events your site sends</h2>
+          <div class="event-list">
+            <span>whatsapp_click</span>
+            <span>phone_click</span>
+            <span>email_click</span>
+            <span>service_click</span>
+            <span>portfolio_click</span>
+            <span>blog_click</span>
+            <span>contact_cta_click</span>
+            <span>project_option_select</span>
+          </div>
+        </div>
+        <p class="note">GitHub Pages cannot run a backend API. This dashboard uses Google Apps Script as the free backend and Google Sheets as the data store.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container"><div class="section-head"><h2 class="section-title">Let's <span class="script">Connect</span> there</h2><a class="btn-primary" href="/start-project/">Start Project <span class="btn-dot">+</span></a></div><div class="footer-grid"><div><a class="brand" href="/"><span class="brand-mark" aria-hidden="true"></span><span style="color:var(--ink,#171717);">AB Labs by Aaditya.</span></a><p>AB Labs keeps projects organized from the first idea to launch: clear planning, clean website delivery, simple communication, and automation where it makes the business easier to run.</p></div><div><h3>Navigation</h3><div class="footer-links"><a href="/services/">Services</a><a href="/about/">About</a><a href="/portfolio/">Portfolio</a><a href="/case-studies/">Case Studies</a><a href="/blog/">Blog</a></div></div><div><h3>Contact</h3><div class="footer-links"><a href="tel:+917357397888">+91 735 739 7888</a><a href="mailto:ablabs.business@gmail.com">ablabs.business@gmail.com</a><a href="https://wa.me/917357397888">WhatsApp</a></div></div><div><h3>Social</h3><div class="footer-links"><a href="https://github.com/ablabsbusiness-create">GitHub</a><a href="https://www.linkedin.com/in/aadityabhatnagar2008/">LinkedIn</a><a href="https://instagram.com/aadityabhatnagar13">Instagram</a></div></div></div><div class="footer-bottom"><span>Copyright 2026 AB Labs by Aaditya. All rights reserved.</span><span><a href="/privacy/">Privacy Policy</a></span></div></div></footer>
+  <script src="/assets/site-analytics.js" defer></script>
+  <script>
+    const analyticsLogin = document.getElementById('analyticsLogin');
+    const ANALYTICS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxtfxOA1Sk45TGVsYwEJV7LMHdTbGl_3Q1qMHLyU1JWoIfxgPbHyJ0Iletmv1YDJJQB/exec';
+    const analyticsKey = document.getElementById('analyticsKey');
+    const analyticsStatus = document.getElementById('analyticsStatus');
+    const refreshAnalytics = document.getElementById('refreshAnalytics');
+    const rangeFilter = document.getElementById('rangeFilter');
+    const actionGrid = document.getElementById('actionGrid');
+    const metricGrid = document.getElementById('metricGrid');
+    const setupMessage = document.getElementById('setupMessage');
+    const warningGrid = document.getElementById('warningGrid');
+    const lists = {
+      events: document.getElementById('eventsList'),
+      engagement: document.getElementById('engagementList'),
+      buttons: document.getElementById('buttonsList'),
+      packages: document.getElementById('packagesList'),
+      deadClicks: document.getElementById('deadClickList'),
+      pages: document.getElementById('pagesList'),
+      sources: document.getElementById('sourcesList'),
+      devices: document.getElementById('devicesList'),
+      daily: document.getElementById('dailyList'),
+      recent: document.getElementById('recentList')
+    };
+
+    function formatNumber(value) {
+      return new Intl.NumberFormat('en-IN').format(Number(value || 0));
+    }
+
+    function saveKey(key) {
+      sessionStorage.setItem('ab_analytics_key', key);
+    }
+
+    function getKey() {
+      return sessionStorage.getItem('ab_analytics_key') || '';
+    }
+
+    function getDays() {
+      return sessionStorage.getItem('ab_analytics_days') || '1';
+    }
+
+    function saveDays(days) {
+      sessionStorage.setItem('ab_analytics_days', String(days));
+      rangeFilter.querySelectorAll('button').forEach((button) => {
+        button.classList.toggle('is-active', button.dataset.days === String(days));
+      });
+    }
+
+    function row(label, value, warning) {
+      return `<div class="data-row${warning ? ' ux-warning' : ''}"><span>${label || 'Unknown'}</span><strong>${formatNumber(value)}</strong></div>`;
+    }
+
+    function readableEvent(name) {
+      const labels = {
+        project_whatsapp_submit: 'Project sent on WhatsApp',
+        whatsapp_click: 'WhatsApp click',
+        hero_hire_me_click: 'Hero Hire Me click',
+        start_project_click: 'Start Project click',
+        footer_start_project_click: 'Footer Start Project click',
+        hero_portfolio_click: 'Hero portfolio click',
+        portfolio_card_click: 'Portfolio card click',
+        portfolio_click: 'Portfolio click',
+        service_card_click: 'Service card click',
+        service_click: 'Service page click',
+        blog_card_click: 'Blog card click',
+        phone_click: 'Phone click',
+        email_click: 'Email click',
+        project_option_select: 'Project option selected',
+        dead_click: 'Dead click',
+        rage_click: 'Rage click',
+        ab_page_view: 'Page view',
+        time_30_seconds: 'Stayed 30 seconds',
+        time_60_seconds: 'Stayed 60 seconds',
+        time_120_seconds: 'Stayed 120 seconds',
+        page_exit: 'Page exit',
+        scroll_25: 'Scrolled 25%',
+        scroll_50: 'Scrolled 50%',
+        scroll_75: 'Scrolled 75%',
+        scroll_90: 'Scrolled 90%',
+        scroll_100: 'Scrolled 100%'
+      };
+      return labels[name] || String(name || 'Unknown').replace(/_/g, ' ');
+    }
+
+    const businessEventNames = [
+      'project_whatsapp_submit',
+      'whatsapp_click',
+      'hero_hire_me_click',
+      'start_project_click',
+      'footer_start_project_click',
+      'hero_portfolio_click',
+      'portfolio_card_click',
+      'portfolio_click',
+      'service_card_click',
+      'service_click',
+      'phone_click',
+      'email_click',
+      'project_option_select'
+    ];
+
+    const engagementEventNames = [
+      'time_30_seconds',
+      'time_60_seconds',
+      'time_120_seconds',
+      'page_exit',
+      'scroll_25',
+      'scroll_50',
+      'scroll_75',
+      'scroll_90',
+      'scroll_100'
+    ];
+
+    function eventCount(data, names) {
+      const rows = data.events || [];
+      return rows.reduce((total, item) => names.includes(item.event) ? total + Number(item.count || 0) : total, 0);
+    }
+
+    function renderActionCards(data) {
+      const actions = [
+        { icon: 'W', label: 'WhatsApp actions', count: eventCount(data, ['project_whatsapp_submit', 'whatsapp_click']), primary: true },
+        { icon: 'S', label: 'Start Project clicks', count: eventCount(data, ['start_project_click', 'footer_start_project_click']) },
+        { icon: 'H', label: 'Hire Me clicks', count: eventCount(data, ['hero_hire_me_click']) },
+        { icon: 'P', label: 'Portfolio interest', count: eventCount(data, ['hero_portfolio_click', 'portfolio_card_click', 'portfolio_click']) },
+        { icon: 'V', label: 'Service interest', count: eventCount(data, ['service_card_click', 'service_click']) },
+        { icon: '%', label: 'WhatsApp conversion', count: `${Number(data.overview.whatsappConversionRate || 0)}%` }
+      ];
+      actionGrid.innerHTML = actions.map((item) => `
+        <div class="action-card${item.primary ? ' primary' : ''}">
+          <span>${item.icon}</span>
+          <strong>${typeof item.count === 'string' ? item.count : formatNumber(item.count)}</strong>
+          <small>${item.label}</small>
+        </div>
+      `).join('');
+    }
+
+    function renderWarnings(data) {
+      const events = data.events || [];
+      const devices = data.devices || [];
+      const rageClicks = eventCount(data, ['rage_click']);
+      const deadClicks = eventCount(data, ['dead_click']);
+      const scroll25 = eventCount(data, ['scroll_25']);
+      const scroll75 = eventCount(data, ['scroll_75']);
+      const mobile = devices.find((item) => String(item.device || '').toLowerCase() === 'mobile');
+      const totalDeviceSessions = devices.reduce((total, item) => total + Number(item.sessions || 0), 0);
+      const mobilePercent = totalDeviceSessions ? Math.round((Number(mobile?.sessions || 0) / totalDeviceSessions) * 100) : 0;
+      const lowScroll = scroll25 > 0 && scroll75 === 0 ? 'Yes' : 'No';
+      const cards = [
+        { label: 'Rage clicks', value: rageClicks, hot: rageClicks > 0 },
+        { label: 'Dead clicks', value: deadClicks, hot: deadClicks > 0 },
+        { label: 'Low scroll depth', value: lowScroll, hot: lowScroll === 'Yes' },
+        { label: 'Mobile traffic', value: `${mobilePercent}%`, hot: mobilePercent >= 70 }
+      ];
+      warningGrid.innerHTML = cards.map((item) => `<div class="warning-card${item.hot ? ' is-hot' : ''}"><strong>${item.value}</strong><span>${item.label}</span></div>`).join('');
+    }
+
+    function renderList(element, items, labelKey, valueKey, warningKeys) {
+      if (!items || !items.length) {
+        element.innerHTML = '<p class="data-empty">No data yet.</p>';
+        return;
+      }
+      element.innerHTML = items.map((item) => row(item[labelKey], item[valueKey], warningKeys && warningKeys.includes(item[labelKey]))).join('');
+    }
+
+    function renderRecent(items) {
+      const useful = (items || []).filter((item) => !['time_30_seconds', 'time_60_seconds', 'time_120_seconds', 'page_exit'].includes(item.event_name)).slice(0, 12);
+      if (!useful.length) {
+        lists.recent.innerHTML = '<p class="data-empty">No recent visitor actions yet.</p>';
+        return;
+      }
+      lists.recent.innerHTML = useful.map((item) => {
+        const time = item.timestamp ? new Date(item.timestamp).toLocaleString() : 'Unknown time';
+        return `<div class="data-row recent-row"><span>${readableEvent(item.event_name)}</span><em>${item.page_path || '/'}</em><em>${item.device_type || 'device unknown'}</em><strong>${time}</strong></div>`;
+      }).join('');
+    }
+
+    function renderDashboard(data) {
+      setupMessage.style.display = Number(data.overview.events || 0) === 0 ? 'block' : 'none';
+      renderActionCards(data);
+      renderWarnings(data);
+      metricGrid.innerHTML = `
+        <div class="metric-card"><span>Active users</span><strong>${formatNumber(data.overview.activeUsers)}</strong></div>
+        <div class="metric-card"><span>Sessions</span><strong>${formatNumber(data.overview.sessions)}</strong></div>
+        <div class="metric-card"><span>Page views</span><strong>${formatNumber(data.overview.views)}</strong></div>
+        <div class="metric-card"><span>Events</span><strong>${formatNumber(data.overview.events)}</strong></div>
+      `;
+      const usefulEvents = (data.events || [])
+        .filter((item) => businessEventNames.includes(item.event))
+        .map((item) => ({ event: readableEvent(item.event), count: item.count }));
+      const engagementEvents = (data.events || [])
+        .filter((item) => engagementEventNames.includes(item.event))
+        .map((item) => ({ event: readableEvent(item.event), count: item.count }));
+      renderRecent(data.recent);
+      renderList(lists.events, usefulEvents, 'event', 'count');
+      renderList(lists.buttons, data.topButtons || [], 'button', 'count');
+      renderList(lists.packages, data.packageChoices || [], 'choice', 'count');
+      renderList(lists.deadClicks, data.deadClicks || [], 'location', 'count', (data.deadClicks || []).map((item) => item.location));
+      renderList(lists.engagement, engagementEvents, 'event', 'count');
+      renderList(lists.pages, data.pages, 'path', 'views');
+      renderList(lists.sources, data.sources, 'source', 'sessions');
+      renderList(lists.devices, data.devices, 'device', 'sessions');
+      renderList(lists.daily, data.daily.map((item) => ({ label: item.date, count: item.users })), 'label', 'count');
+      analyticsStatus.textContent = `Loaded ${data.range}. Updated ${new Date(data.updatedAt).toLocaleString()}.`;
+    }
+
+    async function loadAnalytics() {
+      const key = getKey();
+      if (!key) {
+        analyticsStatus.textContent = 'Enter your dashboard key to load data.';
+        return;
+      }
+
+      analyticsStatus.textContent = 'Loading analytics data...';
+      let url;
+      try {
+        url = new URL(ANALYTICS_ENDPOINT);
+        url.searchParams.set('mode', 'summary');
+        url.searchParams.set('key', key);
+        url.searchParams.set('days', getDays());
+      } catch (error) {
+        analyticsStatus.textContent = 'That Apps Script URL does not look valid.';
+        return;
+      }
+      let response;
+      try {
+        response = await fetch(url.toString());
+      } catch (error) {
+        analyticsStatus.textContent = 'Could not reach Apps Script. Check the URL and deployment access.';
+        return;
+      }
+      const contentType = response.headers.get('content-type') || '';
+      if (!contentType.includes('application/json')) {
+        analyticsStatus.textContent = 'Apps Script did not return JSON. Check that the web app is deployed for anyone with the link.';
+        return;
+      }
+      const data = await response.json();
+      if (!response.ok || data.ok === false) {
+        analyticsStatus.textContent = data.error || 'Could not load analytics data.';
+        return;
+      }
+      renderDashboard(data);
+    }
+
+    analyticsLogin.addEventListener('submit', (event) => {
+      event.preventDefault();
+      saveKey(analyticsKey.value.trim());
+      loadAnalytics();
+    });
+
+    refreshAnalytics.addEventListener('click', loadAnalytics);
+
+    rangeFilter.addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-days]');
+      if (!button) return;
+      saveDays(button.dataset.days);
+      loadAnalytics();
+    });
+
+    saveDays(getDays());
+    if (getKey()) {
+      analyticsKey.value = getKey();
+      loadAnalytics();
+    }
+  </script>
+  <script src="/assets/site-nav.js"></script>
+</body>
+</html>

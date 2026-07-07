@@ -1,0 +1,6 @@
+User-agent: *
+Disallow:
+Disallow: /demo/
+Disallow: /project-tracker/
+
+Sitemap: https://aadityabhatnagar.online/sitemap.xml
