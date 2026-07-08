@@ -74,6 +74,81 @@ main > .hero p:not(.eyebrow) {
   border-radius: 8px;
 }
 
+.callout {
+  display: flex;
+  gap: 16px;
+  margin: 30px 0 0;
+  padding: 22px 24px;
+  background: #fff7e0;
+  border: 1px solid rgba(245, 169, 0, 0.45);
+  border-left: 4px solid #f5a900;
+  border-radius: 8px;
+}
+
+.callout-icon {
+  flex: 0 0 auto;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.callout p {
+  margin: 0;
+  color: #171717 !important;
+  font-size: clamp(16px, 1.7vw, 18px) !important;
+  line-height: 1.7;
+}
+
+.callout strong {
+  color: #294d33;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 30px 0 0;
+}
+
+.stat-row > div {
+  padding: 20px 16px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #ded8ce;
+  border-radius: 8px;
+}
+
+.stat-row .stat-num {
+  display: block;
+  color: #294d33;
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 900;
+}
+
+.stat-row .stat-label {
+  display: block;
+  margin-top: 6px;
+  color: #66645f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pull-quote {
+  margin: 30px 0 0;
+  padding: 4px 0 4px 24px;
+  border-left: 4px solid #294d33;
+  color: #171717 !important;
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(19px, 2.4vw, 24px) !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 760px) {
+  .stat-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .blog-faq {
   padding: 64px 0;
   background: #fff;
