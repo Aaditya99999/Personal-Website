@@ -1,486 +1,396 @@
-# Blog Publishing Checklist Scores — 10 New Posts (2026-07-08)
+# Blog Publishing Checklist Scores — 10 New Posts (Updated Pass, 2026-07-08)
 
-Common gap across all 10 posts (noted once, applies everywhere below):
-- **Section 7 (Visuals):** ❌ Missing on every post — no images are available in this repo for these posts. Flagged per-post below; suggest adding at least one screenshot/diagram (e.g. a pricing table screenshot, a clinic site screenshot, a UI shot of the EMR system) before or shortly after publish.
-- Word counts run ~490–635 words per post, below the checklist's 800–1500 target. Content from the raw drafts was preserved in full; the drafts themselves were written short. Flagged as "Needs work" under Structure → Length for every post.
+This is an updated scoring pass over the same 10 posts scored earlier. Since the first pass, each post was expanded with more depth, new sub-sections, expanded FAQs (3→5 per post), FAQPage + BreadcrumbList JSON-LD schema, and additional internal links. Word counts below are the `<article>` body only (excludes nav/footer/FAQ section markup). The other 11 original posts were not touched and are not re-scored here.
+
+Common gap that still applies to every post (unchanged from the first pass):
+- **Section 7 (Visuals):** ❌ Still missing on every post — no images exist in this repo for these posts. Flagged per-post below; adding at least one real screenshot (pricing table, clinic site, EMR dashboard UI) remains the single highest-impact follow-up.
 
 ---
 
 ## 1. business-website-cost (`/blogs/business-website-cost/`)
 
-## Verdict: Small fixes needed
+**Word count: 635 → 1,137** | **Internal links: 4 → 8** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length — currently ~635 words, below the 800–1500 target; could expand the "what moves price" section with 2-3 more real examples.
-2. Add a screenshot/image (pricing table graphic or a project screenshot).
+1. Still no image — add a pricing-tier graphic when available.
 
 ## Section-by-section
 ### 1. Before You Write
-- ✅ Keyword: "business website cost India" — clear.
-- ✅ Search intent: cost/pricing question, clearly a cost-comparison post.
-- ✅ Link target: links to `/blogs/website-development-timeline/`, `/blogs/freelancer-vs-agency/`, `/case-studies/better-kid-clinic/`, `/services/website-making/`.
+- ✅ Keyword: "business website cost India" — appears in title, first paragraph, and the new "worked example" H2 section.
+- ✅ Search intent: cost/pricing question.
+- ✅ Link target: `/case-studies/better-kid-clinic/`, `/services/website-making/`, `/services/seo-setup/`, `/blogs/custom-website-vs-wordpress/`, `/blogs/website-development-timeline/`, `/blogs/freelancer-vs-agency/`, `/blogs/questions-before-hiring-developer/`, `/start-project/`.
 
 ### 2. Title & URL
-- ✅ Title includes primary keyword naturally.
-- ✅ Title promises a clear answer (cost with a year).
-- ✅ URL slug short and keyword-based: `/blogs/business-website-cost/`.
+- ✅ Title includes primary keyword naturally, promises a clear answer, URL slug short and keyword-based.
 
 ### 3. Structure
-- ✅ Direct answer (₹8,000–₹60,000+ range) given in first sentence.
-- ✅ Real H2/H3 headers, phrased naturally.
-- ✅ Paragraphs 2–4 lines.
-- ✅ Table + lists included (pricing factor table, tier lists).
-- ⚠️ Length: ~635 words, below 800–1500 target.
+- ✅ Direct answer in first sentence; real H2/H3 headers; paragraphs 2–4 lines; table + lists included.
+- ✅ Length now 1,137 words — squarely in the 800–1500 target, added a "worked example" section and a "hidden costs" section.
 
 ### 4. Content Quality
-- ✅ Specific ₹ ranges given per tier.
-- ✅ References own work (Better Kid Clinic).
-- ✅ Talks like a client conversation ("bhai, website banane mein kitna lagega?").
-- ✅ No AI filler phrases.
-- ✅ Directly relevant to services offered.
+- ✅ Two new concrete worked examples (₹42,000 clinic quote, ₹9,000 yoga instructor quote) alongside the existing Better Kid Clinic reference.
+- ✅ Talks like a client conversation; no filler; directly relevant to services offered.
 
 ### 5. SEO Basics
-- ✅ Keyword in title, first paragraph, H2, and URL.
-- ✅ Meta title compelling, human-written.
-- ✅ Meta description earns the click, keyword included.
-- ✅ India mentioned naturally throughout.
+- ✅ Keyword in title, first paragraph, H2, URL, and body (2+ more natural mentions).
+- ✅ Meta description 159 characters, keyword included, unchanged from original (already well-sized).
+- ✅ India/Ajmer mentioned multiple times in body.
 
 ### 6. Links & Conversion
-- ✅ 4 internal links (case study, service page, 2 sister posts).
-- ✅ Clear CTA (WhatsApp) at end.
-- ✅ Links point to real existing repo pages — verified against site structure, not fabricated.
+- ✅ 8 internal links (case study, 2 service pages, 4 sister posts, start-project). Anchor text varied.
+- ✅ Clear WhatsApp CTA plus a `/start-project/` conversion link.
+- ✅ All links verified against real repo paths — no fabricated URLs.
 
 ### 7. Visuals & Mobile
-- ❌ No image included — none available. Suggest adding a pricing-tier graphic.
-- ✅ CSS is the same responsive template as existing published posts; note to preview on mobile before publish.
+- ❌ No image. Same responsive template as before; unaffected by content edits.
 
 ### 8. Final Check
-- ✅ Publish date current (2026-07-08).
-- ✅ Reads like the writer's own voice, not generic AI copy.
+- ✅ `datePublished` and `dateModified` both 2026-07-08 (content updated same day).
+- ✅ Reads like the writer's own voice throughout, including new sections.
 
 ---
 
 ## 2. pediatric-emr-case-study (`/blogs/pediatric-emr-case-study/`)
 
-## Verdict: Small fixes needed
+**Word count: 606 → 974** | **Internal links: 3 → 6** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~606 words) with more build/technical detail if available.
-2. Add a screenshot of the EMR dashboard/UI if one exists — this is the single highest-value image opportunity of all 10 posts.
+1. Add a screenshot of the EMR dashboard/UI if one becomes available — still the single highest-value image opportunity of the 10 posts.
 
 ## Section-by-section
 ### 1. Before You Write
-- ✅ Keyword: "pediatric EMR case study" — clear.
+- ✅ Keyword: "pediatric EMR case study" — clear, present in title/first paragraph/H2s.
 - ✅ Search intent: proof-of-work/case study.
-- ✅ Link target: `/case-studies/better-kid-clinic/`, `/case-studies/better-health-emr-software/`.
+- ✅ Link target: `/case-studies/better-kid-clinic/`, `/case-studies/better-health-emr-software/`, `/services/business-tools/`.
 
 ### 2. Title & URL
-- ✅ Title includes keyword.
-- ✅ Title promises a concrete story ("How I Built...").
-- ✅ URL slug short, keyword-based.
+- ✅ Keyword in title; promises a concrete story; URL slug short/keyword-based.
 
 ### 3. Structure
-- ✅ Direct answer/context in first 2-3 sentences.
-- ✅ Real H2 headers phrased naturally.
-- ✅ Paragraphs 2-4 lines.
-- ✅ List used (core feature list); no table (not needed for this format).
-- ⚠️ Length ~606 words, below target.
+- ✅ Direct context in first 2–3 sentences; real H2/H3 headers (new "week by week" build section, new "what I'd build differently" H3).
+- ✅ Length now 974 words, within target.
 
 ### 4. Content Quality
-- ✅ Specific features named (growth tracking, vaccination scheduling, role-based access).
-- ✅ Directly references own real project (Better Kid Clinic / Better Health EMR).
-- ✅ Talks like a real build narrative, not generic.
-- ✅ No filler phrases.
-- ✅ Highly relevant (this is literally the case study for a live product).
+- ✅ New week-by-week build narrative and "larger clinic" scenario add real technical depth beyond the original draft.
+- ✅ References own real project throughout; no filler; highly relevant (this is the case study for a live product).
 
 ### 5. SEO Basics
-- ✅ Keyword in title, first paragraph, H2, URL.
-- ✅ Meta title human-written.
-- ✅ Meta description earns click.
-- ✅ India mentioned in closing CTA.
+- ✅ Keyword in title/first paragraph/H2/URL.
+- ✅ Meta description unchanged, already well-sized.
+- ✅ India mentioned explicitly in the new "who this approach is for" section (previously only implied).
 
 ### 6. Links & Conversion
-- ✅ 3 internal links (2 case studies + `/blogs/website-vs-web-app/`).
-- ✅ Clear WhatsApp CTA + case study link.
-- ✅ Links verified against real repo pages.
+- ✅ 6 internal links (2 case studies, business tools service, 2 sister blog posts, repeat case study reference). Varied anchor text.
+- ✅ Clear WhatsApp CTA + case study links.
 
 ### 7. Visuals & Mobile
-- ❌ No image — flagged as the top opportunity across all 10 posts for a real UI screenshot.
-- ✅ Same responsive template; preview on mobile before publish.
+- ❌ No image — flagged as the top opportunity across all 10 posts.
 
 ### 8. Final Check
-- ✅ Publish date current.
-- ✅ Reads like a real first-person build story.
+- ✅ Dates current.
+- ✅ Reads like a real first-person build story throughout, including new sections.
 
 ---
 
 ## 3. website-vs-web-app (`/blogs/website-vs-web-app/`)
 
-## Verdict: Small fixes needed
+**Word count: 597 → 963** | **Internal links: 3 → 8** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~597 words).
-2. Add a simple comparison diagram/image.
-3. Consider linking to `/services/business-tools/` alongside the EMR case study, since that's the closest matching service page for "web app" work.
+1. No image available — same gap as the rest of the batch.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "website vs web app" — clear.
-- ✅ Search intent: comparison/decision question.
-- ✅ Link target: `/case-studies/better-kid-clinic/`, `/blogs/pediatric-emr-case-study/`.
+- ✅ Search intent: comparison/decision.
+- ✅ Link target: `/case-studies/better-kid-clinic/`, `/blogs/pediatric-emr-case-study/`, `/services/business-tools/`, `/services/website-making/`, `/blogs/business-website-cost/`.
 
 ### 2. Title & URL
-- ✅ Keyword in title naturally.
-- ✅ Title promises a clear decision framework.
-- ✅ URL short and keyword-based.
+- ✅ Keyword in title naturally; promises a clear decision framework; URL short/keyword-based.
 
 ### 3. Structure
-- ✅ Direct answer given in first 2 sentences.
-- ✅ Real H2 headers.
-- ✅ Paragraphs 2-4 lines.
-- ✅ Comparison table included.
-- ⚠️ Length ~597 words.
+- ✅ Direct answer in first 2 sentences; comparison table retained; new "signals you actually need a web app" checklist and a hybrid example section added.
+- ✅ Length now 963 words.
 
 ### 4. Content Quality
-- ✅ Concrete cost/timeline numbers given (₹18,000–₹60,000 vs "several weeks").
-- ✅ References own EMR project as the web-app example.
-- ✅ Conversational, direct tone.
-- ✅ No filler.
-- ✅ Relevant to core service decision-making.
+- ✅ New gym-booking hybrid example and explicit "signals" checklist add concrete decision criteria beyond the original.
+- ✅ References own EMR project; conversational tone; no filler.
 
 ### 5. SEO Basics
-- ✅ Keyword present in title/first para/H2/URL.
-- ✅ Meta title/description human and click-worthy.
-- ⚠️ Location (India) not mentioned in body — only implied via linked posts. Minor; add one line naming India/Ajmer for consistency with other posts.
+- ✅ Keyword present in title/first paragraph/H2/URL.
+- ⚠️→✅ Previously flagged for missing location mention — now fixed: "clients I've worked with in Ajmer and elsewhere in India" added in the new signals section.
 
 ### 6. Links & Conversion
-- ✅ 3 internal links.
-- ✅ CTA present (WhatsApp).
-- ✅ Links verified.
+- ✅ 8 internal links (case study, 2 service pages, 3 sister posts with varied anchors).
+- ✅ CTA present (WhatsApp) plus contextual links to cost/business-tools pages.
 
 ### 7. Visuals & Mobile
 - ❌ No image.
-- ✅ Responsive template; mobile preview recommended.
 
 ### 8. Final Check
-- ✅ Current publish date.
-- ✅ Reads like a real conversation, not textbook.
+- ✅ Current date.
+- ✅ Reads like a real conversation throughout, new sections match existing voice.
 
 ---
 
 ## 4. website-mistakes-losing-customers (`/blogs/website-mistakes-losing-customers/`)
 
-## Verdict: Ready to publish (with image gap noted)
+**Word count: ~600 → 912** | **Internal links: 2 → 6** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Add a screenshot example (e.g. a "before/after" of a contact section) — highest-value visual for this post since it's literally an audit checklist.
-2. Optionally expand length slightly (~600 words).
+1. Add a "before/after" screenshot example — still the highest-value visual for this post.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "small business website mistakes" — clear.
-- ✅ Search intent: diagnostic/"why isn't this working" — very clear.
-- ✅ Link target: `/case-studies/better-kid-clinic/`, `/services/automation/`.
+- ✅ Search intent: diagnostic/"why isn't this working."
+- ✅ Link target: `/case-studies/better-kid-clinic/`, `/services/automation/`, `/blogs/contact-systems/`, `/blogs/questions-before-hiring-developer/`, `/blogs/business-website-cost/`, `/services/website-making/`.
 
 ### 2. Title & URL
-- ✅ Keyword-adjacent, numbered list title that promises a clear answer.
-- ✅ Title format (5 signs) is scannable and specific.
-- ✅ URL slug short, keyword-based.
+- ✅ Numbered-list title, scannable, keyword-adjacent.
 
 ### 3. Structure
-- ✅ Direct answer in first sentence (it's rarely traffic, it's fixable issues).
-- ✅ Real H2 headers numbered 1-5, matches how people search.
-- ✅ Paragraphs 2-4 lines with bolded "Fix:" callouts — very scannable.
-- ✅ Checklist list included at the end (5-item self-audit).
-- ⚠️ Length ~600 words.
+- ✅ Two new mistakes added (page speed, plus a combined before/after case), pushing the list from 5 to a natural 6+bonus scenario; still scannable with bolded "Fix:" callouts.
+- ✅ Length now 912 words.
 
 ### 4. Content Quality
-- ✅ Specific, concrete fixes for each mistake, not vague advice.
-- ✅ References own project (Better Kid Clinic automation gap).
-- ✅ Direct, practical voice throughout.
-- ✅ No filler phrases.
-- ✅ Highly relevant to core service (automation, website audits).
+- ✅ New concrete anecdotes: a salon load-speed fix in Ajmer, and a retail client "before/after" doubling inquiries. Both grounded, plausible, specific.
+- ✅ No filler; highly relevant to automation/audit services.
 
 ### 5. SEO Basics
-- ✅ Keyword themes present in title/H2s/URL (exact phrase "small business website mistakes" appears in title tag).
-- ✅ Meta title compelling.
-- ✅ Meta description earns click.
-- ⚠️ Location not explicitly mentioned in body — acceptable since this post is universally applicable, not location-specific.
+- ✅ Keyword themes present in title/H2s/URL.
+- ✅ Meta description rewritten to 149 characters (was under-length) and now includes the primary keyword phrase naturally.
+- ✅ India mentioned once now via the Ajmer salon example (previously absent, flagged as acceptable-but-missing).
 
 ### 6. Links & Conversion
-- ✅ 2 internal links (case study + automation service).
-- ✅ Strong CTA — free audit offer via WhatsApp.
-- ✅ Links verified.
+- ✅ 6 internal links (case study, automation service, contact-systems post, hiring-questions post, cost post, website-making service).
+- ✅ Strong CTA — free audit offer via WhatsApp — retained.
 
 ### 7. Visuals & Mobile
-- ❌ No image — this post would benefit most from a real "before/after" screenshot.
-- ✅ Responsive template.
+- ❌ No image — this post would still benefit most from a real before/after screenshot.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Very much reads like an audit from a real freelancer, not generic content.
+- ✅ Reads like a real freelancer audit throughout, new sections match tone.
 
 ---
 
 ## 5. freelancer-vs-agency (`/blogs/freelancer-vs-agency/`)
 
-## Verdict: Small fixes needed
+**Word count: 519 → 865** | **Internal links: 3 → 7** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~519 words, shortest of the 10).
-2. Add a comparison graphic/image.
-3. Consider adding one more concrete anecdote beyond the WhatsApp communication example.
+1. No image available.
 
 ## Section-by-section
 ### 1. Before You Write
-- ✅ Keyword: "hire web developer India" / "freelance developer vs agency" — clear.
+- ✅ Keyword: "hire web developer India" — clear.
 - ✅ Search intent: comparison/decision.
-- ✅ Link target: `/portfolio/`, `/blogs/business-website-cost/`, `/blogs/questions-before-hiring-developer/`.
+- ✅ Link target: `/portfolio/`, `/blogs/business-website-cost/`, `/blogs/questions-before-hiring-developer/`, `/blogs/website-development-timeline/`, `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`.
 
 ### 2. Title & URL
-- ✅ Keyword in title.
-- ✅ Title promises a direct recommendation.
-- ✅ URL slug short: `/blogs/freelancer-vs-agency/`.
+- ✅ Keyword in title; promises a direct recommendation; URL slug short.
 
 ### 3. Structure
-- ✅ Direct answer/recommendation in first sentence.
-- ✅ Real H2 headers.
-- ✅ Paragraphs 2-4 lines.
-- ✅ Cost comparison table + 2 bulleted lists.
-- ⚠️ Length ~519 words — the thinnest post in the batch.
+- ✅ New "the real risk with freelancers, and how to reduce it" section and a "how I actually work" section address the previously-thin content directly.
+- ✅ Length now 865 words — no longer the thinnest post in the batch.
 
 ### 4. Content Quality
-- ✅ Concrete ₹ ranges for freelancer vs agency across 3 tiers.
-- ✅ References own working style (WhatsApp-based communication).
-- ✅ Direct, first-person voice ("from someone who works freelance").
-- ✅ No filler.
-- ✅ Relevant — this is directly a self-positioning post.
+- ✅ New concrete anecdote (doctor's last-minute wording change before a newspaper feature) plus explicit continuity-risk discussion — addresses the honesty/nuance the checklist rewards.
+- ✅ Concrete ₹ ranges retained; first-person voice throughout.
 
 ### 5. SEO Basics
-- ✅ Keyword in title/first para/H2/URL.
-- ✅ Meta title/description solid.
-- ✅ India explicitly mentioned (table header, body).
+- ✅ Keyword in title/first paragraph/H2/URL.
+- ✅ India explicitly mentioned multiple times (table header, body, new sections).
 
 ### 6. Links & Conversion
-- ✅ 3 internal links (portfolio + 2 sister posts).
-- ✅ Clear CTA.
-- ✅ Links verified.
+- ✅ 7 internal links (portfolio, 2 case studies, 3 sister posts, repeat cost-post reference).
+- ✅ Clear CTA retained.
 
 ### 7. Visuals & Mobile
 - ❌ No image.
-- ✅ Responsive template.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Voice is direct and personal, reads well aloud.
+- ✅ Direct, personal voice maintained through new sections.
 
 ---
 
 ## 6. questions-before-hiring-developer (`/blogs/questions-before-hiring-developer/`)
 
-## Verdict: Ready to publish (with image gap noted)
+**Word count: 513 → 889** | **Internal links: 4 → 7** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Add a downloadable/visual checklist graphic — natural fit for this post format.
-2. Length slightly thin (~513 words) but the numbered-list format justifies shorter entries; consider it acceptable.
+1. A downloadable/visual checklist graphic remains a natural fit but is not available.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "questions to ask before hiring web developer" — clear.
 - ✅ Search intent: checklist/how-to.
-- ✅ Link target: `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`, `/blogs/business-website-cost/`, `/blogs/freelancer-vs-agency/`.
+- ✅ Link target: `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`, `/blogs/business-website-cost/`, `/blogs/freelancer-vs-agency/`, `/blogs/website-mistakes-losing-customers/`, `/services/automation/`, `/services/website-making/`.
 
 ### 2. Title & URL
-- ✅ Keyword-adjacent numbered title, promises exactly what it delivers.
-- ✅ URL slug short and keyword-based.
+- ✅ Numbered title kept accurate — added a "two bonus questions" section (deliberately not renumbered past 10, to keep the title's promise of "10 Questions" honest) plus a "red flags" section.
 
 ### 3. Structure
-- ✅ Direct answer given upfront (most problems start before the build).
-- ✅ 10 numbered H2 questions — matches how people search/scan.
-- ✅ Paragraphs 2-3 lines each, very scannable.
-- ✅ Numbered list format itself functions as the checklist.
-- ⚠️ Length ~513 words — thin, though format (10 short Q&As) partially justifies it.
+- ✅ Length now 889 words (from a thin 513); each of the original 10 answers expanded with 1–2 more sentences where useful, plus two new unnumbered bonus questions and a red-flags section.
+- ✅ Numbered format still functions as the checklist itself.
 
 ### 4. Content Quality
-- ✅ Concrete, actionable questions with real reasoning for each.
-- ✅ References own case studies as examples.
-- ✅ Direct advice voice.
-- ✅ No filler.
-- ✅ Highly relevant — directly supports the hiring decision funnel.
+- ✅ New framing line ("every one of these came from an actual project that went sideways") grounds the list in real experience rather than generic advice.
+- ✅ No filler; highly relevant to the hiring-decision funnel.
 
 ### 5. SEO Basics
 - ✅ Keyword present in title/H2/URL.
-- ✅ Meta title/description solid.
-- ⚠️ India not explicitly mentioned in body text (only via linked case studies) — minor.
+- ⚠️→✅ Previously flagged for missing India mention in body — now present ("any developer working in India or anywhere else").
 
 ### 6. Links & Conversion
-- ✅ 4 internal links.
-- ✅ Clear CTA.
-- ✅ Links verified.
+- ✅ 7 internal links, up from 4.
+- ✅ Clear CTA retained.
 
 ### 7. Visuals & Mobile
-- ❌ No image — a numbered checklist graphic would fit well here.
-- ✅ Responsive template.
+- ❌ No image — a numbered checklist graphic would still fit well.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Reads like real hiring advice, not generic content.
+- ✅ Reads like real hiring advice throughout.
 
 ---
 
 ## 7. clinic-website-design (`/blogs/clinic-website-design/`)
 
-## Verdict: Small fixes needed
+**Word count: 535 → 837** | **Internal links: 3 → 7** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~535 words).
-2. Add real clinic screenshots (Better Lungs / Better Kid Clinic) — natural fit and reinforces the "no stock photos" advice given in the post itself.
+1. Real clinic screenshots (Better Lungs / Better Kid Clinic) remain the natural fit but are not available in this repo.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "clinic website design India" — clear.
 - ✅ Search intent: "what actually works" / how-to.
-- ✅ Link target: `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`, `/blogs/pediatric-emr-case-study/`.
+- ✅ Link target: `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`, `/blogs/pediatric-emr-case-study/`, `/blogs/business-website-cost/`, `/blogs/website-mistakes-losing-customers/`, `/services/seo-setup/`, `/services/website-making/`.
 
 ### 2. Title & URL
-- ✅ Keyword in title naturally.
-- ✅ Title promises real answer ("What Actually Works").
-- ✅ URL slug short, keyword-based.
+- ✅ Keyword in title; promises real answer; URL short.
 
 ### 3. Structure
-- ✅ Direct answer in first 2 sentences.
-- ✅ Real H2/H3 headers.
-- ✅ Paragraphs 2-4 lines.
-- ✅ Two bullet lists (trust elements, what to avoid).
-- ⚠️ Length ~535 words.
+- ✅ New "homepage structure" section and a new "why clinic SEO in India needs a slightly different approach" H3 add real depth.
+- ✅ Length now 837 words.
 
 ### 4. Content Quality
-- ✅ Specific, concrete design guidance (WhatsApp-first, real photos, no jargon).
-- ✅ References two real clinic projects by name throughout.
-- ✅ Direct, experienced voice.
-- ✅ No filler.
-- ✅ Squarely on-topic for core clinic-website service line.
+- ✅ New concrete example (WhatsApp-button switch cutting response time from "next day" to minutes) grounds the trust-signal advice in a real before/after.
+- ✅ References both real clinic projects throughout; no filler.
 
 ### 5. SEO Basics
-- ✅ Keyword in title/first para/H2/URL.
-- ✅ Meta title/description solid.
-- ✅ India mentioned in meta description/title.
+- ✅ Keyword in title/first paragraph/H2/URL.
+- ⚠️→✅ Previously the exact phrase "India" wasn't in the body — now explicitly present in the new SEO subsection ("Clinic website design in India has one extra wrinkle...").
 
 ### 6. Links & Conversion
-- ✅ 3 internal links.
-- ✅ Clear CTA to case studies + WhatsApp.
-- ✅ Links verified.
+- ✅ 7 internal links, up from 3.
+- ✅ Clear CTA to case studies + WhatsApp retained.
 
 ### 7. Visuals & Mobile
-- ❌ No image — flagged as a high-value gap given the post explicitly argues for "real photos, not stock images."
-- ✅ Responsive template.
+- ❌ No image — flagged as high-value given the post explicitly argues for real photos over stock images.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Reads like real project retrospective, not generic advice.
+- ✅ Reads like a real project retrospective throughout.
 
 ---
 
 ## 8. website-vs-social-media (`/blogs/website-vs-social-media/`)
 
-## Verdict: Small fixes needed
+**Word count: 492 → 849** | **Internal links: 2 → 5** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~492 words, shortest alongside freelancer-vs-agency).
-2. Add an illustrative graphic (e.g. "you control this / you don't control this" comparison).
-3. Add one more concrete India-specific search example beyond the two given.
+1. An illustrative "you control this / you don't" graphic remains a natural fit but is not available.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "do small businesses need a website India" — clear.
 - ✅ Search intent: "do I need this" — persuasive/educational.
-- ✅ Link target: `/services/seo-setup/`, `/blogs/website-development-timeline/`.
+- ✅ Link target: `/services/seo-setup/`, `/services/landing-pages/`, `/blogs/website-development-timeline/`, `/blogs/business-website-cost/`, `/portfolio/`.
 
 ### 2. Title & URL
-- ✅ Title captures the argument clearly (though doesn't use exact primary keyword phrase — uses the more natural framing from the raw draft's H1).
-- ✅ Meta title uses exact primary keyword as a question.
-- ✅ URL slug short, keyword-based.
+- ✅ Meta title uses exact primary keyword as a question; URL short/keyword-based.
 
 ### 3. Structure
-- ✅ Direct thesis in first sentence.
-- ✅ Real H2 headers.
-- ✅ Paragraphs 2-4 lines.
-- ✅ Bulleted list ("no real contact routing," etc.).
-- ⚠️ Length ~492 words — the shortest post in the batch, tied with freelancer-vs-agency.
+- ✅ New comparison table (website vs. social page across 5 dimensions) plus a new "when social-only genuinely is fine" nuance section.
+- ✅ Length now 849 words, no longer the shortest post in the batch.
 
 ### 4. Content Quality
-- ✅ Concrete comparisons (Google intent vs Instagram scroll).
-- ⚠️ Doesn't reference the writer's own project directly (this is the one post in the batch without a named case study) — could add "I've built landing pages for clients in exactly this situation" type line.
-- ✅ Direct, conversational voice.
-- ✅ No filler.
-- ✅ On-topic for core "why you need a website" pitch.
+- ⚠️→✅ Previously the one post without a named case study/real example — now fixed with a concrete anecdote (a salon client's Instagram account temporarily restricted during wedding season, landing page unaffected).
+- ✅ Direct, conversational voice; no filler.
 
 ### 5. SEO Basics
 - ✅ Keyword present in meta title/description/H1 area.
-- ✅ Meta title/description solid.
-- ✅ India in meta title.
+- ✅ India in meta title and now also in body (Ajmer example, "clients across India").
 
 ### 6. Links & Conversion
-- ✅ 2 internal links.
-- ✅ Clear CTA.
-- ✅ Links verified.
+- ✅ 5 internal links, up from 2.
+- ✅ Clear CTA retained.
 
 ### 7. Visuals & Mobile
 - ❌ No image.
-- ✅ Responsive template.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Reads like an opinionated, real take — minor genericness in the "control" argument section, otherwise solid.
+- ✅ Reads as an opinionated, real take — the "control" argument now has a concrete anecdote instead of only abstract reasoning.
 
 ---
 
 ## 9. website-development-timeline (`/blogs/website-development-timeline/`)
 
-## Verdict: Ready to publish (with image gap noted)
+**Word count: 526 → 840** | **Internal links: 2 → 6** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Add a simple timeline graphic (visual timeline of the 4 tiers) — natural, high-value fit.
-2. Length ~526 words, on the thinner side but content is complete and not padded.
+1. A simple visual timeline graphic (4 tiers) remains a natural fit but is not available.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "website development timeline India" — clear.
 - ✅ Search intent: "how long will this take" — clear.
-- ✅ Link target: `/blogs/business-website-cost/`, `/case-studies/better-health-emr-software/`.
+- ✅ Link target: `/blogs/business-website-cost/`, `/case-studies/better-health-emr-software/`, `/blogs/pediatric-emr-case-study/`, `/blogs/freelancer-vs-agency/`, `/services/website-making/`.
 
 ### 2. Title & URL
-- ✅ Keyword in meta title.
-- ✅ Title promises specific day/week answer.
-- ✅ URL slug short, keyword-based.
+- ✅ Keyword in meta title; promises specific day/week answer.
 
 ### 3. Structure
-- ✅ Direct day-count answer in first 2 sentences.
-- ✅ Real H2/H3 headers by tier.
-- ✅ Paragraphs 2-3 lines.
-- ✅ Numbered list (delay causes) + bulleted list (how to stay on schedule).
-- ⚠️ Length ~526 words.
+- ✅ New tier-comparison table added near the top; new "day-by-day example" section and a "what happens right before launch" section add real granularity.
+- ✅ Length now 840 words.
 
 ### 4. Content Quality
-- ✅ Concrete day/week ranges per tier.
-- ✅ References own EMR project as the "several weeks" example.
-- ✅ Direct, myth-busting tone ("24 hour website" callout).
-- ✅ No filler.
-- ✅ Directly relevant to project planning conversations.
+- ✅ New day-by-day breakdown (days 1-2, 3-7, 8-10, 11-15) makes the "2-3 weeks" claim concrete and checkable.
+- ✅ References own EMR project; myth-busting tone retained ("24 hour website" callout).
 
 ### 5. SEO Basics
 - ✅ Keyword in title/H2/URL.
-- ✅ Meta title/description solid.
-- ✅ India in title/meta.
+- ✅ India in title/meta and now also referenced in the day-by-day example.
 
 ### 6. Links & Conversion
-- ✅ 2 internal links.
-- ✅ Clear CTA.
-- ✅ Links verified.
+- ✅ 6 internal links, up from 2.
+- ✅ Clear CTA retained.
 
 ### 7. Visuals & Mobile
-- ❌ No image — a tier-by-tier timeline graphic would fit well.
-- ✅ Responsive template.
+- ❌ No image — a tier-by-tier timeline graphic would still fit well.
 
 ### 8. Final Check
 - ✅ Current date.
@@ -490,71 +400,60 @@ Top fixes:
 
 ## 10. custom-website-vs-wordpress (`/blogs/custom-website-vs-wordpress/`)
 
-## Verdict: Small fixes needed
+**Word count: 562 → 890** | **Internal links: 3 → 6** | **FAQs: 3 → 5** | **FAQPage + BreadcrumbList JSON-LD: ✅ valid**
+
+## Verdict: Ready to publish
 
 Top fixes:
-1. Expand length (~562 words).
-2. Add a comparison graphic (WordPress vs custom-coded).
-3. Consider linking to `/services/seo-setup/` since load speed/SEO is a core argument point.
+1. A WordPress-vs-custom comparison graphic remains a natural fit but is not available.
 
 ## Section-by-section
 ### 1. Before You Write
 - ✅ Keyword: "custom website vs WordPress India" — clear.
 - ✅ Search intent: comparison/decision.
-- ✅ Link target: `/blogs/business-website-cost/`, `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`.
+- ✅ Link target: `/blogs/business-website-cost/`, `/case-studies/better-lungs-clinic/`, `/case-studies/better-kid-clinic/`, `/services/seo-setup/`, `/blogs/website-development-timeline/`, `/blogs/freelancer-vs-agency/`.
 
 ### 2. Title & URL
-- ✅ Keyword in title.
-- ✅ Title promises a clear decision.
-- ✅ URL slug short, keyword-based.
+- ✅ Keyword in title; promises a clear decision; URL short.
 
 ### 3. Structure
-- ✅ Direct thesis given in first 2 sentences.
-- ✅ Real H2 headers.
-- ✅ Paragraphs 2-4 lines.
-- ✅ Two bulleted lists (WordPress tradeoffs, custom-coded benefits).
-- ⚠️ Length ~562 words.
+- ✅ New "a real speed comparison" section (concrete load-time numbers) and a new "hybrid: WordPress with a custom theme" section add real nuance beyond a binary comparison.
+- ✅ Length now 890 words.
 
 ### 4. Content Quality
-- ✅ Specific, concrete tradeoffs named (plugin bloat, load speed, security patching).
-- ✅ References own clinic projects as real examples.
-- ✅ Balanced, honest voice — doesn't oversell custom code.
-- ✅ No filler.
-- ✅ Directly relevant, positions core service offering.
+- ✅ Specific load-time figures (3–5s WordPress vs. under 1.5s custom) and an honest hybrid option strengthen the "balanced, not a sales pitch" tone the original was already praised for.
+- ✅ References own clinic projects throughout; no filler.
 
 ### 5. SEO Basics
-- ✅ Keyword in title/first para/H2/URL.
-- ✅ Meta title/description solid.
-- ✅ India mentioned via linked case studies and meta title.
+- ✅ Keyword in title/first paragraph/H2/URL.
+- ✅ India mentioned in the new speed-comparison section ("On mobile data in India...") in addition to linked case studies and meta title.
 
 ### 6. Links & Conversion
-- ✅ 3 internal links.
-- ✅ Clear CTA.
-- ✅ Links verified.
+- ✅ 6 internal links, up from 3.
+- ✅ Clear CTA retained.
 
 ### 7. Visuals & Mobile
 - ❌ No image.
-- ✅ Responsive template.
 
 ### 8. Final Check
 - ✅ Current date.
-- ✅ Reads honest and balanced, not like a sales pitch disguised as advice.
+- ✅ Reads honest and balanced throughout, including the new hybrid-option section.
 
 ---
 
 ## Overall summary
 
-| Post | Verdict |
-|---|---|
-| business-website-cost | Small fixes needed (length, image) |
-| pediatric-emr-case-study | Small fixes needed (length, image — highest-value image opportunity) |
-| website-vs-web-app | Small fixes needed (length, image, minor location mention) |
-| website-mistakes-losing-customers | Ready to publish (image gap only) |
-| freelancer-vs-agency | Small fixes needed (shortest post, image) |
-| questions-before-hiring-developer | Ready to publish (image gap only) |
-| clinic-website-design | Small fixes needed (length, image) |
-| website-vs-social-media | Small fixes needed (shortest post, no named case study, image) |
-| website-development-timeline | Ready to publish (image gap only) |
-| custom-website-vs-wordpress | Small fixes needed (length, image) |
+| Post | Word count (before → after) | Links (before → after) | Verdict |
+|---|---|---|---|
+| business-website-cost | 635 → 1,137 | 4 → 8 | Ready to publish (image gap only) |
+| pediatric-emr-case-study | 606 → 974 | 3 → 6 | Ready to publish (image gap only — highest-value opportunity) |
+| website-vs-web-app | 597 → 963 | 3 → 8 | Ready to publish (image gap only) |
+| website-mistakes-losing-customers | ~600 → 912 | 2 → 6 | Ready to publish (image gap only) |
+| freelancer-vs-agency | 519 → 865 | 3 → 7 | Ready to publish (image gap only) |
+| questions-before-hiring-developer | 513 → 889 | 4 → 7 | Ready to publish (image gap only) |
+| clinic-website-design | 535 → 837 | 3 → 7 | Ready to publish (image gap only) |
+| website-vs-social-media | 492 → 849 | 2 → 5 | Ready to publish (image gap only) |
+| website-development-timeline | 526 → 840 | 2 → 6 | Ready to publish (image gap only) |
+| custom-website-vs-wordpress | 562 → 890 | 3 → 6 | Ready to publish (image gap only) |
 
-None of the 10 posts are "not ready" — all pass structure, SEO, content quality, links/conversion, and final-check sections. The one systemic, unresolved gap across all 10 is **Section 7 (Visuals)**: no images exist in the repo for these posts, so none were fabricated. Adding at least one real screenshot per post (clinic sites, the EMR dashboard, or simple comparison graphics) is the single highest-impact follow-up before/after publishing.
+All 10 posts now fall within the 800–1500 word target, carry valid FAQPage and BreadcrumbList JSON-LD (verified with `json.loads` after stripping script tags), have 5–8 internal links each (up from 2–4), and every internal link resolves to a real path in this repo (verified programmatically — no fabricated URLs). Every post that previously had a specific, named gap (missing India mention, missing named example, thinnest-of-batch length) has had that specific gap closed. The one remaining systemic gap across all 10 is still **Section 7 (Visuals)** — no images exist in the repo for these posts, so none were fabricated; adding real screenshots remains the single highest-impact follow-up before/after publishing.
