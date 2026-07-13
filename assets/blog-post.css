@@ -32,6 +32,16 @@ main > .hero p:not(.eyebrow) {
   font-size: clamp(17px, 1.6vw, 21px);
 }
 
+.hero-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 28px;
+  border-radius: 8px;
+  border: 1px solid #ded8ce;
+  box-shadow: 0 12px 30px rgba(41, 77, 51, 0.08);
+}
+
 .blog-intent {
   display: flex;
   flex-wrap: wrap;

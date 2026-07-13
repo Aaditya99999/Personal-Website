@@ -1,0 +1,22 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Page structure comparison illustration">
+  <rect width="800" height="420" fill="#f7f6f2"/>
+  <rect x="1" y="1" width="798" height="418" fill="none" stroke="#ded8ce"/>
+  <rect x="140" y="80" width="180" height="260" rx="12" fill="#fff" stroke="#294d33" stroke-width="3"/>
+  <rect x="160" y="100" width="140" height="16" rx="4" fill="#294d33"/>
+  <rect x="160" y="130" width="140" height="60" rx="8" fill="#f7f6f2"/>
+  <rect x="160" y="200" width="140" height="10" rx="4" fill="#ded8ce"/>
+  <rect x="160" y="220" width="100" height="10" rx="4" fill="#ded8ce"/>
+  <rect x="160" y="290" width="140" height="30" rx="15" fill="#f5a900"/>
+  <g transform="translate(440,80)">
+    <rect width="80" height="60" rx="8" fill="#294d33"/>
+    <rect y="70" width="80" height="50" rx="8" fill="#fff" stroke="#ded8ce" stroke-width="2"/>
+    <rect y="130" width="80" height="50" rx="8" fill="#fff" stroke="#ded8ce" stroke-width="2"/>
+    <rect y="190" width="80" height="50" rx="8" fill="#fff" stroke="#ded8ce" stroke-width="2"/>
+    <rect x="100" width="180" height="240" rx="8" fill="#fff" stroke="#294d33" stroke-width="3"/>
+    <rect x="116" y="16" width="148" height="14" rx="4" fill="#294d33"/>
+    <rect x="116" y="44" width="148" height="50" rx="6" fill="#f7f6f2"/>
+    <rect x="116" y="106" width="148" height="8" rx="4" fill="#ded8ce"/>
+    <rect x="116" y="122" width="100" height="8" rx="4" fill="#ded8ce"/>
+    <rect x="116" y="190" width="120" height="26" rx="13" fill="#f5a900"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Automation workflow diagram">
+  <rect width="800" height="420" fill="#f7f6f2"/>
+  <rect x="1" y="1" width="798" height="418" fill="none" stroke="#ded8ce"/>
+  <line x1="140" y1="120" x2="300" y2="120" stroke="#294d33" stroke-width="3"/>
+  <line x1="440" y1="120" x2="600" y2="120" stroke="#294d33" stroke-width="3"/>
+  <line x1="220" y1="150" x2="220" y2="270" stroke="#294d33" stroke-width="3"/>
+  <line x1="520" y1="150" x2="520" y2="270" stroke="#294d33" stroke-width="3"/>
+  <line x1="140" y1="300" x2="600" y2="300" stroke="#294d33" stroke-width="3" stroke-dasharray="2 10"/>
+  <rect x="60" y="80" width="160" height="80" rx="14" fill="#fff" stroke="#294d33" stroke-width="3"/>
+  <circle cx="100" cy="120" r="10" fill="#f5a900"/>
+  <text x="122" y="126" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#171717">New message</text>
+  <rect x="300" y="80" width="160" height="80" rx="14" fill="#294d33"/>
+  <circle cx="340" cy="120" r="10" fill="#f5a900"/>
+  <text x="362" y="126" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#fff">Check rules</text>
+  <rect x="140" y="260" width="160" height="80" rx="14" fill="#fff" stroke="#ded8ce" stroke-width="3"/>
+  <circle cx="180" cy="300" r="10" fill="#294d33"/>
+  <text x="202" y="306" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#171717">Auto reply</text>
+  <rect x="440" y="260" width="160" height="80" rx="14" fill="#f5a900"/>
+  <circle cx="480" cy="300" r="10" fill="#294d33"/>
+  <text x="502" y="306" font-family="Inter,sans-serif" font-size="15" font-weight="900" fill="#171717">Notify human</text>
+  <rect x="600" y="80" width="140" height="80" rx="14" fill="#fff" stroke="#294d33" stroke-width="3" stroke-dasharray="4 6"/>
+  <text x="670" y="126" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#294d33">n8n</text>
+</svg>

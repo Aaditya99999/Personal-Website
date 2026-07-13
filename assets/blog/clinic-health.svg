@@ -1,0 +1,8 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Clinic and healthcare illustration">
+  <rect width="800" height="420" fill="#f7f6f2"/>
+  <rect x="1" y="1" width="798" height="418" fill="none" stroke="#ded8ce"/>
+  <circle cx="400" cy="210" r="120" fill="#fff" stroke="#294d33" stroke-width="3"/>
+  <rect x="372" y="150" width="56" height="120" rx="10" fill="#f5a900"/>
+  <rect x="340" y="182" width="120" height="56" rx="10" fill="#f5a900"/>
+  <path d="M180 260 L260 260 L280 200 L310 320 L340 240 L360 260 L620 260" fill="none" stroke="#294d33" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
