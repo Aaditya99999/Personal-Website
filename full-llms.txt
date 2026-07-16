@@ -36,18 +36,58 @@ Aaditya Bhatnagar builds modern business websites, clinic websites, doctor websi
 - Case Study - Better Kid Clinic: https://aadityabhatnagar.online/case-studies/better-kid-clinic/
 - Case Study - Better Health EMR Software: https://aadityabhatnagar.online/case-studies/better-health-emr-software/
 - Case Study - Personal Bot: https://aadityabhatnagar.online/case-studies/personal-bot/
-- Blog - Minimalist Website Design: https://aadityabhatnagar.online/blogs/minimalist-website-design/
-- Blog - Practical UX Layouts: https://aadityabhatnagar.online/blogs/practical-ux-layouts/
-- Blog - Websites and Automation Together: https://aadityabhatnagar.online/blogs/automation-after-website/
-- Blog - Contact Systems: https://aadityabhatnagar.online/blogs/contact-systems/
-- Blog - Useful Automation: https://aadityabhatnagar.online/blogs/useful-automation/
-- Blog - Business Tools: https://aadityabhatnagar.online/blogs/business-tools/
-- Blog - Clinic Websites: https://aadityabhatnagar.online/blogs/clinic-websites/
-- Blog - Landing Pages: https://aadityabhatnagar.online/blogs/landing-pages/
-- Blog - Contact Options: https://aadityabhatnagar.online/blogs/contact-options/
-- Blog - Website Launch: https://aadityabhatnagar.online/blogs/website-launch/
-- Blog - Simple Dashboards: https://aadityabhatnagar.online/blogs/simple-dashboards/
-- Blog - Website Pages: https://aadityabhatnagar.online/blogs/website-pages/
+- Blog - 5 AI Automation Workflows Every Clinic Should Have: https://aadityabhatnagar.online/blogs/5-ai-automation-workflows-for-clinics/
+- Blog - What Happens After Your Website Launches? (The Real Timeline): https://aadityabhatnagar.online/blogs/after-website-launch-timeline/
+- Blog - AI Automation Cost for Small Business in India (2026): https://aadityabhatnagar.online/blogs/ai-automation-cost/
+- Blog - छोटे व्यवसायों के लिए AI ऑटोमेशन गाइड (2026): https://aadityabhatnagar.online/blogs/ai-automation-hindi-guide/
+- Blog - AI Chatbot vs Human Receptionist: What Clinics Actually Need: https://aadityabhatnagar.online/blogs/ai-chatbot-vs-human-receptionist/
+- Blog - How to Automate Appointment Booking for a Clinic Website: https://aadityabhatnagar.online/blogs/automate-clinic-appointment-booking/
+- Blog - Why Websites and Automation Work Better Together: https://aadityabhatnagar.online/blogs/automation-after-website/
+- Blog - Business tools should start small: https://aadityabhatnagar.online/blogs/business-tools/
+- Blog - Business Website Cost in India (2026) — Real Numbers, No Guesswork: https://aadityabhatnagar.online/blogs/business-website-cost/
+- Blog - Should Your Clinic Have an App or Just a Website?: https://aadityabhatnagar.online/blogs/clinic-app-vs-website/
+- Blog - Clinic Website Design in India — What Actually Builds Patient Trust: https://aadityabhatnagar.online/blogs/clinic-website-design/
+- Blog - Clinic Website Developer Tips for Patient Trust: https://aadityabhatnagar.online/blogs/clinic-websites/
+- Blog - Why every business website needs clear contact options: https://aadityabhatnagar.online/blogs/contact-options/
+- Blog - Contact Systems and WhatsApp Automation for Business: https://aadityabhatnagar.online/blogs/contact-systems/
+- Blog - The Real Cost of NOT Automating Your Business Inquiries: https://aadityabhatnagar.online/blogs/cost-of-not-automating/
+- Blog - Custom-Coded Website vs WordPress — Which Should You Choose in India?: https://aadityabhatnagar.online/blogs/custom-website-vs-wordpress/
+- Blog - How to Pick a Domain Name and Hosting for a Small Business Website: https://aadityabhatnagar.online/blogs/domain-and-hosting-guide/
+- Blog - Email vs WhatsApp Automation: Which Converts Better in India?: https://aadityabhatnagar.online/blogs/email-vs-whatsapp-automation/
+- Blog - How I Built an EMR Automation Workflow with n8n (Case Study): https://aadityabhatnagar.online/blogs/emr-automation-n8n-case-study/
+- Blog - Freelance Web Developer Rates in India: What's Fair in 2026?: https://aadityabhatnagar.online/blogs/freelance-developer-rates-india/
+- Blog - Freelance Web Developer vs Agency in India — Which Should You Hire?: https://aadityabhatnagar.online/blogs/freelancer-vs-agency/
+- Blog - Google My Business + Website: The Combo Every Local Business Needs: https://aadityabhatnagar.online/blogs/google-business-profile-plus-website/
+- Blog - How Long Does SEO Take to Show Results for a New Website?: https://aadityabhatnagar.online/blogs/how-long-does-seo-take/
+- Blog - Landing pages work best when they focus on one offer: https://aadityabhatnagar.online/blogs/landing-pages/
+- Blog - Local SEO for Clinics in India: A Step-by-Step Guide: https://aadityabhatnagar.online/blogs/local-seo-for-clinics-india/
+- Blog - Business Website Design That Feels Clear: https://aadityabhatnagar.online/blogs/minimalist-website-design/
+- Blog - Mobile-First Design: Why It Matters More in India: https://aadityabhatnagar.online/blogs/mobile-first-design-india/
+- Blog - n8n से बिज़नेस ऑटोमेशन कैसे करें (2026): https://aadityabhatnagar.online/blogs/n8n-business-automation-hindi/
+- Blog - n8n vs Zapier: Which Should Indian Small Businesses Use?: https://aadityabhatnagar.online/blogs/n8n-vs-zapier/
+- Blog - How to Choose Between a One-Page and Multi-Page Website: https://aadityabhatnagar.online/blogs/one-page-vs-multi-page-website/
+- Blog - Pediatric EMR Case Study — Building Patient Records Software for a Clinic: https://aadityabhatnagar.online/blogs/pediatric-emr-case-study/
+- Blog - Improving user experience with practical layout choices: https://aadityabhatnagar.online/blogs/practical-ux-layouts/
+- Blog - 10 Questions to Ask Before Hiring a Website Developer: https://aadityabhatnagar.online/blogs/questions-before-hiring-developer/
+- Blog - Self-Hosted AI Automation: Why Data Privacy Matters: https://aadityabhatnagar.online/blogs/self-hosted-ai-automation-privacy/
+- Blog - Signs Your Business Needs AI Automation (Not Just a Website): https://aadityabhatnagar.online/blogs/signs-you-need-ai-automation/
+- Blog - Simple dashboards can replace messy spreadsheets: https://aadityabhatnagar.online/blogs/simple-dashboards/
+- Blog - How to Turn Website Visitors into WhatsApp Leads: https://aadityabhatnagar.online/blogs/turn-visitors-into-whatsapp-leads/
+- Blog - AI Automation for Business: When It Saves Time: https://aadityabhatnagar.online/blogs/useful-automation/
+- Blog - How to Write Website Content That Actually Converts: https://aadityabhatnagar.online/blogs/website-content-that-converts/
+- Blog - Website Development Timeline in India — How Long It Actually Takes: https://aadityabhatnagar.online/blogs/website-development-timeline/
+- Blog - Website Launch SEO Checklist for Business Websites: https://aadityabhatnagar.online/blogs/website-launch/
+- Blog - Website Maintenance: What It Costs and Why You Can't Skip It: https://aadityabhatnagar.online/blogs/website-maintenance-cost/
+- Blog - 5 Signs Your Website Is Losing You Customers (And How to Fix It): https://aadityabhatnagar.online/blogs/website-mistakes-losing-customers/
+- Blog - How to decide what pages your business website needs: https://aadityabhatnagar.online/blogs/website-pages/
+- Blog - Website Security Basics Every Small Business Owner Should Know: https://aadityabhatnagar.online/blogs/website-security-basics/
+- Blog - Website SEO Checklist for Small Businesses in India (2026): https://aadityabhatnagar.online/blogs/website-seo-checklist-india/
+- Blog - Do Small Businesses Need a Website If They Already Have Instagram?: https://aadityabhatnagar.online/blogs/website-vs-social-media/
+- Blog - Website vs Web App — Which Does Your Business Actually Need?: https://aadityabhatnagar.online/blogs/website-vs-web-app/
+- Blog - AI Agents Explained: What They Actually Do for a Small Business: https://aadityabhatnagar.online/blogs/what-are-ai-agents/
+- Blog - What Is a Landing Page and Does Your Business Need One?: https://aadityabhatnagar.online/blogs/what-is-a-landing-page/
+- Blog - What Is n8n? A Beginner's Guide for Small Business Owners: https://aadityabhatnagar.online/blogs/what-is-n8n/
+- Blog - How to Automate WhatsApp Business Replies with n8n: https://aadityabhatnagar.online/blogs/whatsapp-automation-n8n/
 - Privacy and terms: https://aadityabhatnagar.online/privacy/
 
 - Sitemap: https://aadityabhatnagar.online/sitemap.xml
