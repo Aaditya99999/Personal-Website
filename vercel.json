@@ -1,4 +1,15 @@
 {
+  "redirects": [
+    { "source": "/blog/7-business-tasks-you-can-automate-with-n8n/(.*)", "destination": "/blogs/useful-automation/", "permanent": true },
+    { "source": "/blog/best-website-features-for-service-businesses/(.*)", "destination": "/blogs/website-pages/", "permanent": true },
+    { "source": "/blog/digital-prescription-automation-for-doctors/(.*)", "destination": "/case-studies/better-health-emr-software/", "permanent": true },
+    { "source": "/blog/how-much-does-a-website-cost-in-india/(.*)", "destination": "/blogs/business-website-cost/", "permanent": true },
+    { "source": "/blog/website-vs-landing-page/(.*)", "destination": "/blogs/landing-pages/", "permanent": true },
+    { "source": "/blog/what-is-n8n-automation/(.*)", "destination": "/blogs/useful-automation/", "permanent": true },
+    { "source": "/blog/whatsapp-automation-for-small-businesses/(.*)", "destination": "/blogs/contact-systems/", "permanent": true },
+    { "source": "/blog/why-every-clinic-needs-a-website-in-2026/(.*)", "destination": "/blogs/clinic-websites/", "permanent": true },
+    { "source": "/blogs/lead-systems/(.*)", "destination": "/blogs/contact-systems/", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/(.*)",
