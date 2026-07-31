@@ -388,8 +388,10 @@
     }
 
     .profile-photo img {
+      display: block;
       width: 72%;
       height: auto;
+      margin: 0 auto;
       filter: drop-shadow(0 18px 22px rgba(0,0,0,0.08));
     }
 
