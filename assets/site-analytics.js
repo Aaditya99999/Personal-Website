@@ -1,5 +1,19 @@
 (function () {
   var GA_ID = 'G-DZZZLY06Q4';
+
+  // --- Google Ads conversion tracking ---------------------------------------
+  // 1. ADS_ID: Google Ads > Goals > Conversions > Google tag > "AW-XXXXXXXXXX".
+  // 2. label:  each conversion action's own label, from its Tag setup screen.
+  //    Events with an empty label are skipped, so partial setup is safe.
+  // 3. value:  rough INR worth of one action, used by Maximize Conversion Value.
+  var ADS_ID = window.AB_ADS_ID || 'AW-18432814461';
+  var ADS_CONVERSIONS = {
+    project_whatsapp_submit: { label: '', value: 3000 },
+    whatsapp_click: { label: '', value: 1000 },
+    phone_click: { label: '', value: 800 },
+    email_click: { label: '', value: 400 }
+  };
+  var firedConversions = {};
   // Add the Apps Script Web App URL here after deploying APPS_SCRIPT_ANALYTICS.gs.
   var AB_ANALYTICS_ENDPOINT = window.AB_ANALYTICS_ENDPOINT || 'https://script.google.com/macros/s/AKfycbxtfxOA1Sk45TGVsYwEJV7LMHdTbGl_3Q1qMHLyU1JWoIfxgPbHyJ0Iletmv1YDJJQB/exec';
   var AB_ANALYTICS_SITE_KEY = window.AB_ANALYTICS_SITE_KEY || 'ab-labs-site';
@@ -69,6 +83,24 @@
     window.gtag('event', name, data);
     window.dataLayer.push(Object.assign({ event: name }, data));
     sendToAbAnalytics(name, data);
+    sendAdsConversion(name, data);
+  }
+
+  function sendAdsConversion(name, data) {
+    if (!ADS_ID) return;
+    var conversion = ADS_CONVERSIONS[name];
+    if (!conversion || !conversion.label) return;
+    // One conversion per action per session; Google dedupes further on
+    // transaction_id when the action is set to "Count: One".
+    if (firedConversions[name]) return;
+    firedConversions[name] = true;
+
+    window.gtag('event', 'conversion', {
+      send_to: ADS_ID + '/' + conversion.label,
+      value: conversion.value,
+      currency: 'INR',
+      transaction_id: data.session_id + '_' + name
+    });
   }
 
   function sendToAbAnalytics(name, data) {
@@ -125,6 +157,10 @@
     page_path: location.pathname,
     page_title: document.title
   });
+
+  if (ADS_ID) {
+    window.gtag('config', ADS_ID);
+  }
 
   sendEvent('ab_page_view', {
     referrer: document.referrer || '',
