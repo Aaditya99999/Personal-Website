@@ -8,7 +8,7 @@
   // 3. value:  rough INR worth of one action, used by Maximize Conversion Value.
   var ADS_ID = window.AB_ADS_ID || 'AW-18432814461';
   var ADS_CONVERSIONS = {
-    project_whatsapp_submit: { label: '', value: 3000 },
+    project_whatsapp_submit: { label: '0JXwCKag7vIcEP3audVE', value: 3000 },
     whatsapp_click: { label: '', value: 1000 },
     phone_click: { label: '', value: 800 },
     email_click: { label: '', value: 400 }
