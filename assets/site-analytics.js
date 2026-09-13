@@ -9,6 +9,7 @@
   var ADS_ID = window.AB_ADS_ID || 'AW-18432814461';
   var ADS_CONVERSIONS = {
     project_whatsapp_submit: { label: '0JXwCKag7vIcEP3audVE', value: 3000 },
+    lead_popup_submit: { label: '0JXwCKag7vIcEP3audVE', value: 3000 },
     whatsapp_click: { label: '', value: 1000 },
     phone_click: { label: '', value: 800 },
     email_click: { label: '', value: 400 }
@@ -151,6 +152,9 @@
     if (path.includes('/analytics/') && href.includes('google')) return 'analytics_tool_click';
     return 'link_click';
   }
+
+  // Lets other scripts (e.g. lead-popup.js) send events through GA, the sheet, and Ads.
+  window.abTrack = sendEvent;
 
   window.gtag('js', new Date());
   window.gtag('config', GA_ID, {

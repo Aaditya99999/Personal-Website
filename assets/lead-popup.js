@@ -76,8 +76,16 @@
     var modal = document.getElementById('leadPopup');
     var form = document.getElementById('leadPopupForm');
 
-    function toggle(open) {
+    function track(name, params) {
+      params = Object.assign({ section: 'lead_popup' }, params);
+      if (typeof window.abTrack === 'function') window.abTrack(name, params);
+      else if (typeof window.gtag === 'function') window.gtag('event', name, params);
+    }
+
+    function toggle(open, source) {
+      if (modal.hidden === !open) return;
       modal.hidden = !open;
+      track(open ? 'lead_popup_open' : 'lead_popup_close', { popup_source: source || 'button' });
       if (open) {
         form.elements.name.focus();
         try { sessionStorage.setItem('leadPopupSeen', '1'); } catch (e) {}
@@ -102,10 +110,10 @@
         'Page: ' + location.pathname
       ];
       if (f.details.value.trim()) lines.push('Details: ' + f.details.value.trim());
-      if (typeof window.gtag === 'function') window.gtag('event', 'lead_popup_submit', { service: f.service.value });
+      track('lead_popup_submit', { service: f.service.value, budget: f.budget.value });
       var url = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n'));
       form.reset();
-      toggle(false);
+      toggle(false, 'submit');
       // Mobile and in-app browsers often block new tabs; fall back to opening WhatsApp in this tab.
       var win = window.open(url, '_blank');
       if (win) win.opener = null;
@@ -115,7 +123,7 @@
     // Auto-open once per session after the visitor has spent some time on the page.
     var seen = false;
     try { seen = sessionStorage.getItem('leadPopupSeen') === '1'; } catch (e) {}
-    if (!seen) setTimeout(function () { if (modal.hidden) toggle(true); }, AUTO_OPEN_MS);
+    if (!seen) setTimeout(function () { if (modal.hidden) toggle(true, 'auto'); }, AUTO_OPEN_MS);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
