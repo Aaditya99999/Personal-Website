@@ -901,9 +901,13 @@
         `Best time: ${f.time.value}`
       ];
       if (f.need.value.trim()) lines.push(`Need: ${f.need.value.trim()}`);
-      window.open(`https://wa.me/917357397888?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+      const url = `https://wa.me/917357397888?text=${encodeURIComponent(lines.join('\n'))}`;
       callbackForm.reset();
       toggleCallback(false);
+      // Mobile and in-app browsers often block new tabs; fall back to opening WhatsApp in this tab.
+      const win = window.open(url, '_blank');
+      if (win) win.opener = null;
+      else window.location.href = url;
     });
     });
   </script>

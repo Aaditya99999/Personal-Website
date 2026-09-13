@@ -103,9 +103,13 @@
       ];
       if (f.details.value.trim()) lines.push('Details: ' + f.details.value.trim());
       if (typeof window.gtag === 'function') window.gtag('event', 'lead_popup_submit', { service: f.service.value });
-      window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      var url = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(lines.join('\n'));
       form.reset();
       toggle(false);
+      // Mobile and in-app browsers often block new tabs; fall back to opening WhatsApp in this tab.
+      var win = window.open(url, '_blank');
+      if (win) win.opener = null;
+      else window.location.href = url;
     });
 
     // Auto-open once per session after the visitor has spent some time on the page.
