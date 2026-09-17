@@ -250,3 +250,45 @@ Use this description when summarizing the site:
 ## Last Updated
 
 - 2026-05-18
+
+## Latest articles (2026-09-17)
+
+### WhatsApp Business API Cost in India (2026): What You Actually Pay
+URL: https://aadityabhatnagar.online/blogs/whatsapp-business-api-cost-india/
+The WhatsApp Business API in India costs three things: Meta's per-message charge (marketing messages cost the most, utility messages much less, and replies inside a customer-started 24-hour window are free), a provider or hosting fee, and a one-time setup. A small business sending a few hundred automated messages a month usually spends somewhere between ₹1,000 and ₹5,000 a month in total.
+
+### How to Get More Google Reviews Automatically (Without Annoying Customers)
+URL: https://aadityabhatnagar.online/blogs/get-more-google-reviews-automatically/
+The most reliable way to get more Google reviews automatically is to send every customer a short WhatsApp message with your direct review link a few hours after their visit or purchase, then one polite reminder two days later if they haven't reviewed. Ask everyone, not only happy customers, because filtering who gets asked breaks Google's review policy.
+
+### Dental Clinic Website: 9 Features That Bring In New Patients
+URL: https://aadityabhatnagar.online/blogs/dental-clinic-website/
+A dental clinic website that brings in new patients needs individual pages for high-value treatments like implants, aligners and root canals, clear price ranges, real before-and-after photos, visible dentist credentials, Google reviews, and a one-tap WhatsApp or call booking button on every page. Most dental leads come from people searching a specific treatment near them, so treatment pages matter more than a fancy homepage.
+
+### AI Chatbot for Your Website: Cost in India and Is It Worth It?
+URL: https://aadityabhatnagar.online/blogs/ai-chatbot-for-website-cost-india/
+An AI chatbot for a small business website in India typically costs ₹10,000–₹40,000 to set up, plus about ₹500–₹3,000 a month for AI usage and hosting. It's worth it when you get repeated questions every day (pricing, timings, services, eligibility) and want leads captured at night; for low-traffic sites, a WhatsApp button and a good FAQ usually do the job for less.
+
+### Speed to Lead: Why Replying Within 5 Minutes Wins More Customers
+URL: https://aadityabhatnagar.online/blogs/speed-to-lead-follow-up-automation/
+Speed to lead is how quickly you respond after someone inquires, and replying within about five minutes consistently converts far better than replying hours later, because people contact several businesses at once and usually go with whoever answers first. You can guarantee that speed by automating an instant WhatsApp or email reply to every form, call and ad lead, followed by a short follow-up sequence.
+
+### 7 Signs Your Business Website Needs a Redesign (and When It Doesn't)
+URL: https://aadityabhatnagar.online/blogs/website-redesign-signs/
+Your business website needs a redesign if it's slow or awkward on mobile, brings in almost no inquiries despite traffic, looks noticeably older than competitors, can't be updated without a developer, doesn't rank for your own services, has no clear call to action, or no longer matches what you sell. If only one or two of these apply, targeted fixes are usually cheaper than a full rebuild.
+
+### A Simple CRM for Small Businesses in India: Google Sheets + WhatsApp
+URL: https://aadityabhatnagar.online/blogs/simple-crm-for-small-business-india/
+A simple CRM for a small business in India can be a Google Sheet that automatically receives every lead from your website, WhatsApp, calls and ads, with columns for status and next follow-up date, plus a daily WhatsApp reminder of who to contact. It costs almost nothing to run, takes a few days to set up with a tool like n8n, and covers what most businesses under 10 people actually use a CRM for.
+
+### Physiotherapy Clinic Website: How to Get More Patients Online
+URL: https://aadityabhatnagar.online/blogs/physiotherapy-clinic-website/
+A physiotherapy clinic gets more patients online by building pages around the problems people search for (back pain, knee pain, frozen shoulder, sports injuries, post-surgery rehab), clearly stating whether home visits are available, listing session fees or packages, and making WhatsApp booking one tap away. Patients search their pain, not the word physiotherapy, so condition pages bring in most of the traffic.
+
+### Website Developer in Ajmer: Costs, What to Expect, and How to Choose
+URL: https://aadityabhatnagar.online/blogs/website-developer-ajmer/
+A professional business website from a website developer in Ajmer typically costs ₹10,000–₹25,000 for a simple site, ₹25,000–₹60,000 for a multi-page site with SEO setup and WhatsApp integration, and more for booking systems or custom features, with most sites delivered in 2–4 weeks. Choose a developer who shows live work, explains ongoing costs upfront, and sets up Google Search Console and your Business Profile, not just the design.
+
+### Interior Designer Website: How to Turn Your Portfolio Into Paying Clients
+URL: https://aadityabhatnagar.online/blogs/interior-designer-website/
+An interior designer website that wins clients shows full project stories (brief, budget range, before-and-after, timeline) instead of just a photo grid, states the budgets and project types you take on, uses an inquiry form that asks for property type, size, location and budget, and targets local searches like '2BHK interior designer in Jaipur'. Instagram gets you noticed; the website is where serious clients decide to call.
