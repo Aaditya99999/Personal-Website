@@ -4,31 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vivek Singh Bhadauriya</title>
-<meta name="description" content="Vivek Singh Bhadauriya, founder of Future Edge Digital Marketing Agency & Training Centre, Kanpur. Google Business listings, SEO, Google Ads and digital marketing training.">
+<meta name="description" content="Vivek Singh Bhadauriya: assistant professor, visiting lecturer and business growth manager from Kanpur. Founder of Future Edge Digital Marketing Agency. Book him for college and school seminars, consultancy or the digital marketing course.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #F7F9FF;
-    --card: #FFFFFF;
-    --ink: #15203B;
-    --soft: #5A6480;
-    --line: #E3E8F5;
+    --bg: #0A0A0C;
+    --bg2: #121216;
+    --card: #17171C;
+    --line: #2A2A31;
+    --ink: #F4F1EA;
+    --soft: #A6A3AD;
+    --gold: #E9B44C;
+    --gold2: #F6D58A;
+    --goldink: #1A1406;
+    --wa: #25D366;
 
-    /* Google-style colours, each with a light tint */
-    --blue: #2F5BFF;   --sky: #E3ECFF;
-    --coral: #FF5E57;  --blush: #FFE4E1;
-    --sun: #FFC93C;    --butter: #FFF3C9;
-    --green: #12A26B;  --mint: #DDF6EA;
+    --display: "Archivo", system-ui, sans-serif;
+    --serif: "Instrument Serif", Georgia, serif;
+    --body: "Manrope", system-ui, sans-serif;
 
-    --display: "Bricolage Grotesque", system-ui, sans-serif;
-    --body: "Figtree", system-ui, sans-serif;
-    --mono: "JetBrains Mono", ui-monospace, monospace;
-
-    --wrap: 1200px;
+    --wrap: 1220px;
     --gutter: clamp(16px, 4vw, 48px);
-    --shadow: 0 1px 0 rgba(21,32,59,.04), 0 18px 40px -22px rgba(47,91,255,.35);
   }
 
   * { box-sizing: border-box; }
@@ -39,205 +37,299 @@
   }
   a { color: inherit; }
   img { display: block; max-width: 100%; }
-  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 8px; }
+  :focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 6px; }
   .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
-  .mono { font-family: var(--mono); font-size: 12.5px; letter-spacing: .02em; }
+  em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--gold); letter-spacing: 0; }
+
+  .kicker {
+    display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px;
+    font: 700 12.5px/1.2 var(--body); letter-spacing: .18em; text-transform: uppercase; color: var(--gold);
+  }
+  .kicker::before { content: ""; width: 28px; height: 1.5px; background: currentColor; }
 
   .btn {
-    display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; border-radius: 999px;
-    font: 600 16px/1 var(--body); text-decoration: none; background: var(--blue); color: #fff !important;
-    box-shadow: 0 10px 24px -12px rgba(47,91,255,.8); transition: transform .2s ease, box-shadow .2s ease;
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 26px; border-radius: 999px;
+    font: 700 15.5px/1 var(--body); text-decoration: none; border: 0; cursor: pointer;
+    background: var(--gold); color: var(--goldink) !important; transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+    box-shadow: 0 12px 30px -14px rgba(233,180,76,.75);
   }
-  .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 28px -12px rgba(47,91,255,.9); }
-  .btn--light { background: var(--card); color: var(--ink) !important; box-shadow: inset 0 0 0 1.5px var(--line); }
-  .btn--light:hover { box-shadow: inset 0 0 0 1.5px var(--ink); }
-  .btn--green { background: var(--green); box-shadow: 0 10px 24px -12px rgba(18,162,107,.8); }
+  .btn:hover { transform: translateY(-2px); background: var(--gold2); }
+  .btn--ghost { background: transparent; color: var(--ink) !important; box-shadow: inset 0 0 0 1.5px var(--line); }
+  .btn--ghost:hover { background: rgba(255,255,255,.04); box-shadow: inset 0 0 0 1.5px var(--soft); }
 
   /* ---------- nav ---------- */
-  .nav { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; padding-bottom: 22px; }
-  .nav__mark { font: 800 22px/1 var(--display); text-decoration: none; letter-spacing: -.02em; }
-  .nav__mark span { color: var(--coral); }
-  .nav__links { display: flex; gap: 28px; align-items: center; }
-  .nav__links a:not(.btn) { text-decoration: none; font-weight: 500; font-size: 15px; color: var(--soft); }
+  .nav-bar { position: sticky; top: 0; z-index: 50; background: rgba(10,10,12,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(255,255,255,.06); }
+  .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; height: 72px; }
+  .nav__mark { text-decoration: none; font: 900 19px/1 var(--display); font-stretch: 110%; letter-spacing: .02em; text-transform: uppercase; }
+  .nav__mark span { color: var(--gold); }
+  .nav__links { display: flex; gap: 26px; align-items: center; }
+  .nav__links a:not(.btn) { text-decoration: none; font-weight: 600; font-size: 14.5px; color: var(--soft); }
   .nav__links a:not(.btn):hover { color: var(--ink); }
-  .nav .btn { padding: 12px 20px; font-size: 15px; }
-  @media (max-width: 760px) { .nav__links a:not(.btn) { display: none; } }
+  .nav .btn { padding: 12px 20px; font-size: 14.5px; }
+  @media (max-width: 920px) { .nav__links a:not(.btn) { display: none; } }
+  .nav .btn { white-space: nowrap; }
+  @media (max-width: 420px) { .nav__mark { font-size: 15px; } .nav .btn { padding: 11px 16px; } }
 
   /* ---------- hero ---------- */
-  .hero { position: relative; isolation: isolate; }
-  .hero__blobs { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-  .hero__blobs i { position: absolute; border-radius: 50%; filter: blur(60px); opacity: .55; }
-  .hero__blobs i:nth-child(1) { width: 420px; height: 420px; background: #C9D8FF; right: 6%; top: -80px; }
-  .hero__blobs i:nth-child(2) { width: 300px; height: 300px; background: #FFE08A; right: 30%; bottom: 0; }
-  .hero__blobs i:nth-child(3) { width: 260px; height: 260px; background: #FFC9C4; left: -80px; top: 30%; }
-
+  .hero { position: relative; isolation: isolate; overflow: hidden; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -2;
+    background:
+      radial-gradient(60% 70% at 78% 40%, rgba(233,180,76,.20), transparent 60%),
+      radial-gradient(40% 50% at 10% 90%, rgba(233,180,76,.07), transparent 70%);
+  }
   .hero__grid {
-    display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(32px, 5vw, 72px); align-items: center;
-    padding-top: clamp(24px, 4vw, 56px); padding-bottom: clamp(64px, 8vw, 110px);
+    display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(24px, 4vw, 56px); align-items: center;
+    padding-top: clamp(24px, 4vw, 48px);
   }
-  .chip {
-    display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px;
-    background: var(--card); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 14px;
-  }
-  .chip__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px var(--mint); }
+  .hero__text { padding-bottom: clamp(32px, 4vw, 48px); }
+  .roles { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 26px; padding: 0; list-style: none; }
+  .roles li { padding: 7px 14px; border-radius: 999px; font: 600 13px/1.2 var(--body); background: rgba(255,255,255,.05); box-shadow: inset 0 0 0 1px var(--line); color: var(--ink); }
+  .roles li:first-child { background: rgba(233,180,76,.12); box-shadow: inset 0 0 0 1px rgba(233,180,76,.4); color: var(--gold2); }
   .name {
-    margin: 22px 0 22px; font: 800 clamp(52px, 8.2vw, 112px)/.92 var(--display); letter-spacing: -.045em;
+    margin: 0 0 24px; font: 800 clamp(42px, 5.6vw, 86px)/.98 var(--display); font-stretch: 100%;
+    letter-spacing: -.035em;
   }
   .name span { display: block; }
-  .hl { position: relative; z-index: 0; white-space: nowrap; }
-  .hl::before {
-    content: ""; position: absolute; z-index: -1; left: -.06em; right: -.08em; bottom: .04em; height: .42em;
-    background: var(--sun); border-radius: .08em; transform: skewX(-8deg); transform-origin: left center;
-  }
-  .hero__lede { margin: 0 0 30px; font-size: clamp(18px, 1.6vw, 20px); color: var(--soft); max-width: 30em; }
-  .hero__lede b { color: var(--ink); font-weight: 600; }
+  .name span:last-child { color: var(--gold); }
+  .hello { margin: 0 0 14px; font: 400 clamp(20px, 2vw, 26px)/1.2 var(--serif); font-style: italic; color: var(--soft); }
+  .hello b { font-style: normal; font-family: var(--body); font-weight: 600; font-size: .62em; letter-spacing: .02em; color: var(--ink); padding: 5px 10px; margin-left: 8px; border-radius: 999px; background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px var(--line); vertical-align: .2em; }
+  .rotator { margin: 0 0 32px; font-size: clamp(19px, 1.9vw, 24px); line-height: 1.4; color: var(--soft); max-width: 28em; min-height: 2.8em; }
+  .rotator b { color: var(--ink); font-weight: 600; }
+  .rotator__line { display: inline; transition: opacity .4s ease; }
+  .rotator__line.is-out { opacity: 0; }
   .hero__cta { display: flex; gap: 12px; flex-wrap: wrap; }
 
-  /* photo in an arch, with colour shapes behind and stickers on top */
-  .portrait { position: relative; max-width: 440px; width: 100%; justify-self: center; }
+  .portrait { position: relative; align-self: end; justify-self: center; width: 100%; max-width: 430px; }
   .portrait::before {
-    content: ""; position: absolute; inset: 8% -7% -5% 9%; border-radius: 999px 999px 36px 36px;
-    background: var(--sun); transform: rotate(4deg); z-index: -1;
+    content: ""; position: absolute; left: 8%; right: 8%; top: 10%; bottom: 0; z-index: -1;
+    border-radius: 999px 999px 0 0; background: linear-gradient(180deg, rgba(233,180,76,.5), rgba(233,180,76,.05) 75%);
   }
-  .portrait::after {
-    content: ""; position: absolute; width: 120px; height: 120px; left: -34px; top: 12%; z-index: -1;
-    background-image: radial-gradient(var(--blue) 2px, transparent 2.5px); background-size: 16px 16px; opacity: .45;
+  .portrait img {
+    width: 100%; height: auto; aspect-ratio: 800 / 979; object-fit: cover;
+    /* fade the studio backdrop's edges into the page */
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent), linear-gradient(180deg, transparent, #000 18%, #000 82%, transparent);
+    mask-composite: intersect;
   }
-  .portrait__frame {
-    border-radius: 999px 999px 36px 36px; overflow: hidden; aspect-ratio: 800 / 979;
-    background: #1a1a1a; box-shadow: 0 30px 60px -30px rgba(21,32,59,.55);
+  .badge {
+    position: absolute; padding: 12px 16px; border-radius: 16px; background: rgba(23,23,28,.88); backdrop-filter: blur(8px);
+    box-shadow: inset 0 0 0 1px var(--line), 0 20px 40px -20px #000; font: 600 13px/1.25 var(--body); white-space: nowrap;
   }
-  .portrait__frame img { width: 100%; height: 100%; object-fit: cover; }
-  .sticker {
-    position: absolute; padding: 12px 16px; border-radius: 16px; background: var(--card);
-    box-shadow: var(--shadow); font: 600 14px/1.25 var(--body); white-space: nowrap;
-  }
-  .sticker b { display: block; font: 800 26px/1 var(--display); letter-spacing: -.02em; margin-bottom: 2px; }
-  .sticker--a { left: -12%; bottom: 18%; background: var(--card); transform: rotate(-4deg); }
-  .sticker--a b { color: var(--blue); }
-  .sticker--b { right: -8%; top: 14%; background: var(--mint); transform: rotate(5deg); }
-  .sticker--b b { color: var(--green); }
-  .sticker--c { right: -4%; bottom: 4%; background: var(--blush); transform: rotate(-3deg); }
-  .sticker--c b { color: var(--coral); font-size: 18px; }
+  .badge b { display: block; font: 900 24px/1 var(--display); color: var(--gold); margin-bottom: 3px; }
+  .badge--a { left: -4%; top: 30%; }
+  .badge--b { right: -2%; bottom: 22%; }
   @media (max-width: 900px) {
     .hero__grid { grid-template-columns: 1fr; }
-    .portrait { order: -1; max-width: 340px; margin-top: 8px; }
-    .sticker { transform: scale(.88); }
-    .sticker--a { left: -6%; } .sticker--b { right: -4%; } .sticker--c { right: -2%; }
+    .portrait { order: -1; max-width: 270px; }
+    .hero__grid { padding-top: 8px; }
+    .hero__text { padding-bottom: 56px; }
+    .badge { transform: scale(.88); }
+    .badge--a { left: -2%; } .badge--b { right: -2%; }
   }
 
-  /* ---------- search ticker ---------- */
-  .ticker { padding-bottom: clamp(56px, 7vw, 96px); }
-  .ticker__card {
-    display: grid; grid-template-columns: auto minmax(0, 1.2fr) auto minmax(0, 1fr); gap: 18px; align-items: center;
-    background: var(--card); border-radius: 24px; padding: 18px 22px; box-shadow: var(--shadow);
+  /* ---------- stats ---------- */
+  .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg2); }
+  .stats__row { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: clamp(24px, 3.4vw, 40px) 20px; text-align: center; }
+  .stat + .stat { border-left: 1px solid var(--line); }
+  .stat b { display: block; font: 800 clamp(36px, 4.6vw, 58px)/1 var(--display); color: var(--gold); letter-spacing: -.02em; }
+  .stat span { display: block; margin-top: 8px; color: var(--soft); font-size: 14.5px; font-weight: 600; }
+  @media (max-width: 760px) {
+    .stats__row { grid-template-columns: 1fr 1fr; }
+    .stat:nth-child(3) { border-left: 0; }
+    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
   }
-  .ticker__label { color: var(--soft); }
-  .ticker__bar {
-    display: flex; align-items: center; gap: 12px; min-width: 0; background: var(--bg);
-    border: 1px solid var(--line); border-radius: 999px; padding: 13px 20px; font: 500 15px/1.2 var(--mono);
-  }
-  .ticker__bar svg { flex: none; color: var(--blue); }
-  .ticker__q { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-height: 1.2em; }
-  .ticker__q::after { content: ""; display: inline-block; width: 2px; height: 1.05em; background: var(--blue); vertical-align: -.18em; margin-left: 2px; animation: blink 1s steps(1) infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
-  .ticker__arrow { color: var(--soft); font: 700 22px/1 var(--body); }
-  .ticker__a {
-    justify-self: start; padding: 10px 18px; border-radius: 999px; font: 700 17px/1.2 var(--display);
-    background: var(--sky); color: var(--blue); transition: opacity .3s ease, transform .3s ease, background .3s, color .3s;
-  }
-  .ticker__a.is-hidden { opacity: 0; transform: translateY(6px); }
-  @media (max-width: 900px) { .ticker__card { grid-template-columns: 1fr; gap: 12px; } .ticker__arrow { display: none; } }
+
+  /* ---------- marquee of institutes ---------- */
+  .marquee { padding: 30px 0; overflow: hidden; border-bottom: 1px solid var(--line); }
+  .marquee__label { text-align: center; color: var(--soft); font: 700 12px/1 var(--body); letter-spacing: .18em; text-transform: uppercase; margin: 0 0 20px; }
+  .marquee__track { display: flex; gap: 56px; width: max-content; animation: slide 36s linear infinite; }
+  .marquee__track span { font: 700 clamp(18px, 2vw, 24px)/1 var(--display); font-stretch: 100%; color: #D8D4CC; white-space: nowrap; display: inline-flex; align-items: center; gap: 56px; }
+  .marquee__track span::after { content: "✦"; color: var(--gold); font-size: .7em; }
+  @keyframes slide { to { transform: translateX(-50%); } }
 
   /* ---------- sections ---------- */
-  .sec { padding: clamp(64px, 9vw, 120px) 0; }
-  .sec__head { max-width: 40em; margin-bottom: clamp(36px, 5vw, 60px); }
-  .eyebrow { display: inline-block; padding: 6px 12px; border-radius: 999px; font: 600 13px/1.2 var(--body); margin: 0 0 16px; }
-  .sec__head h2 { margin: 0 0 14px; font: 800 clamp(36px, 5vw, 60px)/1 var(--display); letter-spacing: -.035em; }
+  .sec { padding: clamp(72px, 10vw, 128px) 0; }
+  .sec--alt { background: var(--bg2); }
+  .sec__head { max-width: 46em; margin-bottom: clamp(40px, 5vw, 64px); }
+  .sec__head--center { margin-left: auto; margin-right: auto; text-align: center; }
+  .sec__head--center .kicker::after { content: ""; width: 28px; height: 1.5px; background: currentColor; }
+  .sec__head h2 {
+    margin: 0 0 16px; font: 800 clamp(32px, 4.4vw, 56px)/1.05 var(--display); font-stretch: 100%;
+    letter-spacing: -.03em;
+  }
+  .sec__head h2 em { font-size: 1.1em; }
   .sec__head p { margin: 0; color: var(--soft); font-size: 18px; }
 
-  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-  @media (max-width: 900px) { .services { grid-template-columns: 1fr; } }
-  .svc {
-    background: var(--card); border-radius: 26px; padding: 30px; box-shadow: var(--shadow);
-    border-top: 6px solid var(--c); transition: transform .25s ease;
+  /* ---------- roles / about ---------- */
+  .about { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(32px, 6vw, 80px); align-items: start; }
+  .about__intro p { color: var(--soft); font-size: 18px; margin: 0 0 18px; }
+  .about__intro p:first-of-type { color: var(--ink); font-size: clamp(21px, 2.2vw, 26px); line-height: 1.4; }
+  .hats { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .hat {
+    display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start;
+    padding: 22px 24px; border-radius: 20px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line);
+    transition: box-shadow .25s ease, transform .25s ease;
   }
-  .svc:hover { transform: translateY(-4px); }
-  .svc__icon { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--t); color: var(--c); margin-bottom: 22px; }
-  .svc__crumb { color: var(--soft); margin: 0 0 6px; }
-  .svc h3 { margin: 0 0 12px; font: 700 23px/1.2 var(--body); color: var(--blue); letter-spacing: -.01em; }
-  .svc p { margin: 0; color: var(--soft); font-size: 16px; }
-  .svc--blue  { --c: var(--blue);  --t: var(--sky); }
-  .svc--green { --c: var(--green); --t: var(--mint); }
-  .svc--coral { --c: var(--coral); --t: var(--blush); }
+  .hat:hover { box-shadow: inset 0 0 0 1px rgba(233,180,76,.45); transform: translateX(4px); }
+  .hat__icon { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; background: rgba(233,180,76,.1); color: var(--gold); }
+  .hat h3 { margin: 2px 0 4px; font: 700 19px/1.25 var(--body); }
+  .hat p { margin: 0; color: var(--soft); font-size: 15.5px; }
+  @media (max-width: 900px) { .about { grid-template-columns: 1fr; } }
 
-  /* ---------- training ---------- */
-  .training { background: linear-gradient(180deg, var(--sky), #F0F5FF); }
-  .stat {
-    display: grid; grid-template-columns: auto 1fr; gap: 16px 48px; align-items: center;
-    background: var(--card); border-radius: 30px; padding: clamp(28px, 4vw, 48px); box-shadow: var(--shadow);
+  /* ---------- casual side ---------- */
+  .human { padding-top: 0; }
+  .human__card {
+    display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: center;
+    padding: clamp(28px, 4vw, 52px); border-radius: 32px;
+    background: linear-gradient(135deg, rgba(233,180,76,.14), rgba(233,180,76,.02) 60%); box-shadow: inset 0 0 0 1px rgba(233,180,76,.25);
   }
-  .stat__num { font: 800 clamp(84px, 13vw, 180px)/.85 var(--display); letter-spacing: -.05em; color: var(--blue); }
-  .stat__num .hl::before { height: .3em; bottom: .02em; }
-  .stat p { margin: 0; font-size: clamp(19px, 2vw, 24px); line-height: 1.4; max-width: 20em; }
-  @media (max-width: 760px) { .stat { grid-template-columns: 1fr; } }
+  .human__card .sec__head { margin: 0; }
+  .human__card .sec__head p + p { margin-top: 14px; }
+  .vibes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .vibe { padding: 20px 20px 18px; border-radius: 20px; background: rgba(10,10,12,.55); box-shadow: inset 0 0 0 1px var(--line); }
+  .vibe span { font-size: 26px; line-height: 1; }
+  .vibe b { display: block; margin: 12px 0 4px; font-size: 16.5px; }
+  .vibe p { margin: 0; color: var(--soft); font-size: 14.5px; }
+  @media (max-width: 900px) { .human__card { grid-template-columns: 1fr; } }
+  @media (max-width: 460px) { .vibes { grid-template-columns: 1fr; } }
 
-  .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-  .fact { border-radius: 22px; padding: 22px 24px; background: var(--t); }
-  .fact b { display: block; font: 800 clamp(34px, 4vw, 46px)/1 var(--display); letter-spacing: -.03em; color: var(--c); }
-  .fact span { display: block; margin-top: 6px; font-size: 15px; color: var(--ink); }
-  @media (max-width: 760px) { .facts { grid-template-columns: 1fr; } }
-
-  .places { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .places__label { width: 100%; margin: 0 0 4px; color: var(--soft); }
-  .places span { padding: 11px 18px; border-radius: 999px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 15px; }
-  .training .btn { margin-top: 36px; }
-
-  /* ---------- about ---------- */
-  .about { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(32px, 6vw, 88px); align-items: start; }
-  .about h2 { margin: 0; font: 800 clamp(36px, 5vw, 60px)/1 var(--display); letter-spacing: -.035em; }
-  .about__body p { margin: 0 0 18px; font-size: 18px; color: var(--soft); max-width: 34em; }
-  .about__body p:first-child { color: var(--ink); font-size: clamp(21px, 2.2vw, 25px); line-height: 1.45; }
-  .about dl { display: grid; grid-template-columns: max-content 1fr; gap: 14px 28px; margin: 32px 0 0; padding: 24px 26px; background: var(--card); border-radius: 22px; box-shadow: var(--shadow); }
-  .about dt { color: var(--soft); padding-top: 3px; }
-  .about dd { margin: 0; font-weight: 500; }
-  @media (max-width: 760px) { .about { grid-template-columns: 1fr; } .about dl { grid-template-columns: 1fr; gap: 4px; } .about dd { margin-bottom: 12px; } }
-
-  /* ---------- contact ---------- */
-  .contact { padding: 0 0 clamp(40px, 5vw, 64px); }
-  .contact__card {
-    border-radius: 36px; padding: clamp(36px, 6vw, 80px); color: var(--ink);
-    background: linear-gradient(120deg, #FFD95C 0%, #FFB36B 55%, #FF8C7A 100%);
-    position: relative; overflow: hidden; isolation: isolate;
+  /* ---------- seminars ---------- */
+  .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .track {
+    position: relative; overflow: hidden; isolation: isolate; display: flex; flex-direction: column;
+    padding: clamp(28px, 3.6vw, 44px); border-radius: 28px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line);
   }
-  .contact__card::after {
-    content: ""; position: absolute; z-index: -1; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%;
-    background: rgba(255,255,255,.28);
+  .track::after {
+    content: ""; position: absolute; z-index: -1; width: 340px; height: 340px; right: -120px; top: -140px; border-radius: 50%;
+    background: radial-gradient(circle, var(--glow), transparent 70%);
   }
-  .contact h2 { margin: 0 0 12px; font: 800 clamp(44px, 7.5vw, 100px)/.95 var(--display); letter-spacing: -.045em; }
-  .contact p { margin: 0 0 36px; font-size: 19px; max-width: 30em; }
-  .ways { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .track--college { --glow: rgba(10,102,194,.35); }
+  .track--school { --glow: rgba(233,180,76,.32); }
+  .track__tag { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; font: 700 13px/1 var(--body); background: rgba(255,255,255,.06); box-shadow: inset 0 0 0 1px var(--line); margin-bottom: 22px; }
+  .track h3 { margin: 0 0 6px; font: 800 clamp(26px, 3vw, 36px)/1.1 var(--display); letter-spacing: -.025em; }
+  .track__sub { margin: 0 0 24px; color: var(--soft); font-size: 17px; }
+  .track ul { list-style: none; margin: 0 0 30px; padding: 0; display: grid; gap: 12px; }
+  .track li { display: grid; grid-template-columns: 22px 1fr; gap: 12px; font-size: 16px; }
+  .track li::before { content: "→"; color: var(--gold); font-weight: 700; }
+  .track .btn { margin-top: auto; align-self: flex-start; }
+  @media (max-width: 860px) { .tracks { grid-template-columns: 1fr; } }
+
+  .lectured { margin-top: 20px; padding: clamp(24px, 3vw, 36px); border-radius: 28px; background: linear-gradient(120deg, rgba(233,180,76,.12), rgba(233,180,76,.02)); box-shadow: inset 0 0 0 1px rgba(233,180,76,.25); }
+  .lectured h3 { margin: 0 0 18px; font: 700 18px/1.3 var(--body); }
+  .lectured h3 span { color: var(--soft); font-weight: 500; }
+  .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+  .chips span { padding: 11px 18px; border-radius: 999px; background: var(--bg); box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; font-size: 15px; }
+
+  /* ---------- reel ---------- */
+  .reel { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: clamp(32px, 6vw, 96px); align-items: center; }
+  .reel .sec__head { margin-bottom: 28px; }
+  .phone {
+    position: relative; width: min(360px, 100%); aspect-ratio: 9 / 16; border-radius: 44px; padding: 10px;
+    background: #1c1c22; box-shadow: inset 0 0 0 1.5px #34343c, 0 40px 80px -30px rgba(233,180,76,.35), 0 30px 60px -20px #000;
+    justify-self: center;
+  }
+  .phone__screen { position: relative; width: 100%; height: 100%; border-radius: 34px; overflow: hidden; background: #000; }
+  .phone iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+  .phone__empty {
+    position: absolute; inset: 0; display: grid; place-content: center; gap: 14px; text-align: center; padding: 24px;
+    background: linear-gradient(180deg, rgba(10,10,12,.2), rgba(10,10,12,.85)), url("/project/vivek-bhadauriya/vivek.jpg") center 20% / cover, url("vivek.jpg") center 20% / cover;
+  }
+  .phone__play { width: 76px; height: 76px; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: var(--gold); color: var(--goldink); box-shadow: 0 0 0 10px rgba(233,180,76,.2); }
+  .phone__empty p { margin: 0; font-weight: 600; font-size: 15px; }
+  .reel__points { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 10px; color: var(--soft); }
+  .reel__points li::before { content: "✦  "; color: var(--gold); }
+  @media (max-width: 860px) { .reel { grid-template-columns: minmax(0, 1fr); } .phone { width: min(320px, 100%); } }
+
+  /* ---------- course ---------- */
+  .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .pillar { padding: 32px 28px; border-radius: 24px; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+  .pillar__n { font: 900 15px/1 var(--display); color: var(--gold); letter-spacing: .1em; }
+  .pillar h3 { margin: 18px 0 10px; font: 800 24px/1.15 var(--display); letter-spacing: -.02em; }
+  .pillar p { margin: 0 0 16px; color: var(--soft); font-size: 15.5px; }
+  .pillar ul { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .pillar li { padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.05); font-size: 13.5px; font-weight: 600; }
+  @media (max-width: 900px) { .pillars { grid-template-columns: 1fr; } }
+
+  .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 20px; border-radius: 24px; overflow: hidden; background: var(--line); box-shadow: inset 0 0 0 1px var(--line); }
+  .perk { padding: 26px 24px; background: var(--bg2); }
+  .perk b { display: block; font: 700 17px/1.3 var(--body); margin: 14px 0 6px; }
+  .perk span { color: var(--soft); font-size: 14.5px; }
+  .perk svg { color: var(--gold); }
+  @media (max-width: 900px) { .perks { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .perks { grid-template-columns: 1fr; } }
+  .course__cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+
+  /* ---------- booking ---------- */
+  .ways { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
   .way {
-    display: block; text-decoration: none; padding: 20px 22px; border-radius: 20px; background: rgba(255,255,255,.85);
-    transition: transform .2s ease, background .2s ease;
+    position: relative; display: flex; flex-direction: column; gap: 10px; padding: 28px 24px 24px; border-radius: 24px;
+    background: var(--card); box-shadow: inset 0 0 0 1px var(--line); text-align: left; color: var(--ink);
+    font: inherit; cursor: pointer; transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
   }
-  .way:hover { transform: translateY(-3px); background: #fff; }
-  .way small { display: block; color: var(--soft); margin-bottom: 8px; text-transform: uppercase; }
-  .way span { font-weight: 700; font-size: clamp(15px, 1.35vw, 18px); overflow-wrap: anywhere; }
-  .way--wa { background: var(--green); color: #fff; }
-  .way--wa small { color: rgba(255,255,255,.8); }
-  .way--wa:hover { background: #0f8f5e; }
-  @media (max-width: 800px) { .ways { grid-template-columns: 1fr; } }
-  footer { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding-top: 28px; color: var(--soft); font-size: 14px; }
+  .way:hover, .way.is-picked { transform: translateY(-4px); box-shadow: inset 0 0 0 1.5px var(--gold); background: #1c1a16; }
+  .way__n { font: 700 13px/1 var(--body); letter-spacing: .14em; color: var(--gold); }
+  .way h3 { margin: 4px 0 0; font: 700 19px/1.25 var(--body); }
+  .way p { margin: 0; color: var(--soft); font-size: 15px; }
+  .way__go { margin-top: auto; padding-top: 10px; color: var(--gold); font-weight: 700; font-size: 14.5px; }
+  @media (max-width: 1000px) { .ways { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .ways { grid-template-columns: 1fr; } }
+
+  .book { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(28px, 5vw, 64px); margin-top: clamp(40px, 5vw, 64px); padding: clamp(28px, 4vw, 52px); border-radius: 32px; background: linear-gradient(135deg, #1d1912, #121216 60%); box-shadow: inset 0 0 0 1px rgba(233,180,76,.25); }
+  .book h3 { margin: 0 0 14px; font: 800 clamp(28px, 3.2vw, 40px)/1.05 var(--display); letter-spacing: -.03em; }
+  .book__aside p { margin: 0 0 24px; color: var(--soft); }
+  .direct { display: grid; gap: 10px; }
+  .direct a { display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,.04); box-shadow: inset 0 0 0 1px var(--line); text-decoration: none; font-weight: 600; font-size: 15px; overflow-wrap: anywhere; }
+  .direct a:hover { box-shadow: inset 0 0 0 1px var(--soft); }
+  .direct small { display: block; color: var(--soft); font-weight: 500; font-size: 12.5px; }
+  .direct svg { flex: none; color: var(--gold); }
+
+  .form { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .field { display: grid; gap: 6px; }
+  .field--full { grid-column: 1 / -1; }
+  .field label { font-size: 13.5px; font-weight: 600; color: var(--soft); }
+  .field input, .field select, .field textarea {
+    width: 100%; padding: 14px 16px; border-radius: 14px; border: 0; background: var(--bg); color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--line); font: 500 16px/1.4 var(--body); transition: box-shadow .2s ease;
+  }
+  .field select { appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--gold) 50%), linear-gradient(135deg, var(--gold) 50%, transparent 50%); background-position: calc(100% - 22px) 52%, calc(100% - 16px) 52%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 40px; }
+  .field textarea { resize: vertical; min-height: 110px; }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; box-shadow: inset 0 0 0 1.5px var(--gold); }
+  .form .btn { grid-column: 1 / -1; justify-self: start; }
+  .form__note { grid-column: 1 / -1; margin: 0; color: var(--soft); font-size: 13.5px; }
+  @media (max-width: 900px) { .book { grid-template-columns: 1fr; } }
+  @media (max-width: 560px) { .form { grid-template-columns: 1fr; } .form .btn { justify-self: stretch; } }
+
+  /* ---------- faq ---------- */
+  .faq { max-width: 860px; margin: 0 auto; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; padding: 22px 0; font: 700 18px/1.35 var(--body); }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; flex: none; color: var(--gold); font: 400 28px/.8 var(--body); transition: transform .25s ease; }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { margin: 0 0 22px; color: var(--soft); max-width: 44em; }
+
+  /* ---------- footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 40px 0 110px; color: var(--soft); font-size: 14px; }
+  .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px 32px; }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+
+  /* floating buttons */
+  .float { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: flex; gap: 10px; }
+  .float a { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; text-decoration: none; box-shadow: 0 14px 30px -10px rgba(0,0,0,.7); transition: transform .2s ease; }
+  .float a:hover { transform: scale(1.06); }
+  .float__wa { background: var(--wa); color: #fff; }
+  .float__call { background: var(--gold); color: var(--goldink); }
 
   /* ---------- motion ---------- */
-  @keyframes float { 50% { translate: 0 -8px; } }
-  .sticker { animation: float 5s ease-in-out infinite; }
-  .sticker--b { animation-delay: -1.6s; } .sticker--c { animation-delay: -3.2s; }
-  .js .hero .hl::before { transform: skewX(-8deg) scaleX(0); }
-  .is-in .hl::before { transform: skewX(-8deg) scaleX(1) !important; transition: transform .7s cubic-bezier(.6,0,.2,1) .4s; }
-  .js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.2,.8,.2,1); }
+  .js .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.8,.2,1); }
   .js .reveal.is-seen { opacity: 1; transform: none; }
+  @keyframes float { 50% { translate: 0 -8px; } }
+  .badge { animation: float 5s ease-in-out infinite; }
+  .badge--b { animation-delay: -2.5s; }
 
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -250,169 +342,467 @@
 </head>
 <body>
 
-<header class="wrap nav">
-  <a class="nav__mark" href="#top">Vivek<span>.</span></a>
-  <nav class="nav__links" aria-label="Main">
-    <a href="#work">Services</a>
-    <a href="#training">Training</a>
-    <a href="#about">About</a>
-    <a class="btn" href="#contact">Get in touch</a>
-  </nav>
-</header>
+<div class="nav-bar">
+  <header class="wrap nav">
+    <a class="nav__mark" href="#top">Vivek <span>Bhadauriya</span></a>
+    <nav class="nav__links" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#seminars">Seminars</a>
+      <a href="#reel">Watch</a>
+      <a href="#course">Course</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn" href="#book">Book Vivek</a>
+    </nav>
+  </header>
+</div>
 
 <main id="top">
-  <section class="hero" id="hero">
-    <div class="hero__blobs" aria-hidden="true"><i></i><i></i><i></i></div>
+  <!-- ============ HERO ============ -->
+  <section class="hero">
     <div class="wrap hero__grid">
-      <div>
-        <span class="chip"><span class="chip__dot"></span>Founder, Future Edge · Kanpur</span>
-        <h1 class="name">
-          <span>Vivek Singh</span>
-          <span class="hl">Bhadauriya</span>
-        </h1>
-        <p class="hero__lede">Gets Kanpur businesses <b>found on Google</b>, and teaches students to do the same. Runs Future Edge Digital Marketing Agency &amp; Training Centre.</p>
+      <div class="hero__text">
+        <ul class="roles" aria-label="Roles">
+          <li>Assistant Professor</li>
+          <li>Visiting Lecturer</li>
+          <li>Business Growth Manager</li>
+        </ul>
+        <p class="hello">Hi, I'm Vivek <b>25 · Kanpur</b></p>
+        <h1 class="name"><span>Vivek Singh</span><span>Bhadauriya</span></h1>
+        <p class="rotator" aria-live="polite"><span class="rotator__line" id="rot">Teaching <b>college students</b> to build a LinkedIn profile that gets them hired.</span></p>
         <div class="hero__cta">
-          <a class="btn btn--green" href="https://wa.me/916393213527">WhatsApp Vivek</a>
-          <a class="btn btn--light" href="#work">See what he does</a>
+          <a class="btn" href="#book">Book a seminar or consultation</a>
+          <a class="btn btn--ghost" href="#reel">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+            Watch Vivek speak
+          </a>
         </div>
       </div>
 
       <figure class="portrait" style="margin:0">
-        <div class="portrait__frame">
-          <!-- Absolute path so the photo loads whether the page URL ends in a slash or not; falls back to the file next to this page when opened locally. -->
-          <img src="/project/vivek-bhadauriya/vivek.jpg"
-               onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='vivek.jpg';}"
-               alt="Vivek Singh Bhadauriya, arms crossed, in a grey check blazer"
-               width="800" height="979" fetchpriority="high">
-        </div>
-        <div class="sticker sticker--a"><b>1,500+</b>students trained</div>
-        <div class="sticker sticker--b"><b>★ 5.0</b>on Justdial</div>
-        <div class="sticker sticker--c"><b>MBA</b>Digital Marketing</div>
+        <!-- Absolute path so the photo loads whether the page URL ends in a slash or not; falls back to the file next to this page when opened locally. -->
+        <img src="/project/vivek-bhadauriya/vivek.jpg"
+             onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='vivek.jpg';}"
+             alt="Vivek Singh Bhadauriya, arms crossed, in a grey check blazer"
+             width="800" height="979" fetchpriority="high">
+        <div class="badge badge--a"><b>1,500+</b>students trained</div>
+        <div class="badge badge--b"><b>55+</b>brands grown</div>
       </figure>
     </div>
   </section>
 
-  <div class="wrap ticker">
-    <div class="ticker__card" aria-label="What people search for, and what Vivek does about it">
-      <span class="ticker__label mono">People search</span>
-      <div class="ticker__bar">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <span class="ticker__q" id="q">how to get my shop on google maps</span>
-      </div>
-      <span class="ticker__arrow" aria-hidden="true">→</span>
-      <span class="ticker__a" id="a">Google Business listing</span>
+  <!-- ============ STATS ============ -->
+  <section class="stats" aria-label="Numbers">
+    <div class="wrap stats__row">
+      <div class="stat"><b data-count="1500">1,500+</b><span>Students trained</span></div>
+      <div class="stat"><b data-count="50">50+</b><span>National brands</span></div>
+      <div class="stat"><b data-count="5">5+</b><span>International brands</span></div>
+      <div class="stat"><b>2</b><span>Seminar tracks: colleges &amp; schools</span></div>
+    </div>
+  </section>
+
+  <!-- ============ INSTITUTES MARQUEE ============ -->
+  <div class="marquee" aria-label="Institutes where Vivek has taught">
+    <p class="marquee__label">Visiting lecturer at</p>
+    <div class="marquee__track" aria-hidden="true">
+      <span>Jagran Institute of Management</span><span>CSA Kanpur</span><span>Cambridge Institute of Professional Studies</span><span>Solus</span>
+      <span>Jagran Institute of Management</span><span>CSA Kanpur</span><span>Cambridge Institute of Professional Studies</span><span>Solus</span>
     </div>
   </div>
 
-  <section class="sec" id="work" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec__head reveal">
-        <p class="eyebrow" style="background:var(--sky);color:var(--blue)">For businesses</p>
-        <h2>Get found by customers already searching for you</h2>
-        <p>Most people in Kanpur find a shop, clinic or institute by searching on Google. Future Edge makes sure they find yours.</p>
-      </div>
-
-      <div class="services">
-        <article class="svc svc--blue reveal">
-          <div class="svc__icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.6"/></svg>
-          </div>
-          <p class="svc__crumb mono">futureedge › google-business</p>
-          <h3>Google Business listing</h3>
-          <p>Sets up and tunes your Google profile with the right category, photos, hours and reviews, so you show on Maps and in local results.</p>
-        </article>
-        <article class="svc svc--green reveal">
-          <div class="svc__icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg>
-          </div>
-          <p class="svc__crumb mono">futureedge › seo</p>
-          <h3>Search engine optimisation</h3>
-          <p>Works on your website and content so it ranks for the words your customers type, and keeps bringing in visitors without paying per click.</p>
-        </article>
-        <article class="svc svc--coral reveal">
-          <div class="svc__icon" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l15-6v14L3 13z"/><path d="M7 13v5a2 2 0 0 0 4 0v-3.5"/></svg>
-          </div>
-          <p class="svc__crumb mono">futureedge › google-ads</p>
-          <h3>Google Ads (PPC)</h3>
-          <p>Runs paid campaigns that put you at the top of results straight away, on a daily budget you choose.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec training" id="training">
-    <div class="wrap">
-      <div class="sec__head reveal">
-        <p class="eyebrow" style="background:var(--butter);color:#8a6400">For learners</p>
-        <h2>He teaches it too</h2>
-        <p>The Future Edge training centre teaches digital marketing using the same methods the agency uses for its clients.</p>
-      </div>
-
-      <div class="stat reveal">
-        <div class="stat__num"><span class="hl">1,500+</span></div>
-        <p><b>students trained</b> through the Future Edge training centre and sessions at colleges and institutes around Kanpur.</p>
-      </div>
-
-      <div class="facts reveal">
-        <div class="fact" style="--t:var(--mint);--c:var(--green)"><b>5.0</b><span>rating from 132 reviews on Justdial</span></div>
-        <div class="fact" style="--t:var(--blush);--c:var(--coral)"><b>2022</b><span>year Future Edge opened</span></div>
-        <div class="fact" style="--t:var(--butter);--c:#C98A00"><b>3 yrs</b><span>of hands-on client work</span></div>
-      </div>
-
-      <div class="places reveal">
-        <p class="places__label mono">Has run sessions with</p>
-        <span>Jagran Institute of Management</span>
-        <span>CSA Kanpur</span>
-        <span>Cambridge Institute of Professional Studies</span>
-        <span>Solus</span>
-      </div>
-      <a class="btn reveal" href="https://wa.me/916393213527?text=Hi%20Vivek%2C%20I%27d%20like%20to%20know%20about%20the%20digital%20marketing%20course.">Ask about the next batch</a>
-    </div>
-  </section>
-
+  <!-- ============ ABOUT / ROLES ============ -->
   <section class="sec" id="about">
     <div class="wrap about">
-      <h2 class="reveal">About Vivek</h2>
-      <div class="about__body reveal">
-        <p>Vivek Singh Bhadauriya founded Future Edge in Kanpur in 2022, with an agency for local businesses and a training centre for students.</p>
-        <p>He has an MBA in Digital Marketing. He teaches the same work he does for clients, so students learn how search and ads actually perform for real businesses.</p>
-        <dl>
-          <dt class="mono">Role</dt><dd>Founder, Future Edge Digital Marketing Agency &amp; Training Centre</dd>
-          <dt class="mono">Education</dt><dd>MBA, Digital Marketing</dd>
-          <dt class="mono">Based in</dt><dd>Ratanlal Nagar, Kanpur, Uttar Pradesh</dd>
-        </dl>
+      <div class="about__intro reveal">
+        <div class="sec__head" style="margin-bottom:28px">
+          <p class="kicker">Meet Vivek</p>
+          <h2>Teacher in the classroom. <em>Strategist</em> in the boardroom.</h2>
+        </div>
+        <p>Vivek Singh Bhadauriya teaches what he practises. He lectures at colleges, runs a digital marketing agency, and leads marketing for a manufacturing company.</p>
+        <p>He has an MBA in Digital Marketing. More than 1,500 students have learned from him, and over 55 national and international brands have grown with his help.</p>
+        <a class="btn btn--ghost" href="#book" style="margin-top:10px">Work with Vivek</a>
+      </div>
+
+      <ul class="hats reveal" aria-label="Roles and positions">
+        <li class="hat">
+          <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
+          <div><h3>Assistant Professor &amp; Visiting Lecturer</h3><p>Teaches digital marketing, personal branding and AI at colleges and management institutes.</p></div>
+        </li>
+        <li class="hat">
+          <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
+          <div><h3>Founder, Future Edge Digital Marketing Agency</h3><p>A one-stop solution for all marketing needs: SEO, ads, social media, Google Business and training.</p></div>
+        </li>
+        <li class="hat">
+          <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
+          <div><h3>Chief Marketing Officer &amp; Director</h3><p>Shivam Bio Luminum Pvt Ltd.</p></div>
+        </li>
+        <li class="hat">
+          <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
+          <div><h3>Business Growth Manager</h3><p>Helps owners find what's holding growth back and fix it: sales, marketing and systems.</p></div>
+        </li>
+        <li class="hat">
+          <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5.5"/></svg></span>
+          <div><h3>Secretary, Kanpur Trade Bar Council</h3><p>Works with the local trade community in Kanpur.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ SEMINARS ============ -->
+  <!-- ============ CASUAL SIDE ============ -->
+  <section class="sec human" aria-labelledby="humanTitle">
+    <div class="wrap">
+      <div class="human__card reveal">
+        <div class="sec__head">
+          <p class="kicker">Off the podium</p>
+          <h2 id="humanTitle">Serious results. <em>Easy to talk to.</em></h2>
+          <p>Vivek is 25, close in age to many of the students he teaches. Sessions feel like a conversation, not a lecture: real examples, live demos and plenty of questions.</p>
+          <p>Business owners get the same thing: straight talk, no jargon, and a plan they can actually follow.</p>
+        </div>
+        <div class="vibes">
+          <div class="vibe"><span aria-hidden="true">🎓</span><b>Gets students</b><p>He was in their seat not long ago, so his examples and language click with them.</p></div>
+          <div class="vibe"><span aria-hidden="true">💻</span><b>Live, hands-on</b><p>Students build things during the session instead of only taking notes.</p></div>
+          <div class="vibe"><span aria-hidden="true">🤝</span><b>Approachable</b><p>Questions are welcome, and nobody gets talked down to.</p></div>
+          <div class="vibe"><span aria-hidden="true">🚀</span><b>Young founder</b><p>Started his own agency and now advises brands across India and abroad.</p></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="contact" id="contact">
+  <section class="sec sec--alt" id="seminars">
     <div class="wrap">
-      <div class="contact__card reveal">
-        <h2>Let's get you found.</h2>
-        <p>Send a message about your business or the course.</p>
-        <div class="ways">
-          <a class="way way--wa" href="https://wa.me/916393213527"><small class="mono">WhatsApp</small><span>Message Vivek →</span></a>
-          <a class="way" href="tel:+916393213527"><small class="mono">Phone</small><span>+91 63932 13527</span></a>
-          <a class="way" href="mailto:futureedgedigitalmarketing@gmail.com"><small class="mono">Email</small><span>futureedgedigitalmarketing@gmail.com</span></a>
+      <div class="sec__head sec__head--center reveal">
+        <p class="kicker">Seminars</p>
+        <h2>Two seminars. <em>One goal:</em> students ready for what's next.</h2>
+        <p>Vivek comes to your campus and runs a hands-on session. Colleges get LinkedIn; schools get AI.</p>
+      </div>
+
+      <div class="tracks">
+        <article class="track track--college reveal">
+          <span class="track__tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#0A66C2" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.8-1.9 4 0 4.8 2.6 4.8 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg>
+            For colleges
+          </span>
+          <h3>LinkedIn seminar</h3>
+          <p class="track__sub">Build a profile that recruiters notice, before placements start.</p>
+          <ul>
+            <li>Write a headline and About section that stand out</li>
+            <li>Grow a network of recruiters and alumni</li>
+            <li>Post content that builds a personal brand</li>
+            <li>Find internships and jobs through LinkedIn</li>
+          </ul>
+          <a class="btn" href="#book" data-pick="seminar">Book for your college</a>
+        </article>
+
+        <article class="track track--school reveal">
+          <span class="track__tag">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E9B44C" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3"/></svg>
+            For schools
+          </span>
+          <h3>AI seminar</h3>
+          <p class="track__sub">Students learn to use AI to make things, not just ask it questions.</p>
+          <ul>
+            <li>Create a website with AI, start to finish</li>
+            <li>Make a presentation (PPT) in minutes</li>
+            <li>Build simple tools for school and daily life</li>
+            <li>Use AI safely and responsibly</li>
+          </ul>
+          <a class="btn" href="#book" data-pick="seminar">Book for your school</a>
+        </article>
+      </div>
+
+      <div class="lectured reveal">
+        <h3>Where Vivek has taught <span>as a visiting lecturer</span></h3>
+        <div class="chips">
+          <span>Jagran Institute of Management</span>
+          <span>CSA Kanpur</span>
+          <span>Cambridge Institute of Professional Studies</span>
+          <span>Solus</span>
         </div>
       </div>
-      <footer>
-        <span>© 2026 Vivek Singh Bhadauriya · Future Edge, Kanpur</span>
-        <a href="https://futureedgedigitalmarketing.com/">futureedgedigitalmarketing.com</a>
-      </footer>
+    </div>
+  </section>
+
+  <!-- ============ REEL ============ -->
+  <section class="sec" id="reel">
+    <div class="wrap reel">
+      <div class="reveal">
+        <div class="sec__head">
+          <p class="kicker">Watch</p>
+          <h2>See Vivek <em>in action</em></h2>
+          <p>Watch his reel right here. No need to open Instagram.</p>
+        </div>
+        <ul class="reel__points">
+          <li>Real sessions with students</li>
+          <li>Practical marketing and AI tips</li>
+          <li>The same energy he brings to your campus</li>
+        </ul>
+        <a class="btn" href="#book">Bring Vivek to your institute</a>
+      </div>
+
+      <div class="phone reveal">
+        <div class="phone__screen" id="reelScreen">
+          <div class="phone__empty" id="reelEmpty">
+            <span class="phone__play" aria-hidden="true"><svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+            <p>Reel coming soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COURSE ============ -->
+  <section class="sec sec--alt" id="course">
+    <div class="wrap">
+      <div class="sec__head reveal">
+        <p class="kicker">Digital marketing course</p>
+        <h2>Learn the skills. <em>Get placed.</em></h2>
+        <p>A practical course from Future Edge, taught with the same methods the agency uses for real clients.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <span class="pillar__n">01</span>
+          <h3>AI for marketing</h3>
+          <p>Use AI tools to plan, write, design and automate. You get the tools and resources to keep.</p>
+          <ul><li>AI content</li><li>Automation</li><li>AI tools &amp; resources</li></ul>
+        </article>
+        <article class="pillar reveal">
+          <span class="pillar__n">02</span>
+          <h3>Performance marketing</h3>
+          <p>Run paid campaigns that bring leads and sales, and know which ones pay off.</p>
+          <ul><li>Google Ads</li><li>Meta Ads</li><li>Tracking &amp; ROI</li></ul>
+        </article>
+        <article class="pillar reveal">
+          <span class="pillar__n">03</span>
+          <h3>Digital marketing</h3>
+          <p>The foundations every business needs to be found online and win customers.</p>
+          <ul><li>SEO</li><li>Social media</li><li>Google Business</li></ul>
+        </article>
+      </div>
+
+      <div class="perks reveal">
+        <div class="perk">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <b>Job placement</b><span>Placement support for everyone who completes the course.</span>
+        </div>
+        <div class="perk">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <b>Paid internships</b><span>Earn while you work on real client projects.</span>
+        </div>
+        <div class="perk">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-9M14 17H5"/><circle cx="17" cy="17" r="3"/><circle cx="7" cy="7" r="3"/></svg>
+          <b>Unpaid internships</b><span>Build experience and a portfolio, with a certificate.</span>
+        </div>
+        <div class="perk">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
+          <b>AI tools &amp; resources</b><span>Templates, tools and notes you keep after the course.</span>
+        </div>
+      </div>
+
+      <div class="course__cta reveal">
+        <a class="btn" href="#book" data-pick="learn">Join the next batch</a>
+        <a class="btn btn--ghost" href="https://wa.me/916393213527?text=Hi%20Vivek%2C%20I%27d%20like%20a%20free%20demo%20class%20of%20the%20digital%20marketing%20course.">Book a free demo class</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK ============ -->
+  <section class="sec" id="book">
+    <div class="wrap">
+      <div class="sec__head sec__head--center reveal">
+        <p class="kicker">Book Vivek</p>
+        <h2>Four ways to <em>work with</em> Vivek</h2>
+        <p>Pick what you need. Your details go straight to Vivek on WhatsApp.</p>
+      </div>
+
+      <div class="ways reveal" role="list">
+        <button class="way" type="button" data-pick="marketing" role="listitem">
+          <span class="way__n">01</span>
+          <h3>Marketing consultancy</h3>
+          <p>A plan for SEO, ads, social media and leads for your business.</p>
+          <span class="way__go">Choose →</span>
+        </button>
+        <button class="way" type="button" data-pick="growth" role="listitem">
+          <span class="way__n">02</span>
+          <h3>Business growth consultancy</h3>
+          <p>Find what's slowing your growth and build a plan to scale.</p>
+          <span class="way__go">Choose →</span>
+        </button>
+        <button class="way" type="button" data-pick="learn" role="listitem">
+          <span class="way__n">03</span>
+          <h3>Learn from Vivek</h3>
+          <p>Join the digital marketing course, with placement and internships.</p>
+          <span class="way__go">Choose →</span>
+        </button>
+        <button class="way" type="button" data-pick="seminar" role="listitem">
+          <span class="way__n">04</span>
+          <h3>Seminar for school or college</h3>
+          <p>LinkedIn for colleges, AI for schools, at your campus.</p>
+          <span class="way__go">Choose →</span>
+        </button>
+      </div>
+
+      <div class="book reveal">
+        <div class="book__aside">
+          <h3>Let's talk</h3>
+          <p>Fill in the form and it opens WhatsApp with your message ready to send. Or reach Vivek directly.</p>
+          <div class="direct">
+            <a href="https://wa.me/916393213527">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+              <span><small>WhatsApp</small>Message Vivek</span>
+            </a>
+            <a href="tel:+916393213527">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+              <span><small>Phone</small>+91 63932 13527</span>
+            </a>
+            <a href="mailto:futureedgedigitalmarketing@gmail.com">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              <span><small>Email</small>futureedgedigitalmarketing@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+        <form class="form" id="bookForm" novalidate>
+          <div class="field">
+            <label for="fName">Your name</label>
+            <input id="fName" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="fPhone">Phone</label>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="field">
+            <label for="fType">I want to book</label>
+            <select id="fType" name="type" required>
+              <option value="marketing">Marketing consultancy</option>
+              <option value="growth">Business growth consultancy</option>
+              <option value="learn">Learn from Vivek (course)</option>
+              <option value="seminar">Seminar for school or college</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="fOrg">Business, school or college</label>
+            <input id="fOrg" name="org" autocomplete="organization">
+          </div>
+          <div class="field field--full">
+            <label for="fMsg">What do you need?</label>
+            <textarea id="fMsg" name="msg" placeholder="Tell Vivek a little about your goal, dates or number of students."></textarea>
+          </div>
+          <button class="btn" type="submit">Send on WhatsApp →</button>
+          <p class="form__note" id="formNote">Opens WhatsApp. Nothing is sent until you press send there.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec sec--alt" id="faq">
+    <div class="wrap">
+      <div class="sec__head sec__head--center reveal">
+        <p class="kicker">FAQ</p>
+        <h2>Questions, <em>answered</em></h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>How do I book Vivek for a seminar at my college or school?</summary>
+          <p>Choose "Seminar for school or college" in the form above and send it on WhatsApp, or call +91 63932 13527. Share your preferred dates and roughly how many students will attend.</p>
+        </details>
+        <details>
+          <summary>What's the difference between the college and school seminars?</summary>
+          <p>The college seminar is about LinkedIn: building a strong profile, a network and a personal brand for jobs and internships. The school seminar is about AI: using it to create websites, presentations and simple tools.</p>
+        </details>
+        <details>
+          <summary>What does the digital marketing course cover?</summary>
+          <p>Three areas: AI for marketing, performance marketing (Google and Meta ads), and core digital marketing like SEO, social media and Google Business. You also get AI tools and resources to keep.</p>
+        </details>
+        <details>
+          <summary>Do you help with jobs and internships?</summary>
+          <p>Yes. Students who take the course get job placement support, and can apply for paid and unpaid internships.</p>
+        </details>
+        <details>
+          <summary>Can Vivek help my business grow?</summary>
+          <p>Yes. Book a marketing consultancy for help with SEO, ads and leads, or a business growth consultancy for a wider plan to scale. Future Edge can also run the marketing for you.</p>
+        </details>
+      </div>
     </div>
   </section>
 </main>
 
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Vivek Singh Bhadauriya · Kanpur, Uttar Pradesh</span>
+    <span><a href="https://futureedgedigitalmarketing.com/">Future Edge Digital Marketing Agency</a></span>
+  </div>
+</footer>
+
+<div class="float">
+  <a class="float__call" href="tel:+916393213527" aria-label="Call Vivek">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+  </a>
+  <a class="float__wa" href="https://wa.me/916393213527" aria-label="WhatsApp Vivek">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+  </a>
+</div>
+
 <script>
+  // Paste the link to Vivek's main Instagram reel here, e.g. "https://www.instagram.com/reel/AbC123xyz/".
+  // Leave it empty to show the "Reel coming soon" card.
+  var REEL_URL = "";
+
   (function () {
     var motion = document.documentElement.classList.contains('js');
 
-    requestAnimationFrame(function () {
-      requestAnimationFrame(function () { document.getElementById('hero').classList.add('is-in'); });
+    // Reel: embed the Instagram reel so it plays on the page
+    var m = REEL_URL.match(/instagram\.com\/(?:reel|reels|p|tv)\/([A-Za-z0-9_-]+)/);
+    if (m) {
+      var f = document.createElement('iframe');
+      f.src = 'https://www.instagram.com/reel/' + m[1] + '/embed/';
+      f.title = 'Vivek Singh Bhadauriya on Instagram';
+      f.loading = 'lazy';
+      f.allow = 'autoplay; encrypted-media; picture-in-picture';
+      f.setAttribute('allowfullscreen', '');
+      f.setAttribute('scrolling', 'no');
+      document.getElementById('reelEmpty').remove();
+      document.getElementById('reelScreen').appendChild(f);
+    }
+
+    // Booking: picking a way pre-selects it in the form
+    var form = document.getElementById('bookForm'), type = document.getElementById('fType');
+    var ways = document.querySelectorAll('.way');
+    function pick(v) {
+      type.value = v;
+      ways.forEach(function (w) { w.classList.toggle('is-picked', w.dataset.pick === v); });
+    }
+    document.querySelectorAll('[data-pick]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        pick(el.dataset.pick);
+        if (el.classList.contains('way')) document.getElementById('fName').focus({ preventScroll: true }), form.scrollIntoView({ behavior: motion ? 'smooth' : 'auto', block: 'center' });
+      });
+    });
+    type.addEventListener('change', function () { pick(type.value); });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      // form.elements, because form.name is the form's own name attribute
+      var f = form.elements, name = f.name.value.trim(), phone = f.phone.value.trim();
+      var note = document.getElementById('formNote');
+      if (!name || !phone) {
+        note.textContent = 'Please add your name and phone number.';
+        note.style.color = 'var(--gold)';
+        (name ? f.phone : f.name).focus();
+        return;
+      }
+      var lines = [
+        'Hi Vivek, I would like to book: ' + type.options[type.selectedIndex].text + '.',
+        'Name: ' + name,
+        'Phone: ' + phone
+      ];
+      if (f.org.value.trim()) lines.push('Organisation: ' + f.org.value.trim());
+      if (f.msg.value.trim()) lines.push('', f.msg.value.trim());
+      window.open('https://wa.me/916393213527?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });
 
+    // Reveal on scroll
     var items = document.querySelectorAll('.reveal');
     if (motion && 'IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
@@ -423,32 +813,37 @@
       items.forEach(function (el) { el.classList.add('is-seen'); });
     }
 
-    // Search ticker: a search people type, then the service that answers it
     if (!motion) return;
-    var pairs = [
-      ['how to get my shop on google maps', 'Google Business listing', '--sky', '--blue'],
-      ['seo expert in kanpur', 'Search engine optimisation', '--mint', '--green'],
-      ['get more customers from google', 'Google Ads campaigns', '--blush', '--coral'],
-      ['digital marketing course kanpur', 'Training at Future Edge', '--butter', '--ink']
+
+    // Count the stats up when they come into view
+    var counters = document.querySelectorAll('[data-count]');
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        co.unobserve(e.target);
+        var el = e.target, end = +el.dataset.count, t0 = null;
+        (function tick(t) {
+          if (!t0) t0 = t;
+          var p = Math.min((t - t0) / 1400, 1), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
+          el.textContent = v.toLocaleString('en-IN') + '+';
+          if (p < 1) requestAnimationFrame(tick);
+        })(performance.now());
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function (el) { co.observe(el); });
+
+    // Hero lines rotate through what Vivek does
+    var lines = [
+      'Teaching <b>college students</b> to build a LinkedIn profile that gets them hired.',
+      'Showing <b>school students</b> how to create websites, PPTs and tools with AI.',
+      'Growing <b>50+ national and 5+ international brands</b> as a marketing strategist.',
+      'Training <b>1,500+ learners</b> in AI, performance and digital marketing.'
     ];
-    var q = document.getElementById('q'), a = document.getElementById('a'), n = 0;
-    function run() {
-      var p = pairs[n++ % pairs.length], i = 0;
-      a.classList.add('is-hidden');
-      q.textContent = '';
-      (function type() {
-        q.textContent = p[0].slice(0, ++i);
-        if (i < p[0].length) return setTimeout(type, 38 + Math.random() * 45);
-        setTimeout(function () {
-          a.textContent = p[1];
-          a.style.background = 'var(' + p[2] + ')';
-          a.style.color = 'var(' + p[3] + ')';
-          a.classList.remove('is-hidden');
-        }, 300);
-        setTimeout(run, 3400);
-      })();
-    }
-    setTimeout(run, 1400);
+    var rot = document.getElementById('rot'), n = 0;
+    setInterval(function () {
+      rot.classList.add('is-out');
+      setTimeout(function () { rot.innerHTML = lines[++n % lines.length]; rot.classList.remove('is-out'); }, 400);
+    }, 4200);
   })();
 </script>
 </body>
