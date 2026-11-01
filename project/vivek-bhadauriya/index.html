@@ -3,8 +3,51 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vivek Singh Bhadauriya</title>
-<meta name="description" content="Vivek Singh Bhadauriya: assistant professor, visiting lecturer and business growth manager from Kanpur. Founder of Future Edge Digital Marketing Agency. Book him for college and school seminars, consultancy or the digital marketing course.">
+<title>Vivek Singh Bhadauriya | Digital Marketer &amp; Visiting Lecturer in Kanpur</title>
+<meta name="keywords" content="Vivek Singh Bhadauriya, digital marketer Kanpur, digital marketing course Kanpur, LinkedIn seminar for colleges, AI seminar for schools, business growth consultant, Future Edge Digital Marketing Agency">
+<meta name="author" content="Vivek Singh Bhadauriya">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0A0A0C">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Vivek Singh Bhadauriya | Digital Marketer &amp; Visiting Lecturer">
+<meta property="og:description" content="Seminars for colleges and schools, marketing and business growth consultancy, and a digital marketing course with placement support. Based in Kanpur.">
+<meta property="og:image" content="vivek.jpg">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Vivek Singh Bhadauriya | Digital Marketer &amp; Visiting Lecturer">
+<meta name="twitter:description" content="Seminars, consultancy and a digital marketing course with placement support. Based in Kanpur.">
+<meta name="twitter:image" content="vivek.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "name": "Vivek Singh Bhadauriya",
+      "jobTitle": ["Digital Marketer", "Visiting Lecturer", "Business Growth Manager"],
+      "description": "Digital marketer, visiting lecturer and founder of Future Edge Digital Marketing Agency, based in Kanpur.",
+      "image": "vivek.jpg",
+      "telephone": "+91-9129413527",
+      "email": "futureedgedigitalmarketing@gmail.com",
+      "address": { "@type": "PostalAddress", "addressLocality": "Kanpur", "addressRegion": "Uttar Pradesh", "addressCountry": "IN" },
+      "alumniOf": "MBA in Digital Marketing",
+      "worksFor": { "@type": "Organization", "name": "Future Edge Digital Marketing Agency", "url": "https://futureedgedigitalmarketing.com/" },
+      "knowsAbout": ["Digital marketing", "Performance marketing", "SEO", "LinkedIn personal branding", "AI for marketing"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How do I book you for a seminar at my college or school?", "acceptedAnswer": { "@type": "Answer", "text": "Choose Seminar for school or college in the booking form and send it on WhatsApp, or call +91 91294 13527. Share your preferred dates and roughly how many students will attend." } },
+        { "@type": "Question", "name": "What's the difference between the college and school seminars?", "acceptedAnswer": { "@type": "Answer", "text": "The college seminar is about LinkedIn: building a strong profile, a network and a personal brand for jobs and internships. The school seminar is about AI: using it to create websites, presentations and simple tools." } },
+        { "@type": "Question", "name": "What does the digital marketing course cover?", "acceptedAnswer": { "@type": "Answer", "text": "AI for marketing, performance marketing (Google and Meta ads), and core digital marketing like SEO, social media and Google Business, plus AI tools and resources to keep." } },
+        { "@type": "Question", "name": "Do you help with jobs and internships?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Students who take my course get job placement support, and can apply for paid and unpaid internships." } },
+        { "@type": "Question", "name": "Can you help my business grow?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book a marketing consultancy for SEO, ads and leads, or a business growth consultancy for a wider plan to scale." } }
+      ]
+    }
+  ]
+}
+</script>
+<meta name="description" content="I'm Vivek Singh Bhadauriya: digital marketer, visiting lecturer and business growth manager from Kanpur, and founder of Future Edge Digital Marketing Agency. Book me for college and school seminars, consultancy or my digital marketing course.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500;62..125,700;62..125,900&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -131,15 +174,14 @@
 
   /* ---------- stats ---------- */
   .stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg2); }
-  .stats__row { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stats__row { display: grid; grid-template-columns: repeat(3, 1fr); }
   .stat { padding: clamp(24px, 3.4vw, 40px) 20px; text-align: center; }
   .stat + .stat { border-left: 1px solid var(--line); }
   .stat b { display: block; font: 800 clamp(36px, 4.6vw, 58px)/1 var(--display); color: var(--gold); letter-spacing: -.02em; }
   .stat span { display: block; margin-top: 8px; color: var(--soft); font-size: 14.5px; font-weight: 600; }
   @media (max-width: 760px) {
-    .stats__row { grid-template-columns: 1fr 1fr; }
-    .stat:nth-child(3) { border-left: 0; }
-    .stat:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .stats__row { grid-template-columns: 1fr; }
+    .stat + .stat { border-left: 0; border-top: 1px solid var(--line); }
   }
 
   /* ---------- marquee of institutes ---------- */
@@ -302,6 +344,23 @@
   @media (max-width: 900px) { .book { grid-template-columns: 1fr; } }
   @media (max-width: 560px) { .form { grid-template-columns: 1fr; } .form .btn { justify-self: stretch; } }
 
+  /* ---------- gallery ---------- */
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 240px; gap: 14px; }
+  .gallery__item { position: relative; margin: 0; border-radius: 20px; overflow: hidden; background: var(--card); box-shadow: inset 0 0 0 1px var(--line); }
+  .gallery__item:first-child { grid-row: span 2; }
+  .gallery__item button { all: unset; display: block; width: 100%; height: 100%; cursor: zoom-in; }
+  .gallery__item button:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+  .gallery__item img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; transition: transform .5s ease; }
+  .gallery__item:hover img { transform: scale(1.04); }
+  .gallery__item figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 30px 16px 14px; background: linear-gradient(transparent, rgba(10,10,12,.85)); font-size: 14px; font-weight: 600; pointer-events: none; }
+  .gallery__empty { display: grid; place-items: center; height: 100%; color: var(--soft); font-size: 14px; text-align: center; padding: 20px; }
+  @media (max-width: 760px) { .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 180px; } }
+  .lightbox { padding: 0; border: 0; background: transparent; max-width: min(92vw, 1100px); max-height: 92vh; }
+  .lightbox::backdrop { background: rgba(5,5,7,.9); }
+  .lightbox img { display: block; max-width: 100%; max-height: 86vh; border-radius: 16px; }
+  .lightbox p { margin: 10px 0 0; color: var(--ink); text-align: center; font-size: 15px; }
+  .lightbox__close { position: fixed; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--card); color: var(--ink); font-size: 24px; cursor: pointer; }
+
   /* ---------- faq ---------- */
   .faq { max-width: 860px; margin: 0 auto; }
   .faq details { border-bottom: 1px solid var(--line); }
@@ -344,14 +403,15 @@
 
 <div class="nav-bar">
   <header class="wrap nav">
-    <a class="nav__mark" href="#top">Vivek <span>Bhadauriya</span></a>
+    <a class="nav__mark" href="#top">Vivek Singh <span>Bhadauriya</span></a>
     <nav class="nav__links" aria-label="Main">
       <a href="#about">About</a>
       <a href="#seminars">Seminars</a>
       <a href="#reel">Watch</a>
+      <a href="#gallery">Gallery</a>
       <a href="#course">Course</a>
       <a href="#faq">FAQ</a>
-      <a class="btn" href="#book">Book Vivek</a>
+      <a class="btn" href="#book">Book an appointment</a>
     </nav>
   </header>
 </div>
@@ -362,18 +422,18 @@
     <div class="wrap hero__grid">
       <div class="hero__text">
         <ul class="roles" aria-label="Roles">
-          <li>Assistant Professor</li>
+          <li>Digital Marketer</li>
           <li>Visiting Lecturer</li>
           <li>Business Growth Manager</li>
         </ul>
-        <p class="hello">Hi, I'm Vivek <b>25 · Kanpur</b></p>
+        <p class="hello">Hi, I'm Vivek</p>
         <h1 class="name"><span>Vivek Singh</span><span>Bhadauriya</span></h1>
         <p class="rotator" aria-live="polite"><span class="rotator__line" id="rot">Teaching <b>college students</b> to build a LinkedIn profile that gets them hired.</span></p>
         <div class="hero__cta">
           <a class="btn" href="#book">Book a seminar or consultation</a>
           <a class="btn btn--ghost" href="#reel">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-            Watch Vivek speak
+            Watch me speak
           </a>
         </div>
       </div>
@@ -384,8 +444,8 @@
              onerror="if(!this.dataset.retry){this.dataset.retry=1;this.src='vivek.jpg';}"
              alt="Vivek Singh Bhadauriya, arms crossed, in a grey check blazer"
              width="800" height="979" fetchpriority="high">
-        <div class="badge badge--a"><b>1,500+</b>students trained</div>
-        <div class="badge badge--b"><b>55+</b>brands grown</div>
+        <div class="badge badge--a"><b>1,500+</b>Students Trained</div>
+        <div class="badge badge--b"><b>55+</b>Brands Grown</div>
       </figure>
     </div>
   </section>
@@ -394,14 +454,13 @@
   <section class="stats" aria-label="Numbers">
     <div class="wrap stats__row">
       <div class="stat"><b data-count="1500">1,500+</b><span>Students trained</span></div>
-      <div class="stat"><b data-count="50">50+</b><span>National brands</span></div>
-      <div class="stat"><b data-count="5">5+</b><span>International brands</span></div>
-      <div class="stat"><b>2</b><span>Seminar tracks: colleges &amp; schools</span></div>
+      <div class="stat"><b data-count="50">50+</b><span>worked with National brands</span></div>
+      <div class="stat"><b data-count="5">5+</b><span>worked with International brands</span></div>
     </div>
   </section>
 
   <!-- ============ INSTITUTES MARQUEE ============ -->
-  <div class="marquee" aria-label="Institutes where Vivek has taught">
+  <div class="marquee" aria-label="Institutes where I have taught">
     <p class="marquee__label">Visiting lecturer at</p>
     <div class="marquee__track" aria-hidden="true">
       <span>Jagran Institute of Management</span><span>CSA Kanpur</span><span>Cambridge Institute of Professional Studies</span><span>Solus</span>
@@ -414,22 +473,22 @@
     <div class="wrap about">
       <div class="about__intro reveal">
         <div class="sec__head" style="margin-bottom:28px">
-          <p class="kicker">Meet Vivek</p>
-          <h2>Teacher in the classroom. <em>Strategist</em> in the boardroom.</h2>
+          <p class="kicker">About me</p>
+          <h2>Professor in the classroom. <em>Strategist</em> in the boardroom.</h2>
         </div>
-        <p>Vivek Singh Bhadauriya teaches what he practises. He lectures at colleges, runs a digital marketing agency, and leads marketing for a manufacturing company.</p>
-        <p>He has an MBA in Digital Marketing. More than 1,500 students have learned from him, and over 55 national and international brands have grown with his help.</p>
-        <a class="btn btn--ghost" href="#book" style="margin-top:10px">Work with Vivek</a>
+        <p>I teach what I practise. I lecture at colleges, run my own digital marketing agency, and lead marketing for a manufacturing company.</p>
+        <p>I have an MBA in Digital Marketing. More than 1,500 students have learned from me, and I've helped over 55 national and international brands grow.</p>
+        <a class="btn btn--ghost" href="#book" style="margin-top:10px">Work with me</a>
       </div>
 
       <ul class="hats reveal" aria-label="Roles and positions">
         <li class="hat">
           <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span>
-          <div><h3>Assistant Professor &amp; Visiting Lecturer</h3><p>Teaches digital marketing, personal branding and AI at colleges and management institutes.</p></div>
+          <div><h3>Visiting Lecturer</h3><p>I teach digital marketing, personal branding and AI at colleges and management institutes.</p></div>
         </li>
         <li class="hat">
           <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></svg></span>
-          <div><h3>Founder, Future Edge Digital Marketing Agency</h3><p>A one-stop solution for all marketing needs: SEO, ads, social media, Google Business and training.</p></div>
+          <div><h3>Founder, Future Edge Digital Marketing Agency</h3><p>My agency is a one-stop solution for all marketing needs: SEO, ads, social media, Google Business and training.</p></div>
         </li>
         <li class="hat">
           <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
@@ -437,11 +496,11 @@
         </li>
         <li class="hat">
           <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span>
-          <div><h3>Business Growth Manager</h3><p>Helps owners find what's holding growth back and fix it: sales, marketing and systems.</p></div>
+          <div><h3>Business Growth Manager</h3><p>I help owners find what's holding growth back and fix it: sales, marketing and systems.</p></div>
         </li>
         <li class="hat">
           <span class="hat__icon" aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.5a5 5 0 0 1 5.5 5.5"/></svg></span>
-          <div><h3>Secretary, Kanpur Trade Bar Council</h3><p>Works with the local trade community in Kanpur.</p></div>
+          <div><h3>Secretary, Kanpur Trade Bar Council</h3><p>I work with the local trade community in Kanpur.</p></div>
         </li>
       </ul>
     </div>
@@ -455,14 +514,14 @@
         <div class="sec__head">
           <p class="kicker">Off the podium</p>
           <h2 id="humanTitle">Serious results. <em>Easy to talk to.</em></h2>
-          <p>Vivek is 25, close in age to many of the students he teaches. Sessions feel like a conversation, not a lecture: real examples, live demos and plenty of questions.</p>
-          <p>Business owners get the same thing: straight talk, no jargon, and a plan they can actually follow.</p>
+          <p>I'm 25, close in age to many of the students I teach. My sessions feel like a conversation, not a lecture: real examples, live demos and plenty of questions.</p>
+          <p>Business owners get the same from me: straight talk, no jargon, and a plan you can actually follow.</p>
         </div>
         <div class="vibes">
-          <div class="vibe"><span aria-hidden="true">🎓</span><b>Gets students</b><p>He was in their seat not long ago, so his examples and language click with them.</p></div>
+          <div class="vibe"><span aria-hidden="true">🎓</span><b>Gets students</b><p>I was in their seat not long ago, so my examples and language click with them.</p></div>
           <div class="vibe"><span aria-hidden="true">💻</span><b>Live, hands-on</b><p>Students build things during the session instead of only taking notes.</p></div>
           <div class="vibe"><span aria-hidden="true">🤝</span><b>Approachable</b><p>Questions are welcome, and nobody gets talked down to.</p></div>
-          <div class="vibe"><span aria-hidden="true">🚀</span><b>Young founder</b><p>Started his own agency and now advises brands across India and abroad.</p></div>
+          <div class="vibe"><span aria-hidden="true">🚀</span><b>Young founder</b><p>I started my own agency and now advise brands across India and abroad.</p></div>
         </div>
       </div>
     </div>
@@ -473,7 +532,7 @@
       <div class="sec__head sec__head--center reveal">
         <p class="kicker">Seminars</p>
         <h2>Two seminars. <em>One goal:</em> students ready for what's next.</h2>
-        <p>Vivek comes to your campus and runs a hands-on session. Colleges get LinkedIn; schools get AI.</p>
+        <p>I come to your campus and run a hands-on session. Colleges get LinkedIn; schools get AI.</p>
       </div>
 
       <div class="tracks">
@@ -511,7 +570,7 @@
       </div>
 
       <div class="lectured reveal">
-        <h3>Where Vivek has taught <span>as a visiting lecturer</span></h3>
+        <h3>Where I have taught <span>as a visiting lecturer</span></h3>
         <div class="chips">
           <span>Jagran Institute of Management</span>
           <span>CSA Kanpur</span>
@@ -528,15 +587,15 @@
       <div class="reveal">
         <div class="sec__head">
           <p class="kicker">Watch</p>
-          <h2>See Vivek <em>in action</em></h2>
-          <p>Watch his reel right here. No need to open Instagram.</p>
+          <h2>Watch me <em>in action</em></h2>
+          <p>Watch my reel right here. No need to open Instagram.</p>
         </div>
         <ul class="reel__points">
           <li>Real sessions with students</li>
           <li>Practical marketing and AI tips</li>
-          <li>The same energy he brings to your campus</li>
+          <li>The same energy I bring to your campus</li>
         </ul>
-        <a class="btn" href="#book">Bring Vivek to your institute</a>
+        <a class="btn" href="#book">Bring me to your institute</a>
       </div>
 
       <div class="phone reveal">
@@ -550,13 +609,30 @@
     </div>
   </section>
 
+  <!-- ============ GALLERY ============ -->
+  <section class="sec sec--alt" id="gallery">
+    <div class="wrap">
+      <div class="sec__head reveal">
+        <p class="kicker">Gallery</p>
+        <h2>Moments from <em>my sessions</em></h2>
+        <p>Seminars, workshops and time with students and clients.</p>
+      </div>
+      <div class="gallery reveal" id="gallery-grid"></div>
+    </div>
+  </section>
+  <dialog class="lightbox" id="lightbox" aria-label="Photo">
+    <button class="lightbox__close" type="button" aria-label="Close">&times;</button>
+    <img alt="">
+    <p></p>
+  </dialog>
+
   <!-- ============ COURSE ============ -->
   <section class="sec sec--alt" id="course">
     <div class="wrap">
       <div class="sec__head reveal">
         <p class="kicker">Digital marketing course</p>
         <h2>Learn the skills. <em>Get placed.</em></h2>
-        <p>A practical course from Future Edge, taught with the same methods the agency uses for real clients.</p>
+        <p>My practical course at Future Edge, taught with the same methods my agency uses for real clients.</p>
       </div>
 
       <div class="pillars">
@@ -601,7 +677,7 @@
 
       <div class="course__cta reveal">
         <a class="btn" href="#book" data-pick="learn">Join the next batch</a>
-        <a class="btn btn--ghost" href="https://wa.me/916393213527?text=Hi%20Vivek%2C%20I%27d%20like%20a%20free%20demo%20class%20of%20the%20digital%20marketing%20course.">Book a free demo class</a>
+        <a class="btn btn--ghost" href="https://wa.me/919129413527?text=Hi%20Vivek%2C%20I%27d%20like%20a%20free%20demo%20class%20of%20the%20digital%20marketing%20course.">Book a free demo class</a>
       </div>
     </div>
   </section>
@@ -610,9 +686,9 @@
   <section class="sec" id="book">
     <div class="wrap">
       <div class="sec__head sec__head--center reveal">
-        <p class="kicker">Book Vivek</p>
-        <h2>Four ways to <em>work with</em> Vivek</h2>
-        <p>Pick what you need. Your details go straight to Vivek on WhatsApp.</p>
+        <p class="kicker">Book an appointment</p>
+        <h2>Four ways to <em>work with</em> me</h2>
+        <p>Pick what you need. Your details come straight to me on WhatsApp.</p>
       </div>
 
       <div class="ways reveal" role="list">
@@ -630,7 +706,7 @@
         </button>
         <button class="way" type="button" data-pick="learn" role="listitem">
           <span class="way__n">03</span>
-          <h3>Learn from Vivek</h3>
+          <h3>Learn from me</h3>
           <p>Join the digital marketing course, with placement and internships.</p>
           <span class="way__go">Choose →</span>
         </button>
@@ -645,15 +721,15 @@
       <div class="book reveal">
         <div class="book__aside">
           <h3>Let's talk</h3>
-          <p>Fill in the form and it opens WhatsApp with your message ready to send. Or reach Vivek directly.</p>
+          <p>Fill in the form and it opens WhatsApp with your message ready to send. Or reach me directly.</p>
           <div class="direct">
-            <a href="https://wa.me/916393213527">
+            <a href="https://wa.me/919129413527">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
-              <span><small>WhatsApp</small>Message Vivek</span>
+              <span><small>WhatsApp</small>Message me</span>
             </a>
-            <a href="tel:+916393213527">
+            <a href="tel:+919129413527">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
-              <span><small>Phone</small>+91 63932 13527</span>
+              <span><small>Phone</small>+91 91294 13527</span>
             </a>
             <a href="mailto:futureedgedigitalmarketing@gmail.com">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
@@ -676,7 +752,7 @@
             <select id="fType" name="type" required>
               <option value="marketing">Marketing consultancy</option>
               <option value="growth">Business growth consultancy</option>
-              <option value="learn">Learn from Vivek (course)</option>
+              <option value="learn">Learn from me (course)</option>
               <option value="seminar">Seminar for school or college</option>
             </select>
           </div>
@@ -686,7 +762,7 @@
           </div>
           <div class="field field--full">
             <label for="fMsg">What do you need?</label>
-            <textarea id="fMsg" name="msg" placeholder="Tell Vivek a little about your goal, dates or number of students."></textarea>
+            <textarea id="fMsg" name="msg" placeholder="Tell me a little about your goal, dates or number of students."></textarea>
           </div>
           <button class="btn" type="submit">Send on WhatsApp →</button>
           <p class="form__note" id="formNote">Opens WhatsApp. Nothing is sent until you press send there.</p>
@@ -704,8 +780,8 @@
       </div>
       <div class="faq reveal">
         <details>
-          <summary>How do I book Vivek for a seminar at my college or school?</summary>
-          <p>Choose "Seminar for school or college" in the form above and send it on WhatsApp, or call +91 63932 13527. Share your preferred dates and roughly how many students will attend.</p>
+          <summary>How do I book you for a seminar at my college or school?</summary>
+          <p>Choose "Seminar for school or college" in the form above and send it on WhatsApp, or call +91 91294 13527. Share your preferred dates and roughly how many students will attend.</p>
         </details>
         <details>
           <summary>What's the difference between the college and school seminars?</summary>
@@ -717,11 +793,11 @@
         </details>
         <details>
           <summary>Do you help with jobs and internships?</summary>
-          <p>Yes. Students who take the course get job placement support, and can apply for paid and unpaid internships.</p>
+          <p>Yes. Students who take my course get job placement support, and can apply for paid and unpaid internships.</p>
         </details>
         <details>
-          <summary>Can Vivek help my business grow?</summary>
-          <p>Yes. Book a marketing consultancy for help with SEO, ads and leads, or a business growth consultancy for a wider plan to scale. Future Edge can also run the marketing for you.</p>
+          <summary>Can you help my business grow?</summary>
+          <p>Yes. Book a marketing consultancy for help with SEO, ads and leads, or a business growth consultancy for a wider plan to scale. My agency, Future Edge, can also run the marketing for you.</p>
         </details>
       </div>
     </div>
@@ -731,15 +807,15 @@
 <footer>
   <div class="wrap foot">
     <span>© 2026 Vivek Singh Bhadauriya · Kanpur, Uttar Pradesh</span>
-    <span><a href="https://futureedgedigitalmarketing.com/">Future Edge Digital Marketing Agency</a></span>
+    <span><a href="#book">Meet me</a></span>
   </div>
 </footer>
 
 <div class="float">
-  <a class="float__call" href="tel:+916393213527" aria-label="Call Vivek">
+  <a class="float__call" href="tel:+919129413527" aria-label="Call me">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
   </a>
-  <a class="float__wa" href="https://wa.me/916393213527" aria-label="WhatsApp Vivek">
+  <a class="float__wa" href="https://wa.me/919129413527" aria-label="WhatsApp me">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
   </a>
 </div>
@@ -748,6 +824,39 @@
   // Paste the link to Vivek's main Instagram reel here, e.g. "https://www.instagram.com/reel/AbC123xyz/".
   // Leave it empty to show the "Reel coming soon" card.
   var REEL_URL = "";
+
+  // Gallery photos: put the image files next to this page and list them here as { src, caption }.
+  // Empty slots show "Photo coming soon" until there are 6 photos.
+  var GALLERY = [
+    { src: "vivek.jpg", caption: "Vivek Singh Bhadauriya" }
+  ];
+
+  (function () {
+    var grid = document.getElementById('gallery-grid'), box = document.getElementById('lightbox');
+    GALLERY.forEach(function (g) {
+      var fig = document.createElement('figure'), btn = document.createElement('button'), img = document.createElement('img');
+      fig.className = 'gallery__item';
+      btn.type = 'button';
+      btn.setAttribute('aria-label', 'Open photo: ' + g.caption);
+      img.src = g.src; img.alt = g.caption; img.loading = 'lazy';
+      btn.appendChild(img); fig.appendChild(btn);
+      if (g.caption) { var c = document.createElement('figcaption'); c.textContent = g.caption; fig.appendChild(c); }
+      btn.addEventListener('click', function () {
+        box.querySelector('img').src = g.src; box.querySelector('img').alt = g.caption;
+        box.querySelector('p').textContent = g.caption;
+        box.showModal();
+      });
+      grid.appendChild(fig);
+    });
+    for (var i = GALLERY.length; i < 6; i++) {
+      var e = document.createElement('figure');
+      e.className = 'gallery__item';
+      e.innerHTML = '<div class="gallery__empty">Photo coming soon</div>';
+      grid.appendChild(e);
+    }
+    box.querySelector('.lightbox__close').addEventListener('click', function () { box.close(); });
+    box.addEventListener('click', function (ev) { if (ev.target === box) box.close(); });
+  })();
 
   (function () {
     var motion = document.documentElement.classList.contains('js');
@@ -799,7 +908,7 @@
       ];
       if (f.org.value.trim()) lines.push('Organisation: ' + f.org.value.trim());
       if (f.msg.value.trim()) lines.push('', f.msg.value.trim());
-      window.open('https://wa.me/916393213527?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
+      window.open('https://wa.me/919129413527?text=' + encodeURIComponent(lines.join('\n')), '_blank', 'noopener');
     });
 
     // Reveal on scroll
