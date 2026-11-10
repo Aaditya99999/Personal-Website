@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Physio+ Physiotherapy Clinic · Wadgaon Sheri, Pune</title>
+<meta name="description" content="Book an appointment online at Physio+ Physiotherapy Clinic, Wadgaon Sheri, Pune.">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#12343B">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2312343B'/><path d='M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z' fill='%23F2A541'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Caveat:wght@600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=1920&q=72&auto=format&fit=crop">
+<style>
+:root{
+  --ink:#12343B; --ink-2:#2B5058; --mint:#E3F0EA; --mint-2:#CFE4DA;
+  --paper:#FBFCFA; --line:#D6E2DC; --marigold:#F2A541; --marigold-d:#C97D16;
+  --green:#2F8F6B; --muted:#5E7479;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;
+  --body:'Instrument Sans',system-ui,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --r:14px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{font-family:var(--body);color:var(--ink);background:var(--paper);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em}
+h2{font-size:clamp(30px,5vw,46px);font-weight:800;margin-bottom:12px}
+.lede{color:var(--muted);max-width:56ch}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--green);margin-bottom:10px;display:block}
+section{padding:84px 0;scroll-margin-top:68px}
+.field{scroll-margin-top:90px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 16px var(--body);padding:14px 22px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--marigold);color:var(--ink)}
+.btn-primary:hover{background:#F6B65F}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-ghost:hover{background:var(--mint)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(251,252,250,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-weight:800;font-size:20px}
+.logo small{display:block;font:500 11.5px var(--mono);color:var(--muted);letter-spacing:.04em}
+.nav ul{display:none;list-style:none;gap:26px;padding:0}
+.nav ul a{text-decoration:none;font-weight:500;font-size:15px}
+.nav ul a:hover{color:var(--green)}
+.nav .btn{padding:10px 18px;font-size:15px}
+@media(min-width:900px){.nav ul{display:flex}}
+
+/* hero */
+.hero{padding:48px 0 72px;background:linear-gradient(180deg,var(--paper),var(--mint) 120%)}
+.hero-grid{display:grid;gap:40px;align-items:center}
+@media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}.hero{padding:72px 0 96px}}
+.hero h1{isolation:isolate;font-size:clamp(40px,7.4vw,76px);font-weight:800;margin:6px 0 18px}
+.hero h1 em{font-style:normal;color:var(--green);position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.14em;background:var(--marigold);border-radius:4px;z-index:-1;opacity:.8}
+.hero .lede{font-size:18.5px;margin-bottom:28px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:30px;font-size:14.5px;color:var(--ink-2)}
+.facts span::before{content:"✓ ";color:var(--green);font-weight:700}
+
+/* signature: OPD board */
+.board{background:var(--ink);color:#EAF3EF;border-radius:22px;padding:22px;box-shadow:0 30px 60px -30px rgba(18,52,59,.55)}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px dashed rgba(234,243,239,.25);padding-bottom:14px;margin-bottom:6px}
+.board-head b{font-family:var(--display);font-size:20px}
+.board-head .live{font:500 12px var(--mono);color:var(--marigold);display:flex;align-items:center;gap:7px}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--marigold);animation:pulse 1.6s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;padding:13px 0;border-bottom:1px solid rgba(234,243,239,.1)}
+.row:last-of-type{border-bottom:0}
+.row .who{font-weight:600}
+.row .dept{font-size:13.5px;color:#A9C4BC;grid-column:1}
+.slot{grid-row:1/3;grid-column:2;font:500 14px var(--mono);background:rgba(242,165,65,.14);color:var(--marigold);border:1px solid rgba(242,165,65,.4);padding:8px 12px;border-radius:10px;cursor:pointer;text-align:center}
+.slot:hover{background:var(--marigold);color:var(--ink)}
+.slot.full{background:transparent;border-color:rgba(234,243,239,.18);color:#7F9C95;cursor:default;text-decoration:line-through}
+.board-foot{font-size:13px;color:#A9C4BC;margin-top:12px}
+
+/* services */
+.svc-grid{display:grid;gap:14px;margin-top:36px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:border-color .2s,transform .2s}
+.svc:hover{border-color:var(--green);transform:translateY(-2px)}
+.svc .ic{width:44px;height:44px;border-radius:12px;background:var(--mint);display:grid;place-items:center;margin-bottom:14px}
+.svc h3{font-size:20px;font-weight:700;margin-bottom:6px}
+.svc p{font-size:15px;color:var(--muted)}
+
+/* doctors */
+.docs{background:var(--mint)}
+.doc-grid{display:grid;gap:16px;margin-top:36px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.doc{background:var(--paper);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.doc .ph{aspect-ratio:5/4;display:grid;place-items:center;font:800 54px var(--display);color:var(--paper)}
+.doc .bd{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+.doc h3{font-size:20px;font-weight:700}
+.doc .q{font:500 12.5px var(--mono);color:var(--green);margin:4px 0 10px}
+.doc p{font-size:14.5px;color:var(--muted);flex:1}
+.doc .days{font-size:13.5px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+.doc button{margin-top:14px;align-self:flex-start;padding:10px 16px;font-size:14.5px}
+
+/* booking */
+.book-grid{display:grid;gap:36px}
+.book-grid>*{min-width:0}
+@media(min-width:960px){.book-grid{grid-template-columns:.8fr 1.2fr;gap:56px}}
+.steps{list-style:none;padding:0;margin-top:26px;counter-reset:s}
+.steps li{counter-increment:s;display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.steps li::before{content:counter(s);font:500 13px var(--mono);width:28px;height:28px;flex:none;border-radius:50%;background:var(--ink);color:var(--paper);display:grid;place-items:center}
+form.card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}
+@media(min-width:600px){form.card{padding:32px}}
+.field{margin-bottom:18px}
+.two{display:grid;gap:0 16px}
+@media(min-width:600px){.two{grid-template-columns:1fr 1fr}}
+label,.lbl{display:block;font-weight:600;font-size:14.5px;margin-bottom:7px}
+input,select,textarea{width:100%;font:16px var(--body);padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(47,143,107,.18)}
+.err{color:#B4361E;font-size:13.5px;margin-top:5px;display:none}
+.field.bad .err{display:block}.field.bad input,.field.bad select{border-color:#B4361E}
+.dates{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.chip{flex:none;border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 0;width:64px;text-align:center;cursor:pointer;font:inherit;color:var(--ink)}
+.chip small{display:block;font:500 11px var(--mono);color:var(--muted);text-transform:uppercase}
+.chip b{font-family:var(--display);font-size:21px}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip[aria-pressed=true] small{color:var(--marigold)}
+.chip:disabled{opacity:.4;cursor:not-allowed}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px}
+.times .t{font:500 14px var(--mono);padding:10px 0;border-radius:10px;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;color:var(--ink)}
+.times .t[aria-pressed=true]{background:var(--marigold);border-color:var(--marigold)}
+.times .t:disabled{text-decoration:line-through;opacity:.45;cursor:not-allowed}
+.tgroup{font:500 12px var(--mono);color:var(--muted);margin:12px 0 6px;text-transform:uppercase;letter-spacing:.06em}
+.note{font-size:13px;color:var(--muted);margin-top:12px}
+.ok{display:none;text-align:center;padding:20px 0}
+.ok .tick{width:64px;height:64px;border-radius:50%;background:var(--mint);display:grid;place-items:center;margin:0 auto 16px}
+.ok h3{font-size:28px;margin-bottom:8px}
+.ticket{margin:20px auto;max-width:360px;text-align:left;background:var(--mint);border-radius:14px;padding:16px 18px;font-size:15px}
+.ticket div{display:flex;justify-content:space-between;gap:12px;padding:5px 0}
+.ticket span{color:var(--muted)}
+
+/* timings + map */
+.visit{background:var(--ink);color:#EAF3EF}
+.visit .eyebrow{color:var(--marigold)}
+.visit .lede{color:#A9C4BC}
+.visit-grid{display:grid;gap:28px;margin-top:36px}
+@media(min-width:900px){.visit-grid{grid-template-columns:1fr 1.2fr}}
+.hours{list-style:none;padding:0}
+.hours li{display:flex;justify-content:space-between;padding:13px 0;border-bottom:1px solid rgba(234,243,239,.14);font-size:16px}
+.hours li b{font:500 15px var(--mono)}
+.hours li.today{color:var(--marigold)}
+.addr{margin-top:22px;font-size:15.5px;color:#C8DCD5}
+.addr strong{color:#fff}
+.map{border-radius:18px;overflow:hidden;min-height:320px;background:#1B444C;position:relative}
+.map iframe{width:100%;height:100%;min-height:320px;border:0;filter:grayscale(.3)}
+
+/* testimonials */
+.tst-grid{display:grid;gap:16px;margin-top:36px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.tst{border-left:3px solid var(--marigold);padding:6px 0 6px 20px}
+.tst p{font-size:17px;margin-bottom:12px}
+.tst cite{font-style:normal;font-size:14px;color:var(--muted)}
+.sample{display:inline-block;font:500 11.5px var(--mono);background:var(--mint);color:var(--ink-2);padding:4px 10px;border-radius:999px;margin-left:8px;vertical-align:middle}
+
+/* faq */
+.faq{background:var(--mint)}
+.faq-list{max-width:780px;margin-top:30px}
+details{background:var(--paper);border-radius:12px;margin-bottom:10px;padding:0 20px}
+summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:500 22px var(--mono);color:var(--green);line-height:1}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:18px;color:var(--muted);font-size:15.5px}
+
+/* contact */
+.contact-grid{display:grid;gap:14px;margin-top:30px;grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.cbox{border:1px solid var(--line);border-radius:var(--r);padding:20px;text-decoration:none;background:#fff}
+.cbox:hover{border-color:var(--green)}
+.cbox span{font:500 12px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.cbox b{display:block;font-family:var(--display);font-size:20px;margin-top:6px}
+.emerg{margin-top:20px;padding:14px 18px;border-radius:12px;background:#FCEFE0;font-size:15px}
+
+footer{border-top:1px solid var(--line);padding:30px 0 110px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+.credit{font-size:12.5px;opacity:.8}
+.credit a{text-decoration:none;border-bottom:1px dotted}
+@media(min-width:900px){footer{padding-bottom:30px}}
+
+/* sticky actions */
+.dock{position:fixed;z-index:30;display:flex;gap:10px}
+.dock a{display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:600;border-radius:999px;box-shadow:0 10px 24px -8px rgba(18,52,59,.45)}
+.dock .wa{background:#1FA855;color:#fff}
+.dock .call{background:var(--ink);color:#fff}
+@media(max-width:899px){
+  .dock{left:12px;right:12px;bottom:12px}
+  .dock a{flex:1;padding:14px}
+}
+@media(min-width:900px){
+  .dock{right:22px;bottom:22px;flex-direction:column}
+  .dock a{width:56px;height:56px}
+  .dock a span{display:none}
+}
+/* hero visual */
+.hero{position:relative;overflow:hidden}
+.hero-visual{position:relative}
+.hero-photo{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:22px;box-shadow:0 30px 60px -35px rgba(18,52,59,.5)}
+.hero-visual .board{position:relative;margin:-90px 14px 0;z-index:2}
+@media(min-width:900px){.hero-visual{padding-left:40px}.hero-visual .board{margin:-120px 0 0 -40px;max-width:400px}}
+.pill-float{position:absolute;top:16px;right:16px;background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;box-shadow:0 8px 20px -8px rgba(18,52,59,.4);animation:bob 4s ease-in-out infinite}
+.pill-float b{color:var(--marigold-d);font-family:var(--display)}
+.pill-float small{color:var(--muted)}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.ecg{position:absolute;left:0;right:0;bottom:8px;width:100%;height:46px;pointer-events:none}
+.ecg path{fill:none;stroke:var(--green);stroke-width:2;opacity:.35;stroke-dasharray:1400;stroke-dashoffset:1400;animation:ecg 5s linear infinite}
+@keyframes ecg{60%,100%{stroke-dashoffset:0}}
+/* ticker */
+.ticker{background:var(--ink);color:var(--mint);overflow:hidden;padding:14px 0;font:500 14px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.ticker-track{display:flex;width:max-content;animation:tick 40s linear infinite}
+.ticker span{padding:0 22px;white-space:nowrap}
+.ticker span::after{content:"✚";color:var(--marigold);margin-left:44px}
+@keyframes tick{to{transform:translateX(-50%)}}
+/* before/after */
+.ba{position:relative;margin-top:36px;border-radius:22px;overflow:hidden;aspect-ratio:16/9;min-height:340px;user-select:none;background:var(--ink)}
+.ba-pane{position:absolute;inset:0}
+.ba-pane img{width:100%;height:100%;object-fit:cover}
+.ba-before{clip-path:inset(0 calc(100% - var(--pos)) 0 0)}
+.ba-before img{filter:grayscale(1) contrast(.85) brightness(.6) sepia(.25)}
+.ba-before::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(0,0,0,.12) 46px 50px)}
+.ba-tags{position:absolute;bottom:18px;list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;z-index:1;font-size:14.5px}
+.ba-tags li{padding:7px 12px;border-radius:10px;width:max-content;max-width:44vw}
+.before-tags{left:18px}.before-tags li{background:rgba(30,30,30,.82);color:#eee}.before-tags b{color:#FF8E7A}
+.after-tags{right:18px;align-items:flex-end}.after-tags li{background:rgba(251,252,250,.94);color:var(--ink)}.after-tags b{color:var(--green)}
+.ba-label{position:absolute;top:16px;font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.08em;padding:6px 12px;border-radius:999px;z-index:1}
+.ba-label.l{left:16px;background:#222;color:#ddd}.ba-label.r{right:16px;background:var(--marigold);color:var(--ink)}
+.ba-range{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4;margin:0}
+.ba-handle{position:absolute;top:0;bottom:0;left:var(--pos);width:3px;background:#fff;transform:translateX(-50%);z-index:3;pointer-events:none}
+.ba-handle span{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.ba-range:focus-visible+.ba-handle span{outline:3px solid var(--marigold)}
+@media(max-width:600px){.ba{aspect-ratio:3/4}.ba-tags{font-size:12.5px;bottom:12px}.before-tags{left:10px}.after-tags{right:10px}}
+.ba-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.ba-stats div{border-top:2px solid var(--ink);padding-top:12px}
+.ba-stats b{display:block;font:800 clamp(28px,5vw,44px) var(--display);letter-spacing:-.02em}
+.ba-stats span{font-size:14px;color:var(--muted)}
+/* gallery */
+.gallery-sec{background:var(--mint)}
+.gallery{display:grid;gap:12px;margin-top:32px;grid-template-columns:1fr 1fr}
+.gallery figure{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:1}
+.gallery .g1{grid-column:1/-1;aspect-ratio:16/9}
+@media(min-width:900px){.gallery{grid-template-columns:2fr 1fr 1fr;grid-template-rows:240px 240px}.gallery figure{aspect-ratio:auto}.gallery .g1{grid-column:1;grid-row:1/3;aspect-ratio:auto}}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.gallery figure:hover img{transform:scale(1.05)}
+.gallery figcaption{position:absolute;left:10px;bottom:10px;background:rgba(18,52,59,.85);color:#fff;font-size:13px;padding:5px 10px;border-radius:8px}
+/* doctor photos */
+.doc .ph{position:relative;overflow:hidden;background:var(--mint-2)}
+.doc .ph img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.doc:hover .ph img{transform:scale(1.04)}
+.doc .ph .badge{position:absolute;left:12px;bottom:12px;background:var(--paper);color:var(--ink);font:500 12px var(--mono);padding:5px 10px;border-radius:999px}
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.demo-flag{background:var(--ink);color:#CFE4DA;font:500 12px var(--mono);text-align:center;padding:7px 12px}
+:root{--green:#3E7D3A;--mint:#E8F2E3;--mint-2:#D2E6CA;--hero:url('https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=1920&q=72&auto=format&fit=crop')}
+
+/* --- human touch layer --- */
+.eyebrow{font:600 25px/1.1 'Caveat',cursive;letter-spacing:0;text-transform:none;margin-bottom:6px}
+.hero{background:#0E2328;color:#fff;min-height:min(92vh,860px);display:flex;align-items:center;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;background:var(--hero) center/cover no-repeat;z-index:-2;animation:kb 20s ease-out both}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(9,24,28,.88) 0%,rgba(9,24,28,.66) 45%,rgba(9,24,28,.2) 100%)}
+@media(max-width:899px){.hero::after{background:linear-gradient(180deg,rgba(9,24,28,.72),rgba(9,24,28,.9))}}
+@keyframes kb{from{transform:scale(1.14)}to{transform:scale(1)}}
+.hero .wrap{width:100%}
+.hero h1,.hero h1 em{color:#fff}
+.hero .lede{color:rgba(255,255,255,.88)}
+.hero .eyebrow{color:var(--marigold)}
+.hero .facts{color:#E8F0EE}.hero .facts span::before{color:var(--marigold)}
+.hero .btn-ghost{color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.8)}.hero .btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero-photo,.ecg{display:none}
+.hero-visual{display:flex;flex-direction:column;align-items:flex-start}
+@media(min-width:900px){.hero-visual{align-items:flex-end;padding-left:0}}
+.hero-visual .board{margin:0!important;width:100%;max-width:420px;background:rgba(12,32,37,.7);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.14)}
+.pill-float{position:static;margin:0 0 14px;animation:bob 4s ease-in-out infinite}
+.hero-grid>div:first-child>*{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-grid>div:first-child>*:nth-child(2){animation-delay:.12s}.hero-grid>div:first-child>*:nth-child(3){animation-delay:.24s}
+.hero-grid>div:first-child>*:nth-child(4){animation-delay:.36s}.hero-grid>div:first-child>*:nth-child(5){animation-delay:.48s}
+.hero-visual{animation:up 1s .4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(22px)}}
+/* patient before / after */
+.ba-before::after{display:none}
+.ba-pane img{object-position:center 30%}
+.ba-label.l{background:#2a2a2a}
+.ba-note{font:600 22px 'Caveat',cursive;color:var(--muted);margin-top:14px}
+/* note from the doctor */
+.note-sec{background:var(--paper)}
+.note-grid{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.note-grid{grid-template-columns:.75fr 1.25fr;gap:64px}}
+.note-photo{position:relative;max-width:380px}
+.note-photo img{border-radius:20px;aspect-ratio:4/5;object-fit:cover;object-position:top;transform:rotate(-2.5deg);box-shadow:0 30px 50px -30px rgba(18,52,59,.6);transition:transform .5s}
+.note-photo:hover img{transform:rotate(0)}
+.note-photo span{position:absolute;right:-8px;bottom:18px;background:var(--marigold);color:var(--ink);font:600 20px 'Caveat',cursive;padding:4px 14px;border-radius:8px;transform:rotate(3deg)}
+.hand{font:500 clamp(21px,2.6vw,28px)/1.45 var(--body);color:var(--ink);margin:10px 0 18px}
+.sig{font:700 40px/1 'Caveat',cursive;color:var(--green)}
+.sig small{display:block;font:500 14px var(--body);color:var(--muted);margin-top:6px}
+/* contact map card */
+.visit-grid{grid-template-columns:1fr!important;max-width:680px}
+.mapcard{display:grid;margin-top:30px;border-radius:26px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 40px 70px -45px rgba(18,52,59,.5)}
+@media(min-width:900px){.mapcard{grid-template-columns:1.35fr 1fr}}
+.mapcard-map{position:relative;min-height:340px;background:var(--mint)}
+.mapcard-map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map-chip{position:absolute;left:14px;top:14px;background:#fff;padding:9px 14px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:0 8px 20px -8px rgba(0,0,0,.35)}
+.mapcard-info{padding:28px;display:flex;flex-direction:column;gap:14px}
+@media(min-width:600px){.mapcard-info{padding:36px}}
+.mapcard-info h3{font-size:clamp(24px,3vw,30px);font-weight:800}
+.mc-addr{color:var(--muted);font-size:15.5px}
+.mc-rating{display:flex;align-items:center;gap:8px;font-size:15px}
+.mc-rating b{background:var(--mint);padding:4px 10px;border-radius:8px;font-family:var(--display)}
+.mc-open{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--green)}
+.mc-open i{width:9px;height:9px;border-radius:50%;background:currentColor;animation:pulse 1.6s infinite}
+.mc-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:8px}
+.mc-actions .btn{padding:12px 18px;font-size:15px}
+.btn-wa{background:#1FA855;color:#fff}.btn-wa:hover{background:#178f47}
+.ba-legend{display:none}
+.flag-short{display:none}
+
+/* --- phones --- */
+@media(max-width:700px){
+  body{font-size:16px}
+  section{padding:56px 0}
+  .wrap{padding:0 16px}
+  h2{font-size:clamp(28px,8vw,36px)}
+  .eyebrow{font-size:22px}
+  .demo-flag{font-size:11px;padding:6px 10px}
+  .flag-long{display:none}.flag-short{display:inline}
+  .nav{height:60px}
+  .logo{font-size:17px;gap:8px;min-width:0}
+  .logo svg{width:30px;height:30px;flex:none}
+  .logo>span{min-width:0}
+  .logo small{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52vw}
+  .nav .btn{padding:9px 16px;font-size:14px}
+
+  .hero{min-height:auto;padding:36px 0 48px}
+  .hero h1{font-size:clamp(36px,10.5vw,46px);margin:4px 0 14px}
+  .hero .lede{font-size:16.5px;margin-bottom:22px}
+  .hero-ctas .btn{flex:1;justify-content:center}
+  .facts{margin-top:22px;gap:6px 16px;font-size:14px}
+  .hero-grid{gap:28px}
+  .board{padding:16px;border-radius:18px}
+  .row{padding:10px 0}
+  .slot{padding:7px 10px;font-size:13px}
+
+  .ba{aspect-ratio:4/5;min-height:0;border-radius:18px}
+  .ba-tags{display:none}
+  .ba-label{top:12px;font-size:10.5px;padding:5px 10px}
+  .ba-label.l{left:12px}.ba-label.r{right:12px}
+  .ba-handle span{width:40px;height:40px}
+  .ba-legend{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+  .ba-legend>div{border-radius:14px;padding:12px 14px;font-size:14px}
+  .ba-legend b{display:block;font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
+  .ba-legend ul{padding-left:16px;margin:0}
+  .ba-legend li{margin:3px 0}
+  .lg-before{background:#EFEDEA;color:#3a3a3a}.lg-before b{color:#B4361E}
+  .lg-after{background:var(--mint)}.lg-after b{color:var(--green)}
+  .ba-stats{gap:8px}
+  .ba-stats b{font-size:26px}.ba-stats span{font-size:12.5px}
+
+  .note-grid{gap:24px}
+  .note-photo{max-width:230px;margin:0 auto}
+  .hand{font-size:19px}
+  .sig{font-size:34px}
+
+  .svc-grid{grid-template-columns:1fr;gap:10px;margin-top:24px}
+  .svc{display:grid;grid-template-columns:44px 1fr;gap:4px 14px;padding:16px;align-items:start}
+  .svc .ic{grid-row:1/3;margin:0}
+  .svc h3{font-size:18px;margin:0}
+  .svc p{font-size:14.5px}
+
+  .doc-grid,.tst-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:24px -16px 0;padding:0 16px 10px;scrollbar-width:none}
+  .doc-grid::-webkit-scrollbar,.tst-grid::-webkit-scrollbar{display:none}
+  .doc{flex:0 0 78%;scroll-snap-align:start}
+  .doc .ph{aspect-ratio:1}
+  .tst{flex:0 0 82%;scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-left:3px solid var(--marigold);border-radius:14px;padding:18px}
+  .tst p{font-size:16px}
+
+  .steps{margin-top:16px}
+  form.card{padding:18px;border-radius:18px}
+  .times{grid-template-columns:repeat(3,1fr)}
+
+  .hours li{font-size:15px;gap:12px}
+  .hours li b{font-size:13.5px;text-align:right}
+
+  .gallery{gap:8px;margin-top:24px}
+  .gallery figure{border-radius:12px}
+  .gallery figcaption{font-size:12px}
+
+  details{padding:0 16px}
+  summary{padding:15px 0;font-size:15.5px}
+
+  .mapcard{border-radius:20px;margin-top:22px}
+  .mapcard-map{min-height:240px}
+  .mapcard-info{padding:20px;gap:10px}
+  .mc-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .mc-actions .btn{justify-content:center;padding:13px 10px}
+  .mc-actions .btn-primary{grid-column:1/-1}
+  .emerg{font-size:14px}
+
+  footer .wrap{flex-direction:column;gap:6px;font-size:13px}
+}
+
+</style>
+</head>
+<body>
+<div class="demo-flag"><span class="flag-long">Sample website made for Physio+ Physiotherapy Clinic by AB Labs · not live · doctors, timings &amp; photos are placeholders</span><span class="flag-short">Sample website by AB Labs · not live yet</span></div>
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Physio+ home">
+      <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#12343B"/><path d="M13 7h6v6h6v6h-6v6h-6v-6H7v-6h6z" fill="#F2A541"/></svg>
+      <span>Physio+<small>PHYSIOTHERAPY · WADGAON SHERI</small></span>
+    </a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#visit">Timings</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="#book">Book</a>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Wadgaon Sheri, Pune · 5★ on Google</span>
+      <h1>Move without pain, <em>one session at a time.</em></h1>
+      <p class="lede">Book your physiotherapy session online, keep the same slot every week, and track your recovery with a plan built around you.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="#book">Book appointment →</a>
+        <a class="btn btn-ghost" href="tel:+919763562689">Call the clinic</a>
+      </div>
+      <div class="facts"><span>One-to-one sessions</span><span>Home visits on request</span><span>Exercise plans on WhatsApp</span></div>
+    </div>
+    <div class="hero-visual">
+    <div class="pill-float"><b>5★</b> on Google <small>(74 reviews)</small></div>
+    <aside class="board" aria-label="Next available slots today">
+      <div class="board-head"><b>Next free slots</b><span class="live"><i></i><span id="boardDate">TODAY</span></span></div>
+      <div id="board"></div>
+      <p class="board-foot">Tap a slot to book it. Average wait after arrival: under 10 minutes.</p>
+    </aside>
+    </div>
+  </div>
+  <svg class="ecg" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 30H420l14-18 16 40 18-56 16 52 12-18H760l10-10 10 10H1200"/></svg>
+</section>
+
+<section id="difference" class="ba-sec">
+  <div class="wrap">
+    <span class="eyebrow">Patient stories</span>
+    <h2>Back on your feet</h2>
+    <p class="lede">Drag the handle. Before treatment on the left, after treatment at Physio+ on the right.</p>
+    <div class="ba" id="ba" style="--pos:50%">
+      <div class="ba-pane ba-after">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=72&auto=format&fit=crop" alt="Patient after treatment" loading="lazy">
+        <ul class="ba-tags after-tags"><li>Pain down to 2/10</li><li>Exercising again in 6 sessions</li></ul>
+        <span class="ba-label r">After treatment</span>
+      </div>
+      <div class="ba-pane ba-before">
+        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=72&auto=format&fit=crop" alt="" loading="lazy" style="filter:grayscale(.8) brightness(.72) contrast(.9) blur(1px)">
+        <ul class="ba-tags before-tags"><li>Back pain 8/10</li><li>Couldn&#x27;t sit for 30 minutes</li></ul>
+        <span class="ba-label l">Before treatment</span>
+      </div>
+      <input type="range" min="0" max="100" value="50" class="ba-range" id="baRange" aria-label="Compare before and after">
+      <div class="ba-handle" aria-hidden="true"><span>⟷</span></div>
+    </div>
+    <div class="ba-legend">
+      <div class="lg-before"><b>Before treatment</b><ul><li>Back pain 8/10</li><li>Couldn&#x27;t sit for 30 minutes</li></ul></div>
+      <div class="lg-after"><b>After treatment</b><ul><li>Pain down to 2/10</li><li>Exercising again in 6 sessions</li></ul></div>
+    </div>
+    <div class="ba-stats">
+      <div><b data-count="74">74</b><span>Google reviews</span></div>
+      <div><b>5★</b><span>average Google rating</span></div>
+      <div><b>24×7</b><span>online booking</span></div>
+    </div>
+    <p class="ba-note">Sample result for this demo. Your real patient cases (with consent) go here.</p>
+  </div>
+</section>
+
+<section class="note-sec">
+  <div class="wrap note-grid">
+    <div class="note-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&q=72&auto=format&fit=crop" alt="Sample photo" loading="lazy"><span>Sample photo</span></div>
+    <div>
+      <span class="eyebrow">A note before you visit</span>
+      <p class="hand">"Pain changes how you live: how you sleep, sit at work, play with your kids. My job is to get you back to those things, and to teach you exercises so you don&#x27;t need me forever."</p>
+      <p class="sig">Dr. Pranita S.<small>Physio+ Physiotherapy Clinic · placeholder note, we'll write the real one with you</small></p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">What we treat</span>
+    <h2>Treatment that gets you moving</h2>
+    <p class="lede">Assessment first, then hands-on therapy and exercises you can do at home.</p>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<section id="doctors" class="docs">
+  <div class="wrap">
+    <span class="eyebrow">Our doctors</span>
+    <h2>Meet who you'll see</h2>
+    <p class="lede">Sample photos and profiles. Your doctors' real photos, qualifications and OPD days go here.</p>
+    <div class="doc-grid" id="docGrid"></div>
+  </div>
+</section>
+
+<section id="book">
+  <div class="wrap book-grid">
+    <div>
+      <span class="eyebrow">Online appointment</span>
+      <h2>Book in under a minute</h2>
+      <p class="lede">No login, no app. You'll get a confirmation with your token number right away.</p>
+      <ol class="steps">
+        <li>Choose the doctor or speciality</li>
+        <li>Pick a day and a free time slot</li>
+        <li>Add your name and mobile number</li>
+        <li>Arrive 10 minutes early with your token</li>
+      </ol>
+    </div>
+    <form class="card" id="bookForm" novalidate>
+      <div id="formBody">
+        <div class="field" id="f-doc">
+          <label for="doctor">Doctor</label>
+          <select id="doctor" required></select>
+          <div class="err">Choose a doctor to see free slots.</div>
+        </div>
+        <div class="field" id="f-date">
+          <span class="lbl" id="dateLbl">Day</span>
+          <div class="dates" id="dates" role="group" aria-labelledby="dateLbl"></div>
+          <div class="err">Pick a day.</div>
+        </div>
+        <div class="field" id="f-time">
+          <span class="lbl" id="timeLbl">Time slot</span>
+          <div id="times" role="group" aria-labelledby="timeLbl"></div>
+          <div class="err">Pick a free time slot.</div>
+        </div>
+        <div class="two">
+          <div class="field" id="f-name">
+            <label for="name">Patient name</label>
+            <input id="name" autocomplete="name" placeholder="e.g. Priya Kulkarni">
+            <div class="err">Enter the patient's name.</div>
+          </div>
+          <div class="field" id="f-phone">
+            <label for="phone">Mobile number</label>
+            <input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="10-digit number" maxlength="10">
+            <div class="err">Enter a 10-digit mobile number.</div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="reason">Reason for visit <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+          <textarea id="reason" rows="2" placeholder="e.g. fever for 3 days"></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center">Confirm appointment</button>
+        <p class="note">This is a demo, no booking is sent and no data leaves your phone.</p>
+      </div>
+      <div class="ok" id="ok" role="status" aria-live="polite">
+        <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2F8F6B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg></div>
+        <h3>Appointment confirmed</h3>
+        <p class="lede" style="margin:0 auto">A confirmation would now go to your phone on WhatsApp and SMS.</p>
+        <div class="ticket" id="ticket"></div>
+        <button class="btn btn-ghost" type="button" id="again">Book another appointment</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <span class="eyebrow">Timings &amp; location</span>
+    <h2>When to find us</h2>
+    <p class="lede">Sample timings, these will match your actual OPD hours.</p>
+    <div class="visit-grid">
+      <div>
+        <ul class="hours" id="hours"></ul>
+        <p class="addr"><strong>Physio+ Physiotherapy Clinic</strong><br>Wadgaon Sheri, Pune<br>Full address and landmarks from your Google listing</p>
+      </div>
+      </div>
+  </div>
+</section>
+
+<section id="inside" class="gallery-sec">
+  <div class="wrap">
+    <span class="eyebrow">Inside the clinic</span>
+    <h2>Clean, calm, and close to home <span class="sample">Sample photos</span></h2>
+    <div class="gallery">
+      <figure class="g1"><img loading="lazy" src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?w=900&q=72&auto=format&fit=crop" alt="Manual therapy"><figcaption>Manual therapy</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1597764690523-15bea4c581c9?w=600&q=72&auto=format&fit=crop" alt="Splints &amp; support"><figcaption>Splints &amp; support</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=72&auto=format&fit=crop" alt="Exercise plans"><figcaption>Exercise plans</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=72&auto=format&fit=crop" alt="Care that listens"><figcaption>Care that listens</figcaption></figure>
+      <figure><img loading="lazy" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=72&auto=format&fit=crop" alt="Reception"><figcaption>Reception</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">Patient stories</span>
+    <h2>What patients say <span class="sample">Sample reviews</span></h2>
+    <p class="lede">Your best Google reviews would be shown here.</p>
+    <div class="tst-grid">
+      <blockquote class="tst"><p>&quot;Two weeks of sessions and my back pain is down to almost nothing. The home exercises really help.&quot;</p><cite>— Sample patient, Wadgaon Sheri</cite></blockquote>
+      <blockquote class="tst"><p>&quot;After my knee surgery they got me walking properly again. Booking the same slot weekly is easy.&quot;</p><cite>— Sample patient, Wadgaon Sheri</cite></blockquote>
+      <blockquote class="tst"><p>&quot;They came home for my father&#x27;s sessions. Very professional.&quot;</p><cite>— Sample patient, Wadgaon Sheri</cite></blockquote>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="faq">
+  <div class="wrap">
+    <span class="eyebrow">Before you visit</span>
+    <h2>Common questions</h2>
+    <div class="faq-list">
+      <details><summary>Do I need a doctor&#x27;s referral?</summary><p>No. You can book directly; bring any reports or X-rays you have.</p></details>
+      <details><summary>How many sessions will I need?</summary><p>Your therapist will tell you after the first assessment. Most problems improve in 6–10 sessions.</p></details>
+      <details><summary>What is the fee per session?</summary><p>Session fees and packages will be listed here once confirmed by the clinic.</p></details>
+      <details><summary>Do you offer home visits?</summary><p>Home visit availability will be listed here.</p></details>
+      <details><summary>What should I wear?</summary><p>Comfortable, loose clothing so the affected area can be examined.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <span class="eyebrow">Come and see us</span>
+    <h2>Find us in Wadgaon Sheri</h2>
+    <div class="mapcard">
+      <div class="mapcard-map">
+        <iframe title="Map showing Physio+ Physiotherapy Clinic" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Physio%2B%20physiotherapy%20clinic%20-%20Dr.%20Pranita%20s%20Wadgaon%20Sheri%20Pune&amp;z=15&amp;output=embed"></iframe>
+        <a class="map-chip" href="https://www.google.com/maps/search/?api=1&amp;query=Physio%2B%20physiotherapy%20clinic%20-%20Dr.%20Pranita%20s&amp;query_place_id=ChIJdaFJmZjBwjsRpWHo2oSfbqY" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+      </div>
+      <div class="mapcard-info">
+        <h3>Physio+ Physiotherapy Clinic</h3>
+        <p class="mc-addr">Wadgaon Sheri, Pune<br><small>Full address and landmark from your Google listing</small></p>
+        <div class="mc-rating"><b>5★</b><span>74 Google reviews</span></div>
+        <div class="mc-open"><i></i><span>Open today · 10 am – 1 pm, 5 – 9 pm (sample)</span></div>
+        <div class="mc-actions">
+          <a class="btn btn-primary" href="tel:+919763562689">Call +91 97635 62689</a>
+          <a class="btn btn-wa" href="https://wa.me/919763562689" target="_blank" rel="noopener">WhatsApp us</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Physio%2B%20physiotherapy%20clinic%20-%20Dr.%20Pranita%20s&amp;query_place_id=ChIJdaFJmZjBwjsRpWHo2oSfbqY" target="_blank" rel="noopener">Directions</a>
+        </div>
+      </div>
+    </div>
+    <p class="emerg"><strong>In an emergency</strong>, call 108 or go to the nearest hospital emergency department.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Sample website for Physio+ Physiotherapy Clinic · not affiliated until approved</span>
+    <span class="credit">Website by <a href="https://aadityabhatnagar.online" target="_blank" rel="noopener">AB Labs</a></span>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Quick contact">
+  <a class="wa" href="https://wa.me/919763562689" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+  <a class="call" href="tel:+919763562689" aria-label="Call the clinic">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>
+    <span>Call now</span>
+  </a>
+</nav>
+
+<script>
+const ico = p => `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2F8F6B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${p}</svg>`;
+const SERVICES = [["Back & neck pain", "Relief for slip disc, sciatica, spondylosis and desk-job pain.", "<path d=\"M17 3a3 3 0 0 0-2.8 4L7 14.2A3 3 0 1 0 9.8 17L17 9.8A3 3 0 1 0 17 3z\"/>"], ["Knee & joint pain", "Arthritis care and strengthening to avoid or delay surgery.", "<path d=\"M17 3a3 3 0 0 0-2.8 4L7 14.2A3 3 0 1 0 9.8 17L17 9.8A3 3 0 1 0 17 3z\"/>"], ["Sports injuries", "Ligament, muscle and tendon injuries, back to play safely.", "<circle cx=\"14\" cy=\"4\" r=\"2\"/><path d=\"M8 21l3-6 3 3v3M6 12l3-3 4 1 3 4h3\"/>"], ["Post-surgery rehab", "Recovery after knee replacement, ACL or spine surgery.", "<path d=\"M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1.1L12 21l7.8-7.5 1-1.1a5.5 5.5 0 0 0 0-7.8z\"/>"], ["Neuro rehab", "Stroke, Parkinson's and nerve-injury rehabilitation.", "<path d=\"M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6\"/>"], ["Home physiotherapy", "Sessions at home for elderly or post-operative patients.", "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M12 7v5l3 2\"/>"]];
+const DOCTORS = [{"id": "d0", "n": "Dr. Pranita S.", "q": "Qualifications here", "s": "Ortho & sports", "img": "photo-1559839734-2b71ea197ec2", "b": "Short bio, experience and areas of interest will go here.", "d": "Mon–Sat", "days": [1, 2, 3, 4, 5, 6]}, {"id": "d1", "n": "Physiotherapist", "q": "BPT", "s": "Neuro & home visits", "img": "photo-1612349317150-e413f6a5b16d", "b": "Short bio, experience and areas of interest will go here.", "d": "Mon–Sat", "days": [1, 2, 3, 4, 5, 6]}];
+const MORNING=['10:00','10:20','10:40','11:00','11:20','11:40','12:00','12:20'], EVENING=['17:00','17:20','17:40','18:00','18:20','18:40','19:00','19:20','19:40','20:00','20:20','20:40'];
+const DAYN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'], MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const fmt = t => { let [h,m]=t.split(':').map(Number); const ap=h>=12?'pm':'am'; h=h%12||12; return `${h}:${String(m).padStart(2,'0')} ${ap}`; };
+// deterministic "taken" slots so the demo looks real
+const taken = (doc,date,t) => { let s=doc+date.toDateString()+t, h=0; for(const c of s) h=(h*31+c.charCodeAt(0))|0; return Math.abs(h)%10<3; };
+const isPast = (date,t) => { const [h,m]=t.split(':'); const d=new Date(date); d.setHours(h,m,0,0); return d < new Date(Date.now()+30*60000); };
+const free = (doc,date,t) => !taken(doc.id,date,t) && !isPast(date,t);
+
+document.getElementById('svcGrid').innerHTML = SERVICES.map(([t,p,i])=>`<article class="svc"><div class="ic">${ico(i)}</div><h3>${t}</h3><p>${p}</p></article>`).join('');
+document.getElementById('docGrid').innerHTML = DOCTORS.map(d=>{
+  const ini=d.n.replace('Dr. ','').split(' ').map(w=>w[0]).join('');
+  return `<article class="doc"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/${d.img}?w=600&q=70&auto=format&fit=crop" alt="Sample photo for ${d.n}"><span class="badge">Sample photo</span></div><div class="bd"><h3>${d.n}</h3><div class="q">${d.q} · ${d.s}</div><p>${d.b}</p><div class="days"><strong>OPD:</strong> ${d.d}</div><button class="btn btn-ghost" data-doc="${d.id}">Book appointment</button></div></article>`}).join('');
+
+// hours
+const HOURS=[['Monday','10 am – 1 pm · 5 – 9 pm'],['Tuesday','10 am – 1 pm · 5 – 9 pm'],['Wednesday','10 am – 1 pm · 5 – 9 pm'],['Thursday','10 am – 1 pm · 5 – 9 pm'],['Friday','10 am – 1 pm · 5 – 9 pm'],['Saturday','10 am – 1 pm · 5 – 9 pm'],['Sunday','10 am – 1 pm (emergencies)']];
+const today=new Date().getDay(), tIdx=(today+6)%7;
+document.getElementById('hours').innerHTML=HOURS.map((h,i)=>`<li class="${i===tIdx?'today':''}"><span>${h[0]}${i===tIdx?' · today':''}</span><b>${h[1]}</b></li>`).join('');
+
+// booking state
+const sel={doc:null,date:null,time:null};
+const docSel=document.getElementById('doctor');
+docSel.innerHTML='<option value="">Select a doctor</option>'+DOCTORS.map(d=>`<option value="${d.id}">${d.n}, ${d.s}</option>`).join('');
+const getDoc=id=>DOCTORS.find(d=>d.id===id);
+const next14=()=>{const a=[];const b=new Date();b.setHours(0,0,0,0);for(let i=0;i<14;i++){const d=new Date(b);d.setDate(b.getDate()+i);a.push(d)}return a};
+const slotsFor=(doc,date)=>date.getDay()===0?MORNING:[...MORNING,...EVENING];
+const hasFree=(doc,date)=>doc.days.includes(date.getDay())&&slotsFor(doc,date).some(t=>free(doc,date,t));
+
+function renderDates(){
+  const el=document.getElementById('dates'), doc=getDoc(sel.doc);
+  el.innerHTML=next14().map((d,i)=>{
+    const ok=doc?hasFree(doc,d):true, on=sel.date&&d.getTime()===sel.date.getTime();
+    return `<button type="button" class="chip" data-i="${i}" aria-pressed="${!!on}" ${ok?'':'disabled'} aria-label="${DAYN[d.getDay()]} ${d.getDate()} ${MON[d.getMonth()]}"><small>${i===0?'Today':DAYN[d.getDay()]}</small><b>${d.getDate()}</b><small>${MON[d.getMonth()]}</small></button>`}).join('');
+}
+function renderTimes(){
+  const el=document.getElementById('times'), doc=getDoc(sel.doc);
+  if(!doc||!sel.date){el.innerHTML='<p class="note" style="margin:0">Choose a doctor and day to see free slots.</p>';return}
+  const g=(name,list)=>list.length?`<div class="tgroup">${name}</div><div class="times">${list.map(t=>`<button type="button" class="t" data-t="${t}" aria-pressed="${sel.time===t}" ${free(doc,sel.date,t)?'':'disabled'}>${fmt(t)}</button>`).join('')}</div>`:'';
+  el.innerHTML=g('Morning',MORNING)+(sel.date.getDay()===0?'':g('Evening',EVENING));
+}
+function pickDoc(id){
+  sel.doc=id;docSel.value=id;sel.time=null;
+  const doc=getDoc(id);
+  if(sel.date&&doc&&!hasFree(doc,sel.date)) sel.date=null;
+  if(!sel.date&&doc) sel.date=next14().find(d=>hasFree(doc,d))||null;
+  renderDates();renderTimes();
+}
+docSel.addEventListener('change',e=>pickDoc(e.target.value||null));
+document.getElementById('dates').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b||b.disabled)return;sel.date=next14()[b.dataset.i];sel.time=null;renderDates();renderTimes();document.getElementById('f-date').classList.remove('bad')});
+document.getElementById('times').addEventListener('click',e=>{const b=e.target.closest('.t');if(!b||b.disabled)return;sel.time=b.dataset.t;renderTimes();document.getElementById('f-time').classList.remove('bad')});
+document.getElementById('docGrid').addEventListener('click',e=>{const b=e.target.closest('[data-doc]');if(!b)return;pickDoc(b.dataset.doc);document.getElementById('book').scrollIntoView()});
+
+// hero board: next free slot per doctor
+function renderBoard(){
+  const now=new Date();
+  document.getElementById('boardDate').textContent=`${DAYN[now.getDay()].toUpperCase()} ${now.getDate()} ${MON[now.getMonth()].toUpperCase()}`;
+  document.getElementById('board').innerHTML=DOCTORS.map(doc=>{
+    let hit=null;
+    for(const d of next14()){ if(!doc.days.includes(d.getDay()))continue; const t=slotsFor(doc,d).find(t=>free(doc,d,t)); if(t){hit={d,t};break} }
+    if(!hit) return `<div class="row"><span class="who">${doc.n}</span><span class="dept">${doc.s}</span><span class="slot full">Full</span></div>`;
+    const sameDay=hit.d.toDateString()===now.toDateString();
+    const label=sameDay?fmt(hit.t):`${DAYN[hit.d.getDay()]} ${fmt(hit.t)}`;
+    return `<div class="row"><span class="who">${doc.n}</span><span class="dept">${doc.s}</span><button class="slot" data-doc="${doc.id}" data-d="${hit.d.getTime()}" data-t="${hit.t}" aria-label="Book ${doc.n} at ${label}">${label}</button></div>`}).join('');
+}
+document.getElementById('board').addEventListener('click',e=>{const b=e.target.closest('.slot[data-doc]');if(!b)return;sel.doc=b.dataset.doc;docSel.value=sel.doc;sel.date=new Date(+b.dataset.d);sel.time=b.dataset.t;renderDates();renderTimes();document.getElementById('book').scrollIntoView();setTimeout(()=>document.getElementById('name').focus({preventScroll:true}),500)});
+
+// submit
+const form=document.getElementById('bookForm');
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const name=document.getElementById('name').value.trim(), phone=document.getElementById('phone').value.replace(/\D/g,'');
+  const checks=[['f-doc',!!sel.doc],['f-date',!!sel.date],['f-time',!!sel.time],['f-name',name.length>1],['f-phone',/^[6-9]\d{9}$/.test(phone)]];
+  let first=null;
+  checks.forEach(([id,ok])=>{document.getElementById(id).classList.toggle('bad',!ok);if(!ok&&!first)first=id});
+  if(first){document.getElementById(first).scrollIntoView({block:'center'});return}
+  const doc=getDoc(sel.doc), token='PH-'+String(100+Math.floor(Math.random()*900));
+  const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.getElementById('ticket').innerHTML=[['Token',token],['Patient',esc(name)],['Doctor',doc.n],['Date',`${DAYN[sel.date.getDay()]}, ${sel.date.getDate()} ${MON[sel.date.getMonth()]}`],['Time',fmt(sel.time)],['Mobile','+91 '+phone.slice(0,5)+' '+phone.slice(5)]].map(([k,v])=>`<div><span>${k}</span><strong>${v}</strong></div>`).join('');
+  document.getElementById('formBody').style.display='none';document.getElementById('ok').style.display='block';
+  form.scrollIntoView({block:'start'});
+});
+['name','phone'].forEach(id=>document.getElementById(id).addEventListener('input',()=>document.getElementById('f-'+id).classList.remove('bad')));
+docSel.addEventListener('change',()=>document.getElementById('f-doc').classList.remove('bad'));
+document.getElementById('again').addEventListener('click',()=>{form.reset();sel.doc=sel.date=sel.time=null;renderDates();renderTimes();document.getElementById('ok').style.display='none';document.getElementById('formBody').style.display='block'});
+
+renderBoard();renderDates();renderTimes();
+
+// before/after slider
+const ba=document.getElementById('ba');
+document.getElementById('baRange').addEventListener('input',e=>ba.style.setProperty('--pos',e.target.value+'%'));
+
+// count-up + reveal
+const io=new IntersectionObserver(es=>es.forEach(en=>{
+  if(!en.isIntersecting)return; const el=en.target; io.unobserve(el);
+  if(el.dataset.count){const end=+el.dataset.count,suf=el.dataset.suffix||(end>999?'+':''),t0=performance.now();
+    const step=n=>{const p=Math.min(1,(n-t0)/1400),v=Math.round(end*(1-Math.pow(1-p,3)));el.textContent=v.toLocaleString('en-IN')+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)}
+  else el.classList.add('in');
+}),{threshold:.2});
+document.querySelectorAll('[data-count]').forEach(el=>io.observe(el));
+document.querySelectorAll('.svc,.doc,.gallery figure,.tst,.ba,.hours li,details,.note-photo,.mapcard').forEach((el,i)=>{el.classList.add('reveal');el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+</script>
+</body>
+</html>

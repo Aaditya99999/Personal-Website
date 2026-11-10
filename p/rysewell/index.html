@@ -749,7 +749,7 @@ form.addEventListener('submit',e=>{
   let first=null;
   checks.forEach(([id,ok])=>{document.getElementById(id).classList.toggle('bad',!ok);if(!ok&&!first)first=id});
   if(first){document.getElementById(first).scrollIntoView({block:'center'});return}
-  const doc=getDoc(sel.doc), token='RW-'+String(100+Math.floor(Math.random()*900));
+  const doc=getDoc(sel.doc), token='RY-'+String(100+Math.floor(Math.random()*900));
   const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
   document.getElementById('ticket').innerHTML=[['Token',token],['Patient',esc(name)],['Doctor',doc.n],['Date',`${DAYN[sel.date.getDay()]}, ${sel.date.getDate()} ${MON[sel.date.getMonth()]}`],['Time',fmt(sel.time)],['Mobile','+91 '+phone.slice(0,5)+' '+phone.slice(5)]].map(([k,v])=>`<div><span>${k}</span><strong>${v}</strong></div>`).join('');
   document.getElementById('formBody').style.display='none';document.getElementById('ok').style.display='block';
